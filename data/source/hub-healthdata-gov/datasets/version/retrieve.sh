@@ -15,6 +15,12 @@
 today=`date +%Y-%b-%d`
 if [ ! -e $today ]; then
    mkdir -p $today/source
-   curl -sH "Content-Type: text/turtle" -d '<http://hub.healthdata.gov> a <http://purl.org/twc/vocab/datafaqs#CKAN> .'  http://aquarius.tw.rpi.edu/projects/datafaqs/services/sadi/core/select-datasets/by-ckan-installation > $today/source/datasets.rdf
+
+   hhs='http://hub.healthdata.gov'
+   sadi='http://aquarius.tw.rpi.edu/projects/datafaqs/services/sadi/core/select-datasets/by-ckan-installation'
+   echo "Requesting $hhs dataset listing from $sadi"
+
+   curl -sH "Content-Type: text/turtle" -d "<$hhs> a <http://purl.org/twc/vocab/datafaqs#CKAN> ." $sadi > $today/source/datasets.rdf
+
    echo $today/source/datasets.rdf
 fi

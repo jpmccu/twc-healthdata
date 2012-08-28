@@ -1,1 +1,1 @@
-Running the [retrieve.sh]() script produces the file `2012-Aug-28/source/datasets.rdf`, which describes all datasets in http://hub.healthdata.gov/dataset. The date reflects the **version-id** of the **catalog** dataset.
+Running the [retrieve.sh]() script produces the file `2012-Aug-28/source/datasets.rdf` (or similar, depending on the date), which describes all datasets in http://hub.healthdata.gov/dataset. The date reflects the **version-id** of the **catalog** dataset.

@@ -4,4 +4,4 @@ The [source/](https://github.com/jimmccusker/twc-healthdata/tree/master/data/sou
 * **what** they were talking about (**dataset-id**), and 
 * **when** they said it (**version-id**).
 
-The [faqt-brick](https://github.com/jimmccusker/twc-healthdata/tree/master/data/faqt-brick) directory follows the directory conventions for DataFAQs. It is used to accumulate dataset evaluations from a variety of evaluation services.
+The [faqt-brick](https://github.com/jimmccusker/twc-healthdata/tree/master/data/faqt-brick) directory follows the [directory conventions](https://github.com/timrdf/DataFAQs/wiki/FAqT-Brick) for [DataFAQs](https://github.com/timrdf/DataFAQs/wiki). It is used to accumulate dataset evaluations from a variety of [evaluation services](https://github.com/timrdf/DataFAQs/wiki/FAqT-Service).

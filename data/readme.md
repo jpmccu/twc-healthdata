@@ -1,1 +1,1 @@
-The [source/](https://github.com/jimmccusker/twc-healthdata/tree/master/data/source) directory follows the [directory conventions] for csv2rdf4lod.
+The [source/](https://github.com/jimmccusker/twc-healthdata/tree/master/data/source) directory follows the [directory conventions](https://github.com/timrdf/csv2rdf4lod-automation/wiki/Directory-Conventions) for [csv2rdf4lod](https://github.com/timrdf/csv2rdf4lod-automation/wiki).

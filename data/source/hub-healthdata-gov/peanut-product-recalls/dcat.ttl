@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_e414f244-d390-430c-9573-de50c6337a16;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "peanut-product-recalls";
+   prov:wasDerivedFrom :as_a_csv_7ffcc25f-200a-433e-a5ae-52bbb757de8b;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_e414f244-d390-430c-9573-de50c6337a16;
+   dcat:distribution :as_a_csv_7ffcc25f-200a-433e-a5ae-52bbb757de8b;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_e414f244-d390-430c-9573-de50c6337a16
+:as_a_csv_7ffcc25f-200a-433e-a5ae-52bbb757de8b
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/peanutbutterrecall/PeanutButterProducts2009.xls>;
 .

@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_bd007658-78ac-406e-ab92-cc87be3edaea;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "omha-appeals-listed-state";
+   prov:wasDerivedFrom :as_a_csv_8675a01e-0b94-4cb7-aad0-31ff38ab4f01;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_bd007658-78ac-406e-ab92-cc87be3edaea;
+   dcat:distribution :as_a_csv_8675a01e-0b94-4cb7-aad0-31ff38ab4f01;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_bd007658-78ac-406e-ab92-cc87be3edaea
+:as_a_csv_8675a01e-0b94-4cb7-aad0-31ff38ab4f01
    a dcat:Distribution;
    dcat:downloadURL <http://www.hhs.gov/omha/resources/appealslistbystate.xls>;
 .

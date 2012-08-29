@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_c2649e47-6016-4301-9cd3-5224a605c7d9;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "community-health-status-indicators";
+   prov:wasDerivedFrom :as_a_csv_921a4b6c-e833-49ca-8850-59a6e02ed67e;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_c2649e47-6016-4301-9cd3-5224a605c7d9;
+   dcat:distribution :as_a_csv_921a4b6c-e833-49ca-8850-59a6e02ed67e;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_c2649e47-6016-4301-9cd3-5224a605c7d9
+:as_a_csv_921a4b6c-e833-49ca-8850-59a6e02ed67e
    a dcat:Distribution;
    dcat:downloadURL <ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/CHDI/chsi_dataset.zip>;
 .

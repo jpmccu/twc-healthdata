@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_57f85352-8f28-46f5-8c3c-1c59417bcad3;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "shell-recalls";
+   prov:wasDerivedFrom :as_a_csv_3b018013-13b7-407b-85b8-7348b64d3ac4;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_57f85352-8f28-46f5-8c3c-1c59417bcad3;
+   dcat:distribution :as_a_csv_3b018013-13b7-407b-85b8-7348b64d3ac4;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_57f85352-8f28-46f5-8c3c-1c59417bcad3
+:as_a_csv_3b018013-13b7-407b-85b8-7348b64d3ac4
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/shelleggsrecall/ShellEggsRecallList2010.xls>;
 .

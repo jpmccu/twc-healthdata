@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_acd2861d-9e26-4720-bf80-f2d9bfc4eac4;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "hospital-medicare-cost-report-data-fy2005";
+   prov:wasDerivedFrom :as_a_csv_e7462a20-8296-46fb-a564-7a89e6a0b163;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_acd2861d-9e26-4720-bf80-f2d9bfc4eac4;
+   dcat:distribution :as_a_csv_e7462a20-8296-46fb-a564-7a89e6a0b163;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_acd2861d-9e26-4720-bf80-f2d9bfc4eac4
+:as_a_csv_e7462a20-8296-46fb-a564-7a89e6a0b163
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY2005.zip>;
 .

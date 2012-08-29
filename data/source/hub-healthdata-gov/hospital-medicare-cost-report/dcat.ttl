@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_ad672ed9-75c5-4a5f-b168-aa81a20f8729;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "hospital-medicare-cost-report";
+   prov:wasDerivedFrom :as_a_csv_9b4da6f7-7954-44ce-a49c-e8ccd01d7aa8;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_ad672ed9-75c5-4a5f-b168-aa81a20f8729;
+   dcat:distribution :as_a_csv_9b4da6f7-7954-44ce-a49c-e8ccd01d7aa8;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_ad672ed9-75c5-4a5f-b168-aa81a20f8729
+:as_a_csv_9b4da6f7-7954-44ce-a49c-e8ccd01d7aa8
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY2009.zip>;
 .

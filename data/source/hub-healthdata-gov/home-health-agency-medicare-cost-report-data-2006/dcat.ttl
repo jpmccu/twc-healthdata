@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_ec717681-c406-48d4-9b69-e80d6eb7f824;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "home-health-agency-medicare-cost-report-data-2006";
+   prov:wasDerivedFrom :as_a_csv_e067d765-1094-48e6-af54-98ad9f3cf7b4;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_ec717681-c406-48d4-9b69-e80d6eb7f824;
+   dcat:distribution :as_a_csv_e067d765-1094-48e6-af54-98ad9f3cf7b4;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_ec717681-c406-48d4-9b69-e80d6eb7f824
+:as_a_csv_e067d765-1094-48e6-af54-98ad9f3cf7b4
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY2006.zip>;
 .

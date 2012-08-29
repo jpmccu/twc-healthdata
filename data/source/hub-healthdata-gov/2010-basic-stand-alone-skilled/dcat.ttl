@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_1fa0b33a-9fd5-4f66-a887-c859d13e126d;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "2010-basic-stand-alone-skilled";
+   prov:wasDerivedFrom :as_a_csv_b63a5dd9-ff27-478d-b29a-26552475dd16;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_1fa0b33a-9fd5-4f66-a887-c859d13e126d;
+   dcat:distribution :as_a_csv_b63a5dd9-ff27-478d-b29a-26552475dd16;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_1fa0b33a-9fd5-4f66-a887-c859d13e126d
+:as_a_csv_b63a5dd9-ff27-478d-b29a-26552475dd16
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/BSAPUFS/downloads/2010_BSA_SNF_Beneficiary_PUF.zip>;
 .

@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_04a70d55-ae45-404c-85e2-8576cb4a70f1;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "drug-label-data";
+   prov:wasDerivedFrom :as_a_csv_ed0f970e-487b-4282-b31b-89d6b84d13fa;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_04a70d55-ae45-404c-85e2-8576cb4a70f1;
+   dcat:distribution :as_a_csv_ed0f970e-487b-4282-b31b-89d6b84d13fa;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_04a70d55-ae45-404c-85e2-8576cb4a70f1
+:as_a_csv_ed0f970e-487b-4282-b31b-89d6b84d13fa
    a dcat:Distribution;
    dcat:downloadURL <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/ucm241597.zip>;
 .

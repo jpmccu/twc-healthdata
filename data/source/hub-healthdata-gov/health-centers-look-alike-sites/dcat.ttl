@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_7ea1d9be-2120-481f-bf31-0048ac1e7f2b;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "health-centers-look-alike-sites";
+   prov:wasDerivedFrom :as_a_csv_0b5b5f8d-b110-4401-bee2-013805368884;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_7ea1d9be-2120-481f-bf31-0048ac1e7f2b;
+   dcat:distribution :as_a_csv_0b5b5f8d-b110-4401-bee2-013805368884;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_7ea1d9be-2120-481f-bf31-0048ac1e7f2b
+:as_a_csv_0b5b5f8d-b110-4401-bee2-013805368884
    a dcat:Distribution;
    dcat:downloadURL <http://datawarehouse.hrsa.gov/DataDownload/HCC/HCCs_and_Lookalikes.zip>;
 .

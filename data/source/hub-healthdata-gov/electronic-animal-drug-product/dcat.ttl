@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_ad9c4ec9-b264-49ec-88f1-e0fe3fe93338;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "electronic-animal-drug-product";
+   prov:wasDerivedFrom :as_a_csv_521f352b-c437-46ae-993c-afc931344521;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_ad9c4ec9-b264-49ec-88f1-e0fe3fe93338;
+   dcat:distribution :as_a_csv_521f352b-c437-46ae-993c-afc931344521;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_ad9c4ec9-b264-49ec-88f1-e0fe3fe93338
+:as_a_csv_521f352b-c437-46ae-993c-afc931344521
    a dcat:Distribution;
    dcat:downloadURL <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/UCM198204.zip>;
 .

@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_4fae81cc-4d82-4f8b-83ad-93a9b9710ab1;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "part-carrier-summary-data-file-cy2006";
+   prov:wasDerivedFrom :as_a_csv_09476ea2-ffb8-4809-88cf-8961e8b53c8d;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_4fae81cc-4d82-4f8b-83ad-93a9b9710ab1;
+   dcat:distribution :as_a_csv_09476ea2-ffb8-4809-88cf-8961e8b53c8d;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_4fae81cc-4d82-4f8b-83ad-93a9b9710ab1
+:as_a_csv_09476ea2-ffb8-4809-88cf-8961e8b53c8d
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/2006AllCarriers.zip>;
 .

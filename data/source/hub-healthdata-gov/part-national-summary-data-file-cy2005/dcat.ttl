@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_20d60a79-5873-4042-9e61-fcf70313e3d0;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "part-national-summary-data-file-cy2005";
+   prov:wasDerivedFrom :as_a_csv_88f542c4-2e40-460f-aafc-2a872f4d96e2;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_20d60a79-5873-4042-9e61-fcf70313e3d0;
+   dcat:distribution :as_a_csv_88f542c4-2e40-460f-aafc-2a872f4d96e2;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_20d60a79-5873-4042-9e61-fcf70313e3d0
+:as_a_csv_88f542c4-2e40-460f-aafc-2a872f4d96e2
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/downloads/PartBNational2005.zip>;
 .

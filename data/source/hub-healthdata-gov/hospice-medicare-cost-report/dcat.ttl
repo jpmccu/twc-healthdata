@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_03e3f9b9-b705-45e6-9631-9b525c7ab50b;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "hospice-medicare-cost-report";
+   prov:wasDerivedFrom :as_a_csv_a5f22ba2-5023-49f9-9fc7-c9e38939d69d;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_03e3f9b9-b705-45e6-9631-9b525c7ab50b;
+   dcat:distribution :as_a_csv_a5f22ba2-5023-49f9-9fc7-c9e38939d69d;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_03e3f9b9-b705-45e6-9631-9b525c7ab50b
+:as_a_csv_a5f22ba2-5023-49f9-9fc7-c9e38939d69d
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPICEallyears.zip>;
 .

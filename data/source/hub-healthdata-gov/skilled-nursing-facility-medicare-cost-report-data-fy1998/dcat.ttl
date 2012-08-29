@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_b1d078d5-2dd8-4c9c-a41a-0018e1510f59;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "skilled-nursing-facility-medicare-cost-report-data-fy1998";
+   prov:wasDerivedFrom :as_a_csv_3d6fbfc6-374f-4d10-8113-4e64844c8f56;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_b1d078d5-2dd8-4c9c-a41a-0018e1510f59;
+   dcat:distribution :as_a_csv_3d6fbfc6-374f-4d10-8113-4e64844c8f56;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_b1d078d5-2dd8-4c9c-a41a-0018e1510f59
+:as_a_csv_3d6fbfc6-374f-4d10-8113-4e64844c8f56
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/SNFFY1998.zip>;
 .

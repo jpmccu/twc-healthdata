@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_394acfcd-6422-41d5-bdac-ef45d0b74401;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "2008-basic-stand-alone-inpatient";
+   prov:wasDerivedFrom :as_a_csv_c8b5c131-9472-40ac-b952-587170680ef8;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_394acfcd-6422-41d5-bdac-ef45d0b74401;
+   dcat:distribution :as_a_csv_c8b5c131-9472-40ac-b952-587170680ef8;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_394acfcd-6422-41d5-bdac-ef45d0b74401
+:as_a_csv_c8b5c131-9472-40ac-b952-587170680ef8
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/BSAPUFS/downloads/2008_BSA_Inpatient_Claims_PUF.zip>;
 .

@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_e6898598-ce76-4c44-8904-4e19b31c4eac;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "renal-dialysis-facility-medicare-cost-report-data-2011";
+   prov:wasDerivedFrom :as_a_csv_b2bb71dc-6233-43d7-a960-ec8d720c130f;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_e6898598-ce76-4c44-8904-4e19b31c4eac;
+   dcat:distribution :as_a_csv_b2bb71dc-6233-43d7-a960-ec8d720c130f;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_e6898598-ce76-4c44-8904-4e19b31c4eac
+:as_a_csv_b2bb71dc-6233-43d7-a960-ec8d720c130f
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/RenalFY2011.zip>;
 .

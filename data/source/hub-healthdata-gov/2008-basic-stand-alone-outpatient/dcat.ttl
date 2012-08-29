@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_99f0de4b-9c07-45bb-bf4d-4b06d5fcf8a1;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "2008-basic-stand-alone-outpatient";
+   prov:wasDerivedFrom :as_a_csv_943e8c18-6cb2-4061-8e1d-2e05d4abc5b2;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_99f0de4b-9c07-45bb-bf4d-4b06d5fcf8a1;
+   dcat:distribution :as_a_csv_943e8c18-6cb2-4061-8e1d-2e05d4abc5b2;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_99f0de4b-9c07-45bb-bf4d-4b06d5fcf8a1
+:as_a_csv_943e8c18-6cb2-4061-8e1d-2e05d4abc5b2
    a dcat:Distribution;
    dcat:downloadURL <http://downloads.cms.gov/BSAPUF/2008_BSA_Outpatient_Procedures_PUF_1.zip>;
 .

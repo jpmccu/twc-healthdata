@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_6ba9abca-683e-44fe-85bb-38b879a89296;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "third-national-survey-older";
+   prov:wasDerivedFrom :as_a_csv_4403bac1-8495-4196-b565-e2aef08d64f8;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_6ba9abca-683e-44fe-85bb-38b879a89296;
+   dcat:distribution :as_a_csv_4403bac1-8495-4196-b565-e2aef08d64f8;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_6ba9abca-683e-44fe-85bb-38b879a89296
+:as_a_csv_4403bac1-8495-4196-b565-e2aef08d64f8
    a dcat:Distribution;
    dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2005/National_Survey/3rd_National_Survey_Data_Files_2005.zip>;
 .

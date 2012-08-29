@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_16b8b9ef-90d1-4240-83b2-428e7ac33c2e;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "designated-health-professional";
+   prov:wasDerivedFrom :as_a_csv_e934374a-bb86-4ac6-b64e-d979472c3eb4;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_16b8b9ef-90d1-4240-83b2-428e7ac33c2e;
+   dcat:distribution :as_a_csv_e934374a-bb86-4ac6-b64e-d979472c3eb4;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_16b8b9ef-90d1-4240-83b2-428e7ac33c2e
+:as_a_csv_e934374a-bb86-4ac6-b64e-d979472c3eb4
    a dcat:Distribution;
    dcat:downloadURL <http://datawarehouse.hrsa.gov/DataDownload/HPSA/HPSA.zip>;
 .

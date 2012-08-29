@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_72ce64d2-56be-4e8c-b2e5-c1c64f2efcf9;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "home-health-agency-medicare-cost-report-data-2000";
+   prov:wasDerivedFrom :as_a_csv_11ac9e8d-9e2b-48ac-a5f9-588aaf5fa79c;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_72ce64d2-56be-4e8c-b2e5-c1c64f2efcf9;
+   dcat:distribution :as_a_csv_11ac9e8d-9e2b-48ac-a5f9-588aaf5fa79c;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_72ce64d2-56be-4e8c-b2e5-c1c64f2efcf9
+:as_a_csv_11ac9e8d-9e2b-48ac-a5f9-588aaf5fa79c
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY2000.zip>;
 .

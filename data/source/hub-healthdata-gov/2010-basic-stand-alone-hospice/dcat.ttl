@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_a50c20e7-eb35-4ab1-a271-4e4a7dfe7cde;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "2010-basic-stand-alone-hospice";
+   prov:wasDerivedFrom :as_a_csv_1999f08f-2f26-4596-bae9-d4cf6b77f258;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_a50c20e7-eb35-4ab1-a271-4e4a7dfe7cde;
+   dcat:distribution :as_a_csv_1999f08f-2f26-4596-bae9-d4cf6b77f258;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_a50c20e7-eb35-4ab1-a271-4e4a7dfe7cde
+:as_a_csv_1999f08f-2f26-4596-bae9-d4cf6b77f258
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/bsapufs/downloads/2010_BSA_Hospice_Beneficiary_PUF.zip>;
 .

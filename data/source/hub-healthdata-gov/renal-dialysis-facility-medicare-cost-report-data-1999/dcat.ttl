@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_e7f3e692-9ad4-4e82-bef4-8bb2a04e0492;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "renal-dialysis-facility-medicare-cost-report-data-1999";
+   prov:wasDerivedFrom :as_a_csv_19ca0f86-ad9f-4c49-9b38-206dd66aeeec;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_e7f3e692-9ad4-4e82-bef4-8bb2a04e0492;
+   dcat:distribution :as_a_csv_19ca0f86-ad9f-4c49-9b38-206dd66aeeec;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_e7f3e692-9ad4-4e82-bef4-8bb2a04e0492
+:as_a_csv_19ca0f86-ad9f-4c49-9b38-206dd66aeeec
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/RENALFY1999.zip>;
 .

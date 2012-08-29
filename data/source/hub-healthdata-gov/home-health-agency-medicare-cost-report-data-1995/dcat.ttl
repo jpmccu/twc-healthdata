@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_69470aef-6551-4077-8ac3-898fe34f5cfe;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "home-health-agency-medicare-cost-report-data-1995";
+   prov:wasDerivedFrom :as_a_csv_6b0dee13-976f-47a8-8e70-7bc2b6635e7a;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_69470aef-6551-4077-8ac3-898fe34f5cfe;
+   dcat:distribution :as_a_csv_6b0dee13-976f-47a8-8e70-7bc2b6635e7a;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_69470aef-6551-4077-8ac3-898fe34f5cfe
+:as_a_csv_6b0dee13-976f-47a8-8e70-7bc2b6635e7a
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY1995.zip>;
 .

@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_8be6f819-84b2-41fa-8b53-8b0d01547391;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "abbott-infant-formula-recall";
+   prov:wasDerivedFrom :as_a_csv_b23741e4-d010-40af-b4d0-a0a014501137;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_8be6f819-84b2-41fa-8b53-8b0d01547391;
+   dcat:distribution :as_a_csv_b23741e4-d010-40af-b4d0-a0a014501137;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_8be6f819-84b2-41fa-8b53-8b0d01547391
+:as_a_csv_b23741e4-d010-40af-b4d0-a0a014501137
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/infantformula/InfantFormulaRecallList2010.xls>;
 .

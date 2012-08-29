@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_88f60d19-9239-48c9-914a-a7daf10c688d;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "claims-listed-state";
+   prov:wasDerivedFrom :as_a_csv_eb9dd0ce-53a5-4441-bb75-b8fb6e19996b;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_88f60d19-9239-48c9-914a-a7daf10c688d;
+   dcat:distribution :as_a_csv_eb9dd0ce-53a5-4441-bb75-b8fb6e19996b;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_88f60d19-9239-48c9-914a-a7daf10c688d
+:as_a_csv_eb9dd0ce-53a5-4441-bb75-b8fb6e19996b
    a dcat:Distribution;
    dcat:downloadURL <http://www.hhs.gov/omha/resources/claimslistbystate.xls>;
 .

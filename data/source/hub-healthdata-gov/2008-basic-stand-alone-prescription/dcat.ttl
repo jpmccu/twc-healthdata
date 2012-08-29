@@ -7,18 +7,18 @@
 
 <http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
    a void:Dataset;
-   conversion:source_identifier  "SOURCE-ID";
-   conversion:dataset_identifier "DATASET-ID";
-   prov:wasDerivedFrom :as_a_csv_97f9088e-711d-4a9f-b8b8-48c15fdf705b;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "2008-basic-stand-alone-prescription";
+   prov:wasDerivedFrom :as_a_csv_b2c1ae68-8f58-4299-af01-efd115379ce3;
 .
 
 <http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_97f9088e-711d-4a9f-b8b8-48c15fdf705b;
+   dcat:distribution :as_a_csv_b2c1ae68-8f58-4299-af01-efd115379ce3;
    prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
 .
 
-:as_a_csv_97f9088e-711d-4a9f-b8b8-48c15fdf705b
+:as_a_csv_b2c1ae68-8f58-4299-af01-efd115379ce3
    a dcat:Distribution;
    dcat:downloadURL <http://downloads.cms.gov/BSAPUF/2008_BSA_PartD_Events_PUF_1.zip>;
 .

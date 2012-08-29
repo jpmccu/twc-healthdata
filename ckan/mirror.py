@@ -1,3 +1,6 @@
+#3> <> prov:specializationOf 
+#3>    <https://github.com/jimmccusker/twc-healthdata/blob/master/ckan/mirror.py> .
+
 import os, json
 
 import ckanclient  # see https://github.com/okfn/ckanclient README

@@ -9,13 +9,15 @@ import ckanclient  # see https://github.com/okfn/ckanclient README
 
 source = 'http://hub.healthdata.gov/api'
 target = 'http://aquarius.tw.rpi.edu/projects/healthdata/api'
-indent = '    '
+
+MIRROR = False            # Modify target CKAN with listings from source CKAN.
+UPDATE = MIRROR and False # If a dataset already exists in target, update it.
 
 sourceCKAN = ckanclient.CkanClient(base_location=source)
 api_key = os.environ['X_CKAN_API_Key'] # api_key must be defined to POST/PUT.
 targetCKAN = ckanclient.CkanClient(base_location=target, api_key=api_key)
 
-MIRROR = True
+indent = '    '
 for name in sourceCKAN.package_register_get():
    
    if name == 'hospital-compare':
@@ -43,22 +45,29 @@ for name in sourceCKAN.package_register_get():
             #    CSV Text XLS XML Feed Query API Widget RDF
       print json.dumps(dataset,sort_keys=True, indent=4)
       if MIRROR:
-         try: # Update the details of a package.
+         try: # See if dataset is listed in targetCKAN
             targetCKAN.package_entity_get(dataset['name'])
-            print 'NOTE: skipping ' + dataset['name'] + ' b/c already listed at ' + target
+            if UPDATE: 
+               # Update target's existing entry from source's
+               targetCKAN.package_entity_put(dataset) 
+            else:
+               print 'NOTE: skipping ' + dataset['name'] + ' ' +
+                     'b/c already listed at ' + target
+
             #update = targetCKAN.last_message
             #update['notes'] = 'Updated.'
-            #targetCKAN.package_entity_put(update)    # PUT   
-            targetCKAN.package_entity_put(dataset)    # PUT   
+            #targetCKAN.package_entity_put(update)
+
          except ckanclient.CkanApiNotFoundError:
             # Dataset is not listed on this CKAN
             print 'INFO: adding ' + dataset['name'] + ' to ' + target
             try:
                targetCKAN.package_register_post(dataset) # POST
             except ckanclient.CkanApiConflictError:
-               print 'WARNING: Conflict error when trying to POST ' + dataset['name']
+               print 'WARNING: '+
+                     'Conflict error when trying to POST ' + dataset['name']
 
 #new_dataset = {
-# 'name': 'test-dataset-3',
+# 'name':  'test-dataset-3',
 # 'notes': 'automatic submission',
 #}

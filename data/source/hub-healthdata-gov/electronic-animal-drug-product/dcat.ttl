@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/electronic-animal-drug-product>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "electronic-animal-drug-product";
-   prov:wasDerivedFrom :as_a_csv_521f352b-c437-46ae-993c-afc931344521;
+   prov:wasDerivedFrom :as_a_csv_1a5594c8-443b-42cf-9f56-96dd305a22f7;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/electronic-animal-drug-product>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_521f352b-c437-46ae-993c-afc931344521;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_1a5594c8-443b-42cf-9f56-96dd305a22f7;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/electronic-animal-drug-product>;
 .
 
-:as_a_csv_521f352b-c437-46ae-993c-afc931344521
+:as_a_csv_1a5594c8-443b-42cf-9f56-96dd305a22f7
    a dcat:Distribution;
    dcat:downloadURL <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/UCM198204.zip>;
 .

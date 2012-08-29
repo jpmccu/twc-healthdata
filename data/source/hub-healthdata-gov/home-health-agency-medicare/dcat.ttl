@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/home-health-agency-medicare>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "home-health-agency-medicare";
-   prov:wasDerivedFrom :as_a_csv_9e7c95bd-f3fd-4882-8de8-c74a62024410;
+   prov:wasDerivedFrom :as_a_csv_aa1b72eb-90bd-43aa-aacb-ba8da0e8d28e;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/home-health-agency-medicare>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_9e7c95bd-f3fd-4882-8de8-c74a62024410;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_aa1b72eb-90bd-43aa-aacb-ba8da0e8d28e;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/home-health-agency-medicare>;
 .
 
-:as_a_csv_9e7c95bd-f3fd-4882-8de8-c74a62024410
+:as_a_csv_aa1b72eb-90bd-43aa-aacb-ba8da0e8d28e
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY2009.zip>;
 .

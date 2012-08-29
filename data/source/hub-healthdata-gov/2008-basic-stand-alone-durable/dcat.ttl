@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/2008-basic-stand-alone-durable>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-durable";
-   prov:wasDerivedFrom :as_a_csv_4d9137d7-b867-44cb-85f7-4d5d248331f4;
+   prov:wasDerivedFrom :as_a_csv_d7607d55-bedd-4c39-9229-699a1d5b7b3b;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/2008-basic-stand-alone-durable>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_4d9137d7-b867-44cb-85f7-4d5d248331f4;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_d7607d55-bedd-4c39-9229-699a1d5b7b3b;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/2008-basic-stand-alone-durable>;
 .
 
-:as_a_csv_4d9137d7-b867-44cb-85f7-4d5d248331f4
+:as_a_csv_d7607d55-bedd-4c39-9229-699a1d5b7b3b
    a dcat:Distribution;
    dcat:downloadURL <http://downloads.cms.gov/BSAPUF/2008_BSA_DME_Line_Items_PUF.zip>;
 .

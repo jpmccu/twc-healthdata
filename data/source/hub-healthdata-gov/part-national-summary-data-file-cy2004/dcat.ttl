@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/part-national-summary-data-file-cy2004>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-national-summary-data-file-cy2004";
-   prov:wasDerivedFrom :as_a_csv_f67ba1b1-11a7-4f1e-b881-940a5101d7fd;
+   prov:wasDerivedFrom :as_a_csv_07206a04-b9a3-4d7b-8703-1caffc2f6b0d;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/part-national-summary-data-file-cy2004>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_f67ba1b1-11a7-4f1e-b881-940a5101d7fd;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_07206a04-b9a3-4d7b-8703-1caffc2f6b0d;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/part-national-summary-data-file-cy2004>;
 .
 
-:as_a_csv_f67ba1b1-11a7-4f1e-b881-940a5101d7fd
+:as_a_csv_07206a04-b9a3-4d7b-8703-1caffc2f6b0d
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/downloads/PartBNational2004.zip>;
 .

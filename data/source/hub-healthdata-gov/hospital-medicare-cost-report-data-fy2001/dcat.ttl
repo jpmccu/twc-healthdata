@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-medicare-cost-report-data-fy2001>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospital-medicare-cost-report-data-fy2001";
-   prov:wasDerivedFrom :as_a_csv_0a9aad1f-950d-4f12-bacc-44dbc819c2a8;
+   prov:wasDerivedFrom :as_a_csv_afed0c79-c27f-465e-b1d6-436d402de288;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/hospital-medicare-cost-report-data-fy2001>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_0a9aad1f-950d-4f12-bacc-44dbc819c2a8;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_afed0c79-c27f-465e-b1d6-436d402de288;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/hospital-medicare-cost-report-data-fy2001>;
 .
 
-:as_a_csv_0a9aad1f-950d-4f12-bacc-44dbc819c2a8
+:as_a_csv_afed0c79-c27f-465e-b1d6-436d402de288
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY2001.zip>;
 .

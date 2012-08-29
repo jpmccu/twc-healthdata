@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/fourth-national-survey-older>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "fourth-national-survey-older";
-   prov:wasDerivedFrom :as_a_csv_bffdd305-36d1-4ee3-bb05-8b76b37ebda7;
+   prov:wasDerivedFrom :as_a_csv_72fdb28f-299b-461f-a86a-463829430c9c;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/fourth-national-survey-older>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_bffdd305-36d1-4ee3-bb05-8b76b37ebda7;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_72fdb28f-299b-461f-a86a-463829430c9c;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/fourth-national-survey-older>;
 .
 
-:as_a_csv_bffdd305-36d1-4ee3-bb05-8b76b37ebda7
+:as_a_csv_72fdb28f-299b-461f-a86a-463829430c9c
    a dcat:Distribution;
    dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2008/National_Survey/4th_National_Survey_Data_Files_2008.zip>;
 .

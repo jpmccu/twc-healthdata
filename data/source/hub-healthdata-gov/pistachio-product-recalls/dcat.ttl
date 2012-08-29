@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/pistachio-product-recalls>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "pistachio-product-recalls";
-   prov:wasDerivedFrom :as_a_csv_4ff94635-d3c4-4289-8f92-ec941b28051c;
+   prov:wasDerivedFrom :as_a_csv_5d7e5c16-d0ed-4ccd-9c2d-4b1324e24d21;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/pistachio-product-recalls>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_4ff94635-d3c4-4289-8f92-ec941b28051c;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_5d7e5c16-d0ed-4ccd-9c2d-4b1324e24d21;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/pistachio-product-recalls>;
 .
 
-:as_a_csv_4ff94635-d3c4-4289-8f92-ec941b28051c
+:as_a_csv_5d7e5c16-d0ed-4ccd-9c2d-4b1324e24d21
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/pistachiorecall/Pistachio2009.xls>;
 .

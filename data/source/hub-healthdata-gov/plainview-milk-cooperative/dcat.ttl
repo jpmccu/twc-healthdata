@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/plainview-milk-cooperative>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "plainview-milk-cooperative";
-   prov:wasDerivedFrom :as_a_csv_ad6d12df-ddf4-4214-af5e-3c993054b3be;
+   prov:wasDerivedFrom :as_a_csv_ac73e690-6fca-4c0c-87e2-75fd645a3822;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/plainview-milk-cooperative>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_ad6d12df-ddf4-4214-af5e-3c993054b3be;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_ac73e690-6fca-4c0c-87e2-75fd645a3822;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/plainview-milk-cooperative>;
 .
 
-:as_a_csv_ad6d12df-ddf4-4214-af5e-3c993054b3be
+:as_a_csv_ac73e690-6fca-4c0c-87e2-75fd645a3822
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/Milk/MilkRecallProducts2009.xls>;
 .

@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/2008-basic-stand-alone-outpatient>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-outpatient";
-   prov:wasDerivedFrom :as_a_csv_943e8c18-6cb2-4061-8e1d-2e05d4abc5b2;
+   prov:wasDerivedFrom :as_a_csv_2f22e901-aec9-4c7d-b3a9-61d7d6772f9f;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/2008-basic-stand-alone-outpatient>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_943e8c18-6cb2-4061-8e1d-2e05d4abc5b2;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_2f22e901-aec9-4c7d-b3a9-61d7d6772f9f;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/2008-basic-stand-alone-outpatient>;
 .
 
-:as_a_csv_943e8c18-6cb2-4061-8e1d-2e05d4abc5b2
+:as_a_csv_2f22e901-aec9-4c7d-b3a9-61d7d6772f9f
    a dcat:Distribution;
    dcat:downloadURL <http://downloads.cms.gov/BSAPUF/2008_BSA_Outpatient_Procedures_PUF_1.zip>;
 .

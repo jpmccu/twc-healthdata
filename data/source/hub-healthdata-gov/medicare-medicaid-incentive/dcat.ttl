@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/medicare-medicaid-incentive>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "medicare-medicaid-incentive";
-   prov:wasDerivedFrom :as_a_csv_ad279d94-bbe6-4cc4-8dfc-77340afcf0a9;
+   prov:wasDerivedFrom :as_a_csv_8ddb5c0d-6887-4554-bd37-5060feca3be4;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/medicare-medicaid-incentive>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_ad279d94-bbe6-4cc4-8dfc-77340afcf0a9;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_8ddb5c0d-6887-4554-bd37-5060feca3be4;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/medicare-medicaid-incentive>;
 .
 
-:as_a_csv_ad279d94-bbe6-4cc4-8dfc-77340afcf0a9
+:as_a_csv_8ddb5c0d-6887-4554-bd37-5060feca3be4
    a dcat:Distribution;
    dcat:downloadURL <http://www.healthit.gov/data/MU_Report.xls>;
 .

@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/part-national-summary-data-file-cy2010>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-national-summary-data-file-cy2010";
-   prov:wasDerivedFrom :as_a_csv_9a452453-6719-477f-84be-371263eabe51;
+   prov:wasDerivedFrom :as_a_csv_b670c1e8-ae2f-43c8-883f-774a5d3ce6c9;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/part-national-summary-data-file-cy2010>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_9a452453-6719-477f-84be-371263eabe51;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_b670c1e8-ae2f-43c8-883f-774a5d3ce6c9;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/part-national-summary-data-file-cy2010>;
 .
 
-:as_a_csv_9a452453-6719-477f-84be-371263eabe51
+:as_a_csv_b670c1e8-ae2f-43c8-883f-774a5d3ce6c9
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/PartBNational2010.zip>;
 .

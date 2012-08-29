@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/claims-listed-state>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "claims-listed-state";
-   prov:wasDerivedFrom :as_a_csv_eb9dd0ce-53a5-4441-bb75-b8fb6e19996b;
+   prov:wasDerivedFrom :as_a_csv_f8a07295-2409-4c0d-aa74-5b8aabe4662f;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/claims-listed-state>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_eb9dd0ce-53a5-4441-bb75-b8fb6e19996b;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_f8a07295-2409-4c0d-aa74-5b8aabe4662f;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/claims-listed-state>;
 .
 
-:as_a_csv_eb9dd0ce-53a5-4441-bb75-b8fb6e19996b
+:as_a_csv_f8a07295-2409-4c0d-aa74-5b8aabe4662f
    a dcat:Distribution;
    dcat:downloadURL <http://www.hhs.gov/omha/resources/claimslistbystate.xls>;
 .

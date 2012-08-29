@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/renal-dialysis-facility-medicare-cost-report-data-2006>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "renal-dialysis-facility-medicare-cost-report-data-2006";
-   prov:wasDerivedFrom :as_a_csv_9c12bffe-b8a8-432e-a0fe-5f5af95da581;
+   prov:wasDerivedFrom :as_a_csv_075ef9d1-0566-4213-8fd5-fa4a9a21fead;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/renal-dialysis-facility-medicare-cost-report-data-2006>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_9c12bffe-b8a8-432e-a0fe-5f5af95da581;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_075ef9d1-0566-4213-8fd5-fa4a9a21fead;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/renal-dialysis-facility-medicare-cost-report-data-2006>;
 .
 
-:as_a_csv_9c12bffe-b8a8-432e-a0fe-5f5af95da581
+:as_a_csv_075ef9d1-0566-4213-8fd5-fa4a9a21fead
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/RENALFY2006.zip>;
 .

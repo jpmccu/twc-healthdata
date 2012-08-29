@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/part-carrier-summary-data-file-cy2007>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-carrier-summary-data-file-cy2007";
-   prov:wasDerivedFrom :as_a_csv_9943eab8-dea4-463a-b38e-b9fd7de63c94;
+   prov:wasDerivedFrom :as_a_csv_107acf94-5d84-48c0-a71e-5dcfc937cc5a;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/part-carrier-summary-data-file-cy2007>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_9943eab8-dea4-463a-b38e-b9fd7de63c94;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_107acf94-5d84-48c0-a71e-5dcfc937cc5a;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/part-carrier-summary-data-file-cy2007>;
 .
 
-:as_a_csv_9943eab8-dea4-463a-b38e-b9fd7de63c94
+:as_a_csv_107acf94-5d84-48c0-a71e-5dcfc937cc5a
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/2007AllCarriers.zip>;
 .

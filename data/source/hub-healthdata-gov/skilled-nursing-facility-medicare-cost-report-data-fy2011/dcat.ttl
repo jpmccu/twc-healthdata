@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/skilled-nursing-facility-medicare-cost-report-data-fy2011>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "skilled-nursing-facility-medicare-cost-report-data-fy2011";
-   prov:wasDerivedFrom :as_a_csv_65505a52-fe70-47ea-b468-5e6e9d6eba03;
+   prov:wasDerivedFrom :as_a_csv_ce054a88-ba44-4320-8eb6-8dc6e3d51cc8;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/skilled-nursing-facility-medicare-cost-report-data-fy2011>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_65505a52-fe70-47ea-b468-5e6e9d6eba03;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_ce054a88-ba44-4320-8eb6-8dc6e3d51cc8;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/skilled-nursing-facility-medicare-cost-report-data-fy2011>;
 .
 
-:as_a_csv_65505a52-fe70-47ea-b468-5e6e9d6eba03
+:as_a_csv_ce054a88-ba44-4320-8eb6-8dc6e3d51cc8
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/SNFFY2011.zip>;
 .

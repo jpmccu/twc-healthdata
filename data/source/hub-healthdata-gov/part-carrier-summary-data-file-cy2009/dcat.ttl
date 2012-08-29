@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/part-carrier-summary-data-file-cy2009>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-carrier-summary-data-file-cy2009";
-   prov:wasDerivedFrom :as_a_csv_62dc79cd-cdcf-4d38-85eb-3c1d0f8415ef;
+   prov:wasDerivedFrom :as_a_csv_b86847e2-d9c0-45f3-9309-6028d3d87e0f;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/part-carrier-summary-data-file-cy2009>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_62dc79cd-cdcf-4d38-85eb-3c1d0f8415ef;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_b86847e2-d9c0-45f3-9309-6028d3d87e0f;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/part-carrier-summary-data-file-cy2009>;
 .
 
-:as_a_csv_62dc79cd-cdcf-4d38-85eb-3c1d0f8415ef
+:as_a_csv_b86847e2-d9c0-45f3-9309-6028d3d87e0f
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/NonIdentifiableDataFiles/PBCAR/itemdetail.asp?filterType=none&filterByDID=-99&sortByDID=1&sortOrder=ascending&itemID=CMS1242082&intNumPerPage=10>;
 .

@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/fraudulent-2009-h1n1-influenza>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "fraudulent-2009-h1n1-influenza";
-   prov:wasDerivedFrom :as_a_csv_8c5c77bf-e85b-44c7-aed2-5136111ec7bc;
+   prov:wasDerivedFrom :as_a_csv_270c98db-8d31-464e-93c1-04b87c7b594a;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/fraudulent-2009-h1n1-influenza>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_8c5c77bf-e85b-44c7-aed2-5136111ec7bc;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_270c98db-8d31-464e-93c1-04b87c7b594a;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/fraudulent-2009-h1n1-influenza>;
 .
 
-:as_a_csv_8c5c77bf-e85b-44c7-aed2-5136111ec7bc
+:as_a_csv_270c98db-8d31-464e-93c1-04b87c7b594a
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/h1n1flu/FraudulentH1N1ProductsList2009.xls>;
 .

@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/home-health-agency-medicare-cost-report-data-1998>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "home-health-agency-medicare-cost-report-data-1998";
-   prov:wasDerivedFrom :as_a_csv_e70cac4a-b3e6-4f42-ba3f-8af4abb805ca;
+   prov:wasDerivedFrom :as_a_csv_0eda6d25-3796-45ce-88a9-55fea0e5d189;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/home-health-agency-medicare-cost-report-data-1998>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_e70cac4a-b3e6-4f42-ba3f-8af4abb805ca;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_0eda6d25-3796-45ce-88a9-55fea0e5d189;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/home-health-agency-medicare-cost-report-data-1998>;
 .
 
-:as_a_csv_e70cac4a-b3e6-4f42-ba3f-8af4abb805ca
+:as_a_csv_0eda6d25-3796-45ce-88a9-55fea0e5d189
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY1998.zip>;
 .

@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospice-medicare-cost-report-data>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospice-medicare-cost-report-data";
-   prov:wasDerivedFrom :as_a_csv_3bcbb458-1ac5-4478-b6d8-3f7b3c4ee5d0;
+   prov:wasDerivedFrom :as_a_csv_37c59c35-18db-4ab6-9e39-000cedffbc0c;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/hospice-medicare-cost-report-data>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_3bcbb458-1ac5-4478-b6d8-3f7b3c4ee5d0;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_37c59c35-18db-4ab6-9e39-000cedffbc0c;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/hospice-medicare-cost-report-data>;
 .
 
-:as_a_csv_3bcbb458-1ac5-4478-b6d8-3f7b3c4ee5d0
+:as_a_csv_37c59c35-18db-4ab6-9e39-000cedffbc0c
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPICEALLYEARS.ZIP>;
 .

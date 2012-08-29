@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/first-national-survey-older>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "first-national-survey-older";
-   prov:wasDerivedFrom :as_a_csv_0c2db552-1839-49b1-a6a5-ff087be02acc;
+   prov:wasDerivedFrom :as_a_csv_5e2d3dae-7074-4cf9-8e94-2fd86e90389d;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/first-national-survey-older>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_0c2db552-1839-49b1-a6a5-ff087be02acc;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_5e2d3dae-7074-4cf9-8e94-2fd86e90389d;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/first-national-survey-older>;
 .
 
-:as_a_csv_0c2db552-1839-49b1-a6a5-ff087be02acc
+:as_a_csv_5e2d3dae-7074-4cf9-8e94-2fd86e90389d
    a dcat:Distribution;
    dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2003/National_Survey/1st_National_Survey_Data_Files_2003.zip>;
 .

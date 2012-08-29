@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/2008-chronic-conditions>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-chronic-conditions";
-   prov:wasDerivedFrom :as_a_csv_516ceaac-7d73-4b36-9620-774fe05cef0b;
+   prov:wasDerivedFrom :as_a_csv_5f98de62-2fec-4e63-93dc-60f171fc15b9;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/2008-chronic-conditions>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_516ceaac-7d73-4b36-9620-774fe05cef0b;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_5f98de62-2fec-4e63-93dc-60f171fc15b9;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/2008-chronic-conditions>;
 .
 
-:as_a_csv_516ceaac-7d73-4b36-9620-774fe05cef0b
+:as_a_csv_5f98de62-2fec-4e63-93dc-60f171fc15b9
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/BSAPUFS/downloads/2008_Chronic_Conditions_PUF.zip>;
 .

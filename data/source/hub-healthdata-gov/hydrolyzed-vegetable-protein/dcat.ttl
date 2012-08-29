@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hydrolyzed-vegetable-protein>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hydrolyzed-vegetable-protein";
-   prov:wasDerivedFrom :as_a_csv_65e51a17-3540-461f-a1d3-abb09f6aa655;
+   prov:wasDerivedFrom :as_a_csv_3c32bf84-0a17-4bf8-abaa-3dcc5805fe84;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/hydrolyzed-vegetable-protein>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_65e51a17-3540-461f-a1d3-abb09f6aa655;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_3c32bf84-0a17-4bf8-abaa-3dcc5805fe84;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/hydrolyzed-vegetable-protein>;
 .
 
-:as_a_csv_65e51a17-3540-461f-a1d3-abb09f6aa655
+:as_a_csv_3c32bf84-0a17-4bf8-abaa-3dcc5805fe84
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/HVPCP/HydrolyzedVegetableProteinProductsList2010.xls>;
 .

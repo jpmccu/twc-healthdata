@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/community-health-status-indicators>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "community-health-status-indicators";
-   prov:wasDerivedFrom :as_a_csv_921a4b6c-e833-49ca-8850-59a6e02ed67e;
+   prov:wasDerivedFrom :as_a_csv_e938f61d-e2bb-4f28-bf40-686de6709fff;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/community-health-status-indicators>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_921a4b6c-e833-49ca-8850-59a6e02ed67e;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_e938f61d-e2bb-4f28-bf40-686de6709fff;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/community-health-status-indicators>;
 .
 
-:as_a_csv_921a4b6c-e833-49ca-8850-59a6e02ed67e
+:as_a_csv_e938f61d-e2bb-4f28-bf40-686de6709fff
    a dcat:Distribution;
    dcat:downloadURL <ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/CHDI/chsi_dataset.zip>;
 .

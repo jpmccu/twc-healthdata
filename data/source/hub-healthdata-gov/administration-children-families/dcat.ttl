@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/administration-children-families>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "administration-children-families";
-   prov:wasDerivedFrom :as_a_csv_0e364894-58d3-4f3e-a18d-6c73b32a9c1f;
+   prov:wasDerivedFrom :as_a_csv_38d489d0-bfa7-4e0b-9a27-45783d438f6c;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/administration-children-families>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_0e364894-58d3-4f3e-a18d-6c73b32a9c1f;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_38d489d0-bfa7-4e0b-9a27-45783d438f6c;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/administration-children-families>;
 .
 
-:as_a_csv_0e364894-58d3-4f3e-a18d-6c73b32a9c1f
+:as_a_csv_38d489d0-bfa7-4e0b-9a27-45783d438f6c
    a dcat:Distribution;
    dcat:downloadURL <http://www.acf.hhs.gov/datagov-datasets/>;
 .

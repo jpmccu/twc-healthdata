@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/part-carrier-summary-data-file-cy2006>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-carrier-summary-data-file-cy2006";
-   prov:wasDerivedFrom :as_a_csv_09476ea2-ffb8-4809-88cf-8961e8b53c8d;
+   prov:wasDerivedFrom :as_a_csv_f495e292-68ec-4a57-a705-b551e8c6287c;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/part-carrier-summary-data-file-cy2006>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_09476ea2-ffb8-4809-88cf-8961e8b53c8d;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_f495e292-68ec-4a57-a705-b551e8c6287c;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/part-carrier-summary-data-file-cy2006>;
 .
 
-:as_a_csv_09476ea2-ffb8-4809-88cf-8961e8b53c8d
+:as_a_csv_f495e292-68ec-4a57-a705-b551e8c6287c
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/2006AllCarriers.zip>;
 .

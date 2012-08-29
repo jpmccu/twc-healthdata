@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/2008-basic-stand-alone-prescription>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-prescription";
-   prov:wasDerivedFrom :as_a_csv_b2c1ae68-8f58-4299-af01-efd115379ce3;
+   prov:wasDerivedFrom :as_a_csv_09e65d5f-c453-4033-b7df-ba09d987ccf7;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/2008-basic-stand-alone-prescription>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_b2c1ae68-8f58-4299-af01-efd115379ce3;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_09e65d5f-c453-4033-b7df-ba09d987ccf7;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/2008-basic-stand-alone-prescription>;
 .
 
-:as_a_csv_b2c1ae68-8f58-4299-af01-efd115379ce3
+:as_a_csv_09e65d5f-c453-4033-b7df-ba09d987ccf7
    a dcat:Distribution;
    dcat:downloadURL <http://downloads.cms.gov/BSAPUF/2008_BSA_PartD_Events_PUF_1.zip>;
 .

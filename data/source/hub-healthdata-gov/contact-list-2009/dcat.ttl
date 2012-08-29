@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/contact-list-2009>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "contact-list-2009";
-   prov:wasDerivedFrom :as_a_csv_cd76d122-e5f4-4079-b50a-17828433e8a5;
+   prov:wasDerivedFrom :as_a_csv_8dcc039c-e9fb-4958-977d-1b64bbdf33dd;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/contact-list-2009>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_cd76d122-e5f4-4079-b50a-17828433e8a5;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_8dcc039c-e9fb-4958-977d-1b64bbdf33dd;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/contact-list-2009>;
 .
 
-:as_a_csv_cd76d122-e5f4-4079-b50a-17828433e8a5
+:as_a_csv_8dcc039c-e9fb-4958-977d-1b64bbdf33dd
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/PrescriptionDrugCovContra/082_MTM.asp#TopOfPage>;
 .

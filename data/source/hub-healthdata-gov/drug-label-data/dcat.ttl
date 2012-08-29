@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/drug-label-data>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "drug-label-data";
-   prov:wasDerivedFrom :as_a_csv_ed0f970e-487b-4282-b31b-89d6b84d13fa;
+   prov:wasDerivedFrom :as_a_csv_5bb3aa78-0ee1-4cc8-8f9b-69de5f061340;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/drug-label-data>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_ed0f970e-487b-4282-b31b-89d6b84d13fa;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_5bb3aa78-0ee1-4cc8-8f9b-69de5f061340;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/drug-label-data>;
 .
 
-:as_a_csv_ed0f970e-487b-4282-b31b-89d6b84d13fa
+:as_a_csv_5bb3aa78-0ee1-4cc8-8f9b-69de5f061340
    a dcat:Distribution;
    dcat:downloadURL <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/ucm241597.zip>;
 .

@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/designated-health-professional>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "designated-health-professional";
-   prov:wasDerivedFrom :as_a_csv_e934374a-bb86-4ac6-b64e-d979472c3eb4;
+   prov:wasDerivedFrom :as_a_csv_9848aa75-a751-4500-b301-8c14075f7576;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/designated-health-professional>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_e934374a-bb86-4ac6-b64e-d979472c3eb4;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_9848aa75-a751-4500-b301-8c14075f7576;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/designated-health-professional>;
 .
 
-:as_a_csv_e934374a-bb86-4ac6-b64e-d979472c3eb4
+:as_a_csv_9848aa75-a751-4500-b301-8c14075f7576
    a dcat:Distribution;
    dcat:downloadURL <http://datawarehouse.hrsa.gov/DataDownload/HPSA/HPSA.zip>;
 .

@@ -5,20 +5,20 @@
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/shell-recalls>
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "shell-recalls";
-   prov:wasDerivedFrom :as_a_csv_3b018013-13b7-407b-85b8-7348b64d3ac4;
+   prov:wasDerivedFrom :as_a_csv_f7b46b27-f5e7-431d-a448-387df9bd9abb;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+<http://healthdata.tw.rpi.edu/dataset/shell-recalls>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_3b018013-13b7-407b-85b8-7348b64d3ac4;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+   dcat:distribution :as_a_csv_f7b46b27-f5e7-431d-a448-387df9bd9abb;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/shell-recalls>;
 .
 
-:as_a_csv_3b018013-13b7-407b-85b8-7348b64d3ac4
+:as_a_csv_f7b46b27-f5e7-431d-a448-387df9bd9abb
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/shelleggsrecall/ShellEggsRecallList2010.xls>;
 .

@@ -1,0 +1,28 @@
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix conversion: <http://purl.org/twc/vocab/conversion/> .
+@prefix dcat:       <http://www.w3.org/ns/dcat#> .
+@prefix void:       <http://rdfs.org/ns/void#> .
+@prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix :           <http://purl.org/twc/health/id/> .
+
+<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+   a void:Dataset;
+   conversion:source_identifier  "SOURCE-ID";
+   conversion:dataset_identifier "DATASET-ID";
+   prov:wasDerivedFrom :as_a_csv_a41d8cfe-7141-4dc9-a17b-5a3d17d7a86a;
+.
+
+<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+   a dcat:Dataset;
+   dcat:distribution :as_a_csv_a41d8cfe-7141-4dc9-a17b-5a3d17d7a86a;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+.
+
+:as_a_csv_a41d8cfe-7141-4dc9-a17b-5a3d17d7a86a
+   a dcat:Distribution;
+   dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY1998.zip>;
+.
+
+<http://hub.healthdata.gov/dataset/hospital-medicare-cost-report-data-fy1998>
+   a dcat:Dataset;
+.

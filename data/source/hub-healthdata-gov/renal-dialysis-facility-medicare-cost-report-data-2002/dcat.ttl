@@ -1,0 +1,28 @@
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix conversion: <http://purl.org/twc/vocab/conversion/> .
+@prefix dcat:       <http://www.w3.org/ns/dcat#> .
+@prefix void:       <http://rdfs.org/ns/void#> .
+@prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix :           <http://purl.org/twc/health/id/> .
+
+<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+   a void:Dataset;
+   conversion:source_identifier  "SOURCE-ID";
+   conversion:dataset_identifier "DATASET-ID";
+   prov:wasDerivedFrom :as_a_csv_3076e6d7-3ca6-45aa-91b3-723c5396c285;
+.
+
+<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+   a dcat:Dataset;
+   dcat:distribution :as_a_csv_3076e6d7-3ca6-45aa-91b3-723c5396c285;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+.
+
+:as_a_csv_3076e6d7-3ca6-45aa-91b3-723c5396c285
+   a dcat:Distribution;
+   dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/RENALFY2002.zip>;
+.
+
+<http://hub.healthdata.gov/dataset/renal-dialysis-facility-medicare-cost-report-data-2002>
+   a dcat:Dataset;
+.

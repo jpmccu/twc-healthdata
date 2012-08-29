@@ -1,0 +1,28 @@
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix conversion: <http://purl.org/twc/vocab/conversion/> .
+@prefix dcat:       <http://www.w3.org/ns/dcat#> .
+@prefix void:       <http://rdfs.org/ns/void#> .
+@prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix :           <http://purl.org/twc/health/id/> .
+
+<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+   a void:Dataset;
+   conversion:source_identifier  "SOURCE-ID";
+   conversion:dataset_identifier "DATASET-ID";
+   prov:wasDerivedFrom :as_a_csv_5dc84422-f155-482a-a95e-7e5fa6f46464;
+.
+
+<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+   a dcat:Dataset;
+   dcat:distribution :as_a_csv_5dc84422-f155-482a-a95e-7e5fa6f46464;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+.
+
+:as_a_csv_5dc84422-f155-482a-a95e-7e5fa6f46464
+   a dcat:Distribution;
+   dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2004/National_Survey/2nd_National_Survey_Data_Files_2004.zip>;
+.
+
+<http://hub.healthdata.gov/dataset/second-national-survey-older>
+   a dcat:Dataset;
+.

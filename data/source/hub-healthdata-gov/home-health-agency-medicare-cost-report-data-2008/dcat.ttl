@@ -1,0 +1,28 @@
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix conversion: <http://purl.org/twc/vocab/conversion/> .
+@prefix dcat:       <http://www.w3.org/ns/dcat#> .
+@prefix void:       <http://rdfs.org/ns/void#> .
+@prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix :           <http://purl.org/twc/health/id/> .
+
+<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+   a void:Dataset;
+   conversion:source_identifier  "SOURCE-ID";
+   conversion:dataset_identifier "DATASET-ID";
+   prov:wasDerivedFrom :as_a_csv_28a04f1a-c2e9-4d93-aeda-841052ba7f03;
+.
+
+<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+   a dcat:Dataset;
+   dcat:distribution :as_a_csv_28a04f1a-c2e9-4d93-aeda-841052ba7f03;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+.
+
+:as_a_csv_28a04f1a-c2e9-4d93-aeda-841052ba7f03
+   a dcat:Distribution;
+   dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY2008.zip>;
+.
+
+<http://hub.healthdata.gov/dataset/home-health-agency-medicare-cost-report-data-2008>
+   a dcat:Dataset;
+.

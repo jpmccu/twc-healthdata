@@ -1,0 +1,28 @@
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix conversion: <http://purl.org/twc/vocab/conversion/> .
+@prefix dcat:       <http://www.w3.org/ns/dcat#> .
+@prefix void:       <http://rdfs.org/ns/void#> .
+@prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix :           <http://purl.org/twc/health/id/> .
+
+<http://purl.org/twc/health/source/SOURCE-ID/dataset/DATASET-ID>
+   a void:Dataset;
+   conversion:source_identifier  "SOURCE-ID";
+   conversion:dataset_identifier "DATASET-ID";
+   prov:wasDerivedFrom :as_a_csv_99e87010-e505-4ad9-a108-bb19c5a65395;
+.
+
+<http://healthdata.tw.rpi.edu/dataset/DATASET-ID>
+   a dcat:Dataset;
+   dcat:distribution :as_a_csv_99e87010-e505-4ad9-a108-bb19c5a65395;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/DATASET-ID>;
+.
+
+:as_a_csv_99e87010-e505-4ad9-a108-bb19c5a65395
+   a dcat:Distribution;
+   dcat:downloadURL <http://www.cms.gov/NonIdentifiableDataFiles/PBCAR/itemdetail.asp?filterType=none&filterByDID=-99&sortByDID=1&sortOrder=ascending&itemID=CMS1242082&intNumPerPage=10>;
+.
+
+<http://hub.healthdata.gov/dataset/part-carrier-summary-data-file-cy2009>
+   a dcat:Dataset;
+.

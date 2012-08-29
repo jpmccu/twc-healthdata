@@ -43,7 +43,7 @@ for name in sourceCKAN.package_register_get():
             print indent + 'format:       ' + resource['format']
             # Formats seen on healthdata.gov: 
             #    CSV Text XLS XML Feed Query API Widget RDF
-      print json.dumps(dataset,sort_keys=True, indent=4)
+      #print json.dumps(dataset,sort_keys=True, indent=4)
       if MIRROR:
          try: # See if dataset is listed in targetCKAN
             targetCKAN.package_entity_get(dataset['name'])
@@ -51,8 +51,8 @@ for name in sourceCKAN.package_register_get():
                # Update target's existing entry from source's
                targetCKAN.package_entity_put(dataset) 
             else:
-               print 'NOTE: skipping ' + dataset['name'] + ' ' +
-                     'b/c already listed at ' + target
+               print ('NOTE: skipping ' + dataset['name'] + ' ' +
+                     'b/c already listed at ' + target)
 
             #update = targetCKAN.last_message
             #update['notes'] = 'Updated.'
@@ -64,8 +64,8 @@ for name in sourceCKAN.package_register_get():
             try:
                targetCKAN.package_register_post(dataset) # POST
             except ckanclient.CkanApiConflictError:
-               print 'WARNING: '+
-                     'Conflict error when trying to POST ' + dataset['name']
+               print ('WARNING: '+
+                     'Conflict error when trying to POST ' + dataset['name'])
 
 #new_dataset = {
 # 'name':  'test-dataset-3',

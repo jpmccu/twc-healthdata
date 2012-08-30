@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "third-national-survey-older";
-   prov:wasDerivedFrom :as_a_csv_c1f7bff3-582a-4811-9ed2-c288e72d90c1;
+   prov:wasDerivedFrom :as_a_csv_5e51c4df-06e6-4141-adf9-ae3d870cb169;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/third-national-survey-older>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_c1f7bff3-582a-4811-9ed2-c288e72d90c1;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/third-national-survey-older>;
-.
-
-:as_a_csv_c1f7bff3-582a-4811-9ed2-c288e72d90c1
+:as_a_csv_5e51c4df-06e6-4141-adf9-ae3d870cb169
    a dcat:Distribution;
    dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2005/National_Survey/3rd_National_Survey_Data_Files_2005.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/third-national-survey-older>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_5e51c4df-06e6-4141-adf9-ae3d870cb169;
 .

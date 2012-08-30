@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-durable";
-   prov:wasDerivedFrom :as_a_csv_d7607d55-bedd-4c39-9229-699a1d5b7b3b;
+   prov:wasDerivedFrom :as_a_csv_c8c9e1ca-8749-4791-944a-fee003dc5c0a;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/2008-basic-stand-alone-durable>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_d7607d55-bedd-4c39-9229-699a1d5b7b3b;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/2008-basic-stand-alone-durable>;
-.
-
-:as_a_csv_d7607d55-bedd-4c39-9229-699a1d5b7b3b
+:as_a_csv_c8c9e1ca-8749-4791-944a-fee003dc5c0a
    a dcat:Distribution;
    dcat:downloadURL <http://downloads.cms.gov/BSAPUF/2008_BSA_DME_Line_Items_PUF.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/2008-basic-stand-alone-durable>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_c8c9e1ca-8749-4791-944a-fee003dc5c0a;
 .

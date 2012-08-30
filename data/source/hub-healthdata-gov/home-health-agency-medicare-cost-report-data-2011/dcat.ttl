@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "home-health-agency-medicare-cost-report-data-2011";
-   prov:wasDerivedFrom :as_a_csv_f2133b1e-9a82-41eb-a0a7-b58445a7a8bd;
+   prov:wasDerivedFrom :as_a_csv_84270ebe-df8c-4be9-8074-5a20e63bf818;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/home-health-agency-medicare-cost-report-data-2011>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_f2133b1e-9a82-41eb-a0a7-b58445a7a8bd;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/home-health-agency-medicare-cost-report-data-2011>;
-.
-
-:as_a_csv_f2133b1e-9a82-41eb-a0a7-b58445a7a8bd
+:as_a_csv_84270ebe-df8c-4be9-8074-5a20e63bf818
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY2011.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/home-health-agency-medicare-cost-report-data-2011>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_84270ebe-df8c-4be9-8074-5a20e63bf818;
 .

@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2010-basic-stand-alone-hospice";
-   prov:wasDerivedFrom :as_a_csv_8d49c8c3-a35b-4d73-b0d2-e2771a70ce38;
+   prov:wasDerivedFrom :as_a_csv_40240811-b6ee-4279-a513-cd2141558132;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/2010-basic-stand-alone-hospice>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_8d49c8c3-a35b-4d73-b0d2-e2771a70ce38;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/2010-basic-stand-alone-hospice>;
-.
-
-:as_a_csv_8d49c8c3-a35b-4d73-b0d2-e2771a70ce38
+:as_a_csv_40240811-b6ee-4279-a513-cd2141558132
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/bsapufs/downloads/2010_BSA_Hospice_Beneficiary_PUF.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/2010-basic-stand-alone-hospice>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_40240811-b6ee-4279-a513-cd2141558132;
 .

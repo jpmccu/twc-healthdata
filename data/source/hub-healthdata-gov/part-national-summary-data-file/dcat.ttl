@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-national-summary-data-file";
-   prov:wasDerivedFrom :as_a_csv_84a67842-f123-4a35-ba72-895a3e15524a;
+   prov:wasDerivedFrom :as_a_csv_e64349db-ab58-4d71-a8ab-51e82f066ef5;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/part-national-summary-data-file>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_84a67842-f123-4a35-ba72-895a3e15524a;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/part-national-summary-data-file>;
-.
-
-:as_a_csv_84a67842-f123-4a35-ba72-895a3e15524a
+:as_a_csv_e64349db-ab58-4d71-a8ab-51e82f066ef5
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/downloads/PartBNational2007.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/part-national-summary-data-file>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_e64349db-ab58-4d71-a8ab-51e82f066ef5;
 .

@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-outpatient";
-   prov:wasDerivedFrom :as_a_csv_2f22e901-aec9-4c7d-b3a9-61d7d6772f9f;
+   prov:wasDerivedFrom :as_a_csv_d3d2ddbb-9bf2-4a07-bd42-fc69e8a4d3bb;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/2008-basic-stand-alone-outpatient>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_2f22e901-aec9-4c7d-b3a9-61d7d6772f9f;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/2008-basic-stand-alone-outpatient>;
-.
-
-:as_a_csv_2f22e901-aec9-4c7d-b3a9-61d7d6772f9f
+:as_a_csv_d3d2ddbb-9bf2-4a07-bd42-fc69e8a4d3bb
    a dcat:Distribution;
    dcat:downloadURL <http://downloads.cms.gov/BSAPUF/2008_BSA_Outpatient_Procedures_PUF_1.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/2008-basic-stand-alone-outpatient>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_d3d2ddbb-9bf2-4a07-bd42-fc69e8a4d3bb;
 .

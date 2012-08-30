@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospital-medicare-cost-report";
-   prov:wasDerivedFrom :as_a_csv_88c709cb-a678-45d5-95ba-806fbd4b57de;
+   prov:wasDerivedFrom :as_a_csv_c4627359-a10d-4369-b7c6-7a62321b88b6;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/hospital-medicare-cost-report>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_88c709cb-a678-45d5-95ba-806fbd4b57de;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/hospital-medicare-cost-report>;
-.
-
-:as_a_csv_88c709cb-a678-45d5-95ba-806fbd4b57de
+:as_a_csv_c4627359-a10d-4369-b7c6-7a62321b88b6
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY2009.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/hospital-medicare-cost-report>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_c4627359-a10d-4369-b7c6-7a62321b88b6;
 .

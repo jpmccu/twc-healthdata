@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "administration-children-families";
-   prov:wasDerivedFrom :as_a_csv_38d489d0-bfa7-4e0b-9a27-45783d438f6c;
+   prov:wasDerivedFrom :as_a_csv_9bfe9f45-2b3a-45c3-8ef3-1bf13fe3ed1c;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/administration-children-families>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_38d489d0-bfa7-4e0b-9a27-45783d438f6c;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/administration-children-families>;
-.
-
-:as_a_csv_38d489d0-bfa7-4e0b-9a27-45783d438f6c
+:as_a_csv_9bfe9f45-2b3a-45c3-8ef3-1bf13fe3ed1c
    a dcat:Distribution;
    dcat:downloadURL <http://www.acf.hhs.gov/datagov-datasets/>;
 .
 
 <http://hub.healthdata.gov/dataset/administration-children-families>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_9bfe9f45-2b3a-45c3-8ef3-1bf13fe3ed1c;
 .

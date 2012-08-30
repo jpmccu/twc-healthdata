@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "fifth-national-survey-older";
-   prov:wasDerivedFrom :as_a_csv_aa90dca1-8006-4487-b694-2c7351fe3dbd;
+   prov:wasDerivedFrom :as_a_csv_84fa714f-9d9f-48a2-a904-6450f27abb1e;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/fifth-national-survey-older>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_aa90dca1-8006-4487-b694-2c7351fe3dbd;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/fifth-national-survey-older>;
-.
-
-:as_a_csv_aa90dca1-8006-4487-b694-2c7351fe3dbd
+:as_a_csv_84fa714f-9d9f-48a2-a904-6450f27abb1e
    a dcat:Distribution;
    dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2009/National_Survey/5th_National_Survey_Data_Files_2009.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/fifth-national-survey-older>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_84fa714f-9d9f-48a2-a904-6450f27abb1e;
 .

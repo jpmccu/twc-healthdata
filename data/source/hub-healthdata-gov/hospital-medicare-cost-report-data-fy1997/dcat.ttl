@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospital-medicare-cost-report-data-fy1997";
-   prov:wasDerivedFrom :as_a_csv_5fb500da-d1b0-4949-ac22-8b6d66dfde6e;
+   prov:wasDerivedFrom :as_a_csv_94b35c08-9d36-46b9-a17a-8361002dd69b;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/hospital-medicare-cost-report-data-fy1997>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_5fb500da-d1b0-4949-ac22-8b6d66dfde6e;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/hospital-medicare-cost-report-data-fy1997>;
-.
-
-:as_a_csv_5fb500da-d1b0-4949-ac22-8b6d66dfde6e
+:as_a_csv_94b35c08-9d36-46b9-a17a-8361002dd69b
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY1997.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/hospital-medicare-cost-report-data-fy1997>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_94b35c08-9d36-46b9-a17a-8361002dd69b;
 .

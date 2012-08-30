@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "food-recalls";
-   prov:wasDerivedFrom :as_a_csv_61ea3e9a-ae29-4654-a134-a98840aa0bcb;
+   prov:wasDerivedFrom :as_a_csv_b6935a6f-e1ed-4302-8f34-28b4af61cd83;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/food-recalls>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_61ea3e9a-ae29-4654-a134-a98840aa0bcb;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/food-recalls>;
-.
-
-:as_a_csv_61ea3e9a-ae29-4654-a134-a98840aa0bcb
+:as_a_csv_b6935a6f-e1ed-4302-8f34-28b4af61cd83
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/newpetfoodrecalls/PetFoodRecallProductsList2009.xls>;
 .
 
 <http://hub.healthdata.gov/dataset/food-recalls>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_b6935a6f-e1ed-4302-8f34-28b4af61cd83;
 .

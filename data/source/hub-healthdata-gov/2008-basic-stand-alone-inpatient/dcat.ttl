@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-inpatient";
-   prov:wasDerivedFrom :as_a_csv_bed1e57d-1d3f-4227-b822-c2e88ef9bde4;
+   prov:wasDerivedFrom :as_a_csv_751e4c7d-aeb7-46bb-8d0f-aa6526aed04c;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/2008-basic-stand-alone-inpatient>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_bed1e57d-1d3f-4227-b822-c2e88ef9bde4;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/2008-basic-stand-alone-inpatient>;
-.
-
-:as_a_csv_bed1e57d-1d3f-4227-b822-c2e88ef9bde4
+:as_a_csv_751e4c7d-aeb7-46bb-8d0f-aa6526aed04c
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/BSAPUFS/downloads/2008_BSA_Inpatient_Claims_PUF.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/2008-basic-stand-alone-inpatient>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_751e4c7d-aeb7-46bb-8d0f-aa6526aed04c;
 .

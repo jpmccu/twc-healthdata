@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "home-health-agency-medicare-cost-report-data-1997";
-   prov:wasDerivedFrom :as_a_csv_c7e4660d-70bb-4367-97e0-63e366d427a6;
+   prov:wasDerivedFrom :as_a_csv_395fc59d-7d78-454e-9714-f1792d56e28c;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/home-health-agency-medicare-cost-report-data-1997>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_c7e4660d-70bb-4367-97e0-63e366d427a6;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/home-health-agency-medicare-cost-report-data-1997>;
-.
-
-:as_a_csv_c7e4660d-70bb-4367-97e0-63e366d427a6
+:as_a_csv_395fc59d-7d78-454e-9714-f1792d56e28c
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY1997.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/home-health-agency-medicare-cost-report-data-1997>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_395fc59d-7d78-454e-9714-f1792d56e28c;
 .

@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-prescription";
-   prov:wasDerivedFrom :as_a_csv_09e65d5f-c453-4033-b7df-ba09d987ccf7;
+   prov:wasDerivedFrom :as_a_csv_cdbfdb93-e0b9-409e-a29e-7a8d1418828b;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/2008-basic-stand-alone-prescription>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_09e65d5f-c453-4033-b7df-ba09d987ccf7;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/2008-basic-stand-alone-prescription>;
-.
-
-:as_a_csv_09e65d5f-c453-4033-b7df-ba09d987ccf7
+:as_a_csv_cdbfdb93-e0b9-409e-a29e-7a8d1418828b
    a dcat:Distribution;
    dcat:downloadURL <http://downloads.cms.gov/BSAPUF/2008_BSA_PartD_Events_PUF_1.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/2008-basic-stand-alone-prescription>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_cdbfdb93-e0b9-409e-a29e-7a8d1418828b;
 .

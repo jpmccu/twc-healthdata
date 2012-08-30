@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "health-centers-look-alike-sites";
-   prov:wasDerivedFrom :as_a_csv_72ce27e8-db1f-4974-b07a-475b81257a78;
+   prov:wasDerivedFrom :as_a_csv_36358105-e4c5-4d57-899b-032e8dd91482;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/health-centers-look-alike-sites>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_72ce27e8-db1f-4974-b07a-475b81257a78;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/health-centers-look-alike-sites>;
-.
-
-:as_a_csv_72ce27e8-db1f-4974-b07a-475b81257a78
+:as_a_csv_36358105-e4c5-4d57-899b-032e8dd91482
    a dcat:Distribution;
    dcat:downloadURL <http://datawarehouse.hrsa.gov/DataDownload/HCC/HCCs_and_Lookalikes.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/health-centers-look-alike-sites>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_36358105-e4c5-4d57-899b-032e8dd91482;
 .

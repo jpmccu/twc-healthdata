@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-carrier-summary-data-file";
-   prov:wasDerivedFrom :as_a_csv_fead86ff-fe80-4dbe-86fe-98f49b023393;
+   prov:wasDerivedFrom :as_a_csv_39925b68-d3cd-479e-846f-3055fdd673be;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/part-carrier-summary-data-file>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_fead86ff-fe80-4dbe-86fe-98f49b023393;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/part-carrier-summary-data-file>;
-.
-
-:as_a_csv_fead86ff-fe80-4dbe-86fe-98f49b023393
+:as_a_csv_39925b68-d3cd-479e-846f-3055fdd673be
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/2008AllCarriers.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/part-carrier-summary-data-file>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_39925b68-d3cd-479e-846f-3055fdd673be;
 .

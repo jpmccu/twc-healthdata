@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "designated-health-professional";
-   prov:wasDerivedFrom :as_a_csv_9848aa75-a751-4500-b301-8c14075f7576;
+   prov:wasDerivedFrom :as_a_csv_35b380c7-6e83-48f0-92a0-622b21e47261;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/designated-health-professional>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_9848aa75-a751-4500-b301-8c14075f7576;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/designated-health-professional>;
-.
-
-:as_a_csv_9848aa75-a751-4500-b301-8c14075f7576
+:as_a_csv_35b380c7-6e83-48f0-92a0-622b21e47261
    a dcat:Distribution;
    dcat:downloadURL <http://datawarehouse.hrsa.gov/DataDownload/HPSA/HPSA.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/designated-health-professional>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_35b380c7-6e83-48f0-92a0-622b21e47261;
 .

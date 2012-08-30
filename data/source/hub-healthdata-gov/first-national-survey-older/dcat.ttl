@@ -9,20 +9,15 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "first-national-survey-older";
-   prov:wasDerivedFrom :as_a_csv_5e2d3dae-7074-4cf9-8e94-2fd86e90389d;
+   prov:wasDerivedFrom :as_a_csv_1cbb3be9-b714-4943-bec8-49875ad43989;
 .
 
-<http://healthdata.tw.rpi.edu/dataset/first-national-survey-older>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_5e2d3dae-7074-4cf9-8e94-2fd86e90389d;
-   prov:alternateOf <http://hub.healthdata.gov/dataset/first-national-survey-older>;
-.
-
-:as_a_csv_5e2d3dae-7074-4cf9-8e94-2fd86e90389d
+:as_a_csv_1cbb3be9-b714-4943-bec8-49875ad43989
    a dcat:Distribution;
    dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2003/National_Survey/1st_National_Survey_Data_Files_2003.zip>;
 .
 
 <http://hub.healthdata.gov/dataset/first-national-survey-older>
    a dcat:Dataset;
+   dcat:distribution :as_a_csv_1cbb3be9-b714-4943-bec8-49875ad43989;
 .

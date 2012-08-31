@@ -1,0 +1,298 @@
+@prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:          <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix todo:          <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:           <http://www.w3.org/2002/07/owl#> .
+@prefix vann:          <http://purl.org/vocab/vann/> .
+@prefix skos:          <http://www.w3.org/2004/02/skos/core#> .
+@prefix time:          <http://www.w3.org/2006/time#> .
+@prefix wgs:           <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geonames:      <http://www.geonames.org/ontology#> .
+@prefix geonamesid:    <http://sws.geonames.org/> .
+@prefix govtrackusgov: <http://www.rdfabout.com/rdf/usgov/geo/us/> .
+@prefix dbpedia:       <http://dbpedia.org/resource/> .
+@prefix dbpediaprop:   <http://dbpedia.org/property/> .
+@prefix dbpediaowl:    <http://dbpedia.org/ontology/> .
+@prefix con:           <http://www.w3.org/2000/10/swap/pim/contact#> .
+@prefix muo:           <http://purl.oclc.org/NET/muo/muo#> .
+@prefix vs:            <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix frbr:          <http://purl.org/vocab/frbr/core#> .
+@prefix bibo:          <http://purl.org/ontology/bibo/> .
+@prefix doap:          <http://usefulinc.com/ns/doap#> .
+@prefix qb:            <http://purl.org/linked-data/cube#> .
+@prefix dgtwc:         <http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#> .
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix void:          <http://rdfs.org/ns/void#> .
+@prefix scovo:         <http://purl.org/NET/scovo#> .
+@prefix sioc:          <http://rdfs.org/sioc/ns#> .
+@prefix foaf:          <http://xmlns.com/foaf/0.1/> .
+@prefix ov:            <http://open.vocab.org/terms/> .
+@prefix conversion:    <http://purl.org/twc/vocab/conversion/> .
+@prefix :              <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/version/2012-Jul-17/params/enhancement/1/> .
+@prefix vcard:         <http://www.w3.org/2006/vcard/ns#> .
+@prefix prov:          <http://www.w3.org/ns/prov#>.
+@prefix snomed:        <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix health:        <http://purl.org/twc/health/ns/>.
+@prefix pml:           <http://provenanceweb.org/ns/pml#>.
+
+
+<http://tw.rpi.edu/instances/JamesMcCusker> foaf:holdsAccount <http://purl.org/klab/lod/machines/schist#jpm78> .
+<http://purl.org/klab/lod/machines/schist#jpm78>
+   a foaf:OnlineAccount;
+   foaf:accountName "jpm78";
+   dcterms:isPartOf <http://purl.org/klab/lod/machines/schist#>;
+   sioc:account_of  <http://tw.rpi.edu/instances/JamesMcCusker>;
+.
+
+:address
+   a conversion:ImplicitBundle;
+   conversion:property_name vcard:adr, prov:atLocation; # Can also be a URI, e.g. dcterms:title.
+   conversion:type_name     vcard:Address;   # Can also be a URI, e.g. foaf:Person.
+   conversion:name_template "[/s]provider/[#1]/address";
+.
+
+:telephone
+   a conversion:ImplicitBundle;
+   conversion:property_name vcard:tel, prov:atLocation; # Can also be a URI, e.g. dcterms:title.
+   conversion:type_name     vcard:Tel;   # Can also be a URI, e.g. foaf:Person.
+   conversion:name_template "[/s]provider/[#1]/telephone";
+.
+
+:owner
+   a conversion:ImplicitBundle;
+   conversion:property_name pml:hadOwner; # Can also be a URI, e.g. dcterms:title.
+   conversion:type_name     pml:Owner;   # Can also be a URI, e.g. foaf:Person.
+   conversion:name_template "[/s]provider/[#1]/owner";
+.
+
+#:a_bundle
+#   a conversion:ImplicitBundle;
+#   conversion:property_name "a_property"; # Can also be a URI, e.g. dcterms:title.
+#   #conversion:type_name     "My Class";   # Can also be a URI, e.g. foaf:Person.
+#.
+
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/version/2012-Jul-17/conversion/enhancement/1>
+   a conversion:LayerDataset, void:Dataset;
+
+   conversion:base_uri           "http://purl.org/twc/health"^^xsd:anyURI;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "hospital-compare";
+   conversion:version_identifier "2012-Jul-17";
+   conversion:enhancement_identifier "1";
+
+   conversion:conversion_process [
+      a conversion:EnhancementConversionProcess;
+      conversion:enhancement_identifier "1";
+      conversion:subject_discriminator  "hqi-hosp";
+
+      dcterms:creator <http://purl.org/klab/lod/machines/schist#jpm78>;
+      dcterms:created "2012-08-29T14:46:42-04:00"^^xsd:dateTime;
+
+      conversion:delimits_cell ",";
+      #conversion:delimits_cell "	"; # tab
+      #conversion:delimits_cell "|";   # pipe
+      #conversion:delimits_cell ",";   # comma
+
+      conversion:enhance [      
+         ov:csvRow 1;
+         a conversion:HeaderRow;
+      ];                        
+
+      conversion:interpret [
+         conversion:symbol        "";
+         conversion:interpretation conversion:null; 
+      ];
+      #conversion:enhance [
+      #   conversion:domain_template "thing_[r]";
+      #   conversion:domain_name     "Thing";
+      #];
+      #conversion:enhance [
+      #   conversion:class_name "Thing";
+      #   conversion:subclass_of <http://purl.org/...>;
+      #];
+      conversion:enhance [
+         ov:csvCol          1;
+         ov:csvHeader       "Provider Number";
+         #conversion:label   "Provider Number";
+         conversion:comment "";
+	 conversion:domain_template "[/s]provider/[.]";
+         conversion:range   rdfs:Literal;
+         conversion:object_search [
+            conversion:regex     "^'(.+)'$";
+            conversion:predicate dcterms:identifier;
+            conversion:object    "[\\1]";
+         ];
+      ];
+      conversion:enhance [
+         ov:csvCol          2;
+         ov:csvHeader       "Hospital Name";
+         #conversion:label   "Hospital Name";
+	 conversion:equivalent_property dcterms:title;
+	 conversion:equivalent_property rdfs:label;
+	 conversion:equivalent_property vcard:organization-name;
+#	 conversion:range_template "[^._]";
+         conversion:comment "";
+         conversion:range   todo:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          3;
+         ov:csvHeader       "Address1";
+         #conversion:label   "Address1";
+	 conversion:bundled_by :address;
+         conversion:equivalent_property vcard:street-address;
+#	 conversion:range_template "[^._]";
+         conversion:comment "";
+         conversion:range   xsd:string;
+      ];
+      conversion:enhance [
+         ov:csvCol          4;
+         ov:csvHeader       "Address2";
+         #conversion:label   "Address2";
+	 conversion:bundled_by :address;
+         conversion:equivalent_property vcard:extended-address;
+#	 conversion:range_template "[^._]";
+         conversion:comment "";
+         conversion:range   xsd:string;
+      ];
+      conversion:enhance [
+         ov:csvCol          5;
+         ov:csvHeader       "Address3";
+         #conversion:label   "Address3";
+         conversion:comment "";
+	 conversion:bundled_by :address;
+         conversion:equivalent_property vcard:extended-address;
+         conversion:range   xsd:string;
+      ];
+      conversion:enhance [
+         ov:csvCol          6;
+         ov:csvHeader       "City";
+         #conversion:label   "City";
+	 conversion:bundled_by :address;
+         conversion:equivalent_property vcard:locality;
+         conversion:comment "";
+#	 conversion:range_template "[^._]";
+         conversion:range   xsd:string;
+      ];
+      conversion:enhance [
+         ov:csvCol          7;
+         ov:csvHeader       "State";
+         #conversion:label   "State";
+	 conversion:bundled_by :address;
+         conversion:equivalent_property vcard:region;
+         conversion:comment "";
+         conversion:range   xsd:string;
+      ];
+      conversion:enhance [
+         ov:csvCol          8;
+         ov:csvHeader       "ZIP Code";
+         #conversion:label   "ZIP Code";
+	 conversion:bundled_by :address;
+         conversion:equivalent_property vcard:postal-code;
+         conversion:comment "";
+         conversion:range   xsd:string;
+      ];
+      conversion:enhance [
+         ov:csvCol          9;
+         ov:csvHeader       "County Name";
+         #conversion:label   "County Name";
+         conversion:comment "";
+         conversion:equivalent_property prov:atLocation;
+	 conversion:range_template "http://dbpedia.org/resource/[.]_County";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          10;
+         ov:csvHeader       "Phone Number";
+         #conversion:label   "Phone Number";
+	 conversion:bundled_by :telephone;
+         conversion:equivalent_property rdf:value;
+         conversion:comment "";
+         conversion:range   rdfs:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          11;
+         ov:csvHeader       "Hospital Type";
+         #conversion:label   "Hospital Type";
+         conversion:comment "";
+         conversion:equivalent_property rdf:type;
+	 conversion:interpret [
+            rdfs:comment "Is Acute Care Hospital in the data dictionary.";
+            conversion:symbol "Acute Care Hospitals";
+            conversion:interpretation <http://purl.bioontology.org/ontology/SNOMEDCT/45131006>;
+         ];
+	 conversion:interpret [
+            rdfs:comment "Is 'Critical Access Hospital' in the data dictionary.";
+            conversion:symbol "Critical Access Hospitals";
+            conversion:interpretation health:CriticalAccessHospital;
+         ];
+	 conversion:interpret [
+            rdfs:comment "Is 'Acute Care – VA Medical Center' in the data dictionary.";
+            conversion:symbol "ACUTE CARE - VETERANS ADMINISTRATION";
+            conversion:interpretation <http://purl.bioontology.org/ontology/SNOMEDCT/48311003>;
+         ];
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          12;
+         ov:csvHeader       "Hospital Ownership";
+         #conversion:label   "Hospital Ownership";
+	 conversion:bundled_by :owner;
+         conversion:equivalent_property rdf:type;
+	 conversion:range_template "http://purl.org/twc/health/ns/[.]";
+         conversion:comment "";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          13;
+         ov:csvHeader       "Emergency Service";
+         #conversion:label   "Emergency Service";
+         conversion:comment "";
+         conversion:equivalent_property rdf:type;
+         conversion:comment "";
+         conversion:range   rdfs:Resource;
+	 conversion:interpret [
+            conversion:symbol "Yes";
+            conversion:interpretation health:EmergencyServiceHospital;
+         ];
+	 conversion:interpret [
+            conversion:symbol "No";
+            conversion:interpretation health:NonEmergencyServiceHospital;
+         ];
+      ];
+      #conversion:enhance [            
+      #   ov:csvRow 3,4,5;             
+      #   a conversion:ExampleResource;
+      #];                              
+   ];
+.
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/45131006> a owl:Class;
+    rdfs:subClassOf <http://purl.bioontology.org/ontology/SNOMEDCT/22232009>;
+    rdfs:label "Primary care hospital".
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/82242000> a owl:Class;
+    rdfs:subClassOf <http://purl.bioontology.org/ontology/SNOMEDCT/22232009>;
+    rdfs:label "Children's hospital".
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/48311003> a owl:Class;
+    rdfs:subClassOf <http://purl.bioontology.org/ontology/SNOMEDCT/22232009>;
+    rdfs:label "Veteran's administration hospital".
+
+health:CriticalAccessHospital a owl:Class, health:TetherlessClass;
+    rdfs:subClassOf <http://purl.bioontology.org/ontology/SNOMEDCT/22232009>;
+    rdfs:comment "CAHs are rural community hospitals that receive cost-based reimbursement. To be designated a CAH, a rural hospital must meet defined criteria that were outlined in the Conditions of Participation 42CFR485 and subsequent legislative refinements to the program through the BBRA, BIPA, the Medicare Modernization Act, the MIPPA, and the PPACA.";
+    rdfs:seeAlso "http://www.aha.org/advocacy-issues/cah/index.shtml";
+    rdfs:label "Critical access hospital".
+
+health:EmergencyServiceHospital a owl:Class, health:TetherlessClass;
+    rdfs:subClassOf <http://purl.bioontology.org/ontology/SNOMEDCT/22232009>;
+    prov:alternateOf <http://purl.bioontology.org/ontology/SNOMEDCT/36125001>;
+    rdfs:label "Emergency service hospital".
+
+health:NonEmergencyServiceHospital a owl:Class, health:TetherlessClass;
+    rdfs:subClassOf <http://purl.bioontology.org/ontology/SNOMEDCT/22232009>;
+    rdfs:label "Non emergency service hospital".
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/36125001> a owl:Class;
+    rdfs:subClassOf <http://purl.bioontology.org/ontology/SNOMEDCT/22232009>;
+    rdfs:label "Trauma center".

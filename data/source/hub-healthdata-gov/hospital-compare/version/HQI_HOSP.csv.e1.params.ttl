@@ -46,23 +46,23 @@
 
 :address
    a conversion:ImplicitBundle;
-   conversion:property_name vcard:adr, prov:atLocation; # Can also be a URI, e.g. dcterms:title.
+   conversion:property_name vcard:adr; # Can also be a URI, e.g. dcterms:title.
    conversion:type_name     vcard:Address;   # Can also be a URI, e.g. foaf:Person.
-   conversion:name_template "[/s]provider/[#1]/address";
+   conversion:name_template "[/s]provider/[>#1<]/address";
 .
 
 :telephone
    a conversion:ImplicitBundle;
-   conversion:property_name vcard:tel, prov:atLocation; # Can also be a URI, e.g. dcterms:title.
+   conversion:property_name vcard:tel; # Can also be a URI, e.g. dcterms:title.
    conversion:type_name     vcard:Tel;   # Can also be a URI, e.g. foaf:Person.
-   conversion:name_template "[/s]provider/[#1]/telephone";
+   conversion:name_template "[/s]provider/[>#1<]/telephone";
 .
 
 :owner
    a conversion:ImplicitBundle;
    conversion:property_name pml:hadOwner; # Can also be a URI, e.g. dcterms:title.
    conversion:type_name     pml:Owner;   # Can also be a URI, e.g. foaf:Person.
-   conversion:name_template "[/s]provider/[#1]/owner";
+   conversion:name_template "[/s]provider/[>#1<]/owner";
 .
 
 #:a_bundle
@@ -115,13 +115,15 @@
          ov:csvHeader       "Provider Number";
          #conversion:label   "Provider Number";
          conversion:comment "";
-	 conversion:domain_template "[/s]provider/[.]";
+	 conversion:domain_template "[/s]provider/[>.<]";
+	 conversion:range_template "[>.<]";
          conversion:range   rdfs:Literal;
-         conversion:object_search [
-            conversion:regex     "^'(.+)'$";
-            conversion:predicate dcterms:identifier;
-            conversion:object    "[\\1]";
-         ];
+         conversion:equivalent_property dcterms:identifier;
+#         conversion:object_search [
+#            conversion:regex     "^'(.+)'$";
+#            conversion:predicate dcterms:identifier;
+#            conversion:object    "[\\1]";
+#         ];
       ];
       conversion:enhance [
          ov:csvCol          2;

@@ -130,7 +130,7 @@
 	 conversion:equivalent_property dcterms:title;
 	 conversion:equivalent_property rdfs:label;
 	 conversion:equivalent_property vcard:organization-name;
-#	 conversion:range_template "[^._]";
+	 conversion:range_template "[^._]";
          conversion:comment "";
          conversion:range   todo:Literal;
       ];
@@ -140,7 +140,7 @@
          #conversion:label   "Address1";
 	 conversion:bundled_by :address;
          conversion:equivalent_property vcard:street-address;
-#	 conversion:range_template "[^._]";
+	 conversion:range_template "[^._]";
          conversion:comment "";
          conversion:range   xsd:string;
       ];
@@ -150,7 +150,7 @@
          #conversion:label   "Address2";
 	 conversion:bundled_by :address;
          conversion:equivalent_property vcard:extended-address;
-#	 conversion:range_template "[^._]";
+	 conversion:range_template "[^._]";
          conversion:comment "";
          conversion:range   xsd:string;
       ];
@@ -170,7 +170,7 @@
 	 conversion:bundled_by :address;
          conversion:equivalent_property vcard:locality;
          conversion:comment "";
-#	 conversion:range_template "[^._]";
+	 conversion:range_template "[^._]";
          conversion:range   xsd:string;
       ];
       conversion:enhance [
@@ -197,7 +197,7 @@
          #conversion:label   "County Name";
          conversion:comment "";
          conversion:equivalent_property prov:atLocation;
-	 conversion:range_template "http://dbpedia.org/resource/[.]_County";
+	 conversion:range_template "http://dbpedia.org/resource/[^._]_County";
          conversion:range   rdfs:Resource;
       ];
       conversion:enhance [

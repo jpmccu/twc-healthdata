@@ -115,8 +115,8 @@
          ov:csvHeader       "Provider Number";
          #conversion:label   "Provider Number";
          conversion:comment "";
-	 conversion:domain_template "[/s]provider/[>.<]";
-	 conversion:range_template "[>.<]";
+         conversion:domain_template "[/s]provider/[>.<]";
+         conversion:range_template "[>.<]";
          conversion:range   rdfs:Literal;
          conversion:equivalent_property dcterms:identifier;
 #         conversion:object_search [
@@ -129,10 +129,10 @@
          ov:csvCol          2;
          ov:csvHeader       "Hospital Name";
          #conversion:label   "Hospital Name";
-	 conversion:equivalent_property dcterms:title;
-	 conversion:equivalent_property rdfs:label;
-	 conversion:equivalent_property vcard:organization-name;
-	 conversion:range_template "[^._]";
+         conversion:equivalent_property dcterms:title;
+         conversion:equivalent_property rdfs:label;
+         conversion:equivalent_property vcard:organization-name;
+         conversion:range_template "[^._]";
          conversion:comment "";
          conversion:range   todo:Literal;
       ];
@@ -140,9 +140,10 @@
          ov:csvCol          3;
          ov:csvHeader       "Address1";
          #conversion:label   "Address1";
-	 conversion:bundled_by :address;
+         conversion:bundled_by :address;
          conversion:equivalent_property vcard:street-address;
-	 conversion:range_template "[^._]";
+         conversion:subproperty_of        con:street;
+         conversion:range_template "[^._]";
          conversion:comment "";
          conversion:range   xsd:string;
       ];
@@ -150,9 +151,10 @@
          ov:csvCol          4;
          ov:csvHeader       "Address2";
          #conversion:label   "Address2";
-	 conversion:bundled_by :address;
+         conversion:bundled_by :address;
          conversion:equivalent_property vcard:extended-address;
-	 conversion:range_template "[^._]";
+         conversion:subproperty_of        con:street2;
+         conversion:range_template "[^._]";
          conversion:comment "";
          conversion:range   xsd:string;
       ];
@@ -161,26 +163,29 @@
          ov:csvHeader       "Address3";
          #conversion:label   "Address3";
          conversion:comment "";
-	 conversion:bundled_by :address;
+         conversion:bundled_by :address;
          conversion:equivalent_property vcard:extended-address;
+         conversion:subproperty_of        con:street3;
          conversion:range   xsd:string;
       ];
       conversion:enhance [
          ov:csvCol          6;
          ov:csvHeader       "City";
          #conversion:label   "City";
-	 conversion:bundled_by :address;
+         conversion:bundled_by :address;
          conversion:equivalent_property vcard:locality;
+         conversion:subproperty_of        con:city;
          conversion:comment "";
-	 conversion:range_template "[^._]";
+         conversion:range_template "[^._]";
          conversion:range   xsd:string;
       ];
       conversion:enhance [
          ov:csvCol          7;
          ov:csvHeader       "State";
          #conversion:label   "State";
-	 conversion:bundled_by :address;
+         conversion:bundled_by :address;
          conversion:equivalent_property vcard:region;
+         conversion:subproperty_of        con:stateOfProvince;
          conversion:comment "";
          conversion:range   xsd:string;
       ];
@@ -188,8 +193,9 @@
          ov:csvCol          8;
          ov:csvHeader       "ZIP Code";
          #conversion:label   "ZIP Code";
-	 conversion:bundled_by :address;
+         conversion:bundled_by :address;
          conversion:equivalent_property vcard:postal-code;
+         conversion:subproperty_of        con:zip;
          conversion:comment "";
          conversion:range   xsd:string;
       ];
@@ -199,14 +205,14 @@
          #conversion:label   "County Name";
          conversion:comment "";
          conversion:equivalent_property prov:atLocation;
-	 conversion:range_template "http://dbpedia.org/resource/[^._]_County";
+         conversion:range_template "http://dbpedia.org/resource/[^._]_County";
          conversion:range   rdfs:Resource;
       ];
       conversion:enhance [
          ov:csvCol          10;
          ov:csvHeader       "Phone Number";
          #conversion:label   "Phone Number";
-	 conversion:bundled_by :telephone;
+         conversion:bundled_by :telephone;
          conversion:equivalent_property rdf:value;
          conversion:comment "";
          conversion:range   rdfs:Literal;
@@ -217,17 +223,17 @@
          #conversion:label   "Hospital Type";
          conversion:comment "";
          conversion:equivalent_property rdf:type;
-	 conversion:interpret [
+         conversion:interpret [
             rdfs:comment "Is Acute Care Hospital in the data dictionary.";
             conversion:symbol "Acute Care Hospitals";
             conversion:interpretation <http://purl.bioontology.org/ontology/SNOMEDCT/45131006>;
          ];
-	 conversion:interpret [
+         conversion:interpret [
             rdfs:comment "Is 'Critical Access Hospital' in the data dictionary.";
             conversion:symbol "Critical Access Hospitals";
             conversion:interpretation health:CriticalAccessHospital;
          ];
-	 conversion:interpret [
+         conversion:interpret [
             rdfs:comment "Is 'Acute Care – VA Medical Center' in the data dictionary.";
             conversion:symbol "ACUTE CARE - VETERANS ADMINISTRATION";
             conversion:interpretation <http://purl.bioontology.org/ontology/SNOMEDCT/48311003>;
@@ -238,9 +244,9 @@
          ov:csvCol          12;
          ov:csvHeader       "Hospital Ownership";
          #conversion:label   "Hospital Ownership";
-	 conversion:bundled_by :owner;
+         conversion:bundled_by :owner;
          conversion:equivalent_property rdf:type;
-	 conversion:range_template "http://purl.org/twc/health/ns/[.]";
+         conversion:range_template "http://purl.org/twc/health/ns/[.]";
          conversion:comment "";
          conversion:range   rdfs:Resource;
       ];
@@ -252,11 +258,11 @@
          conversion:equivalent_property rdf:type;
          conversion:comment "";
          conversion:range   rdfs:Resource;
-	 conversion:interpret [
+         conversion:interpret [
             conversion:symbol "Yes";
             conversion:interpretation health:EmergencyServiceHospital;
          ];
-	 conversion:interpret [
+         conversion:interpret [
             conversion:symbol "No";
             conversion:interpretation health:NonEmergencyServiceHospital;
          ];

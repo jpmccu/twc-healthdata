@@ -95,6 +95,7 @@
       conversion:enhance [
          ov:csvCol          2;
          ov:csvHeader       "PSI_4_SURG_COMP";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery";
          conversion:comment "Lists the composite rating for the measure.";
 	 conversion:range_template "[/]ns/[.]";
@@ -103,6 +104,7 @@
       conversion:enhance [
          ov:csvCol          3;
          ov:csvHeader       "PSI_4_SURG_COMP_F";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          #conversion:label   "PSI_4_SURG_COMP_F";
          conversion:comment "";
          conversion:range   todo:Literal;
@@ -110,6 +112,7 @@
       conversion:enhance [
          ov:csvCol          4;
          ov:csvHeader       "PSI_6_IAT_PTX";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Iatrogenic Pneumothorax";
          conversion:comment "Lists the composite rating for the measure.";
 	 conversion:range_template "[/]ns/[.]";
@@ -118,6 +121,7 @@
       conversion:enhance [
          ov:csvCol          5;
          ov:csvHeader       "PSI_6_IAT_PTX_F";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          #conversion:label   "PSI_6_IAT_PTX_F";
          conversion:comment "";
          conversion:range   todo:Literal;
@@ -125,6 +129,7 @@
       conversion:enhance [
          ov:csvCol          6;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Respiratory Failure";
          conversion:comment "Lists the composite rating for the measure.";
 	 conversion:range_template "[/]ns/[.]";
@@ -133,6 +138,7 @@
       conversion:enhance [
          ov:csvCol          7;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_F";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          #conversion:label   "PSI_11_POSTOP_RESPFAIL_F";
          conversion:comment "";
          conversion:range   todo:Literal;
@@ -140,6 +146,7 @@
       conversion:enhance [
          ov:csvCol          8;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Pulmonary Embolism or Deep Vein Thrombosis";
          conversion:comment "Lists the composite rating for the measure.";
 	 conversion:range_template "[/]ns/[.]";
@@ -148,6 +155,7 @@
       conversion:enhance [
          ov:csvCol          9;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_F";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          #conversion:label   "PSI_12_POSTOP_PULMEMB_DVT_F";
          conversion:comment "";
          conversion:range   todo:Literal;
@@ -155,6 +163,7 @@
       conversion:enhance [
          ov:csvCol          10;
          ov:csvHeader       "PSI_14_POSTOP_DEHIS";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Wound Dehiscence";
          conversion:comment "Lists the composite rating for the measure.";
 	 conversion:range_template "[/]ns/[.]";
@@ -162,6 +171,7 @@
       ];
       conversion:enhance [
          ov:csvCol          11;
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          ov:csvHeader       "PSI_14_POSTOP_DEHIS_F";
          #conversion:label   "PSI_14_POSTOP_DEHIS_F";
          conversion:comment "";
@@ -170,6 +180,7 @@
       conversion:enhance [
          ov:csvCol          12;
          ov:csvHeader       "PSI_15_ACC_LAC";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Accidental Puncture or Laceration";
          conversion:comment "Lists the composite rating for the measure.";
 	 conversion:range_template "[/]ns/[.]";
@@ -178,6 +189,7 @@
       conversion:enhance [
          ov:csvCol          13;
          ov:csvHeader       "PSI_15_ACC_LAC_F";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          #conversion:label   "PSI_15_ACC_LAC_F";
          conversion:comment "";
          conversion:range   todo:Literal;
@@ -185,6 +197,7 @@
       conversion:enhance [
          ov:csvCol          14;
          ov:csvHeader       "PSI_90_SAFETY";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Patient Safety for Selected Indicators";
          conversion:comment "Lists the composite rating for the measure.";
 	 conversion:range_template "[/]ns/[.]";
@@ -193,6 +206,7 @@
       conversion:enhance [
          ov:csvCol          15;
          ov:csvHeader       "PSI_90_SAFETY_F";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          #conversion:label   "PSI_90_SAFETY_F";
          conversion:comment "";
          conversion:range   todo:Literal;
@@ -200,6 +214,7 @@
       conversion:enhance [
          ov:csvCol          16;
          ov:csvHeader       "IQI_11_AAA";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Abdominal Aortic Aneurysm Repair Mortality";
          conversion:comment "Lists the composite rating for the measure.";
 	 conversion:range_template "[/]ns/[.]";
@@ -208,6 +223,7 @@
       conversion:enhance [
          ov:csvCol          17;
          ov:csvHeader       "IQI_11_AAA_F";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          #conversion:label   "IQI_11_AAA_F";
          conversion:comment "";
          conversion:range   xsd:decimal;
@@ -215,6 +231,7 @@
       conversion:enhance [
          ov:csvCol          18;
          ov:csvHeader       "IQI_19_HIP_FX";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Hip Fracture Mortality";
          conversion:comment "Lists the composite rating for the measure.";
 	 conversion:range_template "[/]ns/[.]";
@@ -223,6 +240,7 @@
       conversion:enhance [
          ov:csvCol          19;
          ov:csvHeader       "IQI_19_HIP_FX_F";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          #conversion:label   "IQI_19_HIP_FX_F";
          conversion:comment "";
          conversion:range   xsd:decimal;
@@ -230,6 +248,7 @@
       conversion:enhance [
          ov:csvCol          20;
          ov:csvHeader       "IQI_91_CONDS";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Mortality for Selected Conditions";
          conversion:comment "Lists the composite rating for the measure.";
 	 conversion:range_template "[/]ns/[.]";
@@ -238,6 +257,7 @@
       conversion:enhance [
          ov:csvCol          21;
          ov:csvHeader       "IQI_91_CONDS_F";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          #conversion:label   "IQI_91_CONDS_F";
          conversion:comment "";
          conversion:range   xsd:decimal;
@@ -245,6 +265,7 @@
       conversion:enhance [
          ov:csvCol          22;
          ov:csvHeader       "PSI_4_SURG_COMP_NUM_DC";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:range   xsd:decimal;
@@ -252,6 +273,7 @@
       conversion:enhance [
          ov:csvCol          23;
          ov:csvHeader       "PSI_4_SURG_COMP_RATE";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
          conversion:range   xsd:decimal;
@@ -259,6 +281,7 @@
       conversion:enhance [
          ov:csvCol          24;
          ov:csvHeader       "PSI_4_SURG_COMP_LOW_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -266,6 +289,7 @@
       conversion:enhance [
          ov:csvCol          25;
          ov:csvHeader       "PSI_4_SURG_COMP_HIGH_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -273,6 +297,7 @@
       conversion:enhance [
          ov:csvCol          26;
          ov:csvHeader       "PSI_6_IAT_PTX_NUM_DC";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Iatrogenic Pneumothorax - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:range   xsd:decimal;
@@ -280,6 +305,7 @@
       conversion:enhance [
          ov:csvCol          27;
          ov:csvHeader       "PSI_6_IAT_PTX_RATE";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Iatrogenic Pneumothorax - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
          conversion:range   xsd:decimal;
@@ -287,6 +313,7 @@
       conversion:enhance [
          ov:csvCol          28;
          ov:csvHeader       "PSI_6_IAT_PTX_LOW_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Iatrogenic Pneumothorax - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -294,6 +321,7 @@
       conversion:enhance [
          ov:csvCol          29;
          ov:csvHeader       "PSI_6_IAT_PTX_HIGH_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Iatrogenic Pneumothorax - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -301,6 +329,7 @@
       conversion:enhance [
          ov:csvCol          30;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_NUM_DC";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Respiratory Failure - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:range   xsd:decimal;
@@ -308,6 +337,7 @@
       conversion:enhance [
          ov:csvCol          31;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_RATE";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Respiratory Failure - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
          conversion:range   xsd:decimal;
@@ -315,6 +345,7 @@
       conversion:enhance [
          ov:csvCol          32;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_LOW_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Respiratory Failure - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -322,6 +353,7 @@
       conversion:enhance [
          ov:csvCol          33;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_HIGH_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Respiratory Failure - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -329,6 +361,7 @@
       conversion:enhance [
          ov:csvCol          34;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_NUM_DC";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Pulmonary Embolism or Deep Vein Thrombosis - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:range   xsd:decimal;
@@ -336,6 +369,7 @@
       conversion:enhance [
          ov:csvCol          35;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_RATE";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Pulmonary Embolism or Deep Vein Thrombosis - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
          conversion:range   xsd:decimal;
@@ -343,6 +377,7 @@
       conversion:enhance [
          ov:csvCol          36;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_LOW_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Pulmonary Embolism or Deep Vein Thrombosis - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -350,6 +385,7 @@
       conversion:enhance [
          ov:csvCol          37;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_HIGH_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Pulmonary Embolism or Deep Vein Thrombosis - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -357,6 +393,7 @@
       conversion:enhance [
          ov:csvCol          38;
          ov:csvHeader       "PSI_14_POSTOP_DEHIS_NUM_DC";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Wound Dehiscence - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:range   xsd:decimal;
@@ -364,12 +401,14 @@
       conversion:enhance [
          ov:csvCol          39;
          ov:csvHeader       "PSI_14_POSTOP_DEHIS_RATE";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Wound Dehiscence - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          40;
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          ov:csvHeader       "PSI_14_POSTOP_DEHIS_LOW_EST";
          conversion:label   "Postoperative Wound Dehiscence - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
@@ -378,6 +417,7 @@
       conversion:enhance [
          ov:csvCol          41;
          ov:csvHeader       "PSI_14_POSTOP_DEHIS_HIGH_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Wound Dehiscence - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -385,6 +425,7 @@
       conversion:enhance [
          ov:csvCol          42;
          ov:csvHeader       "PSI_15_ACC_LAC_NUM_DC";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Accidental Puncture or Laceration - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:range   xsd:decimal;
@@ -392,6 +433,7 @@
       conversion:enhance [
          ov:csvCol          43;
          ov:csvHeader       "PSI_15_ACC_LAC_RATE";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Accidental Puncture or Laceration - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
          conversion:range   xsd:decimal;
@@ -399,6 +441,7 @@
       conversion:enhance [
          ov:csvCol          44;
          ov:csvHeader       "PSI_15_ACC_LAC_LOW_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Accidental Puncture or Laceration - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -406,6 +449,7 @@
       conversion:enhance [
          ov:csvCol          45;
          ov:csvHeader       "PSI_15_ACC_LAC_HIGH_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Accidental Puncture or Laceration - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -413,20 +457,23 @@
       conversion:enhance [
          ov:csvCol          46;
          ov:csvHeader       "PSI_90_SAFETY_NUM_DC";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Patient Safety for Selected Indicators - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          47;
-         ov:csvHeader       "Patient Safety for Selected Indicators - Rate";
-         conversion:label   "PSI_90_SAFETY_RATE";
+         conversion:label   "Patient Safety for Selected Indicators - Rate";
+         ov:csvHeader      "PSI_90_SAFETY_RATE";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:comment "Lists the hospital’s rate of complication.";
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          48;
          ov:csvHeader       "PSI_90_SAFETY_LOW_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Patient Safety for Selected Indicators - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -434,6 +481,7 @@
       conversion:enhance [
          ov:csvCol          49;
          ov:csvHeader       "PSI_90_SAFETY_HIGH_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Patient Safety for Selected Indicators - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -441,6 +489,7 @@
       conversion:enhance [
          ov:csvCol          50;
          ov:csvHeader       "IQI_11_AAA_NUM_DC";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Abdominal Aortic Aneurysm Repair Mortality - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:range   xsd:decimal;
@@ -448,6 +497,7 @@
       conversion:enhance [
          ov:csvCol          51;
          ov:csvHeader       "IQI_11_AAA_RATE";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Abdominal Aortic Aneurysm Repair Mortality - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
          conversion:range   xsd:decimal;
@@ -455,6 +505,7 @@
       conversion:enhance [
          ov:csvCol          52;
          ov:csvHeader       "IQI_11_AAA_LOW_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Abdominal Aortic Aneurysm Repair Mortality - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -462,6 +513,7 @@
       conversion:enhance [
          ov:csvCol          53;
          ov:csvHeader       "IQI_11_AAA_HIGH_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Abdominal Aortic Aneurysm Repair Mortality - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -469,6 +521,7 @@
       conversion:enhance [
          ov:csvCol          54;
          ov:csvHeader       "IQI_19_HIP_FX_NUM_DC";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Hip Fracture Mortality - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:range   xsd:decimal;
@@ -476,6 +529,7 @@
       conversion:enhance [
          ov:csvCol          55;
          ov:csvHeader       "IQI_19_HIP_FX_RATE";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Hip Fracture Mortality - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
          conversion:range   xsd:decimal;
@@ -483,6 +537,7 @@
       conversion:enhance [
          ov:csvCol          56;
          ov:csvHeader       "IQI_19_HIP_FX_LOW_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Hip Fracture Mortality - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -490,6 +545,7 @@
       conversion:enhance [
          ov:csvCol          57;
          ov:csvHeader       "IQI_19_HIP_FX_HIGH_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Hip Fracture Mortality - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -497,6 +553,7 @@
       conversion:enhance [
          ov:csvCol          58;
          ov:csvHeader       "IQI_91_CONDS_NUM_DC";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Mortality for Selected Conditions - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:range   xsd:decimal;
@@ -504,6 +561,7 @@
       conversion:enhance [
          ov:csvCol          59;
          ov:csvHeader       "IQI_91_CONDS_RATE";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Mortality for Selected Conditions - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
          conversion:range   xsd:decimal;
@@ -511,6 +569,7 @@
       conversion:enhance [
          ov:csvCol          60;
          ov:csvHeader       "IQI_91_CONDS_LOW_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Mortality for Selected Conditions - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -518,6 +577,7 @@
       conversion:enhance [
          ov:csvCol          61;
          ov:csvHeader       "IQI_91_CONDS_HIGH_EST";
+	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Mortality for Selected Conditions - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;

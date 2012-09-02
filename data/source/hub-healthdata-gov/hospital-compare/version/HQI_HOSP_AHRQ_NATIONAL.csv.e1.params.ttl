@@ -121,16 +121,10 @@
       conversion:enhance [
          ov:csvCol          2;
          ov:csvHeader       "NATIONAL";
+         conversion:equivalent_property "[/sd]measures/ahrq/[#1]";
          #conversion:label   "NATIONAL";
          conversion:comment "";
-         conversion:object_search [
-            conversion:regex     "^(.*)$";
-            conversion:predicate "[/sd]measures/ahrq/[_#1_]";
-            conversion:object    "xsd:decimal([\\1])";
-         ];
-         #Better, but needs to be implemented:
-         #conversion:equivalent_property "[/sd]measures/ahrq/[_#1_]";
-         #conversion:range   xsd:decimal;
+         conversion:range   xsd:decimal;
       ];
       #DEPRECATED (but shows original intent):
       #conversion:enhance [
@@ -142,16 +136,10 @@
       conversion:enhance [
          ov:csvCol          3;
          ov:csvHeader       "PSI_NATIONAL_SCR";
+         conversion:equivalent_property "[/sd]measures/ahrq/[#1]";
          #conversion:label   "PSI_NATIONAL_SCR";
          conversion:comment "";
-         conversion:object_search [
-            conversion:regex     "^(.*)$";
-            conversion:predicate "[/sd]measures/ahrq/[_#1_]";
-            conversion:object    "xsd:decimal([\\1])";
-         ];
-         #Better, but needs to be implemented:
-         #conversion:equivalent_property "[/sd]measures/ahrq/[_#1_]";
-         #conversion:range   xsd:decimal;
+         conversion:range   xsd:decimal;
       ];
       #DEPRECATED (but shows original intent):
       #conversion:enhance [
@@ -163,16 +151,10 @@
       conversion:enhance [
          ov:csvCol          4;
          ov:csvHeader       "IQI_NATIONAL_SCR";
+         conversion:equivalent_property "[/sd]measures/ahrq/[#1]";
          #conversion:label   "IQI_NATIONAL_SCR";
          conversion:comment "";
-         conversion:object_search [
-            conversion:regex     "^(.*)$";
-            conversion:predicate "[/sd]measures/ahrq/[_#1_]";
-            conversion:object    "xsd:decimal([\\1])";
-         ];
-         #Better, but needs to be implemented:
-         #conversion:equivalent_property "[/sd]measures/ahrq/[_#1_]";
-         #conversion:range   xsd:decimal;
+         conversion:range   xsd:decimal;
       ];
       #conversion:enhance [            
       #   ov:csvRow 3,4,5;             

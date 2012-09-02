@@ -119,11 +119,6 @@
          conversion:range_template "[>.<]";
          conversion:range   rdfs:Literal;
          conversion:equivalent_property dcterms:identifier;
-#         conversion:object_search [
-#            conversion:regex     "^'(.+)'$";
-#            conversion:predicate dcterms:identifier;
-#            conversion:object    "[\\1]";
-#         ];
       ];
       conversion:enhance [
          ov:csvCol          2;

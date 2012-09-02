@@ -61,10 +61,10 @@
    conversion:conversion_process [
       a conversion:EnhancementConversionProcess;
       conversion:enhancement_identifier "1";
-      conversion:subject_discriminator  "hqi-hosp-ahrq-national";
+      conversion:subject_discriminator  "hqi-hosp-hac-national";
 
       dcterms:creator <http://purl.org/klab/lod/machines/schist##jpm78>;
-      dcterms:created "2012-08-29T14:46:58-04:00"^^xsd:dateTime;
+      dcterms:created "2012-09-01T21:26:06-04:00"^^xsd:dateTime;
 
       conversion:delimits_cell ",";
       #conversion:delimits_cell "	"; # tab
@@ -76,11 +76,10 @@
          a conversion:HeaderRow;
       ];                        
 
-      conversion:interpret [
-         ov:csvCol          2, 3, 4;
-         conversion:symbol        "", "Not Available", " Not Available", "NAaabe";
-         conversion:interpretation conversion:null; 
-      ];
+      #conversion:interpret [
+      #   conversion:symbol        "";
+      #   conversion:interpretation conversion:null; 
+      #];
       #conversion:enhance [
       #   conversion:domain_template "thing_[r]";
       #   conversion:domain_name     "Thing";
@@ -89,14 +88,6 @@
       #   conversion:class_name "Thing";
       #   conversion:subclass_of <http://purl.org/...>;
       #];
-      conversion:enhance [
-         a conversion:Omitted;
-         ov:csvCol          1;
-         ov:csvHeader       "MSR_CD";
-         #conversion:label   "MSR_CD";
-         conversion:comment "";
-         conversion:range   todo:Literal;
-      ];
       conversion:enhance [
          a conversion:SubjectAnnotation;
          conversion:predicate  prov:specializationOf;
@@ -112,53 +103,22 @@
          a conversion:SubjectAnnotation;
          conversion:predicate "measures/ahrq/[#1]";
          conversion:object "[#2]";
-         conversion:range   xsd:decimal;
       ];
       conversion:enhance [
-         a conversion:SubjectAnnotation;
-         conversion:predicate "measures/ahrq/[#1]";
-         conversion:object "[#3]";
+         a conversion:Omitted;
+         ov:csvCol          1;
+         ov:csvHeader       "msr_cd";
+         #conversion:label   "msr_cd";
+         conversion:comment "";
+         conversion:range   todo:Literal;
       ];
       conversion:enhance [
-         a conversion:SubjectAnnotation;
-         conversion:predicate "measures/ahrq/[#1]";
-         conversion:object "[#4]";
-      ];
-      conversion:enhance [
+         a conversion:Omitted;
          ov:csvCol          2;
-         a conversion:Omitted;
-         ov:csvHeader       "NATIONAL";
-         #conversion:label   "NATIONAL";
+         ov:csvHeader       "scr";
+         #conversion:label   "scr";
          conversion:comment "";
-         conversion:range   xsd:decimal;
-         conversion:interpret [
-            conversion:symbol        "", "Not Available", " Not Available", "NAaabe";
-            conversion:interpretation conversion:null; 
-         ];
-      ];
-      conversion:enhance [
-         ov:csvCol          3;
-         a conversion:Omitted;
-         ov:csvHeader       "PSI_NATIONAL_SCR";
-         #conversion:label   "PSI_NATIONAL_SCR";
-         conversion:comment "";
-         conversion:range   xsd:decimal;
-         conversion:interpret [
-            conversion:symbol        "", "Not Available", " Not Available", "NAaabe";
-            conversion:interpretation conversion:null; 
-         ];
-      ];
-      conversion:enhance [
-         ov:csvCol          4;
-         a conversion:Omitted;
-         ov:csvHeader       "IQI_NATIONAL_SCR";
-         #conversion:label   "IQI_NATIONAL_SCR";
-         conversion:comment "";
-         conversion:range   xsd:decimal;
-         conversion:interpret [
-            conversion:symbol        "", "Not Available", " Not Available", "NAaabe";
-            conversion:interpretation conversion:null; 
-         ];
+         conversion:range   todo:Literal;
       ];
       #conversion:enhance [            
       #   ov:csvRow 3,4,5;             

@@ -13,8 +13,8 @@ $conf['debug'] = false;
 $conf['export'] = true;
 
 #If you want to add/overrid a namespace, add it here
-$conf['ns']['local']   = 'http://healthdata.tw.rpi.edu/lod/';
-$conf['ns']['base']   = 'http://healthdata.tw.rpi.edu/lod/';
-
+$conf['ns']['local']   = 'http://purl.org/twc/health/';
+$conf['ns']['base']   = 'http://healthdata.tw.rpi.edu/source/';
+$conf['ns']['health'] = 'http://healthdata.tw.rpi.edu/lod/';
 $conf['mirror_external_uris'] = $conf['ns']['local'];
 ?>

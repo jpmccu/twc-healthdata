@@ -77,6 +77,7 @@
       ];                        
 
       conversion:interpret [
+         ov:csvCol          2, 3, 4;
          conversion:symbol        "", "Not Available", " Not Available", "NAaabe";
          conversion:interpretation conversion:null; 
       ];
@@ -108,45 +109,45 @@
       ];
       conversion:enhance [
          a conversion:SubjectAnnotation;
-	 conversion:predicate "[/sd]measures/ahrq/[#1]";
-	 conversion:object "xsd:decimal([#2])";
+         conversion:predicate "[/sd]measures/ahrq/[#1]";
+         conversion:object "xsd:decimal([#2])";
       ];
       conversion:enhance [
          a conversion:SubjectAnnotation;
-	 conversion:predicate "[/sd]measures/ahrq/[#1]";
-	 conversion:object "xsd:decimal([#3])";
+         conversion:predicate "[/sd]measures/ahrq/[#1]";
+         conversion:object "xsd:decimal([#3])";
       ];
       conversion:enhance [
          a conversion:SubjectAnnotation;
-	 conversion:predicate "[/sd]measures/ahrq/[#1]";
-	 conversion:object "xsd:decimal([#4])";
+         conversion:predicate "[/sd]measures/ahrq/[#1]";
+         conversion:object "xsd:decimal([#4])";
       ];
       conversion:enhance [
          ov:csvCol          2;
-	 a conversion:Omitted;
+         a conversion:Omitted;
          conversion:domain_template "[/sd]United_States_Hospitals";
          ov:csvHeader       "NATIONAL";
          #conversion:label   "NATIONAL";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[#1]";
+         conversion:equivalent_property "[/sd]measures/ahrq/[#1]";
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          3;
-	 a conversion:Omitted;
+         a conversion:Omitted;
          ov:csvHeader       "PSI_NATIONAL_SCR";
          #conversion:label   "PSI_NATIONAL_SCR";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[#1]";
+         conversion:equivalent_property "[/sd]measures/ahrq/[#1]";
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          4;
-	 a conversion:Omitted;
+         a conversion:Omitted;
          ov:csvHeader       "IQI_NATIONAL_SCR";
          #conversion:label   "IQI_NATIONAL_SCR";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[#1]";
+         conversion:equivalent_property "[/sd]measures/ahrq/[#1]";
          conversion:range   xsd:decimal;
       ];
       #conversion:enhance [            

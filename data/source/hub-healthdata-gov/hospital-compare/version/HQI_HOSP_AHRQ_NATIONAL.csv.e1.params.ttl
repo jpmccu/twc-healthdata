@@ -28,6 +28,7 @@
 @prefix foaf:          <http://xmlns.com/foaf/0.1/> .
 @prefix ov:            <http://open.vocab.org/terms/> .
 @prefix conversion:    <http://purl.org/twc/vocab/conversion/> .
+@prefix ahrqmeasure:   <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/measures/ahrq/> .
 @prefix :              <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/version/2012-Jul-17/params/enhancement/1/> .
 
 @prefix prov:          <http://www.w3.org/ns/prov#>.
@@ -66,6 +67,8 @@
       dcterms:creator <http://purl.org/klab/lod/machines/schist##jpm78>;
       dcterms:created "2012-08-29T14:46:58-04:00"^^xsd:dateTime;
 
+      dcterms:contributor <http://tw.rpi.edu/instances/TimLebo>;
+
       conversion:delimits_cell ",";
       #conversion:delimits_cell "	"; # tab
       #conversion:delimits_cell "|";   # pipe
@@ -77,88 +80,99 @@
       ];                        
 
       conversion:interpret [
-         ov:csvCol          2, 3, 4;
-         conversion:symbol        "", "Not Available", " Not Available", "NAaabe";
+         conversion:symbol        "", "Not Available", " Not Available";
          conversion:interpretation conversion:null; 
       ];
-      #conversion:enhance [
-      #   conversion:domain_template "thing_[r]";
-      #   conversion:domain_name     "Thing";
-      #];
+      conversion:enhance [
+         conversion:domain_template "[/sd]United_States_Hospitals";
+         #conversion:domain_name     "Thing";
+      ];
       #conversion:enhance [
       #   conversion:class_name "Thing";
       #   conversion:subclass_of <http://purl.org/...>;
       #];
       conversion:enhance [
-         a conversion:Omitted;
-         ov:csvCol          1;
-         ov:csvHeader       "MSR_CD";
-         #conversion:label   "MSR_CD";
-         conversion:comment "";
-         conversion:range   todo:Literal;
-      ];
-      conversion:enhance [
          a conversion:SubjectAnnotation;
          conversion:predicate  prov:specializationOf;
          conversion:object     <http://purl.bioontology.org/ontology/SNOMEDCT/22232009>;
-         conversion:domain_template "[/sd]United_States_Hospitals";
       ];
       conversion:enhance [
          a conversion:SubjectAnnotation;
          conversion:predicate  prov:atLocation;
          conversion:object     dbpedia:United_States;
       ];
+
       conversion:enhance [
-         a conversion:SubjectAnnotation;
-         conversion:predicate "measures/ahrq/[#1]";
-         conversion:object "[#2]";
-         conversion:range   xsd:decimal;
+         ov:csvCol          1;
+         ov:csvHeader       "MSR_CD";
+         a conversion:Omitted;
+         rdfs:comment "This column is ignored because it becomes the property annotating the row subject";
+         conversion:comment "";
       ];
-      conversion:enhance [
-         a conversion:SubjectAnnotation;
-         conversion:predicate "measures/ahrq/[#1]";
-         conversion:object "[#3]";
-      ];
-      conversion:enhance [
-         a conversion:SubjectAnnotation;
-         conversion:predicate "measures/ahrq/[#1]";
-         conversion:object "[#4]";
-      ];
+
+      #DEPRECATED (but shows original intent):
+      #conversion:enhance [
+      #   a conversion:SubjectAnnotation;
+      #   conversion:predicate "[/sd]measures/ahrq/[#1]";
+      #   #conversion:predicate "measures/ahrq/[#1]"; # stop-gap to avoid e1:http_purl predicates.
+      #   conversion:object "[#2]";
+      #   conversion:range   xsd:decimal;
+      #];
       conversion:enhance [
          ov:csvCol          2;
-         a conversion:Omitted;
          ov:csvHeader       "NATIONAL";
          #conversion:label   "NATIONAL";
          conversion:comment "";
-         conversion:range   xsd:decimal;
-         conversion:interpret [
-            conversion:symbol        "", "Not Available", " Not Available", "NAaabe";
-            conversion:interpretation conversion:null; 
+         conversion:object_search [
+            conversion:regex     "^(.*)$";
+            conversion:predicate "[/sd]measures/ahrq/[_#1_]";
+            conversion:object    "xsd:decimal([\\1])";
          ];
+         #Better, but needs to be implemented:
+         #conversion:equivalent_property "[/sd]measures/ahrq/[_#1_]";
+         #conversion:range   xsd:decimal;
       ];
+      #DEPRECATED (but shows original intent):
+      #conversion:enhance [
+      #   a conversion:SubjectAnnotation;
+      #   conversion:predicate "[/sd]measures/ahrq/[#1]";
+      #   #conversion:predicate "measures/ahrq/[#1]";
+      #   conversion:object "[#3]";
+      #];
       conversion:enhance [
          ov:csvCol          3;
-         a conversion:Omitted;
          ov:csvHeader       "PSI_NATIONAL_SCR";
          #conversion:label   "PSI_NATIONAL_SCR";
          conversion:comment "";
-         conversion:range   xsd:decimal;
-         conversion:interpret [
-            conversion:symbol        "", "Not Available", " Not Available", "NAaabe";
-            conversion:interpretation conversion:null; 
+         conversion:object_search [
+            conversion:regex     "^(.*)$";
+            conversion:predicate "[/sd]measures/ahrq/[_#1_]";
+            conversion:object    "xsd:decimal([\\1])";
          ];
+         #Better, but needs to be implemented:
+         #conversion:equivalent_property "[/sd]measures/ahrq/[_#1_]";
+         #conversion:range   xsd:decimal;
       ];
+      #DEPRECATED (but shows original intent):
+      #conversion:enhance [
+      #   a conversion:SubjectAnnotation;
+      #   conversion:predicate "[/sd]measures/ahrq/[#1]";
+      #   #conversion:predicate "measures/ahrq/[#1]";
+      #   conversion:object "[#4]";
+      #];
       conversion:enhance [
          ov:csvCol          4;
-         a conversion:Omitted;
          ov:csvHeader       "IQI_NATIONAL_SCR";
          #conversion:label   "IQI_NATIONAL_SCR";
          conversion:comment "";
-         conversion:range   xsd:decimal;
-         conversion:interpret [
-            conversion:symbol        "", "Not Available", " Not Available", "NAaabe";
-            conversion:interpretation conversion:null; 
+         conversion:object_search [
+            conversion:regex     "^(.*)$";
+            conversion:predicate "[/sd]measures/ahrq/[_#1_]";
+            conversion:object    "xsd:decimal([\\1])";
          ];
+         #Better, but needs to be implemented:
+         #conversion:equivalent_property "[/sd]measures/ahrq/[_#1_]";
+         #conversion:range   xsd:decimal;
       ];
       #conversion:enhance [            
       #   ov:csvRow 3,4,5;             

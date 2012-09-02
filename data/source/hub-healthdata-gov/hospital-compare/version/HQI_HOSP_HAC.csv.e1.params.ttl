@@ -29,6 +29,7 @@
 @prefix ov:            <http://open.vocab.org/terms/> .
 @prefix conversion:    <http://purl.org/twc/vocab/conversion/> .
 @prefix :              <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/version/2012-Jul-17/params/enhancement/1/> .
+@prefix hac:           <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/measures/hac/> .
 
 @prefix prov:          <http://www.w3.org/ns/prov#>.
 @prefix snomed:        <http://purl.bioontology.org/ontology/SNOMEDCT/> .
@@ -66,6 +67,8 @@
       dcterms:creator <http://purl.org/klab/lod/machines/schist##jpm78>;
       dcterms:created "2012-09-01T21:25:54-04:00"^^xsd:dateTime;
 
+      dcterms:contributor <http://tw.rpi.edu/instances/TimLebo>;
+
       conversion:delimits_cell ",";
       #conversion:delimits_cell "	"; # tab
       #conversion:delimits_cell "|";   # pipe
@@ -76,19 +79,14 @@
          a conversion:HeaderRow;
       ];                        
 
-      conversion:interpret [
-         ov:csvCol          3;
-         conversion:symbol        "", "Not Available", " Not Available", "NAaabe";
-         conversion:interpretation conversion:null; 
-      ];
       #conversion:interpret [
       #   conversion:symbol        "";
       #   conversion:interpretation conversion:null; 
       #];
-      #conversion:enhance [
-      #   conversion:domain_template "thing_[r]";
-      #   conversion:domain_name     "Thing";
-      #];
+      conversion:enhance [
+         conversion:domain_template "[/s]provider/[>.<]";
+         #conversion:domain_name     "Thing";
+      ];
       #conversion:enhance [
       #   conversion:class_name "Thing";
       #   conversion:subclass_of <http://purl.org/...>;
@@ -96,18 +94,11 @@
       conversion:enhance [
          ov:csvCol          1;
          ov:csvHeader       "prvdr_id";
+         conversion:equivalent_property dcterms:identifier;
          #conversion:label   "prvdr_id";
          conversion:comment "";
-         conversion:domain_template "[/s]provider/[>.<]";
          conversion:range_template "[>.<]";
          conversion:range   rdfs:Literal;
-         conversion:equivalent_property dcterms:identifier;
-      ];
-      conversion:enhance [
-         a conversion:SubjectAnnotation;
-         conversion:predicate "measures/hac/[#2]";
-         conversion:object "[#3]";
-         conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          2;
@@ -115,20 +106,18 @@
          ov:csvHeader       "msr_cd";
          #conversion:label   "msr_cd";
          conversion:comment "";
-         conversion:range   todo:Literal;
       ];
       conversion:enhance [
          ov:csvCol          3;
-         a conversion:Omitted;
          ov:csvHeader       "scr";
+         conversion:equivalent_property "[/sd]measures/hac/[#2]";
          #conversion:label   "scr";
          conversion:comment "";
-         conversion:range   xsd:decimal;
          conversion:interpret [
-            ov:csvCol          3;
-            conversion:symbol        "", "Not Available", " Not Available", "NAaabe";
+            conversion:symbol        "", "Not Available", " Not Available";
             conversion:interpretation conversion:null; 
          ];
+         conversion:range   xsd:decimal;
       ];
       #conversion:enhance [            
       #   ov:csvRow 3,4,5;             
@@ -137,11 +126,11 @@
    ];
 .
 
-<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/measures/hac/HAC_1> rdfs:label "Foreign object retained after surgery (per 1,000 surgical discharges)".
-<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/measures/hac/HAC_2>  rdfs:label "Air embolism (per 1,000 medical and surgical discharges)".
-<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/measures/hac/HAC_3>  rdfs:label "Blood incompatibility (per 1,000 medical and surgical discharges)".
-<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/measures/hac/HAC_4>  rdfs:label "Pressure ulcer stages III and IV (per 1,000 medical and surgical discharges)".
-<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/measures/hac/HAC_5>  rdfs:label "Falls and trauma (per 1,000 medical and surgical discharges)".
-<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/measures/hac/HAC_6>  rdfs:label "Vascular catheter-associated infection (per 1,000 medical and surgical discharges)".
-<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/measures/hac/HAC_7>  rdfs:label "Catheter-associated urinary tract infection (per 1,000 medical and surgical discharges)".
-<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/measures/hac/HAC_8>  rdfs:label "Manifestations of poor glycemic control (per 1,000 medical and surgical discharges)".
+hac:HAC_1> rdfs:label "Foreign object retained after surgery (per 1,000 surgical discharges)".
+hac:HAC_2> rdfs:label "Air embolism (per 1,000 medical and surgical discharges)".
+hac:HAC_3> rdfs:label "Blood incompatibility (per 1,000 medical and surgical discharges)".
+hac:HAC_4> rdfs:label "Pressure ulcer stages III and IV (per 1,000 medical and surgical discharges)".
+hac:HAC_5> rdfs:label "Falls and trauma (per 1,000 medical and surgical discharges)".
+hac:HAC_6> rdfs:label "Vascular catheter-associated infection (per 1,000 medical and surgical discharges)".
+hac:HAC_7> rdfs:label "Catheter-associated urinary tract infection (per 1,000 medical and surgical discharges)".
+hac:HAC_8> rdfs:label "Manifestations of poor glycemic control (per 1,000 medical and surgical discharges)".

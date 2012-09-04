@@ -33,6 +33,7 @@
 @prefix prov:          <http://www.w3.org/ns/prov#>.
 @prefix snomed:        <http://purl.bioontology.org/ontology/SNOMEDCT/> .
 @prefix health:        <http://purl.org/twc/health/ns/>.
+@prefix hac: <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/measures/hac/> .
 
 
 <http://tw.rpi.edu/instances/JamesMcCusker> foaf:holdsAccount <http://purl.org/klab/lod/machines/schist##jpm78> .
@@ -92,17 +93,11 @@
          a conversion:SubjectAnnotation;
          conversion:predicate  prov:specializationOf;
          conversion:object     <http://purl.bioontology.org/ontology/SNOMEDCT/22232009>;
-         conversion:domain_template "[/sd]United_States_Hospitals";
       ];
       conversion:enhance [
          a conversion:SubjectAnnotation;
          conversion:predicate  prov:atLocation;
          conversion:object     dbpedia:United_States;
-      ];
-      conversion:enhance [
-         a conversion:SubjectAnnotation;
-         conversion:predicate "measures/ahrq/[#1]";
-         conversion:object "[#2]";
       ];
       conversion:enhance [
          a conversion:Omitted;
@@ -113,12 +108,17 @@
          conversion:range   todo:Literal;
       ];
       conversion:enhance [
-         a conversion:Omitted;
          ov:csvCol          2;
          ov:csvHeader       "scr";
+         conversion:domain_template "[/sd]United_States_Hospitals";
+         conversion:equivalent_property "[/sd]measures/hac/[#1]";
          #conversion:label   "scr";
          conversion:comment "";
-         conversion:range   todo:Literal;
+         conversion:interpret [
+            conversion:symbol        "", "Not Available", " Not Available";
+            conversion:interpretation conversion:null; 
+         ];
+         conversion:range   xsd:decimal;
       ];
       #conversion:enhance [            
       #   ov:csvRow 3,4,5;             

@@ -29,12 +29,11 @@
 @prefix ov:            <http://open.vocab.org/terms/> .
 @prefix conversion:    <http://purl.org/twc/vocab/conversion/> .
 @prefix :              <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/version/2012-Jul-17/params/enhancement/1/> .
-@prefix hac:           <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/measures/hac/> .
-
+@prefix ao:            <http://purl.org/ao/>.
 @prefix prov:          <http://www.w3.org/ns/prov#>.
 @prefix snomed:        <http://purl.bioontology.org/ontology/SNOMEDCT/> .
 @prefix health:        <http://purl.org/twc/health/ns/>.
-@prefix sd:	       <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/>.
+
 
 <http://tw.rpi.edu/instances/JamesMcCusker> foaf:holdsAccount <http://purl.org/klab/lod/machines/schist##jpm78> .
 <http://purl.org/klab/lod/machines/schist##jpm78>
@@ -62,12 +61,10 @@
    conversion:conversion_process [
       a conversion:EnhancementConversionProcess;
       conversion:enhancement_identifier "1";
-      conversion:subject_discriminator  "hqi-hosp-hac";
+      conversion:subject_discriminator  "hqi-ftnt";
 
       dcterms:creator <http://purl.org/klab/lod/machines/schist##jpm78>;
-      dcterms:created "2012-09-01T21:25:54-04:00"^^xsd:dateTime;
-
-      dcterms:contributor <http://tw.rpi.edu/instances/TimLebo>;
+      dcterms:created "2012-09-01T21:24:51-04:00"^^xsd:dateTime;
 
       conversion:delimits_cell ",";
       #conversion:delimits_cell "	"; # tab
@@ -83,41 +80,30 @@
       #   conversion:symbol        "";
       #   conversion:interpretation conversion:null; 
       #];
-      conversion:enhance [
-         conversion:domain_template "[/s]provider/[>#1<]";
-         #conversion:domain_name     "Thing";
-      ];
+      #conversion:enhance [
+      #   conversion:domain_template "thing_[r]";
+      #   conversion:domain_name     "Thing";
+      #];
       #conversion:enhance [
       #   conversion:class_name "Thing";
       #   conversion:subclass_of <http://purl.org/...>;
       #];
       conversion:enhance [
          ov:csvCol          1;
-         ov:csvHeader       "prvdr_id";
-         conversion:equivalent_property dcterms:identifier;
-         #conversion:label   "prvdr_id";
+         ov:csvHeader       "Footnote";
+         #conversion:label   "Footnote";
          conversion:comment "";
-         conversion:range_template "[>.<]";
          conversion:range   rdfs:Literal;
+         conversion:domain_template "[/sd]footnote/[.]";
+         conversion:equivalent_property dcterms:identifier;
       ];
       conversion:enhance [
          ov:csvCol          2;
-         a conversion:Omitted;
-         ov:csvHeader       "msr_cd";
-         #conversion:label   "msr_cd";
+         ov:csvHeader       "FootnoteText";
+         #conversion:label   "FootnoteText";
          conversion:comment "";
-      ];
-      conversion:enhance [
-         ov:csvCol          3;
-         ov:csvHeader       "scr";
-         conversion:equivalent_property "[/sd]measures/hac/[#2]";
-         #conversion:label   "scr";
-         conversion:comment "";
-         conversion:interpret [
-            conversion:symbol        "", "Not Available", " Not Available";
-            conversion:interpretation conversion:null; 
-         ];
-         conversion:range   xsd:decimal;
+         conversion:range   rdfs:Literal;
+         conversion:equivalent_property prov:value;
       ];
       #conversion:enhance [            
       #   ov:csvRow 3,4,5;             
@@ -125,12 +111,3 @@
       #];                              
    ];
 .
-
-hac:HAC_1 rdfs:label "Foreign object retained after surgery (per 1,000 surgical discharges)".
-hac:HAC_2 rdfs:label "Air embolism (per 1,000 medical and surgical discharges)".
-hac:HAC_3 rdfs:label "Blood incompatibility (per 1,000 medical and surgical discharges)".
-hac:HAC_4 rdfs:label "Pressure ulcer stages III and IV (per 1,000 medical and surgical discharges)".
-hac:HAC_5 rdfs:label "Falls and trauma (per 1,000 medical and surgical discharges)".
-hac:HAC_6 rdfs:label "Vascular catheter-associated infection (per 1,000 medical and surgical discharges)".
-hac:HAC_7 rdfs:label "Catheter-associated urinary tract infection (per 1,000 medical and surgical discharges)".
-hac:HAC_8 rdfs:label "Manifestations of poor glycemic control (per 1,000 medical and surgical discharges)".

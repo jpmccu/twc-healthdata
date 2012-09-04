@@ -110,14 +110,6 @@
          conversion:comment "";
       ];
 
-      #DEPRECATED (but shows original intent):
-      #conversion:enhance [
-      #   a conversion:SubjectAnnotation;
-      #   conversion:predicate "[/sd]measures/ahrq/[#1]";
-      #   #conversion:predicate "measures/ahrq/[#1]"; # stop-gap to avoid e1:http_purl predicates.
-      #   conversion:object "[#2]";
-      #   conversion:range   xsd:decimal;
-      #];
       conversion:enhance [
          ov:csvCol          2;
          ov:csvHeader       "NATIONAL";
@@ -126,13 +118,6 @@
          conversion:comment "";
          conversion:range   xsd:decimal;
       ];
-      #DEPRECATED (but shows original intent):
-      #conversion:enhance [
-      #   a conversion:SubjectAnnotation;
-      #   conversion:predicate "[/sd]measures/ahrq/[#1]";
-      #   #conversion:predicate "measures/ahrq/[#1]";
-      #   conversion:object "[#3]";
-      #];
       conversion:enhance [
          ov:csvCol          3;
          ov:csvHeader       "PSI_NATIONAL_SCR";
@@ -141,13 +126,6 @@
          conversion:comment "";
          conversion:range   xsd:decimal;
       ];
-      #DEPRECATED (but shows original intent):
-      #conversion:enhance [
-      #   a conversion:SubjectAnnotation;
-      #   conversion:predicate "[/sd]measures/ahrq/[#1]";
-      #   #conversion:predicate "measures/ahrq/[#1]";
-      #   conversion:object "[#4]";
-      #];
       conversion:enhance [
          ov:csvCol          4;
          ov:csvHeader       "IQI_NATIONAL_SCR";

@@ -30,6 +30,10 @@
 @prefix conversion:    <http://purl.org/twc/vocab/conversion/> .
 @prefix :              <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/version/2012-Jul-17/params/enhancement/1/> .
 
+@prefix ao:            <http://purl.org/ao/>.
+@prefix prov:          <http://www.w3.org/ns/prov#>.
+@prefix health:        <http://purl.org/twc/health/ns/>.
+
 <http://tw.rpi.edu/instances/JamesMcCusker> foaf:holdsAccount <http://purl.org/klab/lod/machines/schist##jpm78> .
 <http://purl.org/klab/lod/machines/schist##jpm78>
    a foaf:OnlineAccount;
@@ -37,6 +41,67 @@
    dcterms:isPartOf <http://purl.org/klab/lod/machines/schist#>;
    sioc:account_of  <http://tw.rpi.edu/instances/JamesMcCusker>;
 .
+
+:annotatedValue1
+   a conversion:ImplicitBundle;
+   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+   conversion:name_template "[/sdv]provider/[.]/1";
+.
+
+:annotatedValue2
+   a conversion:ImplicitBundle;
+   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+   conversion:name_template "[/sdv]provider/[.]/2";
+.
+
+:annotatedValue3
+   a conversion:ImplicitBundle;
+   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+   conversion:name_template "[/sdv]provider/[.]/3";
+.
+
+:annotatedValue4
+   a conversion:ImplicitBundle;
+   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+   conversion:name_template "[/sdv]provider/[.]/4";
+.
+
+:annotatedValue5
+   a conversion:ImplicitBundle;
+   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+   conversion:name_template "[/sdv]provider/[.]/5";
+.
+
+:annotatedValue6
+   a conversion:ImplicitBundle;
+   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+   conversion:name_template "[/sdv]provider/[.]/6";
+.
+
+:annotatedValue7
+   a conversion:ImplicitBundle;
+   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+   conversion:name_template "[/sdv]provider/[.]/7";
+.
+
+:annotatedValue8
+   a conversion:ImplicitBundle;
+   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+   conversion:name_template "[/sdv]provider/[.]/8";
+.
+
+:annotatedValue9
+   a conversion:ImplicitBundle;
+   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+   conversion:name_template "[/sdv]provider/[.]/9";
+.
+
+:annotatedValue0
+   a conversion:ImplicitBundle;
+   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+   conversion:name_template "[/sdv]provider/[.]/0";
+.
+
 
 #:a_bundle
 #   a conversion:ImplicitBundle;
@@ -104,10 +169,19 @@
       conversion:enhance [
          ov:csvCol          3;
          ov:csvHeader       "PSI_4_SURG_COMP_F";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
-         #conversion:label   "PSI_4_SURG_COMP_F";
-         conversion:comment "";
-         conversion:range   todo:Literal;
+         conversion:bundled_by :annotatedValue0;
+         conversion:equivalent_property health:hasAnnotation;
+         conversion:range_template "[/sd]footnote/[.]";
+         conversion:range   rdfs:Resource;
+         conversion:interpret [
+            conversion:symbol        "";
+            conversion:interpretation conversion:null; 
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/PSI_4_SURG_COMP";
+            conversion:object    "[#2]";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          4;
@@ -121,10 +195,19 @@
       conversion:enhance [
          ov:csvCol          5;
          ov:csvHeader       "PSI_6_IAT_PTX_F";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
-         #conversion:label   "PSI_6_IAT_PTX_F";
-         conversion:comment "";
-         conversion:range   todo:Literal;
+         conversion:bundled_by :annotatedValue1;
+         conversion:equivalent_property health:hasAnnotation;
+         conversion:range_template "[/sd]footnote/[.]";
+         conversion:range   rdfs:Resource;
+         conversion:interpret [
+            conversion:symbol        "";
+            conversion:interpretation conversion:null; 
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/PSI_6_IAT_PTX";
+            conversion:object    "[#4]";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          6;
@@ -138,10 +221,19 @@
       conversion:enhance [
          ov:csvCol          7;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_F";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
-         #conversion:label   "PSI_11_POSTOP_RESPFAIL_F";
-         conversion:comment "";
-         conversion:range   todo:Literal;
+         conversion:bundled_by :annotatedValue2;
+         conversion:equivalent_property health:hasAnnotation;
+         conversion:range_template "[/sd]footnote/[.]";
+         conversion:range   rdfs:Resource;
+         conversion:interpret [
+            conversion:symbol        "";
+            conversion:interpretation conversion:null; 
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/PSI_11_POSTOP_RESPFAIL";
+            conversion:object    "[#6]";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          8;
@@ -155,10 +247,19 @@
       conversion:enhance [
          ov:csvCol          9;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_F";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
-         #conversion:label   "PSI_12_POSTOP_PULMEMB_DVT_F";
-         conversion:comment "";
-         conversion:range   todo:Literal;
+         conversion:bundled_by :annotatedValue3;
+         conversion:equivalent_property health:hasAnnotation;
+         conversion:range_template "[/sd]footnote/[.]";
+         conversion:range   rdfs:Resource;
+         conversion:interpret [
+            conversion:symbol        "";
+            conversion:interpretation conversion:null; 
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/PSI_12_POSTOP_PULMEMB_DVT";
+            conversion:object    "[#8]";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          10;
@@ -171,11 +272,19 @@
       ];
       conversion:enhance [
          ov:csvCol          11;
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
-         ov:csvHeader       "PSI_14_POSTOP_DEHIS_F";
-         #conversion:label   "PSI_14_POSTOP_DEHIS_F";
-         conversion:comment "";
-         conversion:range   todo:Literal;
+         conversion:bundled_by :annotatedValue4;
+         conversion:equivalent_property health:hasAnnotation;
+         conversion:range_template "[/sd]footnote/[.]";
+         conversion:range   rdfs:Resource;
+         conversion:interpret [
+            conversion:symbol        "";
+            conversion:interpretation conversion:null; 
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/PSI_14_POSTOP_DEHIS";
+            conversion:object    "[#10]";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          12;
@@ -189,10 +298,19 @@
       conversion:enhance [
          ov:csvCol          13;
          ov:csvHeader       "PSI_15_ACC_LAC_F";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
-         #conversion:label   "PSI_15_ACC_LAC_F";
-         conversion:comment "";
-         conversion:range   todo:Literal;
+         conversion:bundled_by :annotatedValue5;
+         conversion:equivalent_property health:hasAnnotation;
+         conversion:range_template "[/sd]footnote/[.]";
+         conversion:range   rdfs:Resource;
+         conversion:interpret [
+            conversion:symbol        "";
+            conversion:interpretation conversion:null; 
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/PSI_15_ACC_LAC";
+            conversion:object    "[#13]";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          14;
@@ -206,10 +324,19 @@
       conversion:enhance [
          ov:csvCol          15;
          ov:csvHeader       "PSI_90_SAFETY_F";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
-         #conversion:label   "PSI_90_SAFETY_F";
-         conversion:comment "";
-         conversion:range   todo:Literal;
+         conversion:bundled_by :annotatedValue6;
+         conversion:equivalent_property health:hasAnnotation;
+         conversion:range_template "[/sd]footnote/[.]";
+         conversion:range   rdfs:Resource;
+         conversion:interpret [
+            conversion:symbol        "";
+            conversion:interpretation conversion:null; 
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/PSI_90_SAFETY";
+            conversion:object    "[#14]";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          16;
@@ -223,10 +350,19 @@
       conversion:enhance [
          ov:csvCol          17;
          ov:csvHeader       "IQI_11_AAA_F";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
-         #conversion:label   "IQI_11_AAA_F";
-         conversion:comment "";
-         conversion:range   xsd:decimal;
+         conversion:bundled_by :annotatedValue7;
+         conversion:equivalent_property health:hasAnnotation;
+         conversion:range_template "[/sd]footnote/[.]";
+         conversion:range   rdfs:Resource;
+         conversion:interpret [
+            conversion:symbol        "";
+            conversion:interpretation conversion:null; 
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/IQI_11_AAA";
+            conversion:object    "[#16]";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          18;
@@ -240,10 +376,19 @@
       conversion:enhance [
          ov:csvCol          19;
          ov:csvHeader       "IQI_19_HIP_FX_F";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
-         #conversion:label   "IQI_19_HIP_FX_F";
-         conversion:comment "";
-         conversion:range   xsd:decimal;
+         conversion:bundled_by :annotatedValue8;
+         conversion:equivalent_property health:hasAnnotation;
+         conversion:range_template "[/sd]footnote/[.]";
+         conversion:range   rdfs:Resource;
+         conversion:interpret [
+            conversion:symbol        "";
+            conversion:interpretation conversion:null; 
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/IQI_19_HIP_FX";
+            conversion:object    "[#18]";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          20;
@@ -257,10 +402,19 @@
       conversion:enhance [
          ov:csvCol          21;
          ov:csvHeader       "IQI_91_CONDS_F";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
-         #conversion:label   "IQI_91_CONDS_F";
-         conversion:comment "";
-         conversion:range   xsd:decimal;
+         conversion:bundled_by :annotatedValue9;
+         conversion:equivalent_property health:hasAnnotation;
+         conversion:range_template "[/sd]footnote/[.]";
+         conversion:range   rdfs:Resource;
+         conversion:interpret [
+            conversion:symbol        "";
+            conversion:interpretation conversion:null; 
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/IQI_19_HIP_FX";
+            conversion:object    "[#20]";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          22;

@@ -302,8 +302,8 @@ export CSV2RDF4LOD_PUBLISH_COMPRESS="true"
 #
 # (done in cr-publish-void-to-endpoint.sh)
 #
-export CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID="twc-rpi-edu"
 export CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID=""
+export CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID="tw-rpi-edu"
 
 #
 # Customize: Specify the "base" conversion_identifier

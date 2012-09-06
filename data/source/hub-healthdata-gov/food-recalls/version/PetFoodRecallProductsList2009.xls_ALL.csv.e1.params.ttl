@@ -71,14 +71,14 @@
          a conversion:HeaderRow;
       ];                        
 
-      #conversion:interpret [
-      #   conversion:symbol        "";
-      #   conversion:interpretation conversion:null; 
-      #];
-      #conversion:enhance [
-      #   conversion:domain_template "thing_[r]";
-      #   conversion:domain_name     "Thing";
-      #];
+      conversion:interpret [
+         conversion:symbol        "", " ";
+         conversion:interpretation conversion:null; 
+      ];
+      conversion:enhance [
+         conversion:domain_template "recall_[r]";
+         conversion:domain_name     "Recall";
+      ];
       #conversion:enhance [
       #   conversion:class_name "Thing";
       #   conversion:subclass_of <http://purl.org/...>;
@@ -88,7 +88,7 @@
          ov:csvHeader       "Fiscal Year";
          #conversion:label   "Fiscal Year";
          conversion:comment "";
-         conversion:range   todo:Literal;
+         conversion:range   xsd:gYear;
       ];
       conversion:enhance [
          ov:csvCol          2;
@@ -98,39 +98,43 @@
          conversion:range   todo:Literal;
       ];
       conversion:enhance [
+         ov:csvCol          3, 4, 5, 6, 7;
+         conversion:eg "09/09/2005", 
+                       "Tue May 22 00:00:00 EDT 2007";
+         conversion:range   xsd:date;
+         conversion:pattern "MM/dd/yyyy", "E M d HH:mm:ss zzz yyyy";
+         conversion:todo "Handle outlier date pattern on :district_awareness :thing_1148";
+      ];
+      conversion:enhance [
          ov:csvCol          3;
          ov:csvHeader       "Recall Completed Dt";
-         #conversion:label   "Recall Completed Dt";
+         conversion:label   "Completed";
          conversion:comment "";
-         conversion:range   todo:Literal;
       ];
       conversion:enhance [
          ov:csvCol          4;
          ov:csvHeader       "Recall Initiation Dt";
-         #conversion:label   "Recall Initiation Dt";
+         conversion:label   "Initiated";
          conversion:comment "";
-         conversion:range   todo:Literal;
       ];
       conversion:enhance [
          ov:csvCol          5;
          ov:csvHeader       "District Awareness Dt";
-         #conversion:label   "District Awareness Dt";
+         conversion:label   "District Awareness";
          conversion:comment "";
-         conversion:range   todo:Literal;
       ];
       conversion:enhance [
          ov:csvCol          6;
          ov:csvHeader       "Event Create Dt";
-         #conversion:label   "Event Create Dt";
+         conversion:label   "Event Create";
          conversion:comment "";
-         conversion:range   todo:Literal;
+         rdfs:comment "What is the difference between an Event and a Recall?";
       ];
       conversion:enhance [
          ov:csvCol          7;
          ov:csvHeader       "Classification Dt";
-         #conversion:label   "Classification Dt";
+         conversion:label   "Classification Date";
          conversion:comment "";
-         conversion:range   todo:Literal;
       ];
       conversion:enhance [
          ov:csvCol          8;
@@ -205,9 +209,11 @@
       conversion:enhance [
          ov:csvCol          18;
          ov:csvHeader       "Recall Status";
+         conversion:equivalent_property rdf:type;
          #conversion:label   "Recall Status";
          conversion:comment "";
-         conversion:range   todo:Literal;
+         conversion:range   rdfs:Resource;
+         conversion:range_template "[/sd]vocab/recall/[.]";
       ];
       conversion:enhance [
          ov:csvCol          19;

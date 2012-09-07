@@ -22,5 +22,5 @@ if [ ! -e $today ]; then
 
    curl -sH "Content-Type: text/turtle" -d "<$hhs> a <http://purl.org/twc/vocab/datafaqs#CKAN> ." $sadi > $today/source/datasets.ttl
 
-   echo $today/source/datasets.rdf
+   echo $today/source/datasets.ttl
 fi

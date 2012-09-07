@@ -4,3 +4,5 @@
 #3     <https://github.com/timrdf/csv2rdf4lod-automation/wiki/Script:-source-me.sh> .
 
 export CSV2RDF4LOD_CONVERT_MACHINE_URI="http://tw.rpi.edu/web/inside/machine/aquarius#healthdata"
+export CSV2RDF4LOD_PUBLISH_VARWWW_ROOT="/var/www"
+source /srv/twc-healthdata/config/triple-store/virtuoso/csv2rdf4lod-source-me-for-virtuoso-credentials.sh

@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="{{lodspk.home}}css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
     <link rel="alternate" type="application/rdf+xml" title="RDF/XML Version" href="{{lodspk.local.value}}.rdf" />
     <link rel="alternate" type="text/turtle" title="Turtle Version" href="{{lodspk.local.value}}.ttl" />
     <link rel="alternate" type="text/plain" title="N-Triples Version" href="{{lodspk.local.value}}.nt" />
     <link rel="alternate" type="application/json" title="RDFJSON Version" href="{{lodspk.local.value}}.json" />
+    <link href="{{lodspk.home}}css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -45,45 +45,45 @@
     </script>
   </head>
   <body>
+ <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">LODSPeaKr</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="{{lodspk.home}}classes">Classes</a></li>
+              <li><a href="{{lodspk.home}}namedGraphs">Named Graphs</a></li>
+            </ul>
+            <form class="navbar-search pull-left" action="">
+              <input type="text" data-provide="typeahead" class="typeahead search-query span2" placeholder="Search"/>
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
-{%include "../../menu.inc"%}
     <div class="container">
-    <h1>Default view</h1>
-
-    <table class="table table-striped" about="{{uri}}">
-    <thead>
-      <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
-    </thead>
-    {% for row in models.po %}
-     <tr>
-<td>{%if forloop.first%}<a href='{{lodspk.this.value}}'>{{lodspk.this.curie}}</a>{%endif%}</td>
-     <td><a href='{{row.p.value}}'>{{row.p.curie}}</a></td>
-     
-        <td>
-        {%if row.o.uri == 1%}
-        <a rel='{{row.p.value}}' href='{{row.o.value}}'>{{row.o.curie}}</a>
-        {%else%}
-        <span property='{{row.p.value}}'>{{row.o.value}}</span>
-        {%endif%}
-        </td>
-
-        </tr>
+      <h3>Classes in {{lodspk.args.all|deurifier}}</h3>
+      <h4>Total: {{models.main|length}}</h4>
+ 	    <ul>
+    {% for row in models.main %}
+        <li>{{row.class.curie}} ({{row.total.value}} instances)</a></li>
     {% endfor %}
-
-    {% for row in models.sp %}
-      <tr>
-        <td><a href='{{row.s.value}}'>{{row.s.curie}}</a></td>
-
-        <td><a rev='{{row.s.value}}' href='{{row.p.value}}'>{{row.p.curie}}</a></td>
-<td>{%if forloop.first%}<a href='{{lodspk.this.value}}'>{{lodspk.this.curie}}</a>{%endif%}</td>
-        </tr>
+      </ul>
+      <h3>Predicates in {{lodspk.args.all|deurifier}}</h3>
+      <h4>Total: {{models.preds|length}}</h4>
+ 	    <ul>
+    {% for row in models.preds %}
+        <li>{{row.p.curie}} (used in {{row.total.value}} triples)</a></li>
     {% endfor %}
-    <thead>
-      <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
-    </thead>
-
-    </table>
-    </div>    
-    
+      </ul>
+    </div>
   </body>
 </html>
+

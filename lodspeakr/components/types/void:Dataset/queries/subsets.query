@@ -1,0 +1,6 @@
+SELECT ?dataset ?datasetId WHERE{
+  <{{uri}}> void:subset ?dataset .
+  OPTIONAL{
+  ?dataset  dcterms:identifier ?datasetId .
+  }
+}

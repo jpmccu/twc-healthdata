@@ -1,0 +1,6 @@
+SELECT DISTINCT (COUNT(?p) AS ?total) ?p WHERE {
+ GRAPH <{{lodspk.args.all|deurifier}}>{
+  [] ?p []
+ }
+}GROUP BY ?p
+ORDER BY DESC(?total)

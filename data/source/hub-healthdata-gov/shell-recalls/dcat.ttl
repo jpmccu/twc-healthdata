@@ -9,16 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "shell-recalls";
-   prov:wasDerivedFrom :as_a_csv_24deeb77-c704-4416-a1de-a2c4b65e733b;
+   prov:wasDerivedFrom :as_a_csv_8071c168-1717-48b4-9130-fd4d07ebc2e7;
 .
 
-:as_a_csv_24deeb77-c704-4416-a1de-a2c4b65e733b
+:as_a_csv_8071c168-1717-48b4-9130-fd4d07ebc2e7
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/shelleggsrecall/ShellEggsRecallList2010.xls>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/shell-recalls>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_24deeb77-c704-4416-a1de-a2c4b65e733b;
-   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
+   dcat:distribution :as_a_csv_8071c168-1717-48b4-9130-fd4d07ebc2e7;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .

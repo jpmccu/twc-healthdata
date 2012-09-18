@@ -9,16 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospital-medicare-cost-report-data-fy1996";
-   prov:wasDerivedFrom :as_a_csv_8f27d76c-3151-4a2b-86c3-87349a043d13;
+   prov:wasDerivedFrom :as_a_csv_0ef4cb4d-2e9b-448e-b31f-aa03015dc13e;
 .
 
-:as_a_csv_8f27d76c-3151-4a2b-86c3-87349a043d13
+:as_a_csv_0ef4cb4d-2e9b-448e-b31f-aa03015dc13e
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY1996.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/hospital-medicare-cost-report-data-fy1996>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_8f27d76c-3151-4a2b-86c3-87349a043d13;
-   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
+   dcat:distribution :as_a_csv_0ef4cb4d-2e9b-448e-b31f-aa03015dc13e;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .

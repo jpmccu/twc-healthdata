@@ -9,16 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "community-health-status-indicators";
-   prov:wasDerivedFrom :as_a_csv_802f792b-ba58-4a36-8d4b-0f4ff7ad196d;
+   prov:wasDerivedFrom :as_a_csv_3155ea37-01de-4d30-bc69-c4fe32538dda;
 .
 
-:as_a_csv_802f792b-ba58-4a36-8d4b-0f4ff7ad196d
+:as_a_csv_3155ea37-01de-4d30-bc69-c4fe32538dda
    a dcat:Distribution;
    dcat:downloadURL <ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/CHDI/chsi_dataset.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/community-health-status-indicators>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_802f792b-ba58-4a36-8d4b-0f4ff7ad196d;
-   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
+   dcat:distribution :as_a_csv_3155ea37-01de-4d30-bc69-c4fe32538dda;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .

@@ -9,16 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "drug-label-data";
-   prov:wasDerivedFrom :as_a_csv_5e75b4f0-9f08-4cdf-81c9-6b1dc6d97619;
+   prov:wasDerivedFrom :as_a_csv_3f38723c-5159-4fc6-9abc-588b7b0eabc9;
 .
 
-:as_a_csv_5e75b4f0-9f08-4cdf-81c9-6b1dc6d97619
+:as_a_csv_3f38723c-5159-4fc6-9abc-588b7b0eabc9
    a dcat:Distribution;
    dcat:downloadURL <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/ucm241597.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/drug-label-data>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_5e75b4f0-9f08-4cdf-81c9-6b1dc6d97619;
-   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
+   dcat:distribution :as_a_csv_3f38723c-5159-4fc6-9abc-588b7b0eabc9;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .

@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/second-national-survey-older>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "second-national-survey-older";
-   prov:wasDerivedFrom :as_a_csv_370bd67c-f5f3-40da-b69e-4ed2abc846dc;
+   prov:wasDerivedFrom :as_a_csv_a5df698b-ae55-4e38-ab73-7cff007fe29d;
 .
 
-:as_a_csv_370bd67c-f5f3-40da-b69e-4ed2abc846dc
+:as_a_csv_a5df698b-ae55-4e38-ab73-7cff007fe29d
    a dcat:Distribution;
    dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2004/National_Survey/2nd_National_Survey_Data_Files_2004.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/second-national-survey-older>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_370bd67c-f5f3-40da-b69e-4ed2abc846dc;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_a5df698b-ae55-4e38-ab73-7cff007fe29d;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/second-national-survey-older> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/second-national-survey-older>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/second-national-survey-older>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/second-national-survey-older>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

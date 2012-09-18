@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/health-centers-look-alike-sites>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "health-centers-look-alike-sites";
-   prov:wasDerivedFrom :as_a_csv_975a9e22-8da1-4468-a3a6-6de82b134566;
+   prov:wasDerivedFrom :as_a_csv_b36fe20c-6947-47de-90ac-ef3f6e3096a5;
 .
 
-:as_a_csv_975a9e22-8da1-4468-a3a6-6de82b134566
+:as_a_csv_b36fe20c-6947-47de-90ac-ef3f6e3096a5
    a dcat:Distribution;
    dcat:downloadURL <http://datawarehouse.hrsa.gov/DataDownload/HCC/HCCs_and_Lookalikes.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/health-centers-look-alike-sites>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_975a9e22-8da1-4468-a3a6-6de82b134566;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_b36fe20c-6947-47de-90ac-ef3f6e3096a5;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/health-centers-look-alike-sites> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/health-centers-look-alike-sites>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/health-centers-look-alike-sites>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/health-centers-look-alike-sites>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

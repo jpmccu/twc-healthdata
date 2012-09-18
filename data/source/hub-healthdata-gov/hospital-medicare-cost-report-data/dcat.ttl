@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-medicare-cost-report-data>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospital-medicare-cost-report-data";
-   prov:wasDerivedFrom :as_a_csv_923e9575-7e89-4902-a206-25d5fdab1abd;
+   prov:wasDerivedFrom :as_a_csv_5cfb164e-7af8-4f68-8918-db827f2eb711;
 .
 
-:as_a_csv_923e9575-7e89-4902-a206-25d5fdab1abd
+:as_a_csv_5cfb164e-7af8-4f68-8918-db827f2eb711
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY2008.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/hospital-medicare-cost-report-data>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_923e9575-7e89-4902-a206-25d5fdab1abd;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_5cfb164e-7af8-4f68-8918-db827f2eb711;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/hospital-medicare-cost-report-data> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/hospital-medicare-cost-report-data>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/hospital-medicare-cost-report-data>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/hospital-medicare-cost-report-data>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

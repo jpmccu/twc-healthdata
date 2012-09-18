@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/2008-basic-stand-alone-outpatient>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-outpatient";
-   prov:wasDerivedFrom :as_a_csv_8b8a3b4b-9c19-4e01-a1df-0d6c4fe16029;
+   prov:wasDerivedFrom :as_a_csv_8fdefa67-517a-48ea-aa0d-02860144b85d;
 .
 
-:as_a_csv_8b8a3b4b-9c19-4e01-a1df-0d6c4fe16029
+:as_a_csv_8fdefa67-517a-48ea-aa0d-02860144b85d
    a dcat:Distribution;
    dcat:downloadURL <http://downloads.cms.gov/BSAPUF/2008_BSA_Outpatient_Procedures_PUF_1.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-outpatient>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_8b8a3b4b-9c19-4e01-a1df-0d6c4fe16029;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_8fdefa67-517a-48ea-aa0d-02860144b85d;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-outpatient> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/2008-basic-stand-alone-outpatient>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/2008-basic-stand-alone-outpatient>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-outpatient>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

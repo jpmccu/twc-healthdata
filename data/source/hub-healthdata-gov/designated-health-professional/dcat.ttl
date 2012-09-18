@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/designated-health-professional>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "designated-health-professional";
-   prov:wasDerivedFrom :as_a_csv_72726fe0-21b1-4421-8c2c-37a46d7b5693;
+   prov:wasDerivedFrom :as_a_csv_b08a6a2f-6992-4914-8c21-85d2ea55549c;
 .
 
-:as_a_csv_72726fe0-21b1-4421-8c2c-37a46d7b5693
+:as_a_csv_b08a6a2f-6992-4914-8c21-85d2ea55549c
    a dcat:Distribution;
    dcat:downloadURL <http://datawarehouse.hrsa.gov/DataDownload/HPSA/HPSA.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/designated-health-professional>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_72726fe0-21b1-4421-8c2c-37a46d7b5693;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_b08a6a2f-6992-4914-8c21-85d2ea55549c;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/designated-health-professional> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/designated-health-professional>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/designated-health-professional>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/designated-health-professional>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

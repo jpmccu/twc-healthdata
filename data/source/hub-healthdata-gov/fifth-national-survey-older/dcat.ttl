@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/fifth-national-survey-older>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "fifth-national-survey-older";
-   prov:wasDerivedFrom :as_a_csv_512e9dae-9817-45c5-aefc-1ab18fb5c352;
+   prov:wasDerivedFrom :as_a_csv_b389a291-03bf-4064-9907-6934bdfa58f8;
 .
 
-:as_a_csv_512e9dae-9817-45c5-aefc-1ab18fb5c352
+:as_a_csv_b389a291-03bf-4064-9907-6934bdfa58f8
    a dcat:Distribution;
    dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2009/National_Survey/5th_National_Survey_Data_Files_2009.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/fifth-national-survey-older>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_512e9dae-9817-45c5-aefc-1ab18fb5c352;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_b389a291-03bf-4064-9907-6934bdfa58f8;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/fifth-national-survey-older> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/fifth-national-survey-older>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/fifth-national-survey-older>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/fifth-national-survey-older>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

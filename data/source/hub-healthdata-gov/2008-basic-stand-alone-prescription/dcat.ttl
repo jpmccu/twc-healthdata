@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/2008-basic-stand-alone-prescription>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-prescription";
-   prov:wasDerivedFrom :as_a_csv_2aa3991f-6eda-4be9-bdc0-5079ac280502;
+   prov:wasDerivedFrom :as_a_csv_78b625c1-e6e5-484e-8b13-b0e125ace14e;
 .
 
-:as_a_csv_2aa3991f-6eda-4be9-bdc0-5079ac280502
+:as_a_csv_78b625c1-e6e5-484e-8b13-b0e125ace14e
    a dcat:Distribution;
    dcat:downloadURL <http://downloads.cms.gov/BSAPUF/2008_BSA_PartD_Events_PUF_1.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-prescription>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_2aa3991f-6eda-4be9-bdc0-5079ac280502;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_78b625c1-e6e5-484e-8b13-b0e125ace14e;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-prescription> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/2008-basic-stand-alone-prescription>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/2008-basic-stand-alone-prescription>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-prescription>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

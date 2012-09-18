@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/medicare-medicaid-incentive>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "medicare-medicaid-incentive";
-   prov:wasDerivedFrom :as_a_csv_db78a649-6d8b-4ec8-81ba-007547db466a;
+   prov:wasDerivedFrom :as_a_csv_b09b001c-efcf-45f4-9ba7-32ef274a3c36;
 .
 
-:as_a_csv_db78a649-6d8b-4ec8-81ba-007547db466a
+:as_a_csv_b09b001c-efcf-45f4-9ba7-32ef274a3c36
    a dcat:Distribution;
    dcat:downloadURL <http://www.healthit.gov/data/MU_Report.xls>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/medicare-medicaid-incentive>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_db78a649-6d8b-4ec8-81ba-007547db466a;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_b09b001c-efcf-45f4-9ba7-32ef274a3c36;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/medicare-medicaid-incentive> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/medicare-medicaid-incentive>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/medicare-medicaid-incentive>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/medicare-medicaid-incentive>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

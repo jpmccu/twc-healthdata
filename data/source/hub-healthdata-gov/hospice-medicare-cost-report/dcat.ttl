@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospice-medicare-cost-report>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospice-medicare-cost-report";
-   prov:wasDerivedFrom :as_a_csv_93baa66e-98c0-4870-80e9-e26f40f4e500;
+   prov:wasDerivedFrom :as_a_csv_573dfab8-89ea-4c36-80bb-7be2b9cefaa5;
 .
 
-:as_a_csv_93baa66e-98c0-4870-80e9-e26f40f4e500
+:as_a_csv_573dfab8-89ea-4c36-80bb-7be2b9cefaa5
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPICEallyears.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/hospice-medicare-cost-report>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_93baa66e-98c0-4870-80e9-e26f40f4e500;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_573dfab8-89ea-4c36-80bb-7be2b9cefaa5;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/hospice-medicare-cost-report> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/hospice-medicare-cost-report>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/hospice-medicare-cost-report>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/hospice-medicare-cost-report>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

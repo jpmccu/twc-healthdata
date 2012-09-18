@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/electronic-animal-drug-product>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "electronic-animal-drug-product";
-   prov:wasDerivedFrom :as_a_csv_6f187e9a-fd29-459c-b7ae-beab4bc6d5cd;
+   prov:wasDerivedFrom :as_a_csv_de871f7d-dfcb-43ac-af79-b1c211d0d61c;
 .
 
-:as_a_csv_6f187e9a-fd29-459c-b7ae-beab4bc6d5cd
+:as_a_csv_de871f7d-dfcb-43ac-af79-b1c211d0d61c
    a dcat:Distribution;
    dcat:downloadURL <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/UCM198204.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/electronic-animal-drug-product>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_6f187e9a-fd29-459c-b7ae-beab4bc6d5cd;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_de871f7d-dfcb-43ac-af79-b1c211d0d61c;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/electronic-animal-drug-product> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/electronic-animal-drug-product>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/electronic-animal-drug-product>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/electronic-animal-drug-product>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

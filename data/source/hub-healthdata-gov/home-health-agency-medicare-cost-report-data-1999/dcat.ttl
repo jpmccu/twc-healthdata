@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/home-health-agency-medicare-cost-report-data-1999>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "home-health-agency-medicare-cost-report-data-1999";
-   prov:wasDerivedFrom :as_a_csv_6349d109-871c-4710-85da-3e48f95b012a;
+   prov:wasDerivedFrom :as_a_csv_78ead7c4-6624-4400-b4a3-ba151191bcc8;
 .
 
-:as_a_csv_6349d109-871c-4710-85da-3e48f95b012a
+:as_a_csv_78ead7c4-6624-4400-b4a3-ba151191bcc8
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY1999.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/home-health-agency-medicare-cost-report-data-1999>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_6349d109-871c-4710-85da-3e48f95b012a;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_78ead7c4-6624-4400-b4a3-ba151191bcc8;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/home-health-agency-medicare-cost-report-data-1999> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/home-health-agency-medicare-cost-report-data-1999>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/home-health-agency-medicare-cost-report-data-1999>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/home-health-agency-medicare-cost-report-data-1999>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

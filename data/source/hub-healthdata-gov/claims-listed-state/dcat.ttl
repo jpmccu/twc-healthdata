@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/claims-listed-state>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "claims-listed-state";
-   prov:wasDerivedFrom :as_a_csv_988c3f7e-0bef-4fca-99c8-493b0a77361b;
+   prov:wasDerivedFrom :as_a_csv_3ad5db3b-b5f6-4916-bec4-b0a0cad019c8;
 .
 
-:as_a_csv_988c3f7e-0bef-4fca-99c8-493b0a77361b
+:as_a_csv_3ad5db3b-b5f6-4916-bec4-b0a0cad019c8
    a dcat:Distribution;
    dcat:downloadURL <http://www.hhs.gov/omha/resources/claimslistbystate.xls>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/claims-listed-state>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_988c3f7e-0bef-4fca-99c8-493b0a77361b;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_3ad5db3b-b5f6-4916-bec4-b0a0cad019c8;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/claims-listed-state> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/claims-listed-state>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/claims-listed-state>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/claims-listed-state>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

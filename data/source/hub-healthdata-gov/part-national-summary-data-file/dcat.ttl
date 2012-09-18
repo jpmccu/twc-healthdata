@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/part-national-summary-data-file>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-national-summary-data-file";
-   prov:wasDerivedFrom :as_a_csv_ba182358-1bf4-482a-b8f9-30147290cbbe;
+   prov:wasDerivedFrom :as_a_csv_79cf82de-0fbb-4092-9658-86bdaf24efff;
 .
 
-:as_a_csv_ba182358-1bf4-482a-b8f9-30147290cbbe
+:as_a_csv_79cf82de-0fbb-4092-9658-86bdaf24efff
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/downloads/PartBNational2007.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/part-national-summary-data-file>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_ba182358-1bf4-482a-b8f9-30147290cbbe;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_79cf82de-0fbb-4092-9658-86bdaf24efff;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/part-national-summary-data-file> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/part-national-summary-data-file>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/part-national-summary-data-file>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/part-national-summary-data-file>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

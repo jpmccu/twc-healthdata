@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/2010-basic-stand-alone-hospice>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2010-basic-stand-alone-hospice";
-   prov:wasDerivedFrom :as_a_csv_a82104f3-d7ac-4391-813f-cc8640254eed;
+   prov:wasDerivedFrom :as_a_csv_3131c806-bd70-4df1-8e80-31585cc8111b;
 .
 
-:as_a_csv_a82104f3-d7ac-4391-813f-cc8640254eed
+:as_a_csv_3131c806-bd70-4df1-8e80-31585cc8111b
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/bsapufs/downloads/2010_BSA_Hospice_Beneficiary_PUF.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/2010-basic-stand-alone-hospice>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_a82104f3-d7ac-4391-813f-cc8640254eed;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_3131c806-bd70-4df1-8e80-31585cc8111b;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/2010-basic-stand-alone-hospice> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/2010-basic-stand-alone-hospice>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/2010-basic-stand-alone-hospice>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/2010-basic-stand-alone-hospice>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

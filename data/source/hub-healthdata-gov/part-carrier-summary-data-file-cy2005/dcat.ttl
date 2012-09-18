@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/part-carrier-summary-data-file-cy2005>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-carrier-summary-data-file-cy2005";
-   prov:wasDerivedFrom :as_a_csv_1c8c8881-459b-4464-a3c8-afa6ebecd65b;
+   prov:wasDerivedFrom :as_a_csv_9a7e07a8-cf45-4c38-85a8-868a99139d30;
 .
 
-:as_a_csv_1c8c8881-459b-4464-a3c8-afa6ebecd65b
+:as_a_csv_9a7e07a8-cf45-4c38-85a8-868a99139d30
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/2005AllCarriers.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/part-carrier-summary-data-file-cy2005>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_1c8c8881-459b-4464-a3c8-afa6ebecd65b;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_9a7e07a8-cf45-4c38-85a8-868a99139d30;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/part-carrier-summary-data-file-cy2005> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/part-carrier-summary-data-file-cy2005>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/part-carrier-summary-data-file-cy2005>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/part-carrier-summary-data-file-cy2005>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

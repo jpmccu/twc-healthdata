@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/administration-children-families>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "administration-children-families";
-   prov:wasDerivedFrom :as_a_csv_4d4307a8-b41a-44e1-b653-0fc825c8a9bf;
+   prov:wasDerivedFrom :as_a_csv_36c41a33-d661-42f0-9b06-7ed5bac815fd;
 .
 
-:as_a_csv_4d4307a8-b41a-44e1-b653-0fc825c8a9bf
+:as_a_csv_36c41a33-d661-42f0-9b06-7ed5bac815fd
    a dcat:Distribution;
    dcat:downloadURL <http://www.acf.hhs.gov/datagov-datasets/>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/administration-children-families>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_4d4307a8-b41a-44e1-b653-0fc825c8a9bf;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_36c41a33-d661-42f0-9b06-7ed5bac815fd;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/administration-children-families> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/administration-children-families>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/administration-children-families>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/administration-children-families>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

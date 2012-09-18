@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/shell-recalls>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "shell-recalls";
-   prov:wasDerivedFrom :as_a_csv_8071c168-1717-48b4-9130-fd4d07ebc2e7;
+   prov:wasDerivedFrom :as_a_csv_40740235-8f8c-422b-a78c-2ce81faddd1f;
 .
 
-:as_a_csv_8071c168-1717-48b4-9130-fd4d07ebc2e7
+:as_a_csv_40740235-8f8c-422b-a78c-2ce81faddd1f
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/shelleggsrecall/ShellEggsRecallList2010.xls>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/shell-recalls>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_8071c168-1717-48b4-9130-fd4d07ebc2e7;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_40740235-8f8c-422b-a78c-2ce81faddd1f;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/shell-recalls> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/shell-recalls>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/shell-recalls>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/shell-recalls>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

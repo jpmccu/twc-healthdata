@@ -3,22 +3,33 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/child-support-enforcement-annual-data-report-form-2005>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "child-support-enforcement-annual-data-report-form-2005";
-   prov:wasDerivedFrom :as_a_csv_cea2fd3e-f0a3-47a1-8eae-748fc4210d88;
+   prov:wasDerivedFrom :as_a_csv_a6dfab17-58b1-42a6-8cc8-515468d6b1e0;
 .
 
-:as_a_csv_cea2fd3e-f0a3-47a1-8eae-748fc4210d88
+:as_a_csv_a6dfab17-58b1-42a6-8cc8-515468d6b1e0
    a dcat:Distribution;
    dcat:downloadURL <http://www.acf.hhs.gov/datagov-datasets/ocse/dcs/34A_CSE_ANNUAL_2005.csv>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/child-support-enforcement-annual-data-report-form-2005>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_cea2fd3e-f0a3-47a1-8eae-748fc4210d88;
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_a6dfab17-58b1-42a6-8cc8-515468d6b1e0;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/child-support-enforcement-annual-data-report-form-2005> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/child-support-enforcement-annual-data-report-form-2005>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/child-support-enforcement-annual-data-report-form-2005>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/child-support-enforcement-annual-data-report-form-2005>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

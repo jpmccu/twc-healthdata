@@ -9,15 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "renal-dialysis-facility-medicare-cost-report-data-2011";
-   prov:wasDerivedFrom :as_a_csv_4e7218ae-4538-486b-89cf-612dc17d429e;
+   prov:wasDerivedFrom :as_a_csv_84ff4367-a25f-47c6-9dd1-03f77e53dc8a;
 .
 
-:as_a_csv_4e7218ae-4538-486b-89cf-612dc17d429e
+:as_a_csv_84ff4367-a25f-47c6-9dd1-03f77e53dc8a
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/RenalFY2011.zip>;
 .
 
-<http://hub.healthdata.gov/dataset/renal-dialysis-facility-medicare-cost-report-data-2011>
+<http://healthdata.tw.rpi.edu/hub/dataset/renal-dialysis-facility-medicare-cost-report-data-2011>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_4e7218ae-4538-486b-89cf-612dc17d429e;
+   dcat:distribution :as_a_csv_84ff4367-a25f-47c6-9dd1-03f77e53dc8a;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
 .

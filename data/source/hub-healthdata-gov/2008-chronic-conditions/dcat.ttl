@@ -9,15 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-chronic-conditions";
-   prov:wasDerivedFrom :as_a_csv_2ea4743d-54a2-4288-870a-bebb72afb135;
+   prov:wasDerivedFrom :as_a_csv_eceb8da6-bb89-4deb-a3f3-4807a397bb52;
 .
 
-:as_a_csv_2ea4743d-54a2-4288-870a-bebb72afb135
+:as_a_csv_eceb8da6-bb89-4deb-a3f3-4807a397bb52
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/BSAPUFS/downloads/2008_Chronic_Conditions_PUF.zip>;
 .
 
-<http://hub.healthdata.gov/dataset/2008-chronic-conditions>
+<http://healthdata.tw.rpi.edu/hub/dataset/2008-chronic-conditions>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_2ea4743d-54a2-4288-870a-bebb72afb135;
+   dcat:distribution :as_a_csv_eceb8da6-bb89-4deb-a3f3-4807a397bb52;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
 .

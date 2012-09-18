@@ -9,15 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "second-national-survey-older";
-   prov:wasDerivedFrom :as_a_csv_143f11d2-14ba-4890-9814-76bcfc51a4aa;
+   prov:wasDerivedFrom :as_a_csv_e9521c76-2d29-4b29-80f1-955202558641;
 .
 
-:as_a_csv_143f11d2-14ba-4890-9814-76bcfc51a4aa
+:as_a_csv_e9521c76-2d29-4b29-80f1-955202558641
    a dcat:Distribution;
    dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2004/National_Survey/2nd_National_Survey_Data_Files_2004.zip>;
 .
 
-<http://hub.healthdata.gov/dataset/second-national-survey-older>
+<http://healthdata.tw.rpi.edu/hub/dataset/second-national-survey-older>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_143f11d2-14ba-4890-9814-76bcfc51a4aa;
+   dcat:distribution :as_a_csv_e9521c76-2d29-4b29-80f1-955202558641;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
 .

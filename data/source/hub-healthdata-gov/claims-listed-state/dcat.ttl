@@ -9,15 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "claims-listed-state";
-   prov:wasDerivedFrom :as_a_csv_78a1212c-0783-4cf6-84b4-be9f273b6704;
+   prov:wasDerivedFrom :as_a_csv_2ea30bdc-07f1-45fd-8394-0e8fe71dcef4;
 .
 
-:as_a_csv_78a1212c-0783-4cf6-84b4-be9f273b6704
+:as_a_csv_2ea30bdc-07f1-45fd-8394-0e8fe71dcef4
    a dcat:Distribution;
    dcat:downloadURL <http://www.hhs.gov/omha/resources/claimslistbystate.xls>;
 .
 
-<http://hub.healthdata.gov/dataset/claims-listed-state>
+<http://healthdata.tw.rpi.edu/hub/dataset/claims-listed-state>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_78a1212c-0783-4cf6-84b4-be9f273b6704;
+   dcat:distribution :as_a_csv_2ea30bdc-07f1-45fd-8394-0e8fe71dcef4;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
 .

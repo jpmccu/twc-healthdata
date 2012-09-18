@@ -9,15 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "medicare-medicaid-incentive";
-   prov:wasDerivedFrom :as_a_csv_eaf77f3b-ad27-4401-85bb-e72d36c420e2;
+   prov:wasDerivedFrom :as_a_csv_d5f68bef-b8d1-46b2-96f2-8b294a606309;
 .
 
-:as_a_csv_eaf77f3b-ad27-4401-85bb-e72d36c420e2
+:as_a_csv_d5f68bef-b8d1-46b2-96f2-8b294a606309
    a dcat:Distribution;
    dcat:downloadURL <http://www.healthit.gov/data/MU_Report.xls>;
 .
 
-<http://hub.healthdata.gov/dataset/medicare-medicaid-incentive>
+<http://healthdata.tw.rpi.edu/hub/dataset/medicare-medicaid-incentive>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_eaf77f3b-ad27-4401-85bb-e72d36c420e2;
+   dcat:distribution :as_a_csv_d5f68bef-b8d1-46b2-96f2-8b294a606309;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
 .

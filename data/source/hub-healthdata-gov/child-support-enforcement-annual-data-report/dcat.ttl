@@ -9,15 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "child-support-enforcement-annual-data-report";
-   prov:wasDerivedFrom :as_a_csv_b36cf4dc-dc52-42e0-973e-7cc789e3ca52;
+   prov:wasDerivedFrom :as_a_csv_5205fdac-def8-47ac-a308-2aaceb89ae58;
 .
 
-:as_a_csv_b36cf4dc-dc52-42e0-973e-7cc789e3ca52
+:as_a_csv_5205fdac-def8-47ac-a308-2aaceb89ae58
    a dcat:Distribution;
    dcat:downloadURL <http://www.acf.hhs.gov/datagov-datasets/ocse/dcs/34A_CSE_ANNUAL_2003.csv>;
 .
 
-<http://hub.healthdata.gov/dataset/child-support-enforcement-annual-data-report>
+<http://healthdata.tw.rpi.edu/hub/dataset/child-support-enforcement-annual-data-report>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_b36cf4dc-dc52-42e0-973e-7cc789e3ca52;
+   dcat:distribution :as_a_csv_5205fdac-def8-47ac-a308-2aaceb89ae58;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
 .

@@ -9,15 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospice-medicare-cost-report-data";
-   prov:wasDerivedFrom :as_a_csv_f571047e-4414-4e08-ae83-bee968fb4a83;
+   prov:wasDerivedFrom :as_a_csv_835502a3-f051-47e2-a4c3-74a97c099342;
 .
 
-:as_a_csv_f571047e-4414-4e08-ae83-bee968fb4a83
+:as_a_csv_835502a3-f051-47e2-a4c3-74a97c099342
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPICEALLYEARS.ZIP>;
 .
 
-<http://hub.healthdata.gov/dataset/hospice-medicare-cost-report-data>
+<http://healthdata.tw.rpi.edu/hub/dataset/hospice-medicare-cost-report-data>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_f571047e-4414-4e08-ae83-bee968fb4a83;
+   dcat:distribution :as_a_csv_835502a3-f051-47e2-a4c3-74a97c099342;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
 .

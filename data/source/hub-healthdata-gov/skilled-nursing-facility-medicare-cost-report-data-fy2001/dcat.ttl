@@ -9,15 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "skilled-nursing-facility-medicare-cost-report-data-fy2001";
-   prov:wasDerivedFrom :as_a_csv_41ca75d9-b7ee-430a-9cf5-e05b6563de8b;
+   prov:wasDerivedFrom :as_a_csv_2ba7df67-d828-4ccc-8112-fd42c7db4241;
 .
 
-:as_a_csv_41ca75d9-b7ee-430a-9cf5-e05b6563de8b
+:as_a_csv_2ba7df67-d828-4ccc-8112-fd42c7db4241
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/SNFFY2001.zip>;
 .
 
-<http://hub.healthdata.gov/dataset/skilled-nursing-facility-medicare-cost-report-data-fy2001>
+<http://healthdata.tw.rpi.edu/hub/dataset/skilled-nursing-facility-medicare-cost-report-data-fy2001>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_41ca75d9-b7ee-430a-9cf5-e05b6563de8b;
+   dcat:distribution :as_a_csv_2ba7df67-d828-4ccc-8112-fd42c7db4241;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
 .

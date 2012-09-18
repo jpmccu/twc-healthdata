@@ -9,15 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "fourth-national-survey-older";
-   prov:wasDerivedFrom :as_a_csv_a965d218-8e4e-4b15-8bea-6dc481a5196f;
+   prov:wasDerivedFrom :as_a_csv_c15e7278-780d-4bcb-9f45-fb0d58ba6dcb;
 .
 
-:as_a_csv_a965d218-8e4e-4b15-8bea-6dc481a5196f
+:as_a_csv_c15e7278-780d-4bcb-9f45-fb0d58ba6dcb
    a dcat:Distribution;
    dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2008/National_Survey/4th_National_Survey_Data_Files_2008.zip>;
 .
 
-<http://hub.healthdata.gov/dataset/fourth-national-survey-older>
+<http://healthdata.tw.rpi.edu/hub/dataset/fourth-national-survey-older>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_a965d218-8e4e-4b15-8bea-6dc481a5196f;
+   dcat:distribution :as_a_csv_c15e7278-780d-4bcb-9f45-fb0d58ba6dcb;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
 .

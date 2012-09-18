@@ -9,15 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "contact-list-2009";
-   prov:wasDerivedFrom :as_a_csv_4af874ce-3416-4573-be68-c76c7a1238bf;
+   prov:wasDerivedFrom :as_a_csv_6b191617-d697-469e-b62b-f44fe1faa4f3;
 .
 
-:as_a_csv_4af874ce-3416-4573-be68-c76c7a1238bf
+:as_a_csv_6b191617-d697-469e-b62b-f44fe1faa4f3
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/PrescriptionDrugCovContra/082_MTM.asp#TopOfPage>;
 .
 
-<http://hub.healthdata.gov/dataset/contact-list-2009>
+<http://healthdata.tw.rpi.edu/hub/dataset/contact-list-2009>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_4af874ce-3416-4573-be68-c76c7a1238bf;
+   dcat:distribution :as_a_csv_6b191617-d697-469e-b62b-f44fe1faa4f3;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
 .

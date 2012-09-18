@@ -9,15 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-carrier";
-   prov:wasDerivedFrom :as_a_csv_f38bda46-1972-48b8-82ce-9ce110badd91;
+   prov:wasDerivedFrom :as_a_csv_4fce0a16-0bf3-42ba-883f-568d589dec4b;
 .
 
-:as_a_csv_f38bda46-1972-48b8-82ce-9ce110badd91
+:as_a_csv_4fce0a16-0bf3-42ba-883f-568d589dec4b
    a dcat:Distribution;
    dcat:downloadURL <http://downloads.cms.gov/BSAPUF/2008_BSA_Carrier_Line_Items_PUF_1.zip>;
 .
 
-<http://hub.healthdata.gov/dataset/2008-basic-stand-alone-carrier>
+<http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-carrier>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_f38bda46-1972-48b8-82ce-9ce110badd91;
+   dcat:distribution :as_a_csv_4fce0a16-0bf3-42ba-883f-568d589dec4b;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
 .

@@ -9,15 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "home-health-agency-medicare-cost-report-data-1994";
-   prov:wasDerivedFrom :as_a_csv_46ec19cf-a9eb-47f0-a0ab-2689783f3fd2;
+   prov:wasDerivedFrom :as_a_csv_bf76bfea-d99e-4ca8-a78c-c0a2b8d05b23;
 .
 
-:as_a_csv_46ec19cf-a9eb-47f0-a0ab-2689783f3fd2
+:as_a_csv_bf76bfea-d99e-4ca8-a78c-c0a2b8d05b23
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY1994.zip>;
 .
 
-<http://hub.healthdata.gov/dataset/home-health-agency-medicare-cost-report-data-1994>
+<http://healthdata.tw.rpi.edu/hub/dataset/home-health-agency-medicare-cost-report-data-1994>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_46ec19cf-a9eb-47f0-a0ab-2689783f3fd2;
+   dcat:distribution :as_a_csv_bf76bfea-d99e-4ca8-a78c-c0a2b8d05b23;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
 .

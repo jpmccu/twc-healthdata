@@ -9,15 +9,16 @@
    a void:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-national-summary-data-file-cy2010";
-   prov:wasDerivedFrom :as_a_csv_976e2b81-6395-477a-aa5b-1ccaded3d3a7;
+   prov:wasDerivedFrom :as_a_csv_50e2e082-f1f5-47c5-abc3-edf85ce554f2;
 .
 
-:as_a_csv_976e2b81-6395-477a-aa5b-1ccaded3d3a7
+:as_a_csv_50e2e082-f1f5-47c5-abc3-edf85ce554f2
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/PartBNational2010.zip>;
 .
 
-<http://hub.healthdata.gov/dataset/part-national-summary-data-file-cy2010>
+<http://healthdata.tw.rpi.edu/hub/dataset/part-national-summary-data-file-cy2010>
    a dcat:Dataset;
-   dcat:distribution :as_a_csv_976e2b81-6395-477a-aa5b-1ccaded3d3a7;
+   dcat:distribution :as_a_csv_50e2e082-f1f5-47c5-abc3-edf85ce554f2;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu/hub>;
 .

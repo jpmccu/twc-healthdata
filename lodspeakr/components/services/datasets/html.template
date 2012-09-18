@@ -45,15 +45,79 @@
     </script>
   </head>
   <body>
-{%include "../../menu.inc"%}
+    {%include "../../menu.inc"%}
     <div class="container">
-      <h1>Datasets</h1>
- 	    <ul>
-    {% for row in models.main %}
-        <li><a href="{{ row.dataset.mirroredUri }}">{{row.datasetLabel.value}}</a></li>
-    {% endfor %}
-      </ul>
+     <div class="row-fluid">
+      <div class="span6 well">
+       <h4>Content</h4>
+       <div><a href='#stage-6'>Stage 6: RDF Datasets with Shared Vocabulary</a></div>
+       <div><a href='#stage-5'>Stage 5: RDF Datasets with Shared Resources</a></div>
+       <div><a href='#stage-4'>Stage 4: Enhanced RDF Datasets</a></div>
+       <div><a href='#stage-3'>Stage 3: RDF Datasets</a></div>
+       <div><a href='#stage-2'>Stage 2: Tabular Datasets with Distribution Metadata</a></div>
+       <div><a href='#stage-1'>Stage 1: CKAN Datasets</a></div>
+      </div>
+     </div>
+      <div id="stage-6">
+         <h1>RDF Datasets with Shared Vocabulary</h1>
+         <p>These RDF datasets share vocabulary.</p>
+         <ul>
+           {% for row in models.main %}
+             <li><a href="{{ row.dataset.mirroredUri }}">{{row.datasetLabel.value}}</a></li>
+           {% endfor %}
+         </ul>
+      </div>
+      <div id="stage-5">
+         <h1>RDF Datasets with Shared Resources</h1>
+         <p>These RDF datasets mention common resources.</p>
+         <ul>
+           {% for row in models.main %}
+             <li><a href="{{ row.dataset.mirroredUri }}">{{row.datasetLabel.value}}</a></li>
+           {% endfor %}
+         </ul>
+      </div>
+      <div id="stage-4">
+         <h1>Enhanced RDF Datasets</h1>
+         <p>These RDF datasets have a structure that is more useful than the naive interpretation.</p>
+         <ul>
+           {% for row in models.main %}
+             <li><a href="{{ row.dataset.mirroredUri }}">{{row.datasetLabel.value}}</a></li>
+           {% endfor %}
+         </ul>
+      </div>
+      <div id="stage-4">
+         <h1>RDF Datasets</h1>
+         <p>These datasets RDF datasets have a structure that is more useful than the naive interpretation.</p>
+         <ul>
+           {% for row in models.main %}
+             <li><a href="{{ row.dataset.mirroredUri }}">{{row.datasetLabel.value}}</a></li>
+           {% endfor %}
+         </ul>
+      </div>
+      <div id="stage-3">
+         <h1>RDF Datasets</h1>
+         <p>These RDF datasets have triples from data rows.</p>
+         <ul>
+           {% for row in models.main %}
+             <li><a href="{{ row.dataset.mirroredUri }}">{{row.datasetLabel.value}}</a></li>
+           {% endfor %}
+         </ul>
+      </div>
+      <div id="stage-2">
+         <h1>Tabular Datasets with Distribution Metadata (<span>{{ models.ckan|length }}</span>)</h1>
+         <p>These CKAN datasets are listed as CSV or XLS formats and are annotated with data download URLs, but they have not been converted to RDF.</p>
+         <ul>
+           {% for row in models.main %}
+             <li><a href="{{ row.dataset.mirroredUri }}">{{row.datasetLabel.value}}</a></li>
+           {% endfor %}
+         </ul>
+      </div>
+      <div id="stage-1">
+         <h1>CKAN Datasets</h1>
+         <p>These datasets are listed at <a href="http://healthdata.tw.rpi.edu/hub">http://healthdata.tw.rpi.edu/hub</a>, but have not been processed any further.</p>
+         <ul>
+         </ul>
+      </div>
     </div>
   </body>
 </html>
-

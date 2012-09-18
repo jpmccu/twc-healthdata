@@ -1,0 +1,10 @@
+select distinct ?ckan 
+where {
+  ?ckan a datafaqs:CKANDataset;
+    dcat:distribution ?dist
+  .
+  ?dist a dcat:Distribution .
+  ?void a void:Dataset;
+    prov:wasDerivedFrom ?dist
+  .
+}

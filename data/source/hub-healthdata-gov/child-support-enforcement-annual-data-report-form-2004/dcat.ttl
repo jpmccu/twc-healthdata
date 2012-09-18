@@ -10,17 +10,17 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "child-support-enforcement-annual-data-report-form-2004";
-   prov:wasDerivedFrom :as_a_csv_e5bdb732-09b8-46b2-b19a-cf77d432a3ce;
+   prov:wasDerivedFrom :as_a_csv_9337b754-06c6-4cf5-b408-fdacd0450e37;
 .
 
-:as_a_csv_e5bdb732-09b8-46b2-b19a-cf77d432a3ce
+:as_a_csv_9337b754-06c6-4cf5-b408-fdacd0450e37
    a dcat:Distribution;
    dcat:downloadURL <http://www.acf.hhs.gov/datagov-datasets/ocse/dcs/34A_CSE_ANNUAL_2004.csv>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/child-support-enforcement-annual-data-report-form-2004>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_e5bdb732-09b8-46b2-b19a-cf77d432a3ce;
+   dcat:distribution :as_a_csv_9337b754-06c6-4cf5-b408-fdacd0450e37;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
@@ -33,3 +33,16 @@
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/child-support-enforcement-annual-data-report-form-2004>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;
 .
+
+#3> <> prov:wasGeneratedBy [ 
+#3>    a prov:Activity; 
+#3>    prov:qualifiedAssociation [ 
+#3>       a prov:Association;
+#3>       prov:hadPlan <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>;
+#3>    ];
+#3>    rdfs:seeAlso <https://github.com/jimmccusker/twc-healthdata/wiki/Accessing-CKAN-listings>;
+#3> ] .
+#3> <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>
+#3>    a prov:Plan;
+#3>    dcterms:title "cr-create-dataset-dirs-from-ckan.py" ;
+#3> .

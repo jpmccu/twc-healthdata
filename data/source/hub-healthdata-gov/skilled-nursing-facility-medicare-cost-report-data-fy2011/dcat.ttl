@@ -10,17 +10,17 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "skilled-nursing-facility-medicare-cost-report-data-fy2011";
-   prov:wasDerivedFrom :as_a_csv_02142560-95a7-4455-b556-9e90a4bc72a3;
+   prov:wasDerivedFrom :as_a_csv_648e911f-dbc9-4298-83e9-eedc40fa3067;
 .
 
-:as_a_csv_02142560-95a7-4455-b556-9e90a4bc72a3
+:as_a_csv_648e911f-dbc9-4298-83e9-eedc40fa3067
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/SNFFY2011.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/skilled-nursing-facility-medicare-cost-report-data-fy2011>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_02142560-95a7-4455-b556-9e90a4bc72a3;
+   dcat:distribution :as_a_csv_648e911f-dbc9-4298-83e9-eedc40fa3067;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
@@ -33,3 +33,16 @@
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/skilled-nursing-facility-medicare-cost-report-data-fy2011>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;
 .
+
+#3> <> prov:wasGeneratedBy [ 
+#3>    a prov:Activity; 
+#3>    prov:qualifiedAssociation [ 
+#3>       a prov:Association;
+#3>       prov:hadPlan <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>;
+#3>    ];
+#3>    rdfs:seeAlso <https://github.com/jimmccusker/twc-healthdata/wiki/Accessing-CKAN-listings>;
+#3> ] .
+#3> <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>
+#3>    a prov:Plan;
+#3>    dcterms:title "cr-create-dataset-dirs-from-ckan.py" ;
+#3> .

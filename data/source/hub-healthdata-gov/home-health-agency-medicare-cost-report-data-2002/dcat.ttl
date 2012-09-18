@@ -10,17 +10,17 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "home-health-agency-medicare-cost-report-data-2002";
-   prov:wasDerivedFrom :as_a_csv_9f594701-af58-4751-ae09-1de4a9a8aeb1;
+   prov:wasDerivedFrom :as_a_csv_462f159b-b00f-4b63-a605-da3fc804f1b2;
 .
 
-:as_a_csv_9f594701-af58-4751-ae09-1de4a9a8aeb1
+:as_a_csv_462f159b-b00f-4b63-a605-da3fc804f1b2
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY2002.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/home-health-agency-medicare-cost-report-data-2002>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_9f594701-af58-4751-ae09-1de4a9a8aeb1;
+   dcat:distribution :as_a_csv_462f159b-b00f-4b63-a605-da3fc804f1b2;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
@@ -33,3 +33,16 @@
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/home-health-agency-medicare-cost-report-data-2002>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;
 .
+
+#3> <> prov:wasGeneratedBy [ 
+#3>    a prov:Activity; 
+#3>    prov:qualifiedAssociation [ 
+#3>       a prov:Association;
+#3>       prov:hadPlan <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>;
+#3>    ];
+#3>    rdfs:seeAlso <https://github.com/jimmccusker/twc-healthdata/wiki/Accessing-CKAN-listings>;
+#3> ] .
+#3> <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>
+#3>    a prov:Plan;
+#3>    dcterms:title "cr-create-dataset-dirs-from-ckan.py" ;
+#3> .

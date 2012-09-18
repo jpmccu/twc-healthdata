@@ -10,17 +10,17 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "community-health-status-indicators";
-   prov:wasDerivedFrom :as_a_csv_49021cc3-2e82-421a-9c85-ea6cbe8ce754;
+   prov:wasDerivedFrom :as_a_csv_e4eaa98e-d684-459a-950d-15962ea6dff2;
 .
 
-:as_a_csv_49021cc3-2e82-421a-9c85-ea6cbe8ce754
+:as_a_csv_e4eaa98e-d684-459a-950d-15962ea6dff2
    a dcat:Distribution;
    dcat:downloadURL <ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/CHDI/chsi_dataset.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/community-health-status-indicators>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_49021cc3-2e82-421a-9c85-ea6cbe8ce754;
+   dcat:distribution :as_a_csv_e4eaa98e-d684-459a-950d-15962ea6dff2;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
@@ -33,3 +33,16 @@
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/community-health-status-indicators>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;
 .
+
+#3> <> prov:wasGeneratedBy [ 
+#3>    a prov:Activity; 
+#3>    prov:qualifiedAssociation [ 
+#3>       a prov:Association;
+#3>       prov:hadPlan <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>;
+#3>    ];
+#3>    rdfs:seeAlso <https://github.com/jimmccusker/twc-healthdata/wiki/Accessing-CKAN-listings>;
+#3> ] .
+#3> <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>
+#3>    a prov:Plan;
+#3>    dcterms:title "cr-create-dataset-dirs-from-ckan.py" ;
+#3> .

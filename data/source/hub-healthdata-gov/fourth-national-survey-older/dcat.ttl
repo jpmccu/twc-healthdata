@@ -10,17 +10,17 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "fourth-national-survey-older";
-   prov:wasDerivedFrom :as_a_csv_ebdc8ab9-02c6-4b83-b358-67ca6ed303aa;
+   prov:wasDerivedFrom :as_a_csv_79660267-dffc-455a-bbee-c08324d96cf7;
 .
 
-:as_a_csv_ebdc8ab9-02c6-4b83-b358-67ca6ed303aa
+:as_a_csv_79660267-dffc-455a-bbee-c08324d96cf7
    a dcat:Distribution;
    dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2008/National_Survey/4th_National_Survey_Data_Files_2008.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/fourth-national-survey-older>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_ebdc8ab9-02c6-4b83-b358-67ca6ed303aa;
+   dcat:distribution :as_a_csv_79660267-dffc-455a-bbee-c08324d96cf7;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
@@ -33,3 +33,16 @@
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/fourth-national-survey-older>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;
 .
+
+#3> <> prov:wasGeneratedBy [ 
+#3>    a prov:Activity; 
+#3>    prov:qualifiedAssociation [ 
+#3>       a prov:Association;
+#3>       prov:hadPlan <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>;
+#3>    ];
+#3>    rdfs:seeAlso <https://github.com/jimmccusker/twc-healthdata/wiki/Accessing-CKAN-listings>;
+#3> ] .
+#3> <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>
+#3>    a prov:Plan;
+#3>    dcterms:title "cr-create-dataset-dirs-from-ckan.py" ;
+#3> .

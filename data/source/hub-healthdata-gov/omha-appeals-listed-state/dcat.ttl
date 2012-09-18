@@ -10,17 +10,17 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "omha-appeals-listed-state";
-   prov:wasDerivedFrom :as_a_csv_50685e53-40ac-482e-ab0e-85c2f4bace9f;
+   prov:wasDerivedFrom :as_a_csv_d6f51789-326c-472e-a6e6-d9a5917b0171;
 .
 
-:as_a_csv_50685e53-40ac-482e-ab0e-85c2f4bace9f
+:as_a_csv_d6f51789-326c-472e-a6e6-d9a5917b0171
    a dcat:Distribution;
    dcat:downloadURL <http://www.hhs.gov/omha/resources/appealslistbystate.xls>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/omha-appeals-listed-state>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_50685e53-40ac-482e-ab0e-85c2f4bace9f;
+   dcat:distribution :as_a_csv_d6f51789-326c-472e-a6e6-d9a5917b0171;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
@@ -33,3 +33,16 @@
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/omha-appeals-listed-state>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;
 .
+
+#3> <> prov:wasGeneratedBy [ 
+#3>    a prov:Activity; 
+#3>    prov:qualifiedAssociation [ 
+#3>       a prov:Association;
+#3>       prov:hadPlan <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>;
+#3>    ];
+#3>    rdfs:seeAlso <https://github.com/jimmccusker/twc-healthdata/wiki/Accessing-CKAN-listings>;
+#3> ] .
+#3> <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>
+#3>    a prov:Plan;
+#3>    dcterms:title "cr-create-dataset-dirs-from-ckan.py" ;
+#3> .

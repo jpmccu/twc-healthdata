@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to healthdata.rpi.edu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Jim McCusker,Tim Lebo,Alvaro Graves">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+      .wait{
+        background-image:url('img/wait.gif');
+        background-repeat:no-repeat;
+        padding-right:20px;
+        background-position: right;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-typeahead.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.typeahead').typeahead({
+            source: function (typeahead, query) {
+              $('.typeahead').addClass('wait');[]
+              return $.get('search/'+encodeURIComponent(query), { }, function (data) {
+                  $('.typeahead').removeClass('wait');[]
+                  return typeahead.process(data);
+              }, 'json');
+            },
+            onselect: function (obj) {
+              $('.typeahead').attr('disabled', true);
+              window.location = obj.uri;
+            }
+        });
+    });
+    </script>
+  </head>
+  <body>
+ <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">healthdata.rpi.edu</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="datasets">Datasets</a></li>
+              <li><a href="namedGraphs">Named Graphs</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Welcome to healthdata.rpi.edu</h1>
+      <p></p>
+      <div class="span5 well">
+      <h2>Explore our datasets</h2>
+        <p>You can check the <a href='datasets'>datasets we have available</a> as RDF.</p>
+      </div>
+    </div>
+  </body>
+</html>
+
+

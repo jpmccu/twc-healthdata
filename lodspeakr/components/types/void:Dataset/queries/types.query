@@ -1,0 +1,3 @@
+SELECT ?type WHERE{
+  <{{uri}}> a ?type
+} ORDER BY ?type

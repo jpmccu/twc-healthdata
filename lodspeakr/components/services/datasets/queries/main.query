@@ -1,0 +1,6 @@
+SELECT DISTINCT ?dataset ?datasetLabel WHERE {
+   ?dataset a conv:AbstractDataset .
+   OPTIONAL{
+     ?dataset dcterms:identifier ?datasetLabel .
+   } 
+}

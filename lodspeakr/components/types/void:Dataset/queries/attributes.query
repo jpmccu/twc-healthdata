@@ -1,0 +1,4 @@
+SELECT ?p ?o WHERE{
+  <{{uri}}> ?p ?o
+  FILTER(isLiteral(?o))
+} ORDER BY ?p ?o

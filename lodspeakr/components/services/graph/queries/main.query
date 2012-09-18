@@ -1,0 +1,6 @@
+SELECT DISTINCT (COUNT(?instance) AS ?total) ?class WHERE {
+ GRAPH <{{lodspk.args.all|deurifier}}>{
+  ?instance a ?class
+ }
+}GROUP BY ?class
+ORDER BY DESC(?total)

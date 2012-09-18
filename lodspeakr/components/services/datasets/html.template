@@ -59,7 +59,7 @@
       </div>
      </div>
       <div id="stage-6">
-         <h1>RDF Datasets with Shared Vocabulary</h1>
+         <h1>RDF Datasets with Shared Vocabulary ({{models.main|length}})</h1>
          <p>These RDF datasets share vocabulary.</p>
          <ul>
            {% for row in models.main %}
@@ -68,7 +68,7 @@
          </ul>
       </div>
       <div id="stage-5">
-         <h1>RDF Datasets with Shared Resources</h1>
+         <h1>RDF Datasets with Shared Resources ({{models.main|length}})</h1>
          <p>These RDF datasets mention common resources.</p>
          <ul>
            {% for row in models.main %}
@@ -77,7 +77,7 @@
          </ul>
       </div>
       <div id="stage-4">
-         <h1>Enhanced RDF Datasets</h1>
+         <h1>Enhanced RDF Datasets ({{models.main|length}})</h1>
          <p>These RDF datasets have a structure that is more useful than the naive interpretation.</p>
          <ul>
            {% for row in models.main %}
@@ -86,7 +86,7 @@
          </ul>
       </div>
       <div id="stage-4">
-         <h1>RDF Datasets</h1>
+         <h1>RDF Datasets ({{models.main|length}})</h1>
          <p>These datasets RDF datasets have a structure that is more useful than the naive interpretation.</p>
          <ul>
            {% for row in models.main %}
@@ -95,7 +95,7 @@
          </ul>
       </div>
       <div id="stage-3">
-         <h1>RDF Datasets</h1>
+         <h1>RDF Datasets ({{models.main|length}})</h1>
          <p>These RDF datasets have triples from data rows.</p>
          <ul>
            {% for row in models.main %}

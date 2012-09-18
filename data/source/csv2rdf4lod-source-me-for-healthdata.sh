@@ -3,7 +3,7 @@
 #3     <https://github.com/timrdf/csv2rdf4lod-automation/wiki/CSV2RDF4LOD-environment-variables-%28considerations-for-a-distributed-workflow%29>,
 #3     <https://github.com/timrdf/csv2rdf4lod-automation/wiki/Script:-source-me.sh> .
 
-export CSV2RDF4LOD_HOME="/opt/csv2rdf4lod-automation"
+#export CSV2RDF4LOD_HOME="/opt/csv2rdf4lod-automation"
 #
 #   Copyright 2012 Timothy Lebo
 #

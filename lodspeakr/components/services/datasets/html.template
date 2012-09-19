@@ -114,7 +114,7 @@
       </div>
       <div id="stage-1">
          <h1>CKAN Datasets (<span>{{ models.stage1|length }}</span>)</h1>
-         <p>These datasets are listed at <a href="http://healthdata.tw.rpi.edu/hub">http://healthdata.tw.rpi.edu/hub</a>, but have not been processed any further.</p>
+         <p>These datasets are listed at <a href="http://healthdata.tw.rpi.edu/hub">http://healthdata.tw.rpi.edu/hub</a>, but do not reference URLs to tabular data downloads.</p>
          <ul>
            {% for row in models.stage1 %}
              <li><a href="{{ row.ckan.mirroredUri }}">{{row.id.value}}</a></li>

@@ -54,73 +54,82 @@
        <div><a href='#stage-5'>Stage 5: RDF Datasets with Shared Resources</a></div>
        <div><a href='#stage-4'>Stage 4: Enhanced RDF Datasets</a></div>
        <div><a href='#stage-3'>Stage 3: RDF Datasets</a></div>
-       <div><a href='#stage-2'>Stage 2: Tabular Datasets with Distribution Metadata</a></div>
+       <div><a href='#stage-not-retrieved'>Stage 2.5: Unretrieved Tabular CKAN Datasets with Distribution Metadata</a></div>
+       <div><a href='#stage-2'>Stage 2: Tabular CKAN Datasets with Distribution Metadata</a></div>
        <div><a href='#stage-1'>Stage 1: CKAN Datasets</a></div>
       </div>
      </div>
-      <div id="stage-6">
-         <h1>RDF Datasets with Shared Vocabulary ({{models.main|length}})</h1>
-         <p>These RDF datasets share vocabulary.</p>
-         <ul>
-           {% for row in models.main %}
-             <li><a href="{{ row.dataset.mirroredUri }}">{{row.datasetLabel.value}}</a></li>
-           {% endfor %}
-         </ul>
-      </div>
-      <div id="stage-5">
-         <h1>RDF Datasets with Shared Resources ({{models.main|length}})</h1>
-         <p>These RDF datasets mention common resources.</p>
-         <ul>
-           {% for row in models.main %}
-             <li><a href="{{ row.dataset.mirroredUri }}">{{row.datasetLabel.value}}</a></li>
-           {% endfor %}
-         </ul>
-      </div>
-      <div id="stage-4">
-         <h1>Enhanced RDF Datasets ({{models.main|length}})</h1>
-         <p>These RDF datasets have a structure that is more useful than the naive interpretation.</p>
-         <ul>
-           {% for row in models.main %}
-             <li><a href="{{ row.dataset.mirroredUri }}">{{row.datasetLabel.value}}</a></li>
-           {% endfor %}
-         </ul>
-      </div>
-      <div id="stage-4">
-         <h1>RDF Datasets ({{models.main|length}})</h1>
-         <p>These datasets RDF datasets have a structure that is more useful than the naive interpretation.</p>
-         <ul>
-           {% for row in models.main %}
-             <li><a href="{{ row.dataset.mirroredUri }}">{{row.datasetLabel.value}}</a></li>
-           {% endfor %}
-         </ul>
-      </div>
-      <div id="stage-3">
-         <h1>RDF Datasets ({{models.main|length}})</h1>
-         <p>These RDF datasets have triples from data rows.</p>
-         <ul>
-           {% for row in models.main %}
-             <li><a href="{{ row.dataset.mirroredUri }}">{{row.datasetLabel.value}}</a></li>
-           {% endfor %}
-         </ul>
-      </div>
-      <div id="stage-2">
-         <h1>Tabular Datasets with Distribution Metadata (<span>{{ models.stage2|length }}</span>)</h1>
+
+     <div id="stage-6">
+       <h3>Linked Datasets that Share Vocabulary</h3>
+       <p>These RDF datasets share vocabulary.</p>
+       <ul>
+       </ul>
+     </div>
+
+     <div id="stage-5">
+       <h3>Linked Datasets that Share Resources</h3>
+       <p>These RDF datasets mention common resources.</p>
+       <ul>
+       </ul>
+     </div>
+
+     <div id="stage-converted-enhanced">
+       <h3>RDF Datasets - Enhanced ({{models.converted_enhanced|length}})</h3>
+       <p>These datasets RDF datasets have a structure that is more useful than the naive interpretation.</p>
+       <ul>
+         {% for row in models.converted_enhanced %}
+           <li><a href="{{ row.converted_enhanced.mirroredUri }}">{{row.id.value}}</a></li>
+         {% endfor %}
+       </ul>
+     </div>
+
+     <div id="stage-converted-raw">
+       <h3>RDF Datasets - Naive ({{models.converted_raw|length}})</h3>
+       <p>These RDF datasets were created by converting tabular CKAN datasets, but have not been enhanced to more useful forms.</p>
+       <ul>
+         {% for row in models.converted_raw %}
+           <li><a href="{{ row.void.mirroredUri }}">{{row.id.value}}</a></li>
+         {% endfor %}
+       </ul>
+     </div>
+
+     <div id="stage-not-retrieved">
+       <h3>Unretrieved Tabular CKAN Datasets (<span>{{ models.not_retrieved|length }}</span>)</h3>
+       {% if models.not_retrieved | length != 0 %}
          <p>These CKAN datasets are listed as tabluar format (e.g. CSV or XLS) and are annotated with data download URLs, but they have not been converted to RDF.</p>
          <ul>
            {% for row in models.stage2 %}
-             <li><a href="{{ row.ckan.mirroredUri }}">{{row.id.value}}</a></li>
+             <li><a href="{{ row.not_retreived.mirroredUri }}">{{row.id.value}}</a></li>
            {% endfor %}
          </ul>
-      </div>
-      <div id="stage-1">
-         <h1>CKAN Datasets (<span>{{ models.stage1|length }}</span>)</h1>
-         <p>These datasets are listed at <a href="http://healthdata.tw.rpi.edu/hub">http://healthdata.tw.rpi.edu/hub</a>, but do not reference URLs to tabular data downloads.</p>
-         <ul>
-           {% for row in models.stage1 %}
-             <li><a href="{{ row.ckan.mirroredUri }}">{{row.id.value}}</a></li>
-           {% endfor %}
-         </ul>
-      </div>
+       {%else%}
+          <span>All tabular datasets with proper retrieval information have been downloaded to <a href="http://healthdata.tw.rpi.edu">http://healthdata.tw.rpi.edu</a>.</span>
+       {%endif%}
+     </div>
+
+     {% if models.stage2 | length != 0 %}
+     <div id="stage-2">
+       <h3>Tabular CKAN Datasets with Distribution Metadata (<span>{{ models.stage2|length }}</span>)</h3>
+       <p>These CKAN datasets are listed as tabluar format (e.g. CSV or XLS) and are annotated with data download URLs, but they have not been converted to RDF.</p>
+       <ul>
+         {% for row in models.stage2 %}
+           <li><a href="{{ row.ckan.mirroredUri }}">{{row.id.value}}</a></li>
+         {% endfor %}
+       </ul>
+     </div>
+     {% endif %}
+
+     <div id="stage-not-accessible">
+       <h3>CKAN Datasets (<span>{{ models.not_accessible|length }}</span>)</h3>
+       <p>These datasets are listed at <a href="http://healthdata.tw.rpi.edu/hub">http://healthdata.tw.rpi.edu/hub</a>, but it is not clear how to retrieve them as tabular data.</p>
+       <ul>
+         {% for row in models.not_accessible %}
+           <li><a href="{{ row.ckan.mirroredUri }}">{{row.id.value}}</a></li>
+         {% endfor %}
+       </ul>
+     </div>
+
     </div>
   </body>
 </html>

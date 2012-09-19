@@ -1,0 +1,10 @@
+select distinct ?ckan ?id
+where {
+  optional { [] pmlp:hasSource ?downloaded }
+  filter(!bound(?downloaded))
+  ?ckan
+    a dcat:Dataset, datafaqs:CKANDataset;
+    dcat:distribution [ dcat:downloadURL ?downloaded ]
+  .
+  optional { ?ckan dcterms:identifier ?id }
+} order by ?ckan

@@ -1,8 +1,17 @@
 select distinct ?ckan ?id
 where {
+  ?void
+     a void:Dataset, conversion:AbstractDataset;
+     void:subset [
+        a conversion:VersionedDataset;
+     ];
+     prov:wasDerivedFrom ?dist;
+     dcterms:identifier ?id
+  .
+  filter(!bound(?void))
   ?ckan a datafaqs:CKANDataset;
     dcat:distribution ?dist
   .
   ?dist a dcat:Distribution .
   optional { ?ckan dcterms:identifier ?id }
-}
+} order by ?ckan

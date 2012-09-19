@@ -35,6 +35,7 @@
 @prefix health:        <http://purl.org/twc/health/ns/>.
 @prefix pml:           <http://provenanceweb.org/ns/pml#>.
 
+@prefix twcih:         <http://logd.tw.rpi.edu/id/>.
 
 <http://tw.rpi.edu/instances/JamesMcCusker> foaf:holdsAccount <http://purl.org/klab/lod/machines/schist#jpm78> .
 <http://purl.org/klab/lod/machines/schist#jpm78>
@@ -115,11 +116,12 @@
          ov:csvHeader       "Provider Number";
          #conversion:label   "Provider Number";
          conversion:comment "";
-         conversion:domain_template "[/s]provider/[>.<]";
-         conversion:range_template "[>.<]";
-         conversion:range   rdfs:Literal;
-         conversion:equivalent_property dcterms:identifier;
+         conversion:domain_template "[/sdv]provider/[>.<]";
+         conversion:range_template "http://logd.tw.rpi.edu/id/medicare-gov/provider/[>.<]";
+         conversion:range   rdfs:Resource;
+         conversion:equivalent_property prov:specializationOf;
       ];
+      
       conversion:enhance [
          ov:csvCol          2;
          ov:csvHeader       "Hospital Name";
@@ -268,6 +270,9 @@
       #];                              
    ];
 .
+
+<http://logd.tw.rpi.edu/id/medicare-gov/provider> a owl:Class;
+    skos:inScheme <http://logd.tw.rpi.edu/id>.
 
 <http://purl.bioontology.org/ontology/SNOMEDCT/45131006> a owl:Class;
     rdfs:subClassOf <http://purl.bioontology.org/ontology/SNOMEDCT/22232009>;

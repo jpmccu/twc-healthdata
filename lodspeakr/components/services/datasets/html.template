@@ -104,11 +104,11 @@
          </ul>
       </div>
       <div id="stage-2">
-         <h1>Tabular Datasets with Distribution Metadata (<span>{{ models.ckan|length }}</span>)</h1>
-         <p>These CKAN datasets are listed as CSV or XLS formats and are annotated with data download URLs, but they have not been converted to RDF.</p>
+         <h1>Tabular Datasets with Distribution Metadata (<span>{{ models.stage2|length }}</span>)</h1>
+         <p>These CKAN datasets are listed as tabluar format (e.g. CSV or XLS) and are annotated with data download URLs, but they have not been converted to RDF.</p>
          <ul>
-           {% for row in models.main %}
-             <li><a href="{{ row.dataset.mirroredUri }}">{{row.datasetLabel.value}}</a></li>
+           {% for row in models.stage2 %}
+             <li><a href="{{ row.ckan.mirroredUri }}">{{row.id.value}}</a></li>
            {% endfor %}
          </ul>
       </div>

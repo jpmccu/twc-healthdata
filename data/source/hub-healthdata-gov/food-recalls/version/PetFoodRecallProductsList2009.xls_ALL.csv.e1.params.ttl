@@ -1,0 +1,230 @@
+@prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:          <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix todo:          <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:           <http://www.w3.org/2002/07/owl#> .
+@prefix vann:          <http://purl.org/vocab/vann/> .
+@prefix skos:          <http://www.w3.org/2004/02/skos/core#> .
+@prefix time:          <http://www.w3.org/2006/time#> .
+@prefix wgs:           <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geonames:      <http://www.geonames.org/ontology#> .
+@prefix geonamesid:    <http://sws.geonames.org/> .
+@prefix govtrackusgov: <http://www.rdfabout.com/rdf/usgov/geo/us/> .
+@prefix dbpedia:       <http://dbpedia.org/resource/> .
+@prefix dbpediaprop:   <http://dbpedia.org/property/> .
+@prefix dbpediaowl:    <http://dbpedia.org/ontology/> .
+@prefix con:           <http://www.w3.org/2000/10/swap/pim/contact#> .
+@prefix muo:           <http://purl.oclc.org/NET/muo/muo#> .
+@prefix vs:            <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix frbr:          <http://purl.org/vocab/frbr/core#> .
+@prefix bibo:          <http://purl.org/ontology/bibo/> .
+@prefix doap:          <http://usefulinc.com/ns/doap#> .
+@prefix qb:            <http://purl.org/linked-data/cube#> .
+@prefix dgtwc:         <http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#> .
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix void:          <http://rdfs.org/ns/void#> .
+@prefix scovo:         <http://purl.org/NET/scovo#> .
+@prefix sioc:          <http://rdfs.org/sioc/ns#> .
+@prefix foaf:          <http://xmlns.com/foaf/0.1/> .
+@prefix ov:            <http://open.vocab.org/terms/> .
+@prefix conversion:    <http://purl.org/twc/vocab/conversion/> .
+@prefix :              <http://logd.tw.rpi.edu/source/hub-healthdata-gov/dataset/food-recalls/version/2012-May-08/params/enhancement/1/> .
+
+<http://tw.rpi.edu/instances/TimLebo> foaf:holdsAccount <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot> .
+<http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>
+   a foaf:OnlineAccount;
+   foaf:accountName "lebot";
+   dcterms:isPartOf <http://purl.org/twc/id/machine/lebot/MacBookPro6_2>;
+   sioc:account_of  <http://tw.rpi.edu/instances/TimLebo>;
+.
+
+#:a_bundle
+#   a conversion:ImplicitBundle;
+#   conversion:property_name "a_property"; # Can also be a URI, e.g. dcterms:title.
+#   #conversion:type_name     "My Class";   # Can also be a URI, e.g. foaf:Person.
+#.
+
+<http://logd.tw.rpi.edu/source/hub-healthdata-gov/dataset/food-recalls/version/2012-May-08/conversion/enhancement/1>
+   a conversion:LayerDataset, void:Dataset;
+
+   conversion:base_uri           "http://logd.tw.rpi.edu"^^xsd:anyURI;
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "food-recalls";
+   conversion:version_identifier "2012-May-08";
+   conversion:enhancement_identifier "1";
+
+   conversion:conversion_process [
+      a conversion:EnhancementConversionProcess;
+      conversion:enhancement_identifier "1";
+      conversion:subject_discriminator  "petfoodrecallproductslist2009.xls-all";
+
+      dcterms:creator <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+      dcterms:created "2012-09-06T05:32:44-04:00"^^xsd:dateTime;
+
+      conversion:delimits_cell ",";
+      #conversion:delimits_cell "	"; # tab
+      #conversion:delimits_cell "|";   # pipe
+      #conversion:delimits_cell ",";   # comma
+
+      conversion:enhance [      
+         ov:csvRow 1;
+         a conversion:HeaderRow;
+      ];                        
+
+      conversion:interpret [
+         conversion:symbol        "", " ";
+         conversion:interpretation conversion:null; 
+      ];
+      conversion:enhance [
+         conversion:domain_template "recall_[r]";
+         conversion:domain_name     "Recall";
+      ];
+      #conversion:enhance [
+      #   conversion:class_name "Thing";
+      #   conversion:subclass_of <http://purl.org/...>;
+      #];
+      conversion:enhance [
+         ov:csvCol          1;
+         ov:csvHeader       "Fiscal Year";
+         #conversion:label   "Fiscal Year";
+         conversion:comment "";
+         conversion:range   xsd:gYear;
+      ];
+      conversion:enhance [
+         ov:csvCol          2;
+         ov:csvHeader       "Order";
+         #conversion:label   "Order";
+         conversion:comment "";
+         conversion:range   todo:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          3, 4, 5, 6, 7;
+         conversion:eg "09/09/2005", 
+                       "Tue May 22 00:00:00 EDT 2007";
+         conversion:range   xsd:date;
+         conversion:pattern "MM/dd/yyyy", "E M d HH:mm:ss zzz yyyy";
+         conversion:todo "Handle outlier date pattern on :district_awareness :thing_1148";
+      ];
+      conversion:enhance [
+         ov:csvCol          3;
+         ov:csvHeader       "Recall Completed Dt";
+         conversion:label   "Completed";
+         conversion:comment "";
+      ];
+      conversion:enhance [
+         ov:csvCol          4;
+         ov:csvHeader       "Recall Initiation Dt";
+         conversion:label   "Initiated";
+         conversion:comment "";
+      ];
+      conversion:enhance [
+         ov:csvCol          5;
+         ov:csvHeader       "District Awareness Dt";
+         conversion:label   "District Awareness";
+         conversion:comment "";
+      ];
+      conversion:enhance [
+         ov:csvCol          6;
+         ov:csvHeader       "Event Create Dt";
+         conversion:label   "Event Create";
+         conversion:comment "";
+         rdfs:comment "What is the difference between an Event and a Recall?";
+      ];
+      conversion:enhance [
+         ov:csvCol          7;
+         ov:csvHeader       "Classification Dt";
+         conversion:label   "Classification Date";
+         conversion:comment "";
+      ];
+      conversion:enhance [
+         ov:csvCol          8;
+         ov:csvHeader       "Recall Event Id";
+         #conversion:label   "Recall Event Id";
+         conversion:comment "";
+         conversion:range   todo:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          9;
+         ov:csvHeader       "RECALL Number";
+         #conversion:label   "RECALL Number";
+         conversion:comment "";
+         conversion:range   todo:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          10;
+         ov:csvHeader       "Pet";
+         #conversion:label   "Pet";
+         conversion:comment "";
+         conversion:range   todo:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          11;
+         ov:csvHeader       "Trade Name";
+         #conversion:label   "Trade Name";
+         conversion:comment "";
+         conversion:range   todo:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          12;
+         ov:csvHeader       "Product Description";
+         #conversion:label   "Product Description";
+         conversion:comment "";
+         conversion:range   todo:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          13;
+         ov:csvHeader       "Best Before Dates";
+         #conversion:label   "Best Before Dates";
+         conversion:comment "";
+         conversion:range   todo:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          14;
+         ov:csvHeader       "Lot";
+         #conversion:label   "Lot";
+         conversion:comment "";
+         conversion:range   todo:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          15;
+         ov:csvHeader       "Product Distributed Qnty";
+         #conversion:label   "Product Distributed Qnty";
+         conversion:comment "";
+         conversion:range   todo:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          16;
+         ov:csvHeader       "Industry";
+         #conversion:label   "Industry";
+         conversion:comment "";
+         conversion:range   todo:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          17;
+         ov:csvHeader       "Product Code";
+         #conversion:label   "Product Code";
+         conversion:comment "";
+         conversion:range   todo:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          18;
+         ov:csvHeader       "Recall Status";
+         conversion:equivalent_property rdf:type;
+         #conversion:label   "Recall Status";
+         conversion:comment "";
+         conversion:range   rdfs:Resource;
+         conversion:range_template "[/sd]vocab/recall/[.]";
+      ];
+      conversion:enhance [
+         ov:csvCol          19;
+         ov:csvHeader       "";
+         #conversion:label   "";
+         conversion:comment "";
+         conversion:range   todo:Literal;
+      ];
+      #conversion:enhance [            
+      #   ov:csvRow 3,4,5;             
+      #   a conversion:ExampleResource;
+      #];                              
+   ];
+.

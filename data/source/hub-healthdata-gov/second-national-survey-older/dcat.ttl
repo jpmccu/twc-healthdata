@@ -3,21 +3,46 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/second-national-survey-older>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "second-national-survey-older";
-   prov:wasDerivedFrom :as_a_csv_143f11d2-14ba-4890-9814-76bcfc51a4aa;
+   prov:wasDerivedFrom :as_a_csv_d892e1b6-57b4-4c9a-9085-bb7ceb11c71a;
 .
 
-:as_a_csv_143f11d2-14ba-4890-9814-76bcfc51a4aa
+:as_a_csv_d892e1b6-57b4-4c9a-9085-bb7ceb11c71a
    a dcat:Distribution;
    dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2004/National_Survey/2nd_National_Survey_Data_Files_2004.zip>;
 .
 
-<http://hub.healthdata.gov/dataset/second-national-survey-older>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_143f11d2-14ba-4890-9814-76bcfc51a4aa;
+<http://healthdata.tw.rpi.edu/hub/dataset/second-national-survey-older>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_d892e1b6-57b4-4c9a-9085-bb7ceb11c71a;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
+
+<http://healthdata.tw.rpi.edu/hub/dataset/second-national-survey-older> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/second-national-survey-older>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/second-national-survey-older>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/second-national-survey-older>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
+.
+
+#3> <> prov:wasGeneratedBy [ 
+#3>    a prov:Activity; 
+#3>    prov:qualifiedAssociation [ 
+#3>       a prov:Association;
+#3>       prov:hadPlan <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>;
+#3>    ];
+#3>    rdfs:seeAlso <https://github.com/jimmccusker/twc-healthdata/wiki/Accessing-CKAN-listings>;
+#3> ] .
+#3> <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>
+#3>    a prov:Plan;
+#3>    dcterms:title "cr-create-dataset-dirs-from-ckan.py" ;
+#3> .

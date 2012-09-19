@@ -3,21 +3,46 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/pistachio-product-recalls>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "pistachio-product-recalls";
-   prov:wasDerivedFrom :as_a_csv_ee3153b4-09c8-4fe5-ba23-a7e5be8fde9f;
+   prov:wasDerivedFrom :as_a_csv_1be18deb-80b3-48e1-a495-f13e35f7b9e0;
 .
 
-:as_a_csv_ee3153b4-09c8-4fe5-ba23-a7e5be8fde9f
+:as_a_csv_1be18deb-80b3-48e1-a495-f13e35f7b9e0
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/pistachiorecall/Pistachio2009.xls>;
 .
 
-<http://hub.healthdata.gov/dataset/pistachio-product-recalls>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_ee3153b4-09c8-4fe5-ba23-a7e5be8fde9f;
+<http://healthdata.tw.rpi.edu/hub/dataset/pistachio-product-recalls>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_1be18deb-80b3-48e1-a495-f13e35f7b9e0;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
+
+<http://healthdata.tw.rpi.edu/hub/dataset/pistachio-product-recalls> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/pistachio-product-recalls>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/pistachio-product-recalls>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/pistachio-product-recalls>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
+.
+
+#3> <> prov:wasGeneratedBy [ 
+#3>    a prov:Activity; 
+#3>    prov:qualifiedAssociation [ 
+#3>       a prov:Association;
+#3>       prov:hadPlan <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>;
+#3>    ];
+#3>    rdfs:seeAlso <https://github.com/jimmccusker/twc-healthdata/wiki/Accessing-CKAN-listings>;
+#3> ] .
+#3> <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>
+#3>    a prov:Plan;
+#3>    dcterms:title "cr-create-dataset-dirs-from-ckan.py" ;
+#3> .

@@ -3,21 +3,46 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/community-health-status-indicators>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "community-health-status-indicators";
-   prov:wasDerivedFrom :as_a_csv_fd458235-aa7b-479d-b530-d5978c79ee91;
+   prov:wasDerivedFrom :as_a_csv_e4eaa98e-d684-459a-950d-15962ea6dff2;
 .
 
-:as_a_csv_fd458235-aa7b-479d-b530-d5978c79ee91
+:as_a_csv_e4eaa98e-d684-459a-950d-15962ea6dff2
    a dcat:Distribution;
    dcat:downloadURL <ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/CHDI/chsi_dataset.zip>;
 .
 
-<http://hub.healthdata.gov/dataset/community-health-status-indicators>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_fd458235-aa7b-479d-b530-d5978c79ee91;
+<http://healthdata.tw.rpi.edu/hub/dataset/community-health-status-indicators>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_e4eaa98e-d684-459a-950d-15962ea6dff2;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
+
+<http://healthdata.tw.rpi.edu/hub/dataset/community-health-status-indicators> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/community-health-status-indicators>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/community-health-status-indicators>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/community-health-status-indicators>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
+.
+
+#3> <> prov:wasGeneratedBy [ 
+#3>    a prov:Activity; 
+#3>    prov:qualifiedAssociation [ 
+#3>       a prov:Association;
+#3>       prov:hadPlan <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>;
+#3>    ];
+#3>    rdfs:seeAlso <https://github.com/jimmccusker/twc-healthdata/wiki/Accessing-CKAN-listings>;
+#3> ] .
+#3> <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>
+#3>    a prov:Plan;
+#3>    dcterms:title "cr-create-dataset-dirs-from-ckan.py" ;
+#3> .

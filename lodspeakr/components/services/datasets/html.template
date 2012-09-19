@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LODSPeaKr Basic Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="alternate" type="application/rdf+xml" title="RDF/XML Version" href="{{lodspk.local.value}}.rdf" />
+    <link rel="alternate" type="text/turtle" title="Turtle Version" href="{{lodspk.local.value}}.ttl" />
+    <link rel="alternate" type="text/plain" title="N-Triples Version" href="{{lodspk.local.value}}.nt" />
+    <link rel="alternate" type="application/json" title="RDFJSON Version" href="{{lodspk.local.value}}.json" />
+    <link href="{{lodspk.home}}css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+      .wait{
+        background-image:url('{{lodspk.home}}img/wait.gif');
+        background-repeat:no-repeat;
+        padding-right:20px;
+        background-position: right;
+      }
+    </style>
+    <link href="{{lodspk.home}}css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <script type="text/javascript" src="{{lodspk.home}}js/jquery.js"></script>
+    <script type="text/javascript" src="{{lodspk.home}}js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{lodspk.home}}js/bootstrap-typeahead.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.typeahead').typeahead({
+            source: function (typeahead, query) {
+              $('.typeahead').addClass('wait');[]
+              return $.get('{{lodspk.home}}search/'+encodeURIComponent(query), { }, function (data) {
+                  $('.typeahead').removeClass('wait');[]
+                  return typeahead.process(data);
+              }, 'json');
+            },
+            onselect: function (obj) {
+              $('.typeahead').attr('disabled', true);
+              window.location = obj.uri;
+            }
+        });
+    });
+    </script>
+  </head>
+  <body>
+    {%include "../../menu.inc"%}
+    <div class="container">
+     <div class="row-fluid">
+      <div class="span6 well">
+       <h4>Content</h4>
+       <div><a href='#stage-6'>Stage 6: RDF Datasets with Shared Vocabulary</a></div>
+       <div><a href='#stage-5'>Stage 5: RDF Datasets with Shared Resources</a></div>
+       <div><a href='#stage-4'>Stage 4: Enhanced RDF Datasets</a></div>
+       <div><a href='#stage-3'>Stage 3: RDF Datasets</a></div>
+       <div><a href='#stage-not-retrieved'>Stage 2.5: Unretrieved Tabular CKAN Datasets with Distribution Metadata</a></div>
+       <div><a href='#stage-2'>Stage 2: Tabular CKAN Datasets with Distribution Metadata</a></div>
+       <div><a href='#stage-1'>Stage 1: CKAN Datasets</a></div>
+      </div>
+     </div>
+
+     <div id="stage-6">
+       <h3>Linked Datasets that Share Vocabulary</h3>
+       <p>These RDF datasets share vocabulary.</p>
+       <ul>
+       </ul>
+     </div>
+
+     <div id="stage-5">
+       <h3>Linked Datasets that Share Resources</h3>
+       <p>These RDF datasets mention common resources.</p>
+       <ul>
+       </ul>
+     </div>
+
+     <div id="stage-converted-enhanced">
+       <h3>RDF Datasets - Enhanced ({{models.converted_enhanced|length}})</h3>
+       <p>These datasets RDF datasets have a structure that is more useful than the naive interpretation.</p>
+       <ul>
+         {% for row in models.converted_enhanced %}
+           <li><a href="{{ row.converted_enhanced.mirroredUri }}">{{row.id.value}}</a></li>
+         {% endfor %}
+       </ul>
+     </div>
+
+     <div id="stage-converted-raw">
+       <h3>RDF Datasets - Naive ({{models.converted_raw|length}})</h3>
+       <p>These RDF datasets were created by converting tabular CKAN datasets, but have not been enhanced to more useful forms.</p>
+       <ul>
+         {% for row in models.converted_raw %}
+           <li><a href="{{ row.void.mirroredUri }}">{{row.id.value}}</a></li>
+         {% endfor %}
+       </ul>
+     </div>
+
+     <div id="stage-not-retrieved">
+       <h3>Unretrieved Tabular CKAN Datasets (<span>{{ models.not_retrieved|length }}</span>)</h3>
+       {% if models.not_retrieved | length != 0 %}
+         <p>These CKAN datasets are listed as tabluar format (e.g. CSV or XLS) and are annotated with data download URLs, but they have not been converted to RDF.</p>
+         <ul>
+           {% for row in models.stage2 %}
+             <li><a href="{{ row.not_retreived.mirroredUri }}">{{row.id.value}}</a></li>
+           {% endfor %}
+         </ul>
+       {%else%}
+          <span>All tabular datasets with proper retrieval information have been downloaded to <a href="http://healthdata.tw.rpi.edu">http://healthdata.tw.rpi.edu</a>.</span>
+       {%endif%}
+     </div>
+
+     {% if models.stage2 | length != 0 %}
+     <div id="stage-2">
+       <h3>Tabular CKAN Datasets with Distribution Metadata (<span>{{ models.stage2|length }}</span>)</h3>
+       <p>These CKAN datasets are listed as tabluar format (e.g. CSV or XLS) and are annotated with data download URLs, but they have not been converted to RDF.</p>
+       <ul>
+         {% for row in models.stage2 %}
+           <li><a href="{{ row.ckan.mirroredUri }}">{{row.id.value}}</a></li>
+         {% endfor %}
+       </ul>
+     </div>
+     {% endif %}
+
+     <div id="stage-not-accessible">
+       <h3>CKAN Datasets (<span>{{ models.not_accessible|length }}</span>)</h3>
+       <p>These datasets are listed at <a href="http://healthdata.tw.rpi.edu/hub">http://healthdata.tw.rpi.edu/hub</a>, but it is not clear how to retrieve them as tabular data.</p>
+       <ul>
+         {% for row in models.not_accessible %}
+           <li><a href="{{ row.ckan.mirroredUri }}">{{row.id.value}}</a></li>
+         {% endfor %}
+       </ul>
+     </div>
+
+    </div>
+  </body>
+</html>

@@ -3,7 +3,7 @@
 #3     <https://github.com/timrdf/csv2rdf4lod-automation/wiki/CSV2RDF4LOD-environment-variables-%28considerations-for-a-distributed-workflow%29>,
 #3     <https://github.com/timrdf/csv2rdf4lod-automation/wiki/Script:-source-me.sh> .
 
-export CSV2RDF4LOD_HOME="/opt/csv2rdf4lod-automation"
+#export CSV2RDF4LOD_HOME="/opt/csv2rdf4lod-automation"
 #
 #   Copyright 2012 Timothy Lebo
 #
@@ -302,8 +302,8 @@ export CSV2RDF4LOD_PUBLISH_COMPRESS="true"
 #
 # (done in cr-publish-void-to-endpoint.sh)
 #
-export CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID="twc-rpi-edu"
 export CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID=""
+export CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID="tw-rpi-edu"
 
 #
 # Customize: Specify the "base" conversion_identifier
@@ -738,6 +738,7 @@ export CSV2RDF4LOD_PUBLISH_VIRTUOSO_SCRIPT_PATH=""  # DEPRECATED
 #
 export CSV2RDF4LOD_PUBLISH_VIRTUOSO_SPARQL_ENDPOINT="http://logd.tw.rpi.edu/sparql"
 export CSV2RDF4LOD_PUBLISH_VIRTUOSO_SPARQL_ENDPOINT="http://aquarius.tw.rpi.edu/projects/healthdata/sparql"
+export CSV2RDF4LOD_PUBLISH_VIRTUOSO_SPARQL_ENDPOINT="http://healthdata.tw.rpi.edu/sparql"
 
 
 #
@@ -825,8 +826,8 @@ export saxon9="${CSV2RDF4LOD_HOME}/bin/dup/saxonb9-1-0-8j.jar"
 #
 alias csv2rdf4lod='java edu.rpi.tw.data.csv.CSVtoRDF'
 # # # # # # # These variables should not be modified # # # # # # 
-cr-vars.sh
-echo "(run cr-vars.sh to see all environment variables that CSV2RDF4LOD uses to control execution flow)"
+#cr-vars.sh
+#echo "(run cr-vars.sh to see all environment variables that CSV2RDF4LOD uses to control execution flow)"
 
 
 # Machine-level  variables:

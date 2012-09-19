@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LODSPeaKr Basic Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{{lodspk.home}}css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="alternate" type="application/rdf+xml" title="RDF/XML Version" href="{{lodspk.local.value}}.rdf" />
+    <link rel="alternate" type="text/turtle" title="Turtle Version" href="{{lodspk.local.value}}.ttl" />
+    <link rel="alternate" type="text/plain" title="N-Triples Version" href="{{lodspk.local.value}}.nt" />
+    <link rel="alternate" type="application/json" title="RDFJSON Version" href="{{lodspk.local.value}}.json" />
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+      .wait{
+        background-image:url('{{lodspk.home}}img/wait.gif');
+        background-repeat:no-repeat;
+        padding-right:20px;
+        background-position: right;
+      }
+    </style>
+    <link href="{{lodspk.home}}css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <script type="text/javascript" src="{{lodspk.home}}js/jquery.js"></script>
+    <script type="text/javascript" src="{{lodspk.home}}js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{lodspk.home}}js/bootstrap-typeahead.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.typeahead').typeahead({
+            source: function (typeahead, query) {
+              $('.typeahead').addClass('wait');[]
+              return $.get('{{lodspk.home}}search/'+encodeURIComponent(query), { }, function (data) {
+                  $('.typeahead').removeClass('wait');[]
+                  return typeahead.process(data);
+              }, 'json');
+            },
+            onselect: function (obj) {
+              $('.typeahead').attr('disabled', true);
+              window.location = obj.uri;
+            }
+        });
+    });
+    </script>
+  </head>
+  <body>
+{%include "../../menu.inc"%}
+    <div class="container">
+     <div class="fluid-row">
+      <div class="span12">
+    <h2>Dataset <a href='{{uri}}'>{{first.details.id.value}}</a></h2>
+      </div>
+     </div>
+     <div class="fluid-row">
+      <div class="span12">
+    <h3>Type(s): {%for i in models.types%}{%if !forloop.first%}, {%endif%}{{i.type.curie}}{%endfor%}
+    <!--h3>Named Graph: {{first.ng.namedGraph.value}}</h3>
+    <h3>SPARQL endpoint: {{first.ng.location.value}}</h3-->
+      </div>
+     </div>
+     <div class="fluid-row">
+      <div class="span8">
+
+    <table class="table table-striped" about="{{uri}}">
+    <thead>
+      <tr><th>Attribute</th><th>Value</th></tr>
+    </thead>
+    {% for row in models.attributes %}
+     <tr>
+     <td>{{row.p.curie}}</td>
+     <td>{{row.o.value}}</td>
+     </tr>
+    {% endfor %}
+    </table>
+     </div>
+    </div>
+     <div class="fluid-row">
+      <div class="span8">
+<h3>Subsets</h3>
+{%if models.subsets|length == 0%}
+<div class="alert alert-info">No subsets found</div>
+{%else%}
+<ul>
+    {% for row in models.subsets %}
+     <li><a href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
+    {% endfor %}
+    </ul>
+{%endif%}
+     </div>
+    </div>
+    </div>    
+    
+  </body>
+</html>

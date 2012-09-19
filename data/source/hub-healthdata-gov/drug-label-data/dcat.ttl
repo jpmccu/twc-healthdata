@@ -3,21 +3,46 @@
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/drug-label-data>
-   a void:Dataset;
+   a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "drug-label-data";
-   prov:wasDerivedFrom :as_a_csv_0e07722d-ecfd-44e4-b927-096b4a4e4a61;
+   prov:wasDerivedFrom :as_a_csv_45302af4-01d0-419c-a67b-8ba2d12a5dd2;
 .
 
-:as_a_csv_0e07722d-ecfd-44e4-b927-096b4a4e4a61
+:as_a_csv_45302af4-01d0-419c-a67b-8ba2d12a5dd2
    a dcat:Distribution;
    dcat:downloadURL <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/ucm241597.zip>;
 .
 
-<http://hub.healthdata.gov/dataset/drug-label-data>
-   a dcat:Dataset;
-   dcat:distribution :as_a_csv_0e07722d-ecfd-44e4-b927-096b4a4e4a61;
+<http://healthdata.tw.rpi.edu/hub/dataset/drug-label-data>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_45302af4-01d0-419c-a67b-8ba2d12a5dd2;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
+
+<http://healthdata.tw.rpi.edu/hub/dataset/drug-label-data> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/drug-label-data>;
+.
+
+<http://hub.healthdata.gov/dataset//dataset/drug-label-data>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/drug-label-data>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
+.
+
+#3> <> prov:wasGeneratedBy [ 
+#3>    a prov:Activity; 
+#3>    prov:qualifiedAssociation [ 
+#3>       a prov:Association;
+#3>       prov:hadPlan <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>;
+#3>    ];
+#3>    rdfs:seeAlso <https://github.com/jimmccusker/twc-healthdata/wiki/Accessing-CKAN-listings>;
+#3> ] .
+#3> <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>
+#3>    a prov:Plan;
+#3>    dcterms:title "cr-create-dataset-dirs-from-ckan.py" ;
+#3> .

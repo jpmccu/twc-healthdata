@@ -10,13 +10,14 @@
 #3>      "Script to retrieve and convert a new version of the dataset.";
 #3>    rdfs:seeAlso 
 #3>      <https://github.com/timrdf/csv2rdf4lod-automation/wiki/Automated-creation-of-a-new-Versioned-Dataset>;
+#3>    prov:wasDerivedFrom <https://github.com/jimmccusker/twc-healthdata/blob/master/data/source/hub-healthdata-gov/catalog/version/retrieve.sh>;
 #3> .
 
 today=`date +%Y-%b-%d`
 if [ ! -e $today ]; then
    mkdir -p $today/source
 
-   hhs='http://hub.healthdata.gov'
+   hhs='http://healthdata.tw.rpi.edu/hub'
    sadi='http://aquarius.tw.rpi.edu/projects/datafaqs/services/sadi/core/select-datasets/by-ckan-installation'
    echo "Requesting $hhs dataset listing from $sadi"
 

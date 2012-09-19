@@ -100,9 +100,9 @@
          #conversion:label   "State";
          conversion:equivalent_property  prov:atLocation;
          conversion:comment "";
-	 conversion:domain_template "[/sd][.]_Hospitals";
+	 conversion:domain_template "[/sdv][.]_Hospitals";
          conversion:range   rdfs:Resource;
-	 conversion:links_via <http://www.rpi.edu/~lebot/lod-links/state-fips-dbpedia.ttl>;
+	 conversion:links_via <http://logd.tw.rpi.edu/source/twc-rpi-edu/file/instance-hub-us-states-and-territories/version/2011-Apr-09/conversion/instance-hub-us-states-and-territories.csv.e1.ttl>;
       ];
       conversion:enhance [
          a conversion:SubjectAnnotation;

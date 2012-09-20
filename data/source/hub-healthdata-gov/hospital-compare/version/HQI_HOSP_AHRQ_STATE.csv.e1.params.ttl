@@ -101,20 +101,20 @@ rdf:value conversion:equivalent_property fn:count.
       #];
       conversion:enhance [
          ov:csvCol          1;
-	 a conversion:DirectSameAsEnhancement;
+         a conversion:DirectSameAsEnhancement;
          ov:csvHeader       "State";
          #conversion:label   "State";
          conversion:bundled_by :hospitalsInState_bundle;
          conversion:equivalent_property  prov:atLocation;
          conversion:comment "";
          conversion:range   rdfs:Resource;
-	 conversion:links_via <http://logd.tw.rpi.edu/source/twc-rpi-edu/file/instance-hub-us-states-and-territories/version/2011-Apr-09/conversion/instance-hub-us-states-and-territories.csv.e1.ttl>;
+         conversion:links_via <http://logd.tw.rpi.edu/source/twc-rpi-edu/file/instance-hub-us-states-and-territories/version/2011-Apr-09/conversion/instance-hub-us-states-and-territories.csv.e1.ttl>;
       ];
       conversion:enhance [
          ov:csvCol          2;
          ov:csvHeader       "PSI_4_SURG_COMP_WORSE";
          conversion:label   "PSI_4_SURG_COMP";
-         conversion:equivalent_property "[/sd]measures/ahrq/PSI_4_SURG_COMP";
+         conversion:equivalent_property "[/sd]measures/ahrq/[L]";
          conversion:comment "";
          conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
@@ -131,7 +131,7 @@ rdf:value conversion:equivalent_property fn:count.
          ov:csvHeader       "PSI_4_SURG_COMP_SAME";
          conversion:label   "PSI_4_SURG_COMP";
          conversion:comment "";
-         conversion:equivalent_property "[/sd]measures/ahrq/PSI_4_SURG_COMP";
+         conversion:equivalent_property "[/sd]measures/ahrq/[L]";
          conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
          conversion:object    health:No_Different_than_U_S_National_Rate;

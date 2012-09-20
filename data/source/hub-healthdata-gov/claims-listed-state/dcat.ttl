@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "claims-listed-state";
-   prov:wasDerivedFrom :as_a_csv_14418638-a17b-4119-8856-ccc2c36190a0;
+   prov:wasDerivedFrom :as_a_csv_22cb9506-4936-42ae-aa31-e18fdf58b791;
 .
 
-:as_a_csv_14418638-a17b-4119-8856-ccc2c36190a0
+:as_a_csv_22cb9506-4936-42ae-aa31-e18fdf58b791
    a dcat:Distribution;
    dcat:downloadURL <http://www.hhs.gov/omha/resources/claimslistbystate.xls>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/claims-listed-state>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_14418638-a17b-4119-8856-ccc2c36190a0;
+   dcat:distribution :as_a_csv_22cb9506-4936-42ae-aa31-e18fdf58b791;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/claims-listed-state> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/claims-listed-state>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/claims-listed-state>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/claims-listed-state>
+<http://hub.healthdata.gov/dataset/claims-listed-state>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/claims-listed-state>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospital-medicare-cost-report-data-fy1995";
-   prov:wasDerivedFrom :as_a_csv_83fe553d-7d2a-4c30-9675-a160e90acd81;
+   prov:wasDerivedFrom :as_a_csv_6ebbd1c3-5eab-4263-881e-181e2c57cffe;
 .
 
-:as_a_csv_83fe553d-7d2a-4c30-9675-a160e90acd81
+:as_a_csv_6ebbd1c3-5eab-4263-881e-181e2c57cffe
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY1995.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/hospital-medicare-cost-report-data-fy1995>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_83fe553d-7d2a-4c30-9675-a160e90acd81;
+   dcat:distribution :as_a_csv_6ebbd1c3-5eab-4263-881e-181e2c57cffe;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/hospital-medicare-cost-report-data-fy1995> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/hospital-medicare-cost-report-data-fy1995>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/hospital-medicare-cost-report-data-fy1995>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/hospital-medicare-cost-report-data-fy1995>
+<http://hub.healthdata.gov/dataset/hospital-medicare-cost-report-data-fy1995>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/hospital-medicare-cost-report-data-fy1995>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

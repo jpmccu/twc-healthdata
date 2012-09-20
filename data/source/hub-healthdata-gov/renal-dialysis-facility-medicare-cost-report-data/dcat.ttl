@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "renal-dialysis-facility-medicare-cost-report-data";
-   prov:wasDerivedFrom :as_a_csv_2f76e664-5185-4046-b06d-fb30c403987f;
+   prov:wasDerivedFrom :as_a_csv_4b002fa7-cd4f-4e1c-9832-466c25b86406;
 .
 
-:as_a_csv_2f76e664-5185-4046-b06d-fb30c403987f
+:as_a_csv_4b002fa7-cd4f-4e1c-9832-466c25b86406
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/RENALFY1997.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/renal-dialysis-facility-medicare-cost-report-data>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_2f76e664-5185-4046-b06d-fb30c403987f;
+   dcat:distribution :as_a_csv_4b002fa7-cd4f-4e1c-9832-466c25b86406;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/renal-dialysis-facility-medicare-cost-report-data> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/renal-dialysis-facility-medicare-cost-report-data>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/renal-dialysis-facility-medicare-cost-report-data>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/renal-dialysis-facility-medicare-cost-report-data>
+<http://hub.healthdata.gov/dataset/renal-dialysis-facility-medicare-cost-report-data>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/renal-dialysis-facility-medicare-cost-report-data>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

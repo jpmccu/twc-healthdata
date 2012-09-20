@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "plainview-milk-cooperative";
-   prov:wasDerivedFrom :as_a_csv_26994b08-5395-4bc3-9ef4-0b43945af456;
+   prov:wasDerivedFrom :as_a_csv_0007f61c-cd7e-4970-aa6d-d97723bd8c0f;
 .
 
-:as_a_csv_26994b08-5395-4bc3-9ef4-0b43945af456
+:as_a_csv_0007f61c-cd7e-4970-aa6d-d97723bd8c0f
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/Milk/MilkRecallProducts2009.xls>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/plainview-milk-cooperative>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_26994b08-5395-4bc3-9ef4-0b43945af456;
+   dcat:distribution :as_a_csv_0007f61c-cd7e-4970-aa6d-d97723bd8c0f;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/plainview-milk-cooperative> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/plainview-milk-cooperative>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/plainview-milk-cooperative>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/plainview-milk-cooperative>
+<http://hub.healthdata.gov/dataset/plainview-milk-cooperative>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/plainview-milk-cooperative>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

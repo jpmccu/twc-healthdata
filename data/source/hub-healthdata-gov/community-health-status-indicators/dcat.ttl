@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "community-health-status-indicators";
-   prov:wasDerivedFrom :as_a_csv_e4eaa98e-d684-459a-950d-15962ea6dff2;
+   prov:wasDerivedFrom :as_a_csv_84621624-0b83-42c8-8281-5caec7d9ddb8;
 .
 
-:as_a_csv_e4eaa98e-d684-459a-950d-15962ea6dff2
+:as_a_csv_84621624-0b83-42c8-8281-5caec7d9ddb8
    a dcat:Distribution;
    dcat:downloadURL <ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/CHDI/chsi_dataset.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/community-health-status-indicators>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_e4eaa98e-d684-459a-950d-15962ea6dff2;
+   dcat:distribution :as_a_csv_84621624-0b83-42c8-8281-5caec7d9ddb8;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/community-health-status-indicators> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/community-health-status-indicators>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/community-health-status-indicators>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/community-health-status-indicators>
+<http://hub.healthdata.gov/dataset/community-health-status-indicators>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/community-health-status-indicators>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

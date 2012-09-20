@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "medicare-medicaid-incentive";
-   prov:wasDerivedFrom :as_a_csv_7ebe6563-6dd9-46db-b8af-b565f9a71f7a;
+   prov:wasDerivedFrom :as_a_csv_ae8b1f32-cb42-475f-8564-6c21bb033276;
 .
 
-:as_a_csv_7ebe6563-6dd9-46db-b8af-b565f9a71f7a
+:as_a_csv_ae8b1f32-cb42-475f-8564-6c21bb033276
    a dcat:Distribution;
    dcat:downloadURL <http://www.healthit.gov/data/MU_Report.xls>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/medicare-medicaid-incentive>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_7ebe6563-6dd9-46db-b8af-b565f9a71f7a;
+   dcat:distribution :as_a_csv_ae8b1f32-cb42-475f-8564-6c21bb033276;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/medicare-medicaid-incentive> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/medicare-medicaid-incentive>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/medicare-medicaid-incentive>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/medicare-medicaid-incentive>
+<http://hub.healthdata.gov/dataset/medicare-medicaid-incentive>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/medicare-medicaid-incentive>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

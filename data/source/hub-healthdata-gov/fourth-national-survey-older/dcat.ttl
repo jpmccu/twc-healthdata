@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "fourth-national-survey-older";
-   prov:wasDerivedFrom :as_a_csv_79660267-dffc-455a-bbee-c08324d96cf7;
+   prov:wasDerivedFrom :as_a_csv_a02ff2c5-bf6b-4e61-9015-b83c4713125e;
 .
 
-:as_a_csv_79660267-dffc-455a-bbee-c08324d96cf7
+:as_a_csv_a02ff2c5-bf6b-4e61-9015-b83c4713125e
    a dcat:Distribution;
    dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2008/National_Survey/4th_National_Survey_Data_Files_2008.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/fourth-national-survey-older>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_79660267-dffc-455a-bbee-c08324d96cf7;
+   dcat:distribution :as_a_csv_a02ff2c5-bf6b-4e61-9015-b83c4713125e;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/fourth-national-survey-older> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/fourth-national-survey-older>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/fourth-national-survey-older>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/fourth-national-survey-older>
+<http://hub.healthdata.gov/dataset/fourth-national-survey-older>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/fourth-national-survey-older>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

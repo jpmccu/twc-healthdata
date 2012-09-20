@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "home-health-agency-medicare-cost-report-data-2008";
-   prov:wasDerivedFrom :as_a_csv_1da107ba-3d75-4ad3-be34-1d43e9d2611b;
+   prov:wasDerivedFrom :as_a_csv_0a01233f-a7c3-4e8c-9711-36e44637f29a;
 .
 
-:as_a_csv_1da107ba-3d75-4ad3-be34-1d43e9d2611b
+:as_a_csv_0a01233f-a7c3-4e8c-9711-36e44637f29a
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY2008.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/home-health-agency-medicare-cost-report-data-2008>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_1da107ba-3d75-4ad3-be34-1d43e9d2611b;
+   dcat:distribution :as_a_csv_0a01233f-a7c3-4e8c-9711-36e44637f29a;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/home-health-agency-medicare-cost-report-data-2008> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/home-health-agency-medicare-cost-report-data-2008>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/home-health-agency-medicare-cost-report-data-2008>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/home-health-agency-medicare-cost-report-data-2008>
+<http://hub.healthdata.gov/dataset/home-health-agency-medicare-cost-report-data-2008>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/home-health-agency-medicare-cost-report-data-2008>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

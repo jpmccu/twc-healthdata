@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "drug-label-data";
-   prov:wasDerivedFrom :as_a_csv_45302af4-01d0-419c-a67b-8ba2d12a5dd2;
+   prov:wasDerivedFrom :as_a_csv_c39a220c-537c-4050-992e-a05f6a9a93b7;
 .
 
-:as_a_csv_45302af4-01d0-419c-a67b-8ba2d12a5dd2
+:as_a_csv_c39a220c-537c-4050-992e-a05f6a9a93b7
    a dcat:Distribution;
    dcat:downloadURL <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/ucm241597.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/drug-label-data>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_45302af4-01d0-419c-a67b-8ba2d12a5dd2;
+   dcat:distribution :as_a_csv_c39a220c-537c-4050-992e-a05f6a9a93b7;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/drug-label-data> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/drug-label-data>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/drug-label-data>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/drug-label-data>
+<http://hub.healthdata.gov/dataset/drug-label-data>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/drug-label-data>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "omha-appeals-listed-state";
-   prov:wasDerivedFrom :as_a_csv_d6f51789-326c-472e-a6e6-d9a5917b0171;
+   prov:wasDerivedFrom :as_a_csv_50373968-2453-4e32-be44-deb4a64d0f9f;
 .
 
-:as_a_csv_d6f51789-326c-472e-a6e6-d9a5917b0171
+:as_a_csv_50373968-2453-4e32-be44-deb4a64d0f9f
    a dcat:Distribution;
    dcat:downloadURL <http://www.hhs.gov/omha/resources/appealslistbystate.xls>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/omha-appeals-listed-state>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_d6f51789-326c-472e-a6e6-d9a5917b0171;
+   dcat:distribution :as_a_csv_50373968-2453-4e32-be44-deb4a64d0f9f;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/omha-appeals-listed-state> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/omha-appeals-listed-state>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/omha-appeals-listed-state>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/omha-appeals-listed-state>
+<http://hub.healthdata.gov/dataset/omha-appeals-listed-state>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/omha-appeals-listed-state>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

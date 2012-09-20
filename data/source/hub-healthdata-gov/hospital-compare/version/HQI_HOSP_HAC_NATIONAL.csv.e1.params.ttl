@@ -98,7 +98,6 @@
          a conversion:SubjectAnnotation;
          conversion:predicate  prov:atLocation;
          conversion:object     <http://logd.tw.rpi.edu/id/country/United_States>;
-;
       ];
       conversion:enhance [
          a conversion:Omitted;

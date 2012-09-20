@@ -1,6 +1,5 @@
 SELECT DISTINCT ?g WHERE {
   GRAPH ?g{
-  	[] ?p ?resource .
+  	[] a ?class .
   }
-}
- order by ?g
+} order by ?g

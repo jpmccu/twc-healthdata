@@ -32,7 +32,9 @@
 
 @prefix ao:            <http://purl.org/ao/>.
 @prefix prov:          <http://www.w3.org/ns/prov#>.
-@prefix health:        <http://purl.org/twc/health/ns/>.
+@prefix health:        <http://purl.org/twc/health/vocab/>.
+@prefix agg:        <http://purl.org/twc/health/vocab/aggregate/>.
+@prefix fn:         <http://www.w3.org/2005/xpath-functions#>.
 
 <http://tw.rpi.edu/instances/JamesMcCusker> foaf:holdsAccount <http://purl.org/klab/lod/machines/schist##jpm78> .
 <http://purl.org/klab/lod/machines/schist##jpm78>
@@ -45,61 +47,61 @@
 :annotatedValue1
    a conversion:ImplicitBundle;
    conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[.]/1";
+   conversion:name_template "[/sdv]provider/[#1]/1";
 .
 
 :annotatedValue2
    a conversion:ImplicitBundle;
    conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[.]/2";
+   conversion:name_template "[/sdv]provider/[#1]/2";
 .
 
 :annotatedValue3
    a conversion:ImplicitBundle;
    conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[.]/3";
+   conversion:name_template "[/sdv]provider/[#1]/3";
 .
 
 :annotatedValue4
    a conversion:ImplicitBundle;
    conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[.]/4";
+   conversion:name_template "[/sdv]provider/[#1]/4";
 .
 
 :annotatedValue5
    a conversion:ImplicitBundle;
    conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[.]/5";
+   conversion:name_template "[/sdv]provider/[#1]/5";
 .
 
 :annotatedValue6
    a conversion:ImplicitBundle;
    conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[.]/6";
+   conversion:name_template "[/sdv]provider/[#1]/6";
 .
 
 :annotatedValue7
    a conversion:ImplicitBundle;
    conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[.]/7";
+   conversion:name_template "[/sdv]provider/[#1]/7";
 .
 
 :annotatedValue8
    a conversion:ImplicitBundle;
    conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[.]/8";
+   conversion:name_template "[/sdv]provider/[#1]/8";
 .
 
 :annotatedValue9
    a conversion:ImplicitBundle;
    conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[.]/9";
+   conversion:name_template "[/sdv]provider/[#1]/9";
 .
 
 :annotatedValue0
    a conversion:ImplicitBundle;
    conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[.]/0";
+   conversion:name_template "[/sdv]provider/[#1]/0";
 .
 
 
@@ -153,7 +155,7 @@
          ov:csvHeader       "Provider Number";
          #conversion:label   "Provider Number";
          conversion:comment "";
-	 conversion:domain_template "[/s]provider/[.]";
+	 conversion:domain_template "[/sdv]provider/[.]";
          conversion:range   rdfs:Literal;
 	 conversion:equivalent_property dcterms:identifier;
       ];
@@ -182,6 +184,11 @@
             conversion:predicate "[/sd]measures/ahrq/PSI_4_SURG_COMP";
             conversion:object    "[#2]";
          ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate qb:measureType;
+            conversion:object "[/sd]measures/ahrq/PSI_4_SURG_COMP";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          4;
@@ -207,6 +214,11 @@
             conversion:regex     ".*";
             conversion:predicate "[/sd]measures/ahrq/PSI_6_IAT_PTX";
             conversion:object    "[#4]";
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate qb:measureType;
+            conversion:object "[/sd]measures/ahrq/PSI_6_IAT_PTX";
          ];
       ];
       conversion:enhance [
@@ -234,6 +246,11 @@
             conversion:predicate "[/sd]measures/ahrq/PSI_11_POSTOP_RESPFAIL";
             conversion:object    "[#6]";
          ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate qb:measureType;
+            conversion:object "[/sd]measures/ahrq/PSI_11_POSTOP_RESPFAIL";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          8;
@@ -260,6 +277,11 @@
             conversion:predicate "[/sd]measures/ahrq/PSI_12_POSTOP_PULMEMB_DVT";
             conversion:object    "[#8]";
          ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate qb:measureType;
+            conversion:object "[/sd]measures/ahrq/PSI_12_POSTOP_PULMEMB_DVT";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          10;
@@ -284,6 +306,11 @@
             conversion:regex     ".*";
             conversion:predicate "[/sd]measures/ahrq/PSI_14_POSTOP_DEHIS";
             conversion:object    "[#10]";
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate qb:measureType;
+            conversion:object "[/sd]measures/ahrq/PSI_14_POSTOP_DEHIS";
          ];
       ];
       conversion:enhance [
@@ -311,6 +338,11 @@
             conversion:predicate "[/sd]measures/ahrq/PSI_15_ACC_LAC";
             conversion:object    "[#13]";
          ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate qb:measureType;
+            conversion:object "[/sd]measures/ahrq/PSI_15_ACC_LAC";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          14;
@@ -336,6 +368,11 @@
             conversion:regex     ".*";
             conversion:predicate "[/sd]measures/ahrq/PSI_90_SAFETY";
             conversion:object    "[#14]";
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate qb:measureType;
+            conversion:object "[/sd]measures/ahrq/PSI_90_SAFETY";
          ];
       ];
       conversion:enhance [
@@ -363,6 +400,11 @@
             conversion:predicate "[/sd]measures/ahrq/IQI_11_AAA";
             conversion:object    "[#16]";
          ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate qb:measureType;
+            conversion:object "[/sd]measures/ahrq/IQI_11_AAA";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          18;
@@ -389,6 +431,11 @@
             conversion:predicate "[/sd]measures/ahrq/IQI_19_HIP_FX";
             conversion:object    "[#18]";
          ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate qb:measureType;
+            conversion:object "[/sd]measures/ahrq/IQI_19_HIP_FX";
+         ];
       ];
       conversion:enhance [
          ov:csvCol          20;
@@ -412,22 +459,39 @@
          ];
          conversion:object_search [
             conversion:regex     ".*";
-            conversion:predicate "[/sd]measures/ahrq/IQI_19_HIP_FX";
+            conversion:predicate "[/sd]measures/ahrq/IQI_91_CONDS";
             conversion:object    "[#20]";
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate qb:measureType;
+            conversion:object "[/sd]measures/ahrq/IQI_91_CONDS";
          ];
       ];
       conversion:enhance [
          ov:csvCol          22;
          ov:csvHeader       "PSI_4_SURG_COMP_NUM_DC";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
-         conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Number of Patients";
+         conversion:equivalent_property prov:generalizationOf;
+         conversion:range_template "[/sdv]provider/[#1]/[L]";
+         conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
-         conversion:range   xsd:decimal;
+         conversion:object_search [
+	     conversion:regex ".*";
+             conversion:predicate qb:measureType;
+             conversion:object "[/sd]measures/ahrq/[L]";
+         ];
+         conversion:object_search [
+	     conversion:regex "(.*)";
+             conversion:predicate fn:count;
+             conversion:object "xsd:decimal([\\1])";
+         ];
+         conversion:range   rdfs:Resource;
       ];
       conversion:enhance [
          ov:csvCol          23;
          ov:csvHeader       "PSI_4_SURG_COMP_RATE";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 22];
+	 conversion:equivalent_property agg:rate;
          conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
          conversion:range   xsd:decimal;
@@ -435,7 +499,8 @@
       conversion:enhance [
          ov:csvCol          24;
          ov:csvHeader       "PSI_4_SURG_COMP_LOW_EST";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 22];
+	 conversion:equivalent_property agg:lower95pctConfidenceInterval;
          conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -443,7 +508,8 @@
       conversion:enhance [
          ov:csvCol          25;
          ov:csvHeader       "PSI_4_SURG_COMP_HIGH_EST";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 22];
+	 conversion:equivalent_property agg:upper95pctConfidenceInterval;
          conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -451,15 +517,27 @@
       conversion:enhance [
          ov:csvCol          26;
          ov:csvHeader       "PSI_6_IAT_PTX_NUM_DC";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
-         conversion:label   "Iatrogenic Pneumothorax - Number of Patients";
-         conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
-         conversion:range   xsd:decimal;
+         conversion:equivalent_property prov:generalizationOf;
+         conversion:range_template "[/sdv]provider/[#1]/[L]";
+         conversion:object_search [
+	     conversion:regex ".*";
+             conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Number of Patients";
+             conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
+             conversion:predicate qb:measureType;
+             conversion:object "[/sd]measures/ahrq/[L]";
+         ];
+         conversion:object_search [
+	     conversion:regex "(.*)";
+             conversion:predicate fn:count;
+             conversion:object "xsd:decimal([\\1])";
+         ];
+         conversion:range   rdfs:Resource;
       ];
       conversion:enhance [
          ov:csvCol          27;
          ov:csvHeader       "PSI_6_IAT_PTX_RATE";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 26];
+	 conversion:equivalent_property agg:rate;
          conversion:label   "Iatrogenic Pneumothorax - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
          conversion:range   xsd:decimal;
@@ -467,7 +545,8 @@
       conversion:enhance [
          ov:csvCol          28;
          ov:csvHeader       "PSI_6_IAT_PTX_LOW_EST";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 26];
+	 conversion:equivalent_property agg:lower95pctConfidenceInterval;
          conversion:label   "Iatrogenic Pneumothorax - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -475,7 +554,8 @@
       conversion:enhance [
          ov:csvCol          29;
          ov:csvHeader       "PSI_6_IAT_PTX_HIGH_EST";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 26];
+	 conversion:equivalent_property agg:upper95pctConfidenceInterval;
          conversion:label   "Iatrogenic Pneumothorax - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;

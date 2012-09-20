@@ -97,7 +97,8 @@
       conversion:enhance [
          a conversion:SubjectAnnotation;
          conversion:predicate  prov:atLocation;
-         conversion:object     dbpedia:United_States;
+         conversion:object     <http://logd.tw.rpi.edu/id/country/United_States>;
+;
       ];
       conversion:enhance [
          a conversion:Omitted;
@@ -110,7 +111,7 @@
       conversion:enhance [
          ov:csvCol          2;
          ov:csvHeader       "scr";
-         conversion:domain_template "[/sd]United_States_Hospitals";
+         conversion:domain_template "[/sdv]United_States_Hospitals";
          conversion:equivalent_property "[/sd]measures/hac/[#1]";
          #conversion:label   "scr";
          conversion:comment "";

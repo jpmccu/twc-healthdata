@@ -84,7 +84,7 @@
          conversion:interpretation conversion:null; 
       ];
       conversion:enhance [
-         conversion:domain_template "[/sd]United_States_Hospitals";
+         conversion:domain_template "[/sdv]United_States_Hospitals";
          #conversion:domain_name     "Thing";
       ];
       #conversion:enhance [
@@ -99,7 +99,7 @@
       conversion:enhance [
          a conversion:SubjectAnnotation;
          conversion:predicate  prov:atLocation;
-         conversion:object     dbpedia:United_States;
+         conversion:object     <http://logd.tw.rpi.edu/id/country/United_States>;
       ];
 
       conversion:enhance [

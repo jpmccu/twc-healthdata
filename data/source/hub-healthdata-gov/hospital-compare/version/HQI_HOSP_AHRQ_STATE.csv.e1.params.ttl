@@ -32,7 +32,10 @@
 
 @prefix prov:          <http://www.w3.org/ns/prov#>.
 @prefix snomed:        <http://purl.bioontology.org/ontology/SNOMEDCT/> .
-@prefix health:        <http://purl.org/twc/health/ns/>.
+@prefix health:        <http://purl.org/twc/health/vocab/>.
+@prefix agg:        <http://purl.org/twc/health/vocab/aggregate/>.
+@prefix fn:         <http://www.w3.org/2005/xpath-functions#>.
+
 
 <http://tw.rpi.edu/instances/JamesMcCusker> foaf:holdsAccount <http://purl.org/klab/lod/machines/schist##jpm78> .
 <http://purl.org/klab/lod/machines/schist##jpm78>
@@ -42,11 +45,16 @@
    sioc:account_of  <http://tw.rpi.edu/instances/JamesMcCusker>;
 .
 
-#:a_bundle
-#   a conversion:ImplicitBundle;
-#   conversion:property_name "a_property"; # Can also be a URI, e.g. dcterms:title.
-#   #conversion:type_name     "My Class";   # Can also be a URI, e.g. foaf:Person.
-#.
+:hospitalsInState_bundle
+   a conversion:ImplicitBundle;
+   conversion:name_template "[/sdv]HospitalsIn[#1]";
+   conversion:property_name rdfs:subClassOf; # Can also be a URI, e.g. dcterms:title.
+   conversion:type_name     owl:Class;   # Can also be a URI, e.g. foaf:Person.
+   rdfs:subClassOf <http://purl.bioontology.org/ontology/SNOMEDCT/22232009>;
+
+.
+
+rdf:value conversion:equivalent_property fn:count.
 
 <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/version/2012-Jul-17/conversion/enhancement/1>
    a conversion:LayerDataset, void:Dataset;
@@ -93,339 +101,615 @@
       #];
       conversion:enhance [
          ov:csvCol          1;
-	 a conversion:DirectSameAsEnhancement;
+         a conversion:DirectSameAsEnhancement;
          ov:csvHeader       "State";
          #conversion:label   "State";
+         conversion:bundled_by :hospitalsInState_bundle;
          conversion:equivalent_property  prov:atLocation;
          conversion:comment "";
-	 conversion:domain_template "[/sdv][.]_Hospitals";
          conversion:range   rdfs:Resource;
-	 conversion:links_via <http://logd.tw.rpi.edu/source/twc-rpi-edu/file/instance-hub-us-states-and-territories/version/2011-Apr-09/conversion/instance-hub-us-states-and-territories.csv.e1.ttl>;
-      ];
-      conversion:enhance [
-         a conversion:SubjectAnnotation;
-         conversion:predicate  prov:specializationOf;
-         conversion:object     <http://purl.bioontology.org/ontology/SNOMEDCT/22232009>;
+         conversion:links_via <http://logd.tw.rpi.edu/source/twc-rpi-edu/file/instance-hub-us-states-and-territories/version/2011-Apr-09/conversion/instance-hub-us-states-and-territories.csv.e1.ttl>;
       ];
       conversion:enhance [
          ov:csvCol          2;
          ov:csvHeader       "PSI_4_SURG_COMP_WORSE";
-         #conversion:label   "PSI_4_SURG_COMP_WORSE";
+         conversion:label   "PSI_4_SURG_COMP";
+         conversion:equivalent_property "[/sd]measures/ahrq/[L]";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Worse_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
+
       ];
       conversion:enhance [
          ov:csvCol          3;
          ov:csvHeader       "PSI_4_SURG_COMP_SAME";
-         #conversion:label   "PSI_4_SURG_COMP_SAME";
+         conversion:label   "PSI_4_SURG_COMP";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/[L]";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:No_Different_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          4;
          ov:csvHeader       "PSI_4_SURG_COMP_BETTER";
-         #conversion:label   "PSI_4_SURG_COMP_BETTER";
+         conversion:label   "PSI_4_SURG_COMP_BETTER";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_4_SURG_COMP";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Better_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          5;
          ov:csvHeader       "PSI_4_SURG_COMP_TOOFEW";
          #conversion:label   "PSI_4_SURG_COMP_TOOFEW";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_4_SURG_COMP";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Too_Few_For_Analysis;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          6;
          ov:csvHeader       "PSI_6_IAT_PTX_WORSE";
-         #conversion:label   "PSI_6_IAT_PTX_WORSE";
+         conversion:label   "PSI_6_IAT_PTX";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_6_IAT_PTX";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Worse_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          7;
          ov:csvHeader       "PSI_6_IAT_PTX_SAME";
-         #conversion:label   "PSI_6_IAT_PTX_SAME";
+         conversion:label   "PSI_6_IAT_PTX";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_6_IAT_PTX";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:No_Different_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          8;
          ov:csvHeader       "PSI_6_IAT_PTX_BETTER";
-         #conversion:label   "PSI_6_IAT_PTX_BETTER";
+         conversion:label   "PSI_6_IAT_PTX";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_6_IAT_PTX";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Better_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          9;
          ov:csvHeader       "PSI_6_IAT_PTX_TOOFEW";
-         #conversion:label   "PSI_6_IAT_PTX_TOOFEW";
+         conversion:label   "PSI_6_IAT_PTX";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_6_IAT_PTX";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Too_Few_For_Analysis;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          10;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_WORSE";
-         #conversion:label   "PSI_11_POSTOP_RESPFAIL_WORSE";
+         conversion:label   "PSI_11_POSTOP_RESPFAIL";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_11_POSTOP_RESPFAIL";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Worse_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          11;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_SAME";
-         #conversion:label   "PSI_11_POSTOP_RESPFAIL_SAME";
+         conversion:label   "PSI_11_POSTOP_RESPFAIL";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_11_POSTOP_RESPFAIL";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:No_Different_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          12;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_BETTER";
-         #conversion:label   "PSI_11_POSTOP_RESPFAIL_BETTER";
+         conversion:label   "PSI_11_POSTOP_RESPFAIL";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_11_POSTOP_RESPFAIL";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Better_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          13;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_TOOFEW";
-         #conversion:label   "PSI_11_POSTOP_RESPFAIL_TOOFEW";
+         conversion:label   "PSI_11_POSTOP_RESPFAIL";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_11_POSTOP_RESPFAIL";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Too_Few_For_Analysis;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          14;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_WORSE";
-         #conversion:label   "PSI_12_POSTOP_PULMEMB_DVT_WORSE";
+         conversion:label   "PSI_12_POSTOP_PULMEMB_DVT";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_12_POSTOP_PULMEMB_DVT";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Worse_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          15;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_SAME";
-         #conversion:label   "PSI_12_POSTOP_PULMEMB_DVT_SAME";
+         conversion:label   "PSI_12_POSTOP_PULMEMB_DVT";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_12_POSTOP_PULMEMB_DVT";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:No_Different_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          16;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_BETTER";
-         #conversion:label   "PSI_12_POSTOP_PULMEMB_DVT_BETTER";
+         conversion:label   "PSI_12_POSTOP_PULMEMB_DVT";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_12_POSTOP_PULMEMB_DVT";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Better_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          17;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_TOOFEW";
-         #conversion:label   "PSI_12_POSTOP_PULMEMB_DVT_TOOFEW";
+         conversion:label   "PSI_12_POSTOP_PULMEMB_DVT";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_12_POSTOP_PULMEMB_DVT";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Too_Few_For_Analysis;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          18;
          ov:csvHeader       "PSI_14_POSTOP_DEHIS_WORSE";
-         #conversion:label   "PSI_14_POSTOP_DEHIS_WORSE";
+         conversion:label   "PSI_14_POSTOP_DEHIS";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_14_POSTOP_DEHIS";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Worse_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          19;
          ov:csvHeader       "PSI_14_POSTOP_DEHIS_SAME";
-         #conversion:label   "PSI_14_POSTOP_DEHIS_SAME";
+         conversion:label   "PSI_14_POSTOP_DEHIS";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_14_POSTOP_DEHIS";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:No_Different_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          20;
          ov:csvHeader       "PSI_14_POSTOP_DEHIS_BETTER";
-         #conversion:label   "PSI_14_POSTOP_DEHIS_BETTER";
+         conversion:label   "PSI_14_POSTOP_DEHIS";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_14_POSTOP_DEHIS";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Better_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          21;
          ov:csvHeader       "PSI_14_POSTOP_DEHIS_TOOFEW";
-         #conversion:label   "PSI_14_POSTOP_DEHIS_TOOFEW";
+         conversion:label   "PSI_14_POSTOP_DEHIS";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_14_POSTOP_DEHIS";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Too_Few_For_Analysis;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          22;
          ov:csvHeader       "PSI_15_ACC_LAC_WORSE";
-         #conversion:label   "PSI_15_ACC_LAC_WORSE";
+         conversion:label   "PSI_15_ACC_LAC";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_15_ACC_LAC";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Worse_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          23;
          ov:csvHeader       "PSI_15_ACC_LAC_SAME";
-         #conversion:label   "PSI_15_ACC_LAC_SAME";
+         conversion:label   "PSI_15_ACC_LAC";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_15_ACC_LAC";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:No_Different_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          24;
          ov:csvHeader       "PSI_15_ACC_LAC_BETTER";
-         #conversion:label   "PSI_15_ACC_LAC_BETTER";
+         conversion:label   "PSI_15_ACC_LAC";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_15_ACC_LAC";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Better_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          25;
          ov:csvHeader       "PSI_15_ACC_LAC_TOOFEW";
-         #conversion:label   "PSI_15_ACC_LAC_TOOFEW";
+         conversion:label   "PSI_15_ACC_LAC";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_15_ACC_LAC";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Too_Few_For_Analysis;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          26;
          ov:csvHeader       "PSI_90_SAFETY_WORSE";
-         #conversion:label   "PSI_90_SAFETY_WORSE";
+         conversion:label   "PSI_90_SAFETY";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_90_SAFETY";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Worse_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          27;
          ov:csvHeader       "PSI_90_SAFETY_SAME";
-         #conversion:label   "PSI_90_SAFETY_SAME";
+         conversion:label   "PSI_90_SAFETY";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_90_SAFETY";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:No_Different_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          28;
          ov:csvHeader       "PSI_90_SAFETY_BETTER";
-         #conversion:label   "PSI_90_SAFETY_BETTER";
+         conversion:label   "PSI_90_SAFETY";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_90_SAFETY";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Better_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          29;
          ov:csvHeader       "PSI_90_SAFETY_TOOFEW";
-         #conversion:label   "PSI_90_SAFETY_TOOFEW";
+         conversion:label   "PSI_90_SAFETY";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/PSI_90_SAFETY";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Too_Few_For_Analysis;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          30;
          ov:csvHeader       "IQI_11_AAA_WORSE";
-         #conversion:label   "IQI_11_AAA_WORSE";
+         conversion:label   "IQI_11_AAA";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/IQI_11_AAA";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Worse_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          31;
          ov:csvHeader       "IQI_11_AAA_SAME";
-         #conversion:label   "IQI_11_AAA_SAME";
+         conversion:label   "IQI_11_AAA";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/IQI_11_AAA";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:No_Different_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          32;
          ov:csvHeader       "IQI_11_AAA_BETTER";
-         #conversion:label   "IQI_11_AAA_BETTER";
+         conversion:label   "IQI_11_AAA";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/IQI_11_AAA";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Worse_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          33;
          ov:csvHeader       "IQI_11_AAA_TOOFEW";
-         #conversion:label   "IQI_11_AAA_TOOFEW";
+         conversion:label   "IQI_11_AAA";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/IQI_11_AAA";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Too_Few_For_Analysis;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          34;
          ov:csvHeader       "IQI_19_HIP_FX_WORSE";
-         #conversion:label   "IQI_19_HIP_FX_WORSE";
+         conversion:label   "IQI_19_HIP_FX";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/IQI_19_HIP_FX";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Worse_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          35;
          ov:csvHeader       "IQI_19_HIP_FX_SAME";
-         #conversion:label   "IQI_19_HIP_FX_SAME";
+         conversion:label   "IQI_19_HIP_FX";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/IQI_19_HIP_FX";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Worse_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          36;
          ov:csvHeader       "IQI_19_HIP_FX_BETTER";
-         #conversion:label   "IQI_19_HIP_FX_BETTER";
+         conversion:label   "IQI_19_HIP_FX";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/IQI_19_HIP_FX";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Better_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          37;
          ov:csvHeader       "IQI_19_HIP_FX_TOOFEW";
-         #conversion:label   "IQI_19_HIP_FX_TOOFEW";
+         conversion:label   "IQI_19_HIP_FX";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/IQI_19_HIP_FX";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Too_Few_For_Analysis;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          38;
          ov:csvHeader       "IQI_91_CONDS_WORSE";
-         #conversion:label   "IQI_91_CONDS_WORSE";
+         conversion:label   "IQI_91_CONDS";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/IQI_91_CONDS";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Worse_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          39;
          ov:csvHeader       "IQI_91_CONDS_SAME";
-         #conversion:label   "IQI_91_CONDS_SAME";
+         conversion:label   "IQI_91_CONDS";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/IQI_91_CONDS";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:No_Different_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          40;
          ov:csvHeader       "IQI_91_CONDS_BETTER";
-         #conversion:label   "IQI_91_CONDS_BETTER";
+         conversion:label   "IQI_91_CONDS";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/IQI_91_CONDS";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Better_than_U_S_National_Rate;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       conversion:enhance [
          ov:csvCol          41;
          ov:csvHeader       "IQI_91_CONDS_TOOFEW";
-         #conversion:label   "IQI_91_CONDS_TOOFEW";
+         conversion:label   "IQI_91_CONDS";
          conversion:comment "";
-	 conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:equivalent_property "[/sd]measures/ahrq/IQI_91_CONDS";
+         conversion:domain_template "[/sd]measures/ahrq/[#1]_Hospitals_Where_[H]";
          conversion:range   xsd:decimal;
+         conversion:object    health:Too_Few_For_Analysis;
+         a scovo:Item;
+         conversion:subject_annotation [
+             conversion:predicate rdfs:label;
+             conversion:object "[#1] hospital where [H]"
+         ];
       ];
       #conversion:enhance [            
       #   ov:csvRow 3,4,5;             

@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "skilled-nursing-facility-medicare-cost-report-data-fy2006";
-   prov:wasDerivedFrom :as_a_csv_4d0f6f0a-9d3a-4a88-b3aa-12fa1118d70b;
+   prov:wasDerivedFrom :as_a_csv_f6bee47c-3e46-4442-9f73-cfc78b694bdd;
 .
 
-:as_a_csv_4d0f6f0a-9d3a-4a88-b3aa-12fa1118d70b
+:as_a_csv_f6bee47c-3e46-4442-9f73-cfc78b694bdd
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/SNFFY2006.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/skilled-nursing-facility-medicare-cost-report-data-fy2006>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_4d0f6f0a-9d3a-4a88-b3aa-12fa1118d70b;
+   dcat:distribution :as_a_csv_f6bee47c-3e46-4442-9f73-cfc78b694bdd;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/skilled-nursing-facility-medicare-cost-report-data-fy2006> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/skilled-nursing-facility-medicare-cost-report-data-fy2006>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/skilled-nursing-facility-medicare-cost-report-data-fy2006>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/skilled-nursing-facility-medicare-cost-report-data-fy2006>
+<http://hub.healthdata.gov/dataset/skilled-nursing-facility-medicare-cost-report-data-fy2006>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/skilled-nursing-facility-medicare-cost-report-data-fy2006>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

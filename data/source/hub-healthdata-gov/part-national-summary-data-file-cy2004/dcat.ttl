@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-national-summary-data-file-cy2004";
-   prov:wasDerivedFrom :as_a_csv_6d32fd36-3df4-4838-a042-53e714649a67;
+   prov:wasDerivedFrom :as_a_csv_54b9f762-76fa-4d36-a7bf-0e97b4ae43cc;
 .
 
-:as_a_csv_6d32fd36-3df4-4838-a042-53e714649a67
+:as_a_csv_54b9f762-76fa-4d36-a7bf-0e97b4ae43cc
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/downloads/PartBNational2004.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/part-national-summary-data-file-cy2004>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_6d32fd36-3df4-4838-a042-53e714649a67;
+   dcat:distribution :as_a_csv_54b9f762-76fa-4d36-a7bf-0e97b4ae43cc;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/part-national-summary-data-file-cy2004> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/part-national-summary-data-file-cy2004>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/part-national-summary-data-file-cy2004>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/part-national-summary-data-file-cy2004>
+<http://hub.healthdata.gov/dataset/part-national-summary-data-file-cy2004>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/part-national-summary-data-file-cy2004>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

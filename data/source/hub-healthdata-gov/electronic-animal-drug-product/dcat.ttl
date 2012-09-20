@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "electronic-animal-drug-product";
-   prov:wasDerivedFrom :as_a_csv_b4585ed2-7cd9-4f9b-8a07-237fd1a1fff2;
+   prov:wasDerivedFrom :as_a_csv_d020e661-694d-40f2-885f-c7e95f635e2a;
 .
 
-:as_a_csv_b4585ed2-7cd9-4f9b-8a07-237fd1a1fff2
+:as_a_csv_d020e661-694d-40f2-885f-c7e95f635e2a
    a dcat:Distribution;
    dcat:downloadURL <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/UCM198204.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/electronic-animal-drug-product>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_b4585ed2-7cd9-4f9b-8a07-237fd1a1fff2;
+   dcat:distribution :as_a_csv_d020e661-694d-40f2-885f-c7e95f635e2a;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/electronic-animal-drug-product> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/electronic-animal-drug-product>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/electronic-animal-drug-product>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/electronic-animal-drug-product>
+<http://hub.healthdata.gov/dataset/electronic-animal-drug-product>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/electronic-animal-drug-product>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

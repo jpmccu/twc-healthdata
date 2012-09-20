@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-durable";
-   prov:wasDerivedFrom :as_a_csv_d1e6e3fc-70e1-4e17-ba8e-03287458e770;
+   prov:wasDerivedFrom :as_a_csv_a06af8af-95d5-4db3-a25c-f3173c1cd5cb;
 .
 
-:as_a_csv_d1e6e3fc-70e1-4e17-ba8e-03287458e770
+:as_a_csv_a06af8af-95d5-4db3-a25c-f3173c1cd5cb
    a dcat:Distribution;
    dcat:downloadURL <http://downloads.cms.gov/BSAPUF/2008_BSA_DME_Line_Items_PUF.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-durable>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_d1e6e3fc-70e1-4e17-ba8e-03287458e770;
+   dcat:distribution :as_a_csv_a06af8af-95d5-4db3-a25c-f3173c1cd5cb;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-durable> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/2008-basic-stand-alone-durable>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/2008-basic-stand-alone-durable>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/2008-basic-stand-alone-durable>
+<http://hub.healthdata.gov/dataset/2008-basic-stand-alone-durable>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-durable>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

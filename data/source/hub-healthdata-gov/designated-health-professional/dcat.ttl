@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "designated-health-professional";
-   prov:wasDerivedFrom :as_a_csv_4dd1c283-eb0a-479b-9130-60589ad767a9;
+   prov:wasDerivedFrom :as_a_csv_6672bc63-ec40-45ba-b9b7-b10a849e7458;
 .
 
-:as_a_csv_4dd1c283-eb0a-479b-9130-60589ad767a9
+:as_a_csv_6672bc63-ec40-45ba-b9b7-b10a849e7458
    a dcat:Distribution;
    dcat:downloadURL <http://datawarehouse.hrsa.gov/DataDownload/HPSA/HPSA.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/designated-health-professional>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_4dd1c283-eb0a-479b-9130-60589ad767a9;
+   dcat:distribution :as_a_csv_6672bc63-ec40-45ba-b9b7-b10a849e7458;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/designated-health-professional> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/designated-health-professional>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/designated-health-professional>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/designated-health-professional>
+<http://hub.healthdata.gov/dataset/designated-health-professional>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/designated-health-professional>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

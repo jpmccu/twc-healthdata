@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-hospice";
-   prov:wasDerivedFrom :as_a_csv_86e02949-6b7c-491d-84f4-51f5b5118d2f;
+   prov:wasDerivedFrom :as_a_csv_b45a6792-dc9a-41a0-ab65-2435d4e98e55;
 .
 
-:as_a_csv_86e02949-6b7c-491d-84f4-51f5b5118d2f
+:as_a_csv_b45a6792-dc9a-41a0-ab65-2435d4e98e55
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/bsapufs/downloads/2008_BSA_Hospice_Beneficiary_PUF.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-hospice>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_86e02949-6b7c-491d-84f4-51f5b5118d2f;
+   dcat:distribution :as_a_csv_b45a6792-dc9a-41a0-ab65-2435d4e98e55;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-hospice> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/2008-basic-stand-alone-hospice>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/2008-basic-stand-alone-hospice>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/2008-basic-stand-alone-hospice>
+<http://hub.healthdata.gov/dataset/2008-basic-stand-alone-hospice>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-hospice>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

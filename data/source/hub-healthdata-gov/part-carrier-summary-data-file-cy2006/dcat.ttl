@@ -10,25 +10,25 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-carrier-summary-data-file-cy2006";
-   prov:wasDerivedFrom :as_a_csv_009d8b83-bb49-47d3-a476-50ecff1fe1b7;
+   prov:wasDerivedFrom :as_a_csv_de3b0395-b28a-43db-944a-63387ffb2fd3;
 .
 
-:as_a_csv_009d8b83-bb49-47d3-a476-50ecff1fe1b7
+:as_a_csv_de3b0395-b28a-43db-944a-63387ffb2fd3
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/2006AllCarriers.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/part-carrier-summary-data-file-cy2006>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_009d8b83-bb49-47d3-a476-50ecff1fe1b7;
+   dcat:distribution :as_a_csv_de3b0395-b28a-43db-944a-63387ffb2fd3;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/part-carrier-summary-data-file-cy2006> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset//dataset/part-carrier-summary-data-file-cy2006>;
+   prov:alternateOf <http://hub.healthdata.gov/dataset/part-carrier-summary-data-file-cy2006>;
 .
 
-<http://hub.healthdata.gov/dataset//dataset/part-carrier-summary-data-file-cy2006>
+<http://hub.healthdata.gov/dataset/part-carrier-summary-data-file-cy2006>
    a dcat:Dataset, datafaqs:CKANDataset;
    prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/part-carrier-summary-data-file-cy2006>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;

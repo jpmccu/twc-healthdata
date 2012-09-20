@@ -74,25 +74,30 @@
      </div>
 
      <div id="stage-converted-enhanced">
-       <!--  {{lodspk.home}}lodspeakr/components/services/datasets/queries/converted_enhanced.query -->
-       <h3>RDF Datasets - Enhanced ({{models.converted_enhanced|length}}) </h3><span>(<a href="#toc">top</a>) </span>
-       <p>These RDF datasets have a structure that is more useful than the naive interpretation. 
-          (<a href="{{lodspk.home}}lodspeakr/components/services/datasets/queries/converted_enhanced.query">query</a>)</p>
+       <h3>RDF Datasets - Enhanced ({{models.converted_enhanced|length}}) </h3>
+       <p>These RDF datasets 
+          (<a href="{{lodspk.home}}lodspeakr/components/services/datasets/queries/converted_enhanced.query">query</a>)
+	have a structure that is more useful than the naive interpretation. 
+	</p>
        <ul>
          {% for row in models.converted_enhanced %}
            <li><a href="{{ row.void.mirroredUri }}">{{row.id.value}}</a></li>
          {% endfor %}
        </ul>
+	<span>(<a href="#toc">top</a>) </span>
      </div>
 
      <div id="stage-converted-raw">
        <h3>RDF Datasets - Naive ({{models.converted_raw|length}})</h3>
-       <p>These RDF datasets were created by converting tabular CKAN datasets, but have not been enhanced to more useful forms.</p>
+       <p>These RDF datasets 
+          (<a href="{{lodspk.home}}lodspeakr/components/services/datasets/queries/converted_raw.query">query</a>)
+	were created by converting tabular CKAN datasets, but have not been enhanced to more useful forms.</p>
        <ul>
          {% for row in models.converted_raw %}
            <li><a href="{{ row.void.mirroredUri }}">{{row.id.value}}</a></li>
          {% endfor %}
        </ul>
+	<span>(<a href="#toc">top</a>) </span>
      </div>
 
      <div id="stage-not-retrieved">
@@ -107,16 +112,20 @@
        {%else%}
           <span>All tabular datasets with proper retrieval information have been downloaded to <a href="http://healthdata.tw.rpi.edu">http://healthdata.tw.rpi.edu</a>.</span>
        {%endif%}
+	<span>(<a href="#toc">top</a>) </span>
      </div>
 
      <div id="stage-not-accessible">
        <h3>CKAN Datasets (<span>{{ models.not_accessible|length }}</span>)</h3>
-       <p>These datasets are listed at <a href="http://healthdata.tw.rpi.edu/hub">http://healthdata.tw.rpi.edu/hub</a>, but it is not clear how to retrieve them as tabular data.</p>
+       <p>These datasets 
+          (<a href="{{lodspk.home}}lodspeakr/components/services/datasets/queries/not_accessible.query">query</a>)
+are listed at <a href="http://healthdata.tw.rpi.edu/hub">http://healthdata.tw.rpi.edu/hub</a>, but it is not clear how to retrieve them as tabular data.</p>
        <ul>
          {% for row in models.not_accessible %}
            <li><a href="{{ row.ckan.mirroredUri }}">{{row.id.value}}</a></li>
          {% endfor %}
        </ul>
+	<span>(<a href="#toc">top</a>) </span>
      </div>
 
     </div>

@@ -1,0 +1,48 @@
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix conversion: <http://purl.org/twc/vocab/conversion/> .
+@prefix dcat:       <http://www.w3.org/ns/dcat#> .
+@prefix void:       <http://rdfs.org/ns/void#> .
+@prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
+@prefix :           <http://purl.org/twc/health/id/> .
+
+<http://purl.org/twc/health/source/healthdata-tw-rpi-edu/dataset/child-support-enforcement-annual-data-report-form-2004-1>
+   a void:Dataset, dcat:Dataset;
+   conversion:source_identifier  "healthdata-tw-rpi-edu";
+   conversion:dataset_identifier "child-support-enforcement-annual-data-report-form-2004-1";
+   prov:wasDerivedFrom :as_a_csv_8a7c6cff-4fb3-481c-b1d1-0551233ec77a;
+.
+
+:as_a_csv_8a7c6cff-4fb3-481c-b1d1-0551233ec77a
+   a dcat:Distribution;
+   dcat:downloadURL <http://www.acf.hhs.gov/datagov-datasets/ocse/dcs/157_CSE_ANNUAL_2004.csv>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/child-support-enforcement-annual-data-report-form-2004-1>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_8a7c6cff-4fb3-481c-b1d1-0551233ec77a;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/child-support-enforcement-annual-data-report-form-2004-1> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset/child-support-enforcement-annual-data-report-form-2004-1>;
+.
+
+<http://hub.healthdata.gov/dataset/child-support-enforcement-annual-data-report-form-2004-1>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/child-support-enforcement-annual-data-report-form-2004-1>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
+.
+
+#3> <> prov:wasGeneratedBy [ 
+#3>    a prov:Activity; 
+#3>    prov:qualifiedAssociation [ 
+#3>       a prov:Association;
+#3>       prov:hadPlan <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>;
+#3>    ];
+#3>    rdfs:seeAlso <https://github.com/jimmccusker/twc-healthdata/wiki/Accessing-CKAN-listings>;
+#3> ] .
+#3> <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>
+#3>    a prov:Plan;
+#3>    dcterms:title "cr-create-dataset-dirs-from-ckan.py" ;
+#3> .

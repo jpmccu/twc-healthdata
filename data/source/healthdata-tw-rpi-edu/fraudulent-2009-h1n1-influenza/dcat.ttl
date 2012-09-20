@@ -1,0 +1,48 @@
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix conversion: <http://purl.org/twc/vocab/conversion/> .
+@prefix dcat:       <http://www.w3.org/ns/dcat#> .
+@prefix void:       <http://rdfs.org/ns/void#> .
+@prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
+@prefix :           <http://purl.org/twc/health/id/> .
+
+<http://purl.org/twc/health/source/healthdata-tw-rpi-edu/dataset/fraudulent-2009-h1n1-influenza>
+   a void:Dataset, dcat:Dataset;
+   conversion:source_identifier  "healthdata-tw-rpi-edu";
+   conversion:dataset_identifier "fraudulent-2009-h1n1-influenza";
+   prov:wasDerivedFrom :as_a_csv_2d36cd78-b414-4156-8ce1-544c7bfc6f91;
+.
+
+:as_a_csv_2d36cd78-b414-4156-8ce1-544c7bfc6f91
+   a dcat:Distribution;
+   dcat:downloadURL <http://www.accessdata.fda.gov/scripts/h1n1flu/FraudulentH1N1ProductsList2009.xls>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/fraudulent-2009-h1n1-influenza>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_2d36cd78-b414-4156-8ce1-544c7bfc6f91;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/fraudulent-2009-h1n1-influenza> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset/fraudulent-2009-h1n1-influenza>;
+.
+
+<http://hub.healthdata.gov/dataset/fraudulent-2009-h1n1-influenza>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/fraudulent-2009-h1n1-influenza>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
+.
+
+#3> <> prov:wasGeneratedBy [ 
+#3>    a prov:Activity; 
+#3>    prov:qualifiedAssociation [ 
+#3>       a prov:Association;
+#3>       prov:hadPlan <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>;
+#3>    ];
+#3>    rdfs:seeAlso <https://github.com/jimmccusker/twc-healthdata/wiki/Accessing-CKAN-listings>;
+#3> ] .
+#3> <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>
+#3>    a prov:Plan;
+#3>    dcterms:title "cr-create-dataset-dirs-from-ckan.py" ;
+#3> .

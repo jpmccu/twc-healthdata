@@ -1,0 +1,48 @@
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix conversion: <http://purl.org/twc/vocab/conversion/> .
+@prefix dcat:       <http://www.w3.org/ns/dcat#> .
+@prefix void:       <http://rdfs.org/ns/void#> .
+@prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
+@prefix :           <http://purl.org/twc/health/id/> .
+
+<http://purl.org/twc/health/source/healthdata-tw-rpi-edu/dataset/hydrolyzed-vegetable-protein>
+   a void:Dataset, dcat:Dataset;
+   conversion:source_identifier  "healthdata-tw-rpi-edu";
+   conversion:dataset_identifier "hydrolyzed-vegetable-protein";
+   prov:wasDerivedFrom :as_a_csv_b92da353-774b-400c-a649-43d95ebea05d;
+.
+
+:as_a_csv_b92da353-774b-400c-a649-43d95ebea05d
+   a dcat:Distribution;
+   dcat:downloadURL <http://www.accessdata.fda.gov/scripts/HVPCP/HydrolyzedVegetableProteinProductsList2010.xls>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/hydrolyzed-vegetable-protein>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   dcat:distribution :as_a_csv_b92da353-774b-400c-a649-43d95ebea05d;
+   prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/dataset/hydrolyzed-vegetable-protein> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset/hydrolyzed-vegetable-protein>;
+.
+
+<http://hub.healthdata.gov/dataset/hydrolyzed-vegetable-protein>
+   a dcat:Dataset, datafaqs:CKANDataset;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/hydrolyzed-vegetable-protein>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
+.
+
+#3> <> prov:wasGeneratedBy [ 
+#3>    a prov:Activity; 
+#3>    prov:qualifiedAssociation [ 
+#3>       a prov:Association;
+#3>       prov:hadPlan <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>;
+#3>    ];
+#3>    rdfs:seeAlso <https://github.com/jimmccusker/twc-healthdata/wiki/Accessing-CKAN-listings>;
+#3> ] .
+#3> <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-dataset-dirs-from-ckan.py>
+#3>    a prov:Plan;
+#3>    dcterms:title "cr-create-dataset-dirs-from-ckan.py" ;
+#3> .

@@ -48,15 +48,14 @@
     {%include "../../menu.inc"%}
     <div class="container">
      <div class="row-fluid">
-      <div class="span6 well">
+      <div class="span6 well" id="toc">
        <h4>Content</h4>
        <div><a href='#stage-6'>Stage 6: RDF Datasets with Shared Vocabulary</a></div>
        <div><a href='#stage-5'>Stage 5: RDF Datasets with Shared Resources</a></div>
        <div><a href='#stage-converted-enhanced'>Stage 4: Enhanced RDF Datasets</a></div>
-       <div><a href='#stage-3'>Stage 3: RDF Datasets</a></div>
-       <div><a href='#stage-not-retrieved'>Stage 2.5: Unretrieved Tabular CKAN Datasets with Distribution Metadata</a></div>
-       <div><a href='#stage-2'>Stage 2: Tabular CKAN Datasets with Distribution Metadata</a></div>
-       <div><a href='#stage-1'>Stage 1: CKAN Datasets</a></div>
+       <div><a href='#stage-converted-raw'>Stage 3: RDF Datasets</a></div>
+       <div><a href='#stage-not-retrieved'>Stage 2: Unretrieved Tabular CKAN Datasets with Distribution Metadata</a></div>
+       <div><a href='#stage-not-accessible'>Stage 1: CKAN Datasets</a></div>
       </div>
      </div>
 
@@ -76,7 +75,7 @@
 
      <div id="stage-converted-enhanced">
        <!--  {{lodspk.home}}lodspeakr/components/services/datasets/queries/converted_enhanced.query -->
-       <h3>RDF Datasets - Enhanced ({{models.converted_enhanced|length}})</h3>
+       <h3>RDF Datasets - Enhanced ({{models.converted_enhanced|length}}) </h3><span>(<a href="#toc">top</a>) </span>
        <p>These RDF datasets have a structure that is more useful than the naive interpretation. 
           (<a href="{{lodspk.home}}lodspeakr/components/services/datasets/queries/converted_enhanced.query">query</a>)</p>
        <ul>
@@ -109,18 +108,6 @@
           <span>All tabular datasets with proper retrieval information have been downloaded to <a href="http://healthdata.tw.rpi.edu">http://healthdata.tw.rpi.edu</a>.</span>
        {%endif%}
      </div>
-
-     {% if models.stage2 | length != 0 %}
-     <div id="stage-2">
-       <h3>Tabular CKAN Datasets with Distribution Metadata (<span>{{ models.stage2|length }}</span>)</h3>
-       <p>These CKAN datasets are listed as tabluar format (e.g. CSV or XLS) and are annotated with data download URLs, but they have not been converted to RDF.</p>
-       <ul>
-         {% for row in models.stage2 %}
-           <li><a href="{{ row.ckan.mirroredUri }}">{{row.id.value}}</a></li>
-         {% endfor %}
-       </ul>
-     </div>
-     {% endif %}
 
      <div id="stage-not-accessible">
        <h3>CKAN Datasets (<span>{{ models.not_accessible|length }}</span>)</h3>

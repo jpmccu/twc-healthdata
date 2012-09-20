@@ -77,10 +77,11 @@
      <div id="stage-converted-enhanced">
        <!--  {{lodspk.home}}lodspeakr/components/services/datasets/queries/converted_enhanced.query -->
        <h3>RDF Datasets - Enhanced ({{models.converted_enhanced|length}})</h3>
-       <p>These RDF datasets have a structure that is more useful than the naive interpretation.</p>
+       <p>These RDF datasets have a structure that is more useful than the naive interpretation. 
+          (<a href="{{lodspk.home}}lodspeakr/components/services/datasets/queries/converted_enhanced.query">query</a>)</p>
        <ul>
          {% for row in models.converted_enhanced %}
-           <li><a href="{{ row.converted_enhanced.mirroredUri }}">{{row.id.value}}</a></li>
+           <li><a href="{{ row.void.mirroredUri }}">{{row.id.value}}</a></li>
          {% endfor %}
        </ul>
      </div>

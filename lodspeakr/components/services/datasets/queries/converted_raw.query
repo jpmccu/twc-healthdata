@@ -1,4 +1,4 @@
-prefix dcterms:    <http://purl.org/dc/terms/> 
+prefix dcterms:    <http://purl.org/dc/terms/>
 prefix void:       <http://rdfs.org/ns/void#>
 prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#>
 prefix conversion: <http://purl.org/twc/vocab/conversion/>
@@ -7,16 +7,26 @@ prefix dcat:       <http://www.w3.org/ns/dcat#>
 
 select distinct ?void ?id
 where {
-  ?void 
-     a void:Dataset, conversion:AbstractDataset;
-     void:subset [ 
-        a conversion:VersionedDataset; 
-     ];
-     prov:wasDerivedFrom ?dist;
-     dcterms:identifier ?id
-  .
-  ?ckan a datafaqs:CKANDataset;
-    dcat:distribution ?dist
-  .
-  ?dist a dcat:Distribution .
+   [] a datafaqs:CKANDataset;
+      dcat:distribution ?dist
+   .
+   ?dist a dcat:Distribution .
+   ?void
+       a void:Dataset, conversion:AbstractDataset;
+       prov:wasDerivedFrom ?dist;
+       dcterms:identifier ?id;
+       void:subset [
+          a conversion:VersionedDataset;
+          void:subset ?layer
+       ]
+   .
+   ?layer
+      a conversion:LayerDataset
+   .
+   optional { 
+      ?layer conversion:enhancement_identifier ?e 
+   }
+   filter(!bound(?e))
 } order by ?void
+
+

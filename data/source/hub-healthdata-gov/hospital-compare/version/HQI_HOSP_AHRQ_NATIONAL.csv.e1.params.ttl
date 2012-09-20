@@ -93,7 +93,7 @@
       #];
       conversion:enhance [
          a conversion:SubjectAnnotation;
-         conversion:predicate  prov:specializationOf;
+         conversion:predicate  rdfs:subClassOf;
          conversion:object     <http://purl.bioontology.org/ontology/SNOMEDCT/22232009>;
       ];
       conversion:enhance [

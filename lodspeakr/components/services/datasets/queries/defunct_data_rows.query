@@ -1,11 +1,21 @@
-prefix ov: <http://open.vocab.org/terms/>
+prefix dcterms:    <http://purl.org/dc/terms/>
+prefix ov:         <http://open.vocab.org/terms/>
+prefix conversion: <http://purl.org/twc/vocab/conversion/>
 
-select distinct ?g (count(?row) as ?count)
+select distinct ?abstract ?id (count(?row) as ?count)
 where {
   graph ?g {
-     [] ov:csvRow ?row
+     ?g a conversion:DatasetSample .
+     [] ov:csvRow ?row .
+     ?abstract a conversion:AbstractDataset; 
+        void:subset [ a conversion:VersionedDataset; 
+           void:subset [ a conversion:LayerDataset;
+              void:subset ?g ] ] .
+     optional {
+        ?abstract dcterms:identifier ?id
+     }
   }
 }
-group by ?g 
-having(count(?row) <= 1) 
-order by desc(?count)
+group by ?g ?abstract ?id
+having(count(?row) <= 1)
+order by desc(?id)

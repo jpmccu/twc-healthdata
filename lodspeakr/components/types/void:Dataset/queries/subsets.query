@@ -1,4 +1,4 @@
-SELECT ?dataset ?datasetId WHERE{
+SELECT DISTINCT ?dataset ?datasetId WHERE{
   <{{uri}}> void:subset ?dataset .
   OPTIONAL{
   ?dataset  dcterms:identifier ?datasetId .

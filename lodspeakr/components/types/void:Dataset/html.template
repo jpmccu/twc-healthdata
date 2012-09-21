@@ -89,6 +89,21 @@
 {%endif%}
      </div>
     </div>
+     <div class="fluid-row">
+      <div class="span8">
+	<h3>Supersets</h3>
+	  {%if models.supersets|length == 0%}
+	      <div class="alert alert-info">No supersets found</div>
+	  {%else%}
+	<ul>
+    {% for row in models.supersets %}
+     <li><a href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
+    {% endfor %}
+    </ul>
+{%endif%}
+     </div>
+    </div>
+    </div>    
     </div>    
     
   </body>

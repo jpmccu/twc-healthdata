@@ -100,6 +100,21 @@
 	<span>(<a href="#toc">top</a>) </span>
      </div>
 
+     <div id="stage-not-tabular">
+       <h3>Defunct Tabular CKAN Datasets (<span>{{ models.defunct_data_rows|length }}</span>)</h3>
+       {% if models.not_retrieved | length != 0 %}
+         <p>These CKAN datasets are listed as tabluar format (e.g. CSV or XLS) and are annotated with data download URLs, have been converted to RDF, but do not appear to be tabular.</p>
+         <ul>
+           {% for row in models.defunct_data_rows %}
+             <li><a href="{{ row.g.mirroredUri }}">{{row.g.value}}</a></li>
+           {% endfor %}
+         </ul>
+       {%else%}
+          <span>All tabular datasets with proper retrieval information have been downloaded to <a href="http://healthdata.tw.rpi.edu">http://healthdata.tw.rpi.edu</a>.</span>
+       {%endif%}
+       <span>(<a href="#toc">top</a>) </span>
+     </div>
+
      <div id="stage-not-retrieved">
        <h3>Unretrieved Tabular CKAN Datasets (<span>{{ models.not_retrieved|length }}</span>)</h3>
        {% if models.not_retrieved | length != 0 %}
@@ -112,7 +127,7 @@
        {%else%}
           <span>All tabular datasets with proper retrieval information have been downloaded to <a href="http://healthdata.tw.rpi.edu">http://healthdata.tw.rpi.edu</a>.</span>
        {%endif%}
-	<span>(<a href="#toc">top</a>) </span>
+       <span>(<a href="#toc">top</a>) </span>
      </div>
 
      <div id="stage-not-accessible">

@@ -1,0 +1,11 @@
+prefix ov: <http://open.vocab.org/terms/>
+
+select distinct ?g (count(?row) as ?count)
+where {
+  graph ?g {
+     [] ov:csvRow ?row
+  }
+}
+group by ?g 
+having(count(?row) <= 1) 
+order by desc(?count)

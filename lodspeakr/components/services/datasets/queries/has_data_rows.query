@@ -1,8 +1,0 @@
-prefix ov: <http://open.vocab.org/terms/> 
-
-select distinct ?g count(?row) as ?c
-where { 
-  graph ?g { 
-     [] ov:csvRow ?row 
-  }
-} group by ?g order by desc(?c)

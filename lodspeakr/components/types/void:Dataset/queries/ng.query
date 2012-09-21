@@ -1,6 +1,6 @@
 PREFIX prov: <http://www.w3.org/ns/prov#>
 
-SELECT ?namedGraph ?location WHERE{
+SELECT DISTINCT ?namedGraph ?location WHERE{
 <{{uri}}> dcat:distribution ?dist.
 ?dist a sd:NamedGraph;
       sd:name ?namedGraph;

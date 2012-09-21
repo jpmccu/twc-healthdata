@@ -45,16 +45,16 @@
     </script>
   </head>
   <body>
-{%include "../../menu.inc"%}
+    {%include "../../menu.inc"%}
     <div class="container">
      <div class="fluid-row">
       <div class="span12">
-    <h2>Dataset <a href='{{uri}}'>{{first.details.id.value}}</a></h2>
+        <h2>Dataset <a href='{{uri}}'>{{first.details.id.value}}</a></h2>
       </div>
      </div>
      <div class="fluid-row">
       <div class="span12">
-    <h3>Type(s): {%for i in models.types%}{%if !forloop.first%}, {%endif%}{{i.type.curie}}{%endfor%}
+         <h3>Type{% if models.types | length > 0 %}s{%endif%}: {%for i in models.types%}{%if !forloop.first%}, {%endif%}{{i.type.curie}}{%endfor%}
     <!--h3>Named Graph: {{first.ng.namedGraph.value}}</h3>
     <h3>SPARQL endpoint: {{first.ng.location.value}}</h3-->
       </div>
@@ -77,11 +77,11 @@
     </div>
      <div class="fluid-row">
       <div class="span8">
-<h3>Subsets</h3>
-{%if models.subsets|length == 0%}
-<div class="alert alert-info">No subsets found</div>
-{%else%}
-<ul>
+	<h3>Subsets</h3>
+	  {%if models.subsets|length == 0%}
+	      <div class="alert alert-info">No subsets found</div>
+	  {%else%}
+	<ul>
     {% for row in models.subsets %}
      <li><a href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
     {% endfor %}
@@ -89,6 +89,21 @@
 {%endif%}
      </div>
     </div>
+     <div class="fluid-row">
+      <div class="span8">
+	<h3>Supersets</h3>
+	  {%if models.supersets|length == 0%}
+	      <div class="alert alert-info">No supersets found</div>
+	  {%else%}
+	<ul>
+    {% for row in models.supersets %}
+     <li><a href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
+    {% endfor %}
+    </ul>
+{%endif%}
+     </div>
+    </div>
+    </div>    
     </div>    
     
   </body>

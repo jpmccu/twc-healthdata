@@ -472,18 +472,18 @@
          ov:csvCol          22;
          ov:csvHeader       "PSI_4_SURG_COMP_NUM_DC";
          conversion:equivalent_property prov:generalizationOf;
-         conversion:range_template "[/sdv]provider/[#1]/[L]";
+         conversion:range_template "[/sdv]provider/[#1]/PSI_4_SURG_COMP";
          conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:object_search [
 	     conversion:regex ".*";
              conversion:predicate qb:measureType;
-             conversion:object "[/sd]measures/ahrq/[L]";
+             conversion:object "[/sd]measures/ahrq/PSI_4_SURG_COMP";
          ];
          conversion:object_search [
 	     conversion:regex "(.*)";
              conversion:predicate fn:count;
-             conversion:object "xsd:decimal([\\1])";
+             conversion:object "xsd:decimal([.])";
          ];
          conversion:range   rdfs:Resource;
       ];
@@ -518,18 +518,18 @@
          ov:csvCol          26;
          ov:csvHeader       "PSI_6_IAT_PTX_NUM_DC";
          conversion:equivalent_property prov:generalizationOf;
-         conversion:range_template "[/sdv]provider/[#1]/[L]";
+         conversion:range_template "[/sdv]provider/[#1]/PSI_6_IAT_PTX";
          conversion:object_search [
 	     conversion:regex ".*";
              conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Number of Patients";
              conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
              conversion:predicate qb:measureType;
-             conversion:object "[/sd]measures/ahrq/[L]";
+             conversion:object "[/sd]measures/ahrq/PSI_6_IAT_PTX";
          ];
          conversion:object_search [
 	     conversion:regex "(.*)";
              conversion:predicate fn:count;
-             conversion:object "xsd:decimal([\\1])";
+             conversion:object "xsd:decimal([.])";
          ];
          conversion:range   rdfs:Resource;
       ];

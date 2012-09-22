@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="{{lodspk.home}}css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
     <link rel="alternate" type="application/rdf+xml" title="RDF/XML Version" href="{{lodspk.local.value}}.rdf" />
     <link rel="alternate" type="text/turtle" title="Turtle Version" href="{{lodspk.local.value}}.ttl" />
     <link rel="alternate" type="text/plain" title="N-Triples Version" href="{{lodspk.local.value}}.nt" />
     <link rel="alternate" type="application/json" title="RDFJSON Version" href="{{lodspk.local.value}}.json" />
+    <link href="{{lodspk.home}}css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -45,66 +45,44 @@
     </script>
   </head>
   <body>
-    {%include "../../menu.inc"%}
-    <div class="container">
-     <div class="fluid-row">
-      <div class="span12">
-        <h2>Dataset <a href='{{uri}}'>{{first.details.id.value}}</a></h2>
+ <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">LODSPeaKr</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="classes">Classes</a></li>
+              <li><a href="namedGraphs">Named Graphs</a></li>
+            </ul>
+            <form class="navbar-search pull-left" action="">
+              <input type="text" data-provide="typeahead" class="typeahead search-query span2" placeholder="Search"/>
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
       </div>
-     </div>
-     <div class="fluid-row">
-      <div class="span12">
-         <h3>Type{% if models.types | length > 0 %}s{%endif%}: {%for i in models.types%}{%if !forloop.first%}, {%endif%}{{i.type.curie}}{%endfor%}
-    <!--h3>Named Graph: {{first.ng.namedGraph.value}}</h3>
-    <h3>SPARQL endpoint: {{first.ng.location.value}}</h3-->
-      </div>
-     </div>
-     <div class="fluid-row">
-      <div class="span8">
+    </div>
 
-    <table class="table table-striped" about="{{uri}}">
-    <thead>
-      <tr><th>Attribute</th><th>Value</th></tr>
-    </thead>
-    {% for row in models.attributes %}
-     <tr>
-     <td>{{row.p.curie}}</td>
-     <td>{{row.o.value}}</td>
-     </tr>
-    {% endfor %}
-    </table>
-     </div>
+    <div class="container">
+      <h1>conversion:base_uri</h1>
+      {% if models.defunct_data_rows | length != 0 %}
+         <p>The following datasets have the incorrect conversion:base_uri asserted. This can happen when third parties contribute enhancement parameters, but do not set their environment variables to the project that they are contributing to.
+         </p>
+         <ul>
+         {% for row in models.base_uri %}
+             <li><a href="{{ row.dataset.mirroredUri }}">{{row.base.curie}}</a></li>
+         {% endfor %}
+        </ul>
+      {%else%}
+         <span>All conversion:base_uri appear to be within the right namespace.</span>
+      {%endif%}
     </div>
-     <div class="fluid-row">
-      <div class="span8">
-	<h3>Subsets</h3>
-	  {%if models.subsets|length == 0%}
-	      <div class="alert alert-info">No subsets found</div>
-	  {%else%}
-	<ul>
-    {% for row in models.subsets %}
-     <li><a href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
-    {% endfor %}
-    </ul>
-{%endif%}
-     </div>
-    </div>
-     <div class="fluid-row">
-      <div class="span8">
-	<h3>Supersets</h3>
-	  {%if models.supersets|length == 0%}
-	      <div class="alert alert-info">No supersets found</div>
-	  {%else%}
-	<ul>
-    {% for row in models.supersets %}
-     <li><a href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
-    {% endfor %}
-    </ul>
-{%endif%}
-     </div>
-    </div>
-    </div>    
-    </div>    
-    
+
   </body>
 </html>
+

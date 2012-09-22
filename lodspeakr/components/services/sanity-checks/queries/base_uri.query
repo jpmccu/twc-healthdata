@@ -1,0 +1,8 @@
+prefix xsd:        <http://www.w3.org/2001/XMLSchema#>
+prefix conversion: <http://purl.org/twc/vocab/conversion/>
+
+select distinct ?dataset ?base
+where {
+  ?dataset conversion:base_uri ?base . 
+  filter(!regex(str(?base),"http://purl.org/twc/health"))
+}

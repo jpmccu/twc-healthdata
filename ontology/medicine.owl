@@ -1,0 +1,3 @@
+@prefix : <http://healthdata.tw.rpi.edu/vocab/> .
+
+:Medicine a owl:Class .

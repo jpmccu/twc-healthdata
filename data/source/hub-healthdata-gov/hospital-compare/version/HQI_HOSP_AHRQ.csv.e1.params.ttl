@@ -47,63 +47,63 @@
 
 :annotatedValue1
    a conversion:ImplicitBundle;
-   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[#1]/1";
+   conversion:property_name prov:specializationOf; # Can also be a URI, e.g. dcterms:title.
+   conversion:name_template "[/sdv]provider/[#1]";
 .
 
-:annotatedValue2
-   a conversion:ImplicitBundle;
-   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[#1]/2";
-.
+#:annotatedValue2
+#   a conversion:ImplicitBundle;
+#   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+#   conversion:name_template "[/sdv]provider/[#1]/2";
+#.
 
-:annotatedValue3
-   a conversion:ImplicitBundle;
-   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[#1]/3";
-.
+#:annotatedValue3
+#   a conversion:ImplicitBundle;
+#   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+#   conversion:name_template "[/sdv]provider/[#1]/3";
+#.
 
-:annotatedValue4
-   a conversion:ImplicitBundle;
-   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[#1]/4";
-.
+#:annotatedValue4
+#   a conversion:ImplicitBundle;
+#   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+#   conversion:name_template "[/sdv]provider/[#1]/4";
+#.
 
-:annotatedValue5
-   a conversion:ImplicitBundle;
-   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[#1]/5";
-.
+#:annotatedValue5
+#   a conversion:ImplicitBundle;
+#   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+#   conversion:name_template "[/sdv]provider/[#1]/5";
+#.
 
-:annotatedValue6
-   a conversion:ImplicitBundle;
-   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[#1]/6";
-.
+#:annotatedValue6
+#   a conversion:ImplicitBundle;
+#   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+#   conversion:name_template "[/sdv]provider/[#1]/6";
+#.
 
-:annotatedValue7
-   a conversion:ImplicitBundle;
-   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[#1]/7";
-.
+#:annotatedValue7
+#   a conversion:ImplicitBundle;
+#   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+#   conversion:name_template "[/sdv]provider/[#1]/7";
+#.
 
-:annotatedValue8
-   a conversion:ImplicitBundle;
-   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[#1]/8";
-.
+#:annotatedValue8
+#   a conversion:ImplicitBundle;
+#   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+#   conversion:name_template "[/sdv]provider/[#1]/8";
+#.
 
-:annotatedValue9
-   a conversion:ImplicitBundle;
-   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[#1]/9";
-.
+#:annotatedValue9
+#   a conversion:ImplicitBundle;
+#   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+#   conversion:name_template "[/sdv]provider/[#1]/9";
+#.
 
-:annotatedValue0
-   a conversion:ImplicitBundle;
-   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
-   conversion:name_template "[/sdv]provider/[#1]/0";
-.
+#:annotatedValue0
+#   a conversion:ImplicitBundle;
+#   conversion:property_name prov:generalizationOf; # Can also be a URI, e.g. dcterms:title.
+#   conversion:name_template "[/sdv]provider/[#1]/0";
+#.
 
 
 #:a_bundle
@@ -155,352 +155,319 @@
          ov:csvCol          1;
          ov:csvHeader       "Provider Number";
          #conversion:label   "Provider Number";
+         conversion:bundled_by :annotatedValue1;
          conversion:comment "";
-         conversion:domain_template "[/sdv]provider/[.]";
+         #conversion:range_template "[/sdv]provider/[.]";
          conversion:range   rdfs:Literal;
          conversion:equivalent_property dcterms:identifier;
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/PSI_4_SURG_COMP";
+            conversion:object    "[/sd]vocab/[#2]";
+            conversion:range   rdfs:Resource;
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/PSI_6_IAT_PTX";
+            conversion:object    "[/sd]vocab/[#4]";
+            conversion:range   rdfs:Resource;
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/PSI_11_POSTOP_RESPFAIL";
+            conversion:object    "[/sd]vocab/[#6]";
+            conversion:range   rdfs:Resource;
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/PSI_12_POSTOP_PULMEMB_DVT";
+            conversion:object    "[/sd]vocab/[#8]";
+            conversion:range   rdfs:Resource;
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/PSI_14_POSTOP_DEHIS";
+            conversion:object    "[/sd]vocab/[#10]";
+            conversion:range   rdfs:Resource;
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/PSI_15_ACC_LAC";
+            conversion:object    "[/sd]vocab/[#12]";
+            conversion:range   rdfs:Resource;
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/PSI_90_SAFETY";
+            conversion:object    "[/sd]vocab/[#14]";
+            conversion:range   rdfs:Resource;
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/IQI_11_AAA";
+            conversion:object    "[/sd]vocab/[#16]";
+            conversion:range   rdfs:Resource;
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/IQI_19_HIP_FX";
+            conversion:object    "[/sd]vocab/[#18]";
+            conversion:range   rdfs:Resource;
+         ];
+         conversion:object_search [
+            conversion:regex     ".*";
+            conversion:predicate "[/sd]measures/ahrq/IQI_91_CONDS";
+            conversion:object    "[/sd]vocab/[#20]";
+            conversion:range   rdfs:Resource;
+         ];
       ];
       conversion:enhance [
          ov:csvCol          2;
          ov:csvHeader       "PSI_4_SURG_COMP";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery";
          conversion:comment "Lists the composite rating for the measure.";
-         conversion:range_template "[/]ns/[.]";
+         a scovo:Item;
+         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:object    "[/sd]vocab/[#2]";
+         conversion:subject_annotation [
+             conversion:predicate qb:measureType;
+             conversion:object "[/sd]measures/ahrq/[H]";
+         ];
+         conversion:domain_template "[/sdv]provider/[#1]/[H]";
          conversion:range   rdfs:Resource;
       ];
       conversion:enhance [
          ov:csvCol          3;
          ov:csvHeader       "PSI_4_SURG_COMP_F";
-         conversion:bundled_by :annotatedValue0;
+         conversion:bundled_by [ov:csvCol 2];
          conversion:equivalent_property health:hasAnnotation;
          conversion:range_template "[/sd]footnote/[.]";
          conversion:range   rdfs:Resource;
-         conversion:interpret [
-            conversion:symbol        "";
-            conversion:interpretation conversion:null; 
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate "[/sd]measures/ahrq/PSI_4_SURG_COMP";
-            conversion:object    "[#2]";
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate qb:measureType;
-            conversion:object "[/sd]measures/ahrq/PSI_4_SURG_COMP";
-         ];
       ];
       conversion:enhance [
          ov:csvCol          4;
          ov:csvHeader       "PSI_6_IAT_PTX";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Iatrogenic Pneumothorax";
          conversion:comment "Lists the composite rating for the measure.";
-         conversion:range_template "[/]ns/[.]";
+         a scovo:Item;
+         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:object    "[/]vocab/[.]";
+         conversion:subject_annotation [
+             conversion:predicate qb:measureType;
+             conversion:object "[/sd]measures/ahrq/[H]";
+         ];
+         conversion:domain_template "[/sdv]provider/[#1]/[H]";
          conversion:range   rdfs:Resource;
       ];
       conversion:enhance [
          ov:csvCol          5;
          ov:csvHeader       "PSI_6_IAT_PTX_F";
-         conversion:bundled_by :annotatedValue1;
+         conversion:bundled_by [ov:csvCol 4];
          conversion:equivalent_property health:hasAnnotation;
          conversion:range_template "[/sd]footnote/[.]";
          conversion:range   rdfs:Resource;
-         conversion:interpret [
-            conversion:symbol        "";
-            conversion:interpretation conversion:null; 
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate "[/sd]measures/ahrq/PSI_6_IAT_PTX";
-            conversion:object    "[#4]";
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate qb:measureType;
-            conversion:object "[/sd]measures/ahrq/PSI_6_IAT_PTX";
-         ];
       ];
       conversion:enhance [
          ov:csvCol          6;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Respiratory Failure";
          conversion:comment "Lists the composite rating for the measure.";
-         conversion:range_template "[/]ns/[.]";
+         a scovo:Item;
+         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:object    "[/sd]vocab/[.]";
+         conversion:subject_annotation [
+             conversion:predicate qb:measureType;
+             conversion:object "[/sd]measures/ahrq/[H]";
+         ];
+         conversion:domain_template "[/sdv]provider/[#1]/[H]";
          conversion:range   rdfs:Resource;
       ];
       conversion:enhance [
          ov:csvCol          7;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_F";
-         conversion:bundled_by :annotatedValue2;
+         conversion:bundled_by [ov:csvCol 6];
          conversion:equivalent_property health:hasAnnotation;
          conversion:range_template "[/sd]footnote/[.]";
          conversion:range   rdfs:Resource;
-         conversion:interpret [
-            conversion:symbol        "";
-            conversion:interpretation conversion:null; 
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate "[/sd]measures/ahrq/PSI_11_POSTOP_RESPFAIL";
-            conversion:object    "[#6]";
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate qb:measureType;
-            conversion:object "[/sd]measures/ahrq/PSI_11_POSTOP_RESPFAIL";
-         ];
       ];
       conversion:enhance [
          ov:csvCol          8;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Pulmonary Embolism or Deep Vein Thrombosis";
          conversion:comment "Lists the composite rating for the measure.";
-         conversion:range_template "[/]ns/[.]";
+         a scovo:Item;
+         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:object    "[/sd]vocab/[.]";
+         conversion:subject_annotation [
+             conversion:predicate qb:measureType;
+             conversion:object "[/sd]measures/ahrq/[H]";
+         ];
+         conversion:domain_template "[/sdv]provider/[#1]/[H]";
          conversion:range   rdfs:Resource;
       ];
       conversion:enhance [
          ov:csvCol          9;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_F";
-         conversion:bundled_by :annotatedValue3;
+         conversion:bundled_by [ov:csvCol 8];
          conversion:equivalent_property health:hasAnnotation;
          conversion:range_template "[/sd]footnote/[.]";
          conversion:range   rdfs:Resource;
-         conversion:interpret [
-            conversion:symbol        "";
-            conversion:interpretation conversion:null; 
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate "[/sd]measures/ahrq/PSI_12_POSTOP_PULMEMB_DVT";
-            conversion:object    "[#8]";
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate qb:measureType;
-            conversion:object "[/sd]measures/ahrq/PSI_12_POSTOP_PULMEMB_DVT";
-         ];
       ];
       conversion:enhance [
          ov:csvCol          10;
          ov:csvHeader       "PSI_14_POSTOP_DEHIS";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Wound Dehiscence";
          conversion:comment "Lists the composite rating for the measure.";
-         conversion:range_template "[/]ns/[.]";
+         a scovo:Item;
+         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:object    "[/sd]vocab/[.]";
+         conversion:subject_annotation [
+             conversion:predicate qb:measureType;
+             conversion:object "[/sd]measures/ahrq/[H]";
+         ];
+         conversion:domain_template "[/sdv]provider/[#1]/[H]";
          conversion:range   rdfs:Resource;
       ];
       conversion:enhance [
          ov:csvCol          11;
-         conversion:bundled_by :annotatedValue4;
+         conversion:bundled_by [ov:csvCol 10];
          conversion:equivalent_property health:hasAnnotation;
          conversion:range_template "[/sd]footnote/[.]";
          conversion:range   rdfs:Resource;
-         conversion:interpret [
-            conversion:symbol        "";
-            conversion:interpretation conversion:null; 
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate "[/sd]measures/ahrq/PSI_14_POSTOP_DEHIS";
-            conversion:object    "[#10]";
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate qb:measureType;
-            conversion:object "[/sd]measures/ahrq/PSI_14_POSTOP_DEHIS";
-         ];
       ];
       conversion:enhance [
          ov:csvCol          12;
          ov:csvHeader       "PSI_15_ACC_LAC";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Accidental Puncture or Laceration";
          conversion:comment "Lists the composite rating for the measure.";
-         conversion:range_template "[/]ns/[.]";
+         a scovo:Item;
+         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:object    "[/sd]vocab/[.]";
+         conversion:subject_annotation [
+             conversion:predicate qb:measureType;
+             conversion:object "[/sd]measures/ahrq/[H]";
+         ];
+         conversion:domain_template "[/sdv]provider/[#1]/[H]";
          conversion:range   rdfs:Resource;
       ];
       conversion:enhance [
          ov:csvCol          13;
          ov:csvHeader       "PSI_15_ACC_LAC_F";
-         conversion:bundled_by :annotatedValue5;
+         conversion:bundled_by [ov:csvCol 12];
          conversion:equivalent_property health:hasAnnotation;
          conversion:range_template "[/sd]footnote/[.]";
          conversion:range   rdfs:Resource;
-         conversion:interpret [
-            conversion:symbol        "";
-            conversion:interpretation conversion:null; 
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate "[/sd]measures/ahrq/PSI_15_ACC_LAC";
-            conversion:object    "[#13]";
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate qb:measureType;
-            conversion:object "[/sd]measures/ahrq/PSI_15_ACC_LAC";
-         ];
       ];
       conversion:enhance [
          ov:csvCol          14;
          ov:csvHeader       "PSI_90_SAFETY";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Patient Safety for Selected Indicators";
          conversion:comment "Lists the composite rating for the measure.";
-         conversion:range_template "[/]ns/[.]";
+         a scovo:Item;
+         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:object    "[/sd]vocab/[.]";
+         conversion:subject_annotation [
+             conversion:predicate qb:measureType;
+             conversion:object "[/sd]measures/ahrq/[H]";
+         ];
+         conversion:domain_template "[/sdv]provider/[#1]/[H]";
          conversion:range   rdfs:Resource;
       ];
       conversion:enhance [
          ov:csvCol          15;
          ov:csvHeader       "PSI_90_SAFETY_F";
-         conversion:bundled_by :annotatedValue6;
+         conversion:bundled_by [ov:csvCol 14];
          conversion:equivalent_property health:hasAnnotation;
          conversion:range_template "[/sd]footnote/[.]";
          conversion:range   rdfs:Resource;
-         conversion:interpret [
-            conversion:symbol        "";
-            conversion:interpretation conversion:null; 
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate "[/sd]measures/ahrq/PSI_90_SAFETY";
-            conversion:object    "[#14]";
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate qb:measureType;
-            conversion:object "[/sd]measures/ahrq/PSI_90_SAFETY";
-         ];
       ];
       conversion:enhance [
          ov:csvCol          16;
          ov:csvHeader       "IQI_11_AAA";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Abdominal Aortic Aneurysm Repair Mortality";
          conversion:comment "Lists the composite rating for the measure.";
-         conversion:range_template "[/]ns/[.]";
+         a scovo:Item;
+         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:object    "[/sd]vocab/[.]";
+         conversion:subject_annotation [
+             conversion:predicate qb:measureType;
+             conversion:object "[/sd]measures/ahrq/[H]";
+         ];
+         conversion:domain_template "[/sdv]provider/[#1]/[H]";
          conversion:range   rdfs:Resource;
       ];
       conversion:enhance [
          ov:csvCol          17;
          ov:csvHeader       "IQI_11_AAA_F";
-         conversion:bundled_by :annotatedValue7;
+         conversion:bundled_by [ov:csvCol 16];
          conversion:equivalent_property health:hasAnnotation;
          conversion:range_template "[/sd]footnote/[.]";
          conversion:range   rdfs:Resource;
-         conversion:interpret [
-            conversion:symbol        "";
-            conversion:interpretation conversion:null; 
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate "[/sd]measures/ahrq/IQI_11_AAA";
-            conversion:object    "[#16]";
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate qb:measureType;
-            conversion:object "[/sd]measures/ahrq/IQI_11_AAA";
-         ];
       ];
       conversion:enhance [
          ov:csvCol          18;
          ov:csvHeader       "IQI_19_HIP_FX";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Hip Fracture Mortality";
          conversion:comment "Lists the composite rating for the measure.";
-         conversion:range_template "[/]ns/[.]";
+         a scovo:Item;
+         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:object    "[/sd]vocab/[.]";
+         conversion:subject_annotation [
+             conversion:predicate qb:measureType;
+             conversion:object "[/sd]measures/ahrq/[H]";
+         ];
+         conversion:domain_template "[/sdv]provider/[#1]/[H]";
          conversion:range   rdfs:Resource;
       ];
       conversion:enhance [
          ov:csvCol          19;
          ov:csvHeader       "IQI_19_HIP_FX_F";
-         conversion:bundled_by :annotatedValue8;
+         conversion:bundled_by [ov:csvCol 18];
          conversion:equivalent_property health:hasAnnotation;
          conversion:range_template "[/sd]footnote/[.]";
          conversion:range   rdfs:Resource;
-         conversion:interpret [
-            conversion:symbol        "";
-            conversion:interpretation conversion:null; 
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate "[/sd]measures/ahrq/IQI_19_HIP_FX";
-            conversion:object    "[#18]";
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate qb:measureType;
-            conversion:object "[/sd]measures/ahrq/IQI_19_HIP_FX";
-         ];
       ];
       conversion:enhance [
          ov:csvCol          20;
          ov:csvHeader       "IQI_91_CONDS";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Mortality for Selected Conditions";
          conversion:comment "Lists the composite rating for the measure.";
-         conversion:range_template "[/]ns/[.]";
+         a scovo:Item;
+         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:object    "[/sd]vocab/[.]";
+         conversion:subject_annotation [
+             conversion:predicate qb:measureType;
+             conversion:object "[/sd]measures/ahrq/[H]";
+         ];
+         conversion:domain_template "[/sdv]provider/[#1]/[H]";
          conversion:range   rdfs:Resource;
       ];
       conversion:enhance [
          ov:csvCol          21;
          ov:csvHeader       "IQI_91_CONDS_F";
-         conversion:bundled_by :annotatedValue9;
+         conversion:bundled_by [ov:csvCol 20];
          conversion:equivalent_property health:hasAnnotation;
          conversion:range_template "[/sd]footnote/[.]";
          conversion:range   rdfs:Resource;
-         conversion:interpret [
-            conversion:symbol        "";
-            conversion:interpretation conversion:null; 
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate "[/sd]measures/ahrq/IQI_91_CONDS";
-            conversion:object    "[#20]";
-         ];
-         conversion:object_search [
-            conversion:regex     ".*";
-            conversion:predicate qb:measureType;
-            conversion:object "[/sd]measures/ahrq/IQI_91_CONDS";
-         ];
       ];
       conversion:enhance [
          ov:csvCol          22;
          ov:csvHeader       "PSI_4_SURG_COMP_NUM_DC";
-         conversion:equivalent_property prov:generalizationOf;
-         conversion:range_template "[/sdv]provider/[#1]/PSI_4_SURG_COMP";
-         conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery";
-         conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
-         conversion:object_search [
-             conversion:regex ".*";
-             conversion:predicate qb:measureType;
-             conversion:object "[/sd]measures/ahrq/PSI_4_SURG_COMP";
-         ];
-         conversion:object_search [
-             conversion:regex "(.*)";
-             conversion:predicate fn:count;
-             conversion:object "xsd:decimal([.])";
-         ];
-         conversion:range   rdfs:Resource;
+         conversion:bundled_by [ov:csvCol 2];
+         conversion:equivalent_property fn:count;
+         conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          23;
          ov:csvHeader       "PSI_4_SURG_COMP_RATE";
-         conversion:bundled_by [ov:csvCol 22];
+         conversion:bundled_by [ov:csvCol 2];
          conversion:equivalent_property agg:rate;
-         conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Rate";
-         conversion:comment "Lists the hospital’s rate of complication.";
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          24;
          ov:csvHeader       "PSI_4_SURG_COMP_LOW_EST";
-         conversion:bundled_by [ov:csvCol 22];
+         conversion:bundled_by [ov:csvCol 2];
          conversion:equivalent_property agg:lower95pctConfidenceInterval;
          conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
@@ -509,7 +476,7 @@
       conversion:enhance [
          ov:csvCol          25;
          ov:csvHeader       "PSI_4_SURG_COMP_HIGH_EST";
-         conversion:bundled_by [ov:csvCol 22];
+         conversion:bundled_by [ov:csvCol 2];
          conversion:equivalent_property agg:upper95pctConfidenceInterval;
          conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
@@ -518,25 +485,16 @@
       conversion:enhance [
          ov:csvCol          26;
          ov:csvHeader       "PSI_6_IAT_PTX_NUM_DC";
-         conversion:equivalent_property prov:generalizationOf;
-         conversion:range_template "[/sdv]provider/[#1]/PSI_6_IAT_PTX";
-         conversion:object_search [
-	     conversion:regex ".*";
-             conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Number of Patients";
-             conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
-             conversion:predicate qb:measureType;
-             conversion:object "[/sd]measures/ahrq/PSI_6_IAT_PTX";
-         ];
-         conversion:object_search [
-	     conversion:regex "(.*)";
-             conversion:predicate fn:count;
-             conversion:object "xsd:decimal([.])";
-         ];
+         conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Number of Patients";
+         conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
+         conversion:bundled_by [ov:csvCol 4];
+         conversion:equivalent_property fn:count;
+         conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          27;
          ov:csvHeader       "PSI_6_IAT_PTX_RATE";
-         conversion:bundled_by [ov:csvCol 26];
+         conversion:bundled_by [ov:csvCol 4];
          conversion:equivalent_property agg:rate;
          conversion:label   "Iatrogenic Pneumothorax - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
@@ -545,7 +503,7 @@
       conversion:enhance [
          ov:csvCol          28;
          ov:csvHeader       "PSI_6_IAT_PTX_LOW_EST";
-         conversion:bundled_by [ov:csvCol 26];
+         conversion:bundled_by [ov:csvCol 4];
          conversion:equivalent_property agg:lower95pctConfidenceInterval;
          conversion:label   "Iatrogenic Pneumothorax - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
@@ -554,7 +512,7 @@
       conversion:enhance [
          ov:csvCol          29;
          ov:csvHeader       "PSI_6_IAT_PTX_HIGH_EST";
-         conversion:bundled_by [ov:csvCol 26];
+         conversion:bundled_by [ov:csvCol 4];
          conversion:equivalent_property agg:upper95pctConfidenceInterval;
          conversion:label   "Iatrogenic Pneumothorax - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
@@ -563,23 +521,24 @@
       conversion:enhance [
          ov:csvCol          30;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_NUM_DC";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
-         conversion:label   "Postoperative Respiratory Failure - Number of Patients";
-         conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
+         conversion:bundled_by [ov:csvCol 6];
+         conversion:equivalent_property fn:count;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          31;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_RATE";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Respiratory Failure - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
+         conversion:bundled_by [ov:csvCol 6];
+         conversion:equivalent_property agg:rate;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          32;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_LOW_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 6];
+         conversion:equivalent_property agg:lower95pctConfidenceInterval;
          conversion:label   "Postoperative Respiratory Failure - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -587,7 +546,8 @@
       conversion:enhance [
          ov:csvCol          33;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_HIGH_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 6];
+         conversion:equivalent_property agg:upper95pctConfidenceInterval;
          conversion:label   "Postoperative Respiratory Failure - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -595,23 +555,26 @@
       conversion:enhance [
          ov:csvCol          34;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_NUM_DC";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Pulmonary Embolism or Deep Vein Thrombosis - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
+         conversion:bundled_by [ov:csvCol 8];
+         conversion:equivalent_property fn:count;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          35;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_RATE";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Pulmonary Embolism or Deep Vein Thrombosis - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
+         conversion:bundled_by [ov:csvCol 8];
+         conversion:equivalent_property agg:rate;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          36;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_LOW_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 8];
+         conversion:equivalent_property agg:lower95pctConfidenceInterval;
          conversion:label   "Postoperative Pulmonary Embolism or Deep Vein Thrombosis - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -619,7 +582,8 @@
       conversion:enhance [
          ov:csvCol          37;
          ov:csvHeader       "PSI_12_POSTOP_PULMEMB_DVT_HIGH_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 8];
+         conversion:equivalent_property agg:upper95pctConfidenceInterval;
          conversion:label   "Postoperative Pulmonary Embolism or Deep Vein Thrombosis - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -627,22 +591,25 @@
       conversion:enhance [
          ov:csvCol          38;
          ov:csvHeader       "PSI_14_POSTOP_DEHIS_NUM_DC";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Wound Dehiscence - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
+         conversion:bundled_by [ov:csvCol 10];
+         conversion:equivalent_property fn:count;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          39;
          ov:csvHeader       "PSI_14_POSTOP_DEHIS_RATE";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Postoperative Wound Dehiscence - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
+         conversion:bundled_by [ov:csvCol 10];
+         conversion:equivalent_property agg:rate;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          40;
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 10];
+         conversion:equivalent_property agg:lower95pctConfidenceInterval;
          ov:csvHeader       "PSI_14_POSTOP_DEHIS_LOW_EST";
          conversion:label   "Postoperative Wound Dehiscence - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
@@ -651,7 +618,8 @@
       conversion:enhance [
          ov:csvCol          41;
          ov:csvHeader       "PSI_14_POSTOP_DEHIS_HIGH_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 10];
+         conversion:equivalent_property agg:upper95pctConfidenceInterval;
          conversion:label   "Postoperative Wound Dehiscence - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -659,23 +627,26 @@
       conversion:enhance [
          ov:csvCol          42;
          ov:csvHeader       "PSI_15_ACC_LAC_NUM_DC";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Accidental Puncture or Laceration - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
+         conversion:bundled_by [ov:csvCol 12];
+         conversion:equivalent_property fn:count;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          43;
          ov:csvHeader       "PSI_15_ACC_LAC_RATE";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Accidental Puncture or Laceration - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
+         conversion:bundled_by [ov:csvCol 12];
+         conversion:equivalent_property agg:rate;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          44;
          ov:csvHeader       "PSI_15_ACC_LAC_LOW_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 12];
+         conversion:equivalent_property agg:lower95pctConfidenceInterval;
          conversion:label   "Accidental Puncture or Laceration - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -683,7 +654,8 @@
       conversion:enhance [
          ov:csvCol          45;
          ov:csvHeader       "PSI_15_ACC_LAC_HIGH_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 12];
+         conversion:equivalent_property agg:upper95pctConfidenceInterval;
          conversion:label   "Accidental Puncture or Laceration - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -691,23 +663,26 @@
       conversion:enhance [
          ov:csvCol          46;
          ov:csvHeader       "PSI_90_SAFETY_NUM_DC";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Patient Safety for Selected Indicators - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
+         conversion:bundled_by [ov:csvCol 14];
+         conversion:equivalent_property fn:count;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          47;
          conversion:label   "Patient Safety for Selected Indicators - Rate";
          ov:csvHeader      "PSI_90_SAFETY_RATE";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:comment "Lists the hospital’s rate of complication.";
+         conversion:bundled_by [ov:csvCol 14];
+         conversion:equivalent_property agg:rate;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          48;
          ov:csvHeader       "PSI_90_SAFETY_LOW_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 14];
+         conversion:equivalent_property agg:lower95pctConfidenceInterval;
          conversion:label   "Patient Safety for Selected Indicators - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -715,7 +690,8 @@
       conversion:enhance [
          ov:csvCol          49;
          ov:csvHeader       "PSI_90_SAFETY_HIGH_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 14];
+         conversion:equivalent_property agg:upper95pctConfidenceInterval;
          conversion:label   "Patient Safety for Selected Indicators - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -723,23 +699,26 @@
       conversion:enhance [
          ov:csvCol          50;
          ov:csvHeader       "IQI_11_AAA_NUM_DC";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Abdominal Aortic Aneurysm Repair Mortality - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
+         conversion:bundled_by [ov:csvCol 16];
+         conversion:equivalent_property fn:count;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          51;
          ov:csvHeader       "IQI_11_AAA_RATE";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Abdominal Aortic Aneurysm Repair Mortality - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
+         conversion:bundled_by [ov:csvCol 16];
+         conversion:equivalent_property agg:rate;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          52;
          ov:csvHeader       "IQI_11_AAA_LOW_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 16];
+         conversion:equivalent_property agg:lower95pctConfidenceInterval;
          conversion:label   "Abdominal Aortic Aneurysm Repair Mortality - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -747,7 +726,8 @@
       conversion:enhance [
          ov:csvCol          53;
          ov:csvHeader       "IQI_11_AAA_HIGH_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 16];
+         conversion:equivalent_property agg:upper95pctConfidenceInterval;
          conversion:label   "Abdominal Aortic Aneurysm Repair Mortality - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -755,23 +735,26 @@
       conversion:enhance [
          ov:csvCol          54;
          ov:csvHeader       "IQI_19_HIP_FX_NUM_DC";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Hip Fracture Mortality - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
+         conversion:bundled_by [ov:csvCol 18];
+         conversion:equivalent_property fn:count;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          55;
          ov:csvHeader       "IQI_19_HIP_FX_RATE";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Hip Fracture Mortality - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
+         conversion:bundled_by [ov:csvCol 18];
+         conversion:equivalent_property agg:rate;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          56;
          ov:csvHeader       "IQI_19_HIP_FX_LOW_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 18];
+         conversion:equivalent_property agg:lower95pctConfidenceInterval;
          conversion:label   "Hip Fracture Mortality - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -779,7 +762,8 @@
       conversion:enhance [
          ov:csvCol          57;
          ov:csvHeader       "IQI_19_HIP_FX_HIGH_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 18];
+         conversion:equivalent_property agg:upper95pctConfidenceInterval;
          conversion:label   "Hip Fracture Mortality - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -787,23 +771,27 @@
       conversion:enhance [
          ov:csvCol          58;
          ov:csvHeader       "IQI_91_CONDS_NUM_DC";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Mortality for Selected Conditions - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
+         conversion:bundled_by [ov:csvCol 20];
+         conversion:equivalent_property fn:count;
          conversion:range   xsd:decimal;
+         conversion:range   rdfs:Resource;
       ];
       conversion:enhance [
          ov:csvCol          59;
          ov:csvHeader       "IQI_91_CONDS_RATE";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:label   "Mortality for Selected Conditions - Rate";
          conversion:comment "Lists the hospital’s rate of complication.";
+         conversion:bundled_by [ov:csvCol 20];
+         conversion:equivalent_property agg:rate;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
          ov:csvCol          60;
          ov:csvHeader       "IQI_91_CONDS_LOW_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 20];
+         conversion:equivalent_property agg:lower95pctConfidenceInterval;
          conversion:label   "Mortality for Selected Conditions - Lower Estimate";
          conversion:comment "Lists the lower limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;
@@ -811,7 +799,8 @@
       conversion:enhance [
          ov:csvCol          61;
          ov:csvHeader       "IQI_91_CONDS_HIGH_EST";
-         conversion:equivalent_property "[/sd]measures/ahrq/[H]";
+         conversion:bundled_by [ov:csvCol 20];
+         conversion:equivalent_property agg:upper95pctConfidenceInterval;
          conversion:label   "Mortality for Selected Conditions - Higher Estimate";
          conversion:comment "Lists the upper limit of the hospital’s 95% confidence interval.";
          conversion:range   xsd:decimal;

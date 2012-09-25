@@ -133,7 +133,7 @@
       conversion:enhance [
          a conversion:SubjectAnnotation;
          conversion:predicate rdf:type;
-         conversion:object "[/sdv]HospitalsIn[#]_and_[#4]_value_[#6]";
+         conversion:object "[/sdv]HospitalsIn[#3]_and_[#4]_value_[#6]";
       ];
       conversion:enhance [
          ov:csvCol          4;

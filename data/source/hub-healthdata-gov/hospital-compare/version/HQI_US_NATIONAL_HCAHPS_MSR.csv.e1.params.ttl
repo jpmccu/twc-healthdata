@@ -30,6 +30,14 @@
 @prefix conversion:    <http://purl.org/twc/vocab/conversion/> .
 @prefix :              <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/version/2012-Jul-17/params/enhancement/1/> .
 
+@prefix prov:          <http://www.w3.org/ns/prov#>.
+@prefix snomed:        <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix health:        <http://purl.org/twc/health/vocab/>.
+@prefix hac: <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/measures/hac/> .
+@prefix vcard:         <http://www.w3.org/2006/vcard/ns#> .
+@prefix agg: <http://purl.org/twc/health/vocab/aggregate/> .
+@prefix fn:            <http://www.w3.org/2005/xpath-functions#> .
+
 <http://tw.rpi.edu/instances/JamesMcCusker> foaf:holdsAccount <http://purl.org/klab/lod/machines/schist##jpm78> .
 <http://purl.org/klab/lod/machines/schist##jpm78>
    a foaf:OnlineAccount;
@@ -71,10 +79,10 @@
          a conversion:HeaderRow;
       ];                        
 
-      #conversion:interpret [
-      #   conversion:symbol        "";
-      #   conversion:interpretation conversion:null; 
-      #];
+      conversion:interpret [
+         conversion:symbol        "", "Not Available", " Not Available";
+         conversion:interpretation conversion:null; 
+      ];
       conversion:enhance [
          conversion:domain_template "[/sdv]United_States_Hospitals_and_[#1]_value_[#3]";
          #conversion:domain_name     "Thing";

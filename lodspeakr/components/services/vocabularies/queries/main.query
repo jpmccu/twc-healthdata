@@ -1,0 +1,4 @@
+SELECT DISTINCT ?p WHERE{
+  ?s ?p []
+}
+ORDER BY ?p

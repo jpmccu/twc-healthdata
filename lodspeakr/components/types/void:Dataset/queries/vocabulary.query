@@ -1,0 +1,7 @@
+SELECT DISTINCT ?dataset
+WHERE {
+  <{{uri}}> void:vocabulary ?p .
+  ?dataset void:vocabulary ?p .
+  FILTER(?dataset != <{{uri}}>)
+}
+order by ?dataset

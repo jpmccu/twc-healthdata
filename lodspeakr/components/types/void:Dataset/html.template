@@ -93,19 +93,24 @@
      <div class="fluid-row">
       <div class="span8">
          <h3>CKAN listings</h3>
-         {%if models.ckan_links|length == 0%}
+         {%if models.ckan|length == 0%}
            <div class="alert alert-info">No CKAN links found</div>
          {%else%}
           <ul>
-            {% for row in models.ckan_links %}
-             <li><a href='{{row.theirs.value}}'>on http://hub.healthdata.gov</a></li>
-             <li><a href='{{row.ours.value}}'>on http://healthdata.tw.rpi.edu/hub</a></li>
+            {% for row in models.ckan %}
+             <li><a href='{{row.dataset.value}}'>{{row.dataset.curie}}</a></li>
             {% endfor %}
            </ul>
          {%endif%}
      </div>
     </div>
 
+     <div class="fluid-row">
+      <div class="span8 well">
+         <h3>See all triples</h3>
+         <p><a href='{{lodspk.home}}triples/{{uri|urifier}}'>{{uri}}</a></li>
+     </div>
+    </div>
 
      <div class="fluid-row">
       <div class="span8">

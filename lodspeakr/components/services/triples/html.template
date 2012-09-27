@@ -1,0 +1,60 @@
+{%include "../../menu.inc"%}
+    <div class="container">
+    <h1>Triples of <a href='{{lodspk.args.all|deurifier}}'>{{lodspk.args.all|deurifier}}</a></h1>
+
+    <div style='margin-top: 40px'>
+    <table class='table table-striped'>
+    <thead>
+    <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
+    </thead>
+    {% for row in models.po %}
+     <tr>
+<td>{%if forloop.first%}<a href='{{lodspk.this.value}}'>{{lodspk.this.curie}}</a>{%endif%}</td>
+     <td><a href='{{row.p.value}}'>{{row.p.curie}}</a></td>
+     
+        <td>
+        {%if row.o.uri == 1%}
+        <a rel='{{row.p.value}}' href='{{row.o.value}}'>{{row.o.curie}}</a>
+        {%endif%}
+        {%if row.o.blank == 1%}
+        <span property='{{row.p.value}}'>{{row.o.value}}</span>
+        {%endif%}
+        {%if row.o.literal == 1%}
+        <span property='{{row.p.value}}'>{{row.o.value}}</span>
+        {%endif%}
+        </td>
+
+        </tr>
+    {% endfor %}
+<tr><td></td><td><a href='{{lodspk.this.value}}'>{{lodspk.this.curie}}</a></td><td></td></tr>
+
+    <thead>
+    <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
+    </thead>
+    {% for row in models.sp %}
+      <tr>
+        <td><a href='{{row.s.value}}'>{{row.s.curie}}</a></td>
+
+        <td><a rel='{{row.s.curie}}' href='{{row.p.value}}'>{{row.p.curie}}</a></td>
+<td>{%if forloop.first%}<a href='{{lodspk.this.value}}'>{{lodspk.this.curie}}</a>{%endif%}</td>
+        </tr>
+    {% endfor %}
+    <thead>
+    <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
+    </thead>
+    </table>
+    </div>    
+    
+    <br/>
+
+    <div class='fluid-row'>
+     <h2>Graphical representation</h2>
+     <div class='span8 offset2'>
+<div style='height:660px'><iframe style='overflow-x: hidden;overflow-y: hidden;' frameborder='0' width='100%' height='99%' src='http://graves.cl/visualRDF/embed.php?url={{lodspk.args.all|deurifier}}'></iframe></div>
+     </div>
+    </div>
+
+
+  </body>
+</html>
+

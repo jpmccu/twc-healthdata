@@ -87,7 +87,7 @@
       #   conversion:interpretation conversion:null; 
       #];
       conversion:enhance [
-          conversion:domain_template "[/sdv]HospitalsIn[#]_and_[#3]_value_[#5]";
+          conversion:domain_template "[/sdv]HospitalsIn[#1]_and_[#3]_value_[#5]";
       #   conversion:domain_name     "Thing";
       ];
       #conversion:enhance [

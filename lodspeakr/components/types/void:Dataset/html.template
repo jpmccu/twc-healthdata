@@ -1,57 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>LODSPeaKr Basic Menu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="{{lodspk.home}}css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
-    <link rel="alternate" type="application/rdf+xml" title="RDF/XML Version" href="{{lodspk.local.value}}.rdf" />
-    <link rel="alternate" type="text/turtle" title="Turtle Version" href="{{lodspk.local.value}}.ttl" />
-    <link rel="alternate" type="text/plain" title="N-Triples Version" href="{{lodspk.local.value}}.nt" />
-    <link rel="alternate" type="application/json" title="RDFJSON Version" href="{{lodspk.local.value}}.json" />
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-      .wait{
-        background-image:url('{{lodspk.home}}img/wait.gif');
-        background-repeat:no-repeat;
-        padding-right:20px;
-        background-position: right;
-      }
-    </style>
-    <link href="{{lodspk.home}}css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="screen" />
-    <script type="text/javascript" src="{{lodspk.home}}js/jquery.js"></script>
-    <script type="text/javascript" src="{{lodspk.home}}js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{lodspk.home}}js/bootstrap-typeahead.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-        $('.typeahead').typeahead({
-            source: function (typeahead, query) {
-              $('.typeahead').addClass('wait');[]
-              return $.get('{{lodspk.home}}search/'+encodeURIComponent(query), { }, function (data) {
-                  $('.typeahead').removeClass('wait');[]
-                  return typeahead.process(data);
-              }, 'json');
-            },
-            onselect: function (obj) {
-              $('.typeahead').attr('disabled', true);
-              window.location = obj.uri;
-            }
-        });
-    });
-    </script>
-  </head>
-  <body>
     {%include "../../menu.inc"%}
     <div class="container">
+
      <div class="fluid-row">
       <div class="span12">
         <h2>Dataset <a href='{{uri}}'>{{first.details.id.value}}</a></h2>
       </div>
      </div>
+
      <div class="fluid-row">
       <div class="span12">
          <h3>Type{% if models.types | length > 0 %}s{%endif%}: {%for i in models.types%}{%if !forloop.first%}, {%endif%}{{i.type.curie}}{%endfor%}
@@ -59,43 +14,73 @@
     <h3>SPARQL endpoint: {{first.ng.location.value}}</h3-->
       </div>
      </div>
-     <div class="fluid-row">
-      <div class="span8">
 
-    <table class="table table-striped" about="{{uri}}">
-    <thead>
-      <tr><th>Attribute</th><th>Value</th></tr>
-    </thead>
-    {% for row in models.attributes %}
-     <tr>
-     <td>{{row.p.curie}}</td>
-     <td>{{row.o.value}}</td>
-     </tr>
-    {% endfor %}
-    </table>
+
+    <div class="fluid-row">
+     <div class="span5">
+      <h3>Datasets with common predicates</h3>
+      {%if models.uses_predicate|length == 0%}
+      <div class="alert alert-info">No datasets found</div>
+      {%else%}
+      <ul>
+      {% for row in models.uses_predicate %}
+       <li><a href='{{row.dataset.mirroredUri}}'>{{row.dataset.mirroredUri}}</a></li>
+      {% endfor %}
+      </ul>
+{%endif%}
      </div>
-    </div>
-     <div class="fluid-row">
-      <div class="span8">
-	<h3>Subsets</h3>
-	  {%if models.subsets|length == 0%}
-	      <div class="alert alert-info">No subsets found</div>
-	  {%else%}
-	<ul>
-    {% for row in models.subsets %}
-     <li><a href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
-    {% endfor %}
-    </ul>
+
+     <div class="span5">
+      <h3>Datasets with common vocabularies</h3>
+      {%if models.vocabulary|length == 0%}
+      <div class="alert alert-info">No datasets found</div>
+      {%else%}
+      <ul>
+      {% for row in models.vocabulary %}
+       <li><a href='{{row.dataset.mirroredUri}}'>{{row.dataset.mirroredUri}}</a></li>
+      {% endfor %}
+      </ul>
 {%endif%}
      </div>
     </div>
-     <div class="fluid-row">
+
+    <div class="fluid-row">
+     <div class="span19">
+      <h3>Samples loaded</h3>
+      {%if models.samples|length == 0%}
+      <div class="alert alert-info">No samples found</div>
+      {%else%}
+      <ul>
+      {% for row in models.samples %}
+       <li><a href='{{lodspk.home}}graph/{{row.s.mirroredUri|urifier}}'>{{row.s.mirroredUri}}</a> </li>
+      {% endfor %}
+      </ul>
+      {%endif%}
+     </div>
+    </div>
+
+    <div class="fluid-row">
       <div class="span8">
-	<h3>Supersets</h3>
-	  {%if models.supersets|length == 0%}
-	      <div class="alert alert-info">No supersets found</div>
-	  {%else%}
-	<ul>
+         <h3>Subsets</h3>
+         {%if models.subsets|length == 0%}
+           <div class="alert alert-info">No subsets found</div>
+         {%else%}
+          <ul>
+            {% for row in models.subsets %}
+             <li><a href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
+            {% endfor %}
+           </ul>
+         {%endif%}
+     </div>
+    </div>
+
+     <div class="fluid-row">
+      <div class="span10">
+   <h3>Supersets</h3>
+     {%if models.supersets|length == 0%}
+         <div class="alert alert-info">No supersets found</div>
+     {%else%}
+   <ul>
     {% for row in models.supersets %}
      <li><a href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
     {% endfor %}
@@ -103,8 +88,43 @@
 {%endif%}
      </div>
     </div>
-    </div>    
-    </div>    
-    
+
+
+     <div class="fluid-row">
+      <div class="span8">
+         <h3>CKAN listings</h3>
+         {%if models.ckan_links|length == 0%}
+           <div class="alert alert-info">No CKAN links found</div>
+         {%else%}
+          <ul>
+            {% for row in models.ckan_links %}
+             <li><a href='{{row.theirs.value}}'>on http://hub.healthdata.gov</a></li>
+             <li><a href='{{row.ours.value}}'>on http://healthdata.tw.rpi.edu/hub</a></li>
+            {% endfor %}
+           </ul>
+         {%endif%}
+     </div>
+    </div>
+
+
+     <div class="fluid-row">
+      <div class="span8">
+        <table class="table table-striped" about="{{uri}}">
+        <thead>
+          <tr><th>Attribute</th><th>Value</th></tr>
+        </thead>
+        {% for row in models.attributes %}
+         <tr>
+         <td>{{row.p.curie}}</td>
+         <td>{{row.o.value}}</td>
+         </tr>
+        {% endfor %}
+        </table>
+     </div>
+    </div>
+
+ 
+
+   </div>    
   </body>
 </html>

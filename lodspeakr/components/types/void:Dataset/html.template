@@ -107,7 +107,7 @@
 
      <div class="fluid-row">
       <div class="span8 well">
-         <h3>See all triples</h3>
+         <h3>See all triples about</h3>
          <p><a href='{{lodspk.home}}triples/{{uri|urifier}}'>{{uri}}</a></li>
      </div>
     </div>

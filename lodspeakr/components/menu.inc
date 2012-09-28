@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="foaf: http://xmlns.com/foaf/0.1/ dc: http://purl.org/dc/terms/ conv: http://purl.org/twc/vocab/conversion/ void: http://rdfs.org/ns/void# health: http://healthdata.tw.rpi.edu/source/hub-healthdata-gov/vocab/ dcat: http://www.w3.org/ns/dcat#">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <title>HealthData.tw.rpi.edu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
     <link rel="alternate" type="application/rdf+xml" title="RDF/XML Version" href="{{lodspk.local.value}}.rdf" />
     <link rel="alternate" type="text/turtle" title="Turtle Version" href="{{lodspk.local.value}}.ttl" />
     <link rel="alternate" type="text/plain" title="N-Triples Version" href="{{lodspk.local.value}}.nt" />
@@ -44,7 +44,7 @@
     });
     </script>
   </head>
-  <body>
+  <body about="{{lodspk.local.value}}">
  <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">

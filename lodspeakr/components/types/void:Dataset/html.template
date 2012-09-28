@@ -1,17 +1,16 @@
     {%include "../../menu.inc"%}
+    <span rev="void:subset" resource="{{lodspk.home}}void"></span>
     <div class="container">
 
      <div class="fluid-row">
       <div class="span12">
-        <h2>Dataset <a href='{{uri}}'>{{first.details.id.value}}</a></h2>
+        <h2>Dataset <a href='{{uri}}'><span property='dc:identifier'>{{first.details.id.value}}</span></a></h2>
       </div>
      </div>
 
      <div class="fluid-row">
       <div class="span12">
-         <h3>Type{% if models.types | length > 0 %}s{%endif%}: {%for i in models.types%}{%if !forloop.first%}, {%endif%}{{i.type.curie}}{%endfor%}
-    <!--h3>Named Graph: {{first.ng.namedGraph.value}}</h3>
-    <h3>SPARQL endpoint: {{first.ng.location.value}}</h3-->
+         <h3>Type{% if models.types | length > 0 %}s{%endif%}: {%for i in models.types%}{%if !forloop.first%}, {%endif%}<span about="{{uri}}" typeof='{{i.type.curie}}'>{{i.type.curie}}</span>{%endfor%}</h3>
       </div>
      </div>
 
@@ -108,10 +107,15 @@
      <div class="fluid-row">
       <div class="span8 well">
          <h3>See all triples about</h3>
-         <p><a href='{{lodspk.home}}triples/{{uri|urifier}}'>{{uri}}</a></li>
+         <p><a href='{{lodspk.home}}triples/{{uri|urifier}}'>{{uri}}</a></p>
      </div>
     </div>
 
+     <div class="fluid-row">
+     <div id="timeline1" class="span10">
+     <h2>Modifications</h2>
+     </div>
+     </div>
      <div class="fluid-row">
       <div class="span8">
         <table class="table table-striped" about="{{uri}}">
@@ -128,7 +132,24 @@
      </div>
     </div>
 
- 
+    <div class='fluid-row'>
+     <div class='span8'>
+<script src="http://d3js.org/d3.v2.js"></script>
+<script src="{{lodspk.home}}js/timeknots/src/timeknots-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+                var apple_products = [
+                 {%for i in models.modified%}
+                 {%if !forloop.first%},{%endif%}{name: "{{i.time.value|date:"r"}}", date: "{{i.time.value}}"}
+                 {%endfor%}
+                ];
+                                     
+                                        
+
+                TimeKnots.draw("#timeline1", apple_products, { color:'#699', w:630, h:100});
+</script>
+     </div>
+    </div>
 
    </div>    
   </body>

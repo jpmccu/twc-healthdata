@@ -1,0 +1,441 @@
+@prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:          <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix todo:          <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:           <http://www.w3.org/2002/07/owl#> .
+@prefix vann:          <http://purl.org/vocab/vann/> .
+@prefix skos:          <http://www.w3.org/2004/02/skos/core#> .
+@prefix time:          <http://www.w3.org/2006/time#> .
+@prefix wgs:           <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geonames:      <http://www.geonames.org/ontology#> .
+@prefix geonamesid:    <http://sws.geonames.org/> .
+@prefix govtrackusgov: <http://www.rdfabout.com/rdf/usgov/geo/us/> .
+@prefix dbpedia:       <http://dbpedia.org/resource/> .
+@prefix dbpediaprop:   <http://dbpedia.org/property/> .
+@prefix dbpediaowl:    <http://dbpedia.org/ontology/> .
+@prefix con:           <http://www.w3.org/2000/10/swap/pim/contact#> .
+@prefix muo:           <http://purl.oclc.org/NET/muo/muo#> .
+@prefix vs:            <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix frbr:          <http://purl.org/vocab/frbr/core#> .
+@prefix bibo:          <http://purl.org/ontology/bibo/> .
+@prefix doap:          <http://usefulinc.com/ns/doap#> .
+@prefix qb:            <http://purl.org/linked-data/cube#> .
+@prefix dgtwc:         <http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#> .
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix void:          <http://rdfs.org/ns/void#> .
+@prefix scovo:         <http://purl.org/NET/scovo#> .
+@prefix sioc:          <http://rdfs.org/sioc/ns#> .
+@prefix foaf:          <http://xmlns.com/foaf/0.1/> .
+@prefix ov:            <http://open.vocab.org/terms/> .
+@prefix conversion:    <http://purl.org/twc/vocab/conversion/> .
+@prefix :              <http://purl.org/twc/health/source/hub-heathdata-gov/dataset/2008-stand-alone-carrier-line-iterms/version/2011-May-25/params/enhancement/1/> .
+@prefix health:        <http://purl.org/twc/health/vocab/>.
+@prefix obo:           <http://purl.obolibrary.org/obo/>.
+@prefix local_vocab: <http://purl.org/twc/health/source/hub-heathdata-gov/dataset/2008-stand-alone-carrier-line-iterms/vocab/> .
+@prefix fn:           <http://www.w3.org/2005/xpath-functions#> .
+
+#:a_bundle
+#   a conversion:ImplicitBundle;
+#   conversion:property_name "a_property"; # Can also be a URI, e.g. dcterms:title.
+#   #conversion:type_name     "My Class";   # Can also be a URI, e.g. foaf:Person.
+#.
+
+<http://purl.org/twc/health/source/hub-heathdata-gov/dataset/2008-stand-alone-carrier-line-iterms/version/2011-May-25/conversion/enhancement/1>
+   a conversion:LayerDataset, void:Dataset;
+
+   conversion:base_uri           "http://purl.org/twc/health";
+   conversion:source_identifier  "hub-heathdata-gov";
+   conversion:dataset_identifier "2008-stand-alone-carrier-line-iterms";
+   conversion:version_identifier "2011-May-25";
+   conversion:enhancement_identifier "1";
+
+   conversion:conversion_process [
+      a conversion:EnhancementConversionProcess;
+      conversion:enhancement_identifier "1";
+
+      dcterms:creator [ a foaf:OnlineAccount; foaf:accountName "rui" ];
+      dcterms:created "2012-09-25T15:47:52-04:00"^^xsd:dateTime;
+
+      conversion:delimits_cell ",";
+      #conversion:delimits_cell "	"; # tab
+      #conversion:delimits_cell "|";   # pipe
+      #conversion:delimits_cell ",";   # comma
+
+      #conversion:interpret [
+      #   conversion:symbol        "";
+      #   conversion:interpretation conversion:null; 
+      #];
+      #conversion:enhance [
+      #   conversion:domain_template "thing_[r]";
+      #   conversion:domain_name     "Thing";
+      #];
+      #conversion:enhance [
+      #   conversion:class_name "Thing";
+      #   conversion:subclass_of <http://purl.org/...>;
+      #];
+      conversion:enhance [
+         ov:csvCol          1;
+         ov:csvHeader       "CAR_LINE_ID";
+         #conversion:label   "CAR_LINE_ID";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          2;
+         ov:csvHeader       "BENE_SEX_IDENT_CD";
+         #conversion:label   "BENE_SEX_IDENT_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+	 conversion:interpret [
+		conversion:symbol "1";
+		conversion:interpretation obo:PATO_0000384;
+	];
+	conversion:interpret [
+		conversion:symbol "2";
+		conversion:interpretation obo:PATO_0000383;
+	];
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          3;
+         ov:csvHeader       "BENE_AGE_CAT_CD";
+         #conversion:label   "BENE_AGE_CAT_CD";
+         conversion:comment "";
+         conversion:interpret [
+		conversion:symbol "1";
+		conversion:interpretation health:AgeUnder65;];
+	conversion:interpret [
+		conversion:symbol "2";
+		conversion:interpretation health:AgeBetween65And69;];
+	conversion:interpret [
+		conversion:symbol "3";
+		conversion:interpretation health:AgeBetween70And74;];
+	conversion:interpret [
+		conversion:symbol "4";
+		conversion:interpretation health:AgeBetween75And79;];
+	conversion:interpret [
+		conversion:symbol "5";
+		conversion:interpretation health:AgeBetween80And84;];
+	conversion:interpret [
+		conversion:symbol "6";
+		conversion:interpretation health:AgeOver85;];
+		
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          4;
+         ov:csvHeader       "CAR_LINE_ICD9_DGNS_CD";
+         #conversion:label   "CAR_LINE_ICD9_DGNS_CD";
+         conversion:comment "";
+         conversion:range_template "http://purl.bioontology.org/ontology/ICD9CM/[.]";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:range   rdfs:Resource;
+         conversion:interpret [
+            conversion:symbol        "";
+            conversion:interpretation conversion:null; 
+         ];
+      ];
+      conversion:enhance [
+         ov:csvCol          5;
+         ov:csvHeader       "CAR_LINE_HCPCS_CD";
+         #conversion:label   "CAR_LINE_HCPCS_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:range_template "[/sd]vocab/RecipientOfHCPCS[.]";
+         conversion:range   rdfs:Resource;
+      ];
+      	 conversion:enhance [
+         ov:csvCol          6;
+         ov:csvHeader       "CAR_LINE_BETOS_CD";
+         #conversion:label   "CAR_LINE_BETOS_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:interpret [
+           conversion:symbol        "-";
+           conversion:interpretation conversion:null;
+         ];
+         conversion:range_template "[/sd]vocab/[.]";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          7;
+         ov:csvHeader       "CAR_LINE_SRVC_CNT";
+         #conversion:label   "CAR_LINE_SRVC_CNT";
+         conversion:comment "";
+         conversion:equivalent_property fn:count;
+         conversion:range   xsd:integer;
+      ];
+      conversion:enhance [
+         ov:csvCol          8;
+         ov:csvHeader       "CAR_LINE_PRVDR_TYPE_CD";
+         #conversion:label   "CAR_LINE_PRVDR_TYPE_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:interpret [
+            conversion:symbol "0";
+            conversion:interpretation "Clinics, groups, associations, partnerships, or other entities";
+         ];
+         conversion:interpret [
+            conversion:symbol "1";
+            conversion:interpretation "Physicians or suppliers reporting as solo practitioners";
+         ];
+         conversion:interpret [
+            conversion:symbol "3";
+            conversion:interpretation "Institutional provider";
+         ];
+         conversion:interpret [
+            conversion:symbol "5";
+            conversion:interpretation "Clinics (multiple specialties)";
+         ];
+         conversion:interpret [
+            conversion:symbol "7";
+            conversion:interpretation "Other entities";
+         ];
+         conversion:interpret [
+            conversion:symbol "8";
+            conversion:interpretation "Other entities for whom EI numbers are used in coding the ID field or proprietorship for whom EI numbers are used in coding the ID field.";
+         ];
+         conversion:range_template "[/sd]vocab/[.]";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          9;
+         ov:csvHeader       "CAR_LINE_CMS_TYPE_SRVC_CD";
+         #conversion:label   "CAR_LINE_CMS_TYPE_SRVC_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:interpret [
+            conversion:symbol "0";
+            conversion:interpretation "Whole blood only";
+         ];
+         conversion:interpret [
+            conversion:symbol "1";
+            conversion:interpretation "Medical care";
+         ];
+         conversion:interpret [
+            conversion:symbol "2";
+            conversion:interpretation "Surgery";
+         ];
+         conversion:interpret [
+            conversion:symbol "3";
+            conversion:interpretation "Consultation";
+         ];
+         conversion:interpret [
+            conversion:symbol "4";
+            conversion:interpretation "Diagnostic radiology";
+         ];
+         conversion:interpret [
+            conversion:symbol "5";
+            conversion:interpretation "Diagnostic laboratory";
+         ];
+         conversion:interpret [
+            conversion:symbol "6";
+            conversion:interpretation "Therapeutic radiology";
+         ];
+         conversion:interpret [
+            conversion:symbol "7";
+            conversion:interpretation "Anesthesia";
+         ];
+         conversion:interpret [
+            conversion:symbol "8";
+            conversion:interpretation "Assistant at surgery";
+         ];
+         conversion:interpret [
+            conversion:symbol "9";
+            conversion:interpretation "Other medical items or services";
+         ];
+         conversion:interpret [
+            conversion:symbol "D";
+            conversion:interpretation "Ambulance";
+         ];
+         conversion:interpret [
+            conversion:symbol "F";
+            conversion:interpretation "Ambulatory surgical center (facility usage forsurgical services)";
+         ];
+         conversion:interpret [
+            conversion:symbol "G";
+            conversion:interpretation "Immunosuppressive drugs";
+         ];
+         conversion:interpret [
+            conversion:symbol "K";
+            conversion:interpretation "Hearing items and services";
+         ];
+         conversion:interpret [
+            conversion:symbol "M";
+            conversion:interpretation "Monthly capitation payment for dialysis";
+         ];
+         conversion:interpret [
+            conversion:symbol "N";
+            conversion:interpretation "Kidney donor";
+         ];
+         conversion:interpret [
+            conversion:symbol "P";
+            conversion:interpretation "Lump sum purchase of DME, prosthetics, orthotics";
+         ];
+         conversion:interpret [
+            conversion:symbol "Q";
+            conversion:interpretation "Vision items or services";
+         ];
+         conversion:interpret [
+            conversion:symbol "S";
+            conversion:interpretation "Surgical dressings or other medical supplies";
+         ];
+         conversion:interpret [
+            conversion:symbol "T";
+            conversion:interpretation "Outpatient mental health limitation";
+         ];
+         conversion:interpret [
+            conversion:symbol "U";
+            conversion:interpretation "Occupational therapy";
+         ];
+          conversion:interpret [
+            conversion:symbol "V";
+            conversion:interpretation "Pneumococcal/flu vaccine";
+         ];
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          10;
+         ov:csvHeader       "CAR_LINE_PLACE_OF_SRVC_CD";
+         #conversion:label   "CAR_LINE_PLACE_OF_SRVC_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:interpret [
+            conversion:symbol "0";
+            conversion:interpretation "Invalid Place of Service Code"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "1";
+            conversion:interpretation "Office (pre 1992)"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "11";
+            conversion:interpretation "Office"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "12";
+            conversion:interpretation "Home"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "21";
+            conversion:interpretation "Inpatient hospital"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "22";
+            conversion:interpretation "Outpatient hospital"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "23";
+            conversion:interpretation "Emergency Room hospital"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "24";
+            conversion:interpretation "Ambulatory surgical center"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "31";
+            conversion:interpretation "Skilled nursing facility"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "32";
+            conversion:interpretation "Nursing facility"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "33";
+            conversion:interpretation "Custodial care facility"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "34";
+            conversion:interpretation "Hospice"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "41";
+            conversion:interpretation "Ambulance land"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "42";
+            conversion:interpretation "Ambulance air or water"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "50";
+            conversion:interpretation "Federally qualified health centers"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "51";
+            conversion:interpretation "Impatient psychiatric facility"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "52";
+            conversion:interpretation "Psychiatric facility partial hospitalization"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "53";
+            conversion:interpretation "Community mental health center"; 
+         ];
+          conversion:interpret [
+            conversion:symbol "54";
+            conversion:interpretation "Intermediate care facility/mentally retarded"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "56";
+            conversion:interpretation "Psychiatric residential treatment center"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "60";
+            conversion:interpretation "Mass immunizations center"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "61";
+            conversion:interpretation "Comprehensive inpatient rehabilitation facility"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "65";
+            conversion:interpretation "End stage renal disease treatment facility"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "71";
+            conversion:interpretation "State or local public health clinic"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "72";
+            conversion:interpretation "Rural health clinic"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "81";
+            conversion:interpretation "Independent laboratory"; 
+         ];
+         conversion:interpret [
+            conversion:symbol "99";
+            conversion:interpretation "Other unlisted facility"; 
+         ];
+         conversion:range_template "[/sd]vocab/[.]";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          11;
+         ov:csvHeader       "CAR_HCPCS_PMT_AMT";
+         #conversion:label   "CAR_HCPCS_PMT_AMT";
+         conversion:comment "";
+         conversion:equivalent_property health:hasPayment;
+         conversion:range   xsd:decimal;
+      ];
+      #conversion:enhance [            
+      #   ov:csvRow 3,4,5;             
+      #   a conversion:ExampleResource;
+      #];                              
+   ];
+.
+
+
+
+local_vocab:M1B rdfs:label "Office visits established".
+local_vocab:T1H rdfs:label "Lab tests other (non Medicare fee schedule)".
+local_vocab:M2B rdfs:label "Hospital visit subsequent".
+local_vocab:P6C rdfs:label "Minor procedures other (Medicare fee schedule)".
+local_vocab:T1A rdfs:label "Lab tests routine venipuncture(non Medicare fee schedule)".
+local_vocab:I1A rdfs:label "Standard imaging chest".
+local_vocab:T1B rdfs:label "Lab tests automated general profiles".
+local_vocab:T1D rdfs:label "Lab tests blood counts".
+local_vocab:M5C rdfs:label "Specialist opthamology".
+local_vocab:T2A rdfs:label "Other tests electrocardiograms".

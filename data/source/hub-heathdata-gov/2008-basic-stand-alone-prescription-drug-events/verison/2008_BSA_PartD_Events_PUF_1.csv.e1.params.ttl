@@ -1,0 +1,277 @@
+@prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:          <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix todo:          <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:           <http://www.w3.org/2002/07/owl#> .
+@prefix vann:          <http://purl.org/vocab/vann/> .
+@prefix skos:          <http://www.w3.org/2004/02/skos/core#> .
+@prefix time:          <http://www.w3.org/2006/time#> .
+@prefix wgs:           <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geonames:      <http://www.geonames.org/ontology#> .
+@prefix geonamesid:    <http://sws.geonames.org/> .
+@prefix govtrackusgov: <http://www.rdfabout.com/rdf/usgov/geo/us/> .
+@prefix dbpedia:       <http://dbpedia.org/resource/> .
+@prefix dbpediaprop:   <http://dbpedia.org/property/> .
+@prefix dbpediaowl:    <http://dbpedia.org/ontology/> .
+@prefix con:           <http://www.w3.org/2000/10/swap/pim/contact#> .
+@prefix muo:           <http://purl.oclc.org/NET/muo/muo#> .
+@prefix vs:            <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix frbr:          <http://purl.org/vocab/frbr/core#> .
+@prefix bibo:          <http://purl.org/ontology/bibo/> .
+@prefix doap:          <http://usefulinc.com/ns/doap#> .
+@prefix qb:            <http://purl.org/linked-data/cube#> .
+@prefix dgtwc:         <http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#> .
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix void:          <http://rdfs.org/ns/void#> .
+@prefix scovo:         <http://purl.org/NET/scovo#> .
+@prefix sioc:          <http://rdfs.org/sioc/ns#> .
+@prefix foaf:          <http://xmlns.com/foaf/0.1/> .
+@prefix ov:            <http://open.vocab.org/terms/> .
+@prefix conversion:    <http://purl.org/twc/vocab/conversion/> .
+@prefix :              <http://purl.org/twc/health/source/hub-heathdata-gov/dataset/2008-stand-alone-carrier-line-iterms/version/2011-May-25/params/enhancement/1/> .
+@prefix health:        <http://purl.org/twc/health/vocab/>.
+@prefix obo:           <http://purl.obolibrary.org/obo/>.
+@prefix local_vocab: <http://purl.org/twc/health/source/hub-heathdata-gov/dataset/2008-stand-alone-carrier-line-iterms/vocab/> .
+@prefix fn:           <http://www.w3.org/2005/xpath-functions#> .
+
+
+#:a_bundle
+#   a conversion:ImplicitBundle;
+#   conversion:property_name "a_property"; # Can also be a URI, e.g. dcterms:title.
+#   #conversion:type_name     "My Class";   # Can also be a URI, e.g. foaf:Person.
+#.
+
+<http://purl.org/twc/health/source/hub-heathdata-gov/dataset/2008-basic-stand-alone-prescription-drug-events/version/2011-May-24/conversion/enhancement/1>
+   a conversion:LayerDataset, void:Dataset;
+
+   conversion:base_uri           "http://purl.org/twc/health";
+   conversion:source_identifier  "hub-heathdata-gov";
+   conversion:dataset_identifier "2008-basic-stand-alone-prescription-drug-events";
+   conversion:version_identifier "2011-May-24";
+   conversion:enhancement_identifier "1";
+
+   conversion:conversion_process [
+      a conversion:EnhancementConversionProcess;
+      conversion:enhancement_identifier "1";
+
+      dcterms:creator [ a foaf:OnlineAccount; foaf:accountName "rui" ];
+      dcterms:created "2012-09-28T12:00:45-04:00"^^xsd:dateTime;
+
+      conversion:delimits_cell ",";
+      #conversion:delimits_cell "	"; # tab
+      #conversion:delimits_cell "|";   # pipe
+      #conversion:delimits_cell ",";   # comma
+
+      #conversion:interpret [
+      #   conversion:symbol        "";
+      #   conversion:interpretation conversion:null; 
+      #];
+      #conversion:enhance [
+      #   conversion:domain_template "thing_[r]";
+      #   conversion:domain_name     "Thing";
+      #];
+      #conversion:enhance [
+      #   conversion:class_name "Thing";
+      #   conversion:subclass_of <http://purl.org/...>;
+      #];
+      conversion:enhance [
+         ov:csvCol          1;
+         ov:csvHeader       "PDE_EVENT_ID";
+         #conversion:label   "PDE_EVENT_ID";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          2;
+         ov:csvHeader       "BENE_SEX_IDENT_CD";
+         #conversion:label   "BENE_SEX_IDENT_CD";
+         conversion:comment "";
+         conversion:interpret [
+		conversion:symbol "1";
+		conversion:interpretation obo:PATO_0000384;
+	];
+	conversion:interpret [
+		conversion:symbol "2";
+		conversion:interpretation obo:PATO_0000383;
+	];
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          3;
+         ov:csvHeader       "BENE_AGE_CAT_CD";
+         #conversion:label   "BENE_AGE_CAT_CD";
+         conversion:comment "";
+         conversion:interpret [
+		conversion:symbol "1";
+		conversion:interpretation health:AgeUnder65;];
+	conversion:interpret [
+		conversion:symbol "2";
+		conversion:interpretation health:AgeBetween65And69;];
+	conversion:interpret [
+		conversion:symbol "3";
+		conversion:interpretation health:AgeBetween70And74;];
+	conversion:interpret [
+		conversion:symbol "4";
+		conversion:interpretation health:AgeBetween75And79;];
+	conversion:interpret [
+		conversion:symbol "5";
+		conversion:interpretation health:AgeBetween80And84;];
+	conversion:interpret [
+		conversion:symbol "6";
+		conversion:interpretation health:AgeOver85;];
+		
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          4;
+         ov:csvHeader       "PDE_DRUG_CD";
+         #conversion:label   "PDE_DRUG_CD";
+         conversion:comment "";
+        conversion:equivalent_property rdfs:subClassOf;
+         conversion:interpret [
+           conversion:symbol        "-";
+           conversion:interpretation conversion:null;
+         ];
+         conversion:range_template "[/sd]vocab/[.]";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          5;
+         ov:csvHeader       "PDE_DRUG_STR_CD";
+         #conversion:label   "PDE_DRUG_STR_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:interpret [
+           conversion:symbol        "-";
+           conversion:interpretation conversion:null;
+         ];
+         conversion:range_template "[/sd]vocab/[.]";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          6;
+         ov:csvHeader       "PDE_DRUG_STR_UNITS_CD";
+         #conversion:label   "PDE_DRUG_STR_UNITS_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:interpret [
+           conversion:symbol        "-";
+           conversion:interpretation conversion:null;
+         ];
+         conversion:range_template "[/sd]vocab/[.]";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          7;
+         ov:csvHeader       "PDE_DRUG_DOSE_CD";
+         #conversion:label   "PDE_DRUG_DOSE_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:interpret [
+           conversion:symbol        "-";
+           conversion:interpretation conversion:null;
+         ];
+         conversion:range_template "[/sd]vocab/[.]";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          8;
+         ov:csvHeader       "PDE_DRUG_CLASS_CD";
+         #conversion:label   "PDE_DRUG_CLASS_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:interpret [
+           conversion:symbol        "-";
+           conversion:interpretation conversion:null;
+         ];
+         conversion:range_template "[/sd]vocab/[.]";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          9;
+         ov:csvHeader       "PDE_DRUG_QTY_DIS";
+         #conversion:label   "PDE_DRUG_QTY_DIS";
+         conversion:comment "";
+         conversion:equivalent_property health:hasQuantity;
+         conversion:range   xsd:decimal;
+      ];
+      conversion:enhance [
+         ov:csvCol          10;
+         ov:csvHeader       "PDE_DRUG_DAY_SPLY_CD";
+         #conversion:label   "PDE_DRUG_DAY_SPLY_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         
+	conversion:interpret [
+		conversion:symbol "1";
+		conversion:interpretation "1 to 7 days";];
+	conversion:interpret [
+		conversion:symbol "2";
+		conversion:interpretation "8 to 14 days";];
+	conversion:interpret [
+		conversion:symbol "3";
+		conversion:interpretation "15 to 21 days";];
+	conversion:interpret [
+		conversion:symbol "4";
+		conversion:interpretation "22 to 29 day";];
+	conversion:interpret [
+		conversion:symbol "5";
+		conversion:interpretation "30 to 59 day";];
+	conversion:interpret [
+		conversion:symbol "6";
+		conversion:interpretation "60 to 89 day";];
+	conversion:interpret [
+		conversion:symbol "7";
+		conversion:interpretation "90 or more days";];
+	conversion:range_template "[/sd]vocab/[.]";
+        conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          11;
+         ov:csvHeader       "PDE_DRUG_COST";
+         #conversion:label   "PDE_DRUG_COST";
+         conversion:comment "";
+         conversion:equivalent_property health:hasCost;
+         conversion:range   xsd:decimal;
+      ];
+      conversion:enhance [
+         ov:csvCol          12;
+         ov:csvHeader       "PDE_DRUG_PAT_PAY_CD";
+         #conversion:label   "PDE_DRUG_PAT_PAY_CD";
+         conversion:comment "";
+         conversion:interpret [
+		conversion:symbol "1";
+		conversion:interpretation "Patient did not pay any amount";];
+	conversion:interpret [
+		conversion:symbol "2";
+		conversion:interpretation "Patient paid an amount greater than $0 but less than the total drug cost";];
+	conversion:interpret [
+		conversion:symbol "3";
+		conversion:interpretation "Patient paid the total drug cost";];
+	conversion:range_template "[/sd]vocab/[.]";
+        conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          13;
+         ov:csvHeader       "PDE_DRUG_TYPE_CD";
+         #conversion:label   "PDE_DRUG_TYPE_CD";
+         conversion:comment "";
+         conversion:interpret [
+		conversion:symbol "0";
+		conversion:interpretation "Unkown missing";];
+	conversion:interpret [
+		conversion:symbol "1";
+		conversion:interpretation "Brand name";];
+	conversion:interpret [
+		conversion:symbol "2";
+		conversion:interpretation "Generic name";];
+	conversion:range_template "[/sd]vocab/[.]";
+        conversion:range   rdfs:Resource;
+      ];
+      #conversion:enhance [            
+      #   ov:csvRow 3,4,5;             
+      #   a conversion:ExampleResource;
+      #];                              
+   ];
+.

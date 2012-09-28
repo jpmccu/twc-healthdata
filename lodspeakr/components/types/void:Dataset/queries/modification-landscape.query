@@ -1,0 +1,8 @@
+PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
+PREFIX dcterms:    <http://purl.org/dc/terms/>
+
+select distinct ?modified
+where {
+[] a conversion:LayerDataset; 
+   dcterms:modified ?modified
+}

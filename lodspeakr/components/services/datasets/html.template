@@ -3,9 +3,11 @@
      <div class="row-fluid">
       <div class="span6 well" id="toc">
        <h4>Content</h4>
-       <div><a href='#stage-6'>Stage 7: RDF Datasets with Shared Vocabulary</a></div>
-       <div><a href='#stage-5'>Stage 6: RDF Datasets with Shared Resources</a></div>
-       <div><a href='#stage-converted-enhanced'>Stage 5: Enhanced RDF Datasets</a></div>
+       <div><a href='#stage-6'>Stage 9: RDF Datasets with Shared Vocabulary</a></div>
+       <div><a href='#stage-5'>Stage 8: RDF Datasets w6th Shared Resources</a></div>
+       <div><a href='#stage-converted-enhanced'>Stage 7: Enhanced RDF Datasets</a></div>
+       <div><a href='#stage-converted-common-raw-predicates'>Stage 6: RDF Datasets with similar predicates</a></div>
+       <div><a href='#stage-converted-common-raw-objects'>Stage 5: RDF Datasets with similar objects</a></div>
        <div><a href='#stage-converted-raw'>Stage 4: RDF Datasets</a></div>
        <div><a href='#stage-defunct-tabular'>Stage 3: Retrieved, but Defunct tabular CKAN Datasets</a></div>
        <div><a href='#stage-not-retrieved'>Stage 2: Unretrieved Tabular CKAN Datasets with Distribution Metadata</a></div>
@@ -36,6 +38,32 @@
        <ul>
          {% for row in models.converted_enhanced %}
            <li><a href="{{ row.void.mirroredUri }}">{{row.id.value}}</a></li>
+         {% endfor %}
+       </ul>
+	<span>(<a href="#toc">top</a>) </span>
+     </div>
+
+     <div id="stage-converted-common-raw-predicates">
+       <h3>RDF Datasets - Common Naive predicates ({{models.common_raw_predicates|length}})</h3>
+       <p>These RDF datasets 
+          (<a href="{{lodspk.home}}lodspeakr/components/services/datasets/queries/common_raw_predicates.query">query</a>)
+	use predicates that appear similar to predicates from other naively-converted datasets.</p>
+       <ul>
+         {% for row in models.common_raw_predicates %}
+           <li><a href="{{ row.abstract.mirroredUri }}">{{row.id.value}}</a></li>
+         {% endfor %}
+       </ul>
+	<span>(<a href="#toc">top</a>) </span>
+     </div>
+
+     <div id="stage-converted-common-raw-objects">
+       <h3>RDF Datasets - Common Naive objects ({{models.common_raw_objects|length}})</h3>
+       <p>These RDF datasets 
+          (<a href="{{lodspk.home}}lodspeakr/components/services/datasets/queries/common_raw_objects.query">query</a>)
+	use values that appear similar to predicates from other naively-converted datasets.</p>
+       <ul>
+         {% for row in models.common_raw_objects %}
+           <li><a href="{{ row.abstract.mirroredUri }}">{{row.id.value}}</a></li>
          {% endfor %}
        </ul>
 	<span>(<a href="#toc">top</a>) </span>

@@ -92,7 +92,7 @@
          conversion:interpretation conversion:null; 
       ];
       conversion:enhance [
-          conversion:domain_template "[/sdv]provider/[>.<]_and_[#4]_value_[#6]";
+          conversion:domain_template "[/sdv]provider/[>#1<]_and_[#4]_value_[#6]";
       #   conversion:domain_name     "Thing";
       ];
       #conversion:enhance [

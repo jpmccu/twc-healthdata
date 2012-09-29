@@ -3,9 +3,11 @@
      <div class="row-fluid">
       <div class="span6 well" id="toc">
        <h4>Content</h4>
-       <div><a href='#stage-6'>Stage 7: RDF Datasets with Shared Vocabulary</a></div>
-       <div><a href='#stage-5'>Stage 6: RDF Datasets with Shared Resources</a></div>
-       <div><a href='#stage-converted-enhanced'>Stage 5: Enhanced RDF Datasets</a></div>
+       <div><a href='#stage-6'>Stage 9: RDF Datasets with Shared Vocabulary</a></div>
+       <div><a href='#stage-5'>Stage 8: RDF Datasets w6th Shared Resources</a></div>
+       <div><a href='#stage-converted-enhanced'>Stage 7: Enhanced RDF Datasets</a></div>
+       <div><a href='#stage-converted-common-raw-predicates'>Stage 6: RDF Datasets with similar predicates</a></div>
+       <div><a href='#stage-converted-common-raw-objects'>Stage 5: RDF Datasets with similar objects</a></div>
        <div><a href='#stage-converted-raw'>Stage 4: RDF Datasets</a></div>
        <div><a href='#stage-defunct-tabular'>Stage 3: Retrieved, but Defunct tabular CKAN Datasets</a></div>
        <div><a href='#stage-not-retrieved'>Stage 2: Unretrieved Tabular CKAN Datasets with Distribution Metadata</a></div>

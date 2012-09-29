@@ -150,8 +150,8 @@ export CSV2RDF4LOD_CONVERT_OMIT_RAW_LAYER="false"
 #
 # a conversion:ProjectLevelEnvironmentVariable
 # a conversion:ActivityLevelEnvironmentVariable
-export CSV2RDF4LOD_CONVERT_SAMPLE_NUMBER_OF_ROWS="100"
 export CSV2RDF4LOD_CONVERT_SAMPLE_NUMBER_OF_ROWS="10"
+export CSV2RDF4LOD_CONVERT_SAMPLE_NUMBER_OF_ROWS="1000"
 
 #
 # Customize: Omit the full conversion of the dataset.

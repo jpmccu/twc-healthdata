@@ -41,6 +41,32 @@
 	<span>(<a href="#toc">top</a>) </span>
      </div>
 
+     <div id="stage-converted-common-raw-predicates">
+       <h3>RDF Datasets - Common Naive predicates ({{models.common_raw_predicates|length}})</h3>
+       <p>These RDF datasets 
+          (<a href="{{lodspk.home}}lodspeakr/components/services/datasets/queries/common_raw_predicates.query">query</a>)
+	use predicates that appear similar to predicates from other naively-converted datasets.</p>
+       <ul>
+         {% for row in models.common_raw_predicates %}
+           <li><a href="{{ row.abstract.mirroredUri }}">{{row.id.value}}</a></li>
+         {% endfor %}
+       </ul>
+	<span>(<a href="#toc">top</a>) </span>
+     </div>
+
+     <div id="stage-converted-common-raw-objects">
+       <h3>RDF Datasets - Common Naive objects ({{models.common_raw_objects|length}})</h3>
+       <p>These RDF datasets 
+          (<a href="{{lodspk.home}}lodspeakr/components/services/datasets/queries/common_raw_objects.query">query</a>)
+	use values that appear similar to predicates from other naively-converted datasets.</p>
+       <ul>
+         {% for row in models.common_raw_objects %}
+           <li><a href="{{ row.abstract.mirroredUri }}">{{row.id.value}}</a></li>
+         {% endfor %}
+       </ul>
+	<span>(<a href="#toc">top</a>) </span>
+     </div>
+
      <div id="stage-converted-raw">
        <h3>RDF Datasets - Naive only ({{models.converted_raw|length}})</h3>
        <p>These RDF datasets 

@@ -45,21 +45,39 @@
     </script>
   </head>
   <body>
-{%include "../../menu.inc"%}
+    {%include "../../menu.inc"%}
     <div class="container">
-      <h3>Classes in {{lodspk.args.all|deurifier}}</h3>
-      <h4>Total: {{models.main|length}}</h4>
+
+      <div class="fluid-row">
+         <div class="span12">
+            <p>The SPARQL endpoint at <a href="http://healthdata.tw.rpi.edu/sparql">http://healthdata.tw.rpi.edu/sparql</a> contains a graph with the 
+               <a href="http://www.w3.org/TR/sparql11-service-description/#sd-name">name</a>:</p>
+            <p><i>{{lodspk.args.all|deurifier}}</i></p>
+            <p>This page describes of the contents of that graph, which can be queried using a SPARQL query with the following structure:</p>
+            <div class="alert alert-info">
+               <p>
+select distinct ?type<br/>
+where {<br/>
+  graph &lt;{{lodspk.args.all|deurifier}}&gt; { <br/>
+    [] a ?type<br/>
+  }<br/>
+}<br/>
+               </p>
+            </div>
+         </div>
+      </div>
+
+      <h3>Classes ({{models.main|length}})</h3>
  	    <ul>
-    {% for row in models.main %}
-        <li>{{row.class.curie}} ({{row.total.value}} instances)</a></li>
-    {% endfor %}
+        {% for row in models.main %}
+          <li>{{row.class.curie}} ({{row.total.value}} instances)</a></li>
+        {% endfor %}
       </ul>
-      <h3>Predicates in {{lodspk.args.all|deurifier}}</h3>
-      <h4>Total: {{models.preds|length}}</h4>
+      <h3>Predicates ({{models.preds|length}})</h3>
  	    <ul>
-    {% for row in models.preds %}
-        <li>{{row.p.curie}} (used in {{row.total.value}} triples)</a></li>
-    {% endfor %}
+        {% for row in models.preds %}
+          <li>{{row.p.curie}} (used in {{row.total.value}} triples)</a></li>
+        {% endfor %}
       </ul>
     </div>
   </body>

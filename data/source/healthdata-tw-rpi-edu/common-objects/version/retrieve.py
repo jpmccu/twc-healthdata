@@ -21,9 +21,8 @@ graph ?gs {
 endpointPrefix = "http://healthdata.tw.rpi.edu/sparql?&format=text%2Fcsv&timeout=0&debug=on&"
 datasetURL = endpointPrefix+urllib.urlencode([("query",query)])
 
-health = 'http://purl.org/twc/health/ns/'
+health = 'http://purl.org/twc/health/vocab/'
 
-print datasetURL
 def retrieve():
     graph = collections.defaultdict(list)
     m = None

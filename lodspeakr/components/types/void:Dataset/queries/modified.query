@@ -1,0 +1,3 @@
+SELECT DISTINCT ?time WHERE{
+  <{{uri}}> dcterms:modified ?time
+} ORDER BY ?time

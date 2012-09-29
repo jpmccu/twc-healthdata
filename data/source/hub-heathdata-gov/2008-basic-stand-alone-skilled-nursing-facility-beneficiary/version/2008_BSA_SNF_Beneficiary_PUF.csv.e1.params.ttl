@@ -1,0 +1,205 @@
+@prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:          <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix todo:          <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:           <http://www.w3.org/2002/07/owl#> .
+@prefix vann:          <http://purl.org/vocab/vann/> .
+@prefix skos:          <http://www.w3.org/2004/02/skos/core#> .
+@prefix time:          <http://www.w3.org/2006/time#> .
+@prefix wgs:           <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geonames:      <http://www.geonames.org/ontology#> .
+@prefix geonamesid:    <http://sws.geonames.org/> .
+@prefix govtrackusgov: <http://www.rdfabout.com/rdf/usgov/geo/us/> .
+@prefix dbpedia:       <http://dbpedia.org/resource/> .
+@prefix dbpediaprop:   <http://dbpedia.org/property/> .
+@prefix dbpediaowl:    <http://dbpedia.org/ontology/> .
+@prefix con:           <http://www.w3.org/2000/10/swap/pim/contact#> .
+@prefix muo:           <http://purl.oclc.org/NET/muo/muo#> .
+@prefix vs:            <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix frbr:          <http://purl.org/vocab/frbr/core#> .
+@prefix bibo:          <http://purl.org/ontology/bibo/> .
+@prefix doap:          <http://usefulinc.com/ns/doap#> .
+@prefix qb:            <http://purl.org/linked-data/cube#> .
+@prefix dgtwc:         <http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#> .
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix void:          <http://rdfs.org/ns/void#> .
+@prefix scovo:         <http://purl.org/NET/scovo#> .
+@prefix sioc:          <http://rdfs.org/sioc/ns#> .
+@prefix foaf:          <http://xmlns.com/foaf/0.1/> .
+@prefix ov:            <http://open.vocab.org/terms/> .
+@prefix conversion:    <http://purl.org/twc/vocab/conversion/> .
+@prefix :              <http://purl.org/twc/health/source/hub-heathdata-gov/dataset/2008-stand-alone-carrier-line-iterms/version/2011-May-25/params/enhancement/1/> .
+@prefix health:        <http://purl.org/twc/health/vocab/>.
+@prefix obo:           <http://purl.obolibrary.org/obo/>.
+@prefix local_vocab: <http://purl.org/twc/health/source/hub-heathdata-gov/dataset/2008-stand-alone-carrier-line-iterms/vocab/> .
+@prefix fn:           <http://www.w3.org/2005/xpath-functions#> .
+
+
+#:a_bundle
+#   a conversion:ImplicitBundle;
+#   conversion:property_name "a_property"; # Can also be a URI, e.g. dcterms:title.
+#   #conversion:type_name     "My Class";   # Can also be a URI, e.g. foaf:Person.
+#.
+
+<http://purl.org/twc/health/source/hub-heathdata-gov/dataset/2008-basic-stand-alone-skilled-nursing-facility-beneficiary/version/2011-May-25/conversion/enhancement/1>
+   a conversion:LayerDataset, void:Dataset;
+
+   conversion:base_uri           "http://purl.org/twc/health";
+   conversion:source_identifier  "hub-heathdata-gov";
+   conversion:dataset_identifier "2008-basic-stand-alone-skilled-nursing-facility-beneficiary";
+   conversion:version_identifier "2011-May-25";
+   conversion:enhancement_identifier "1";
+
+   conversion:conversion_process [
+      a conversion:EnhancementConversionProcess;
+      conversion:enhancement_identifier "1";
+
+      dcterms:creator [ a foaf:OnlineAccount; foaf:accountName "rui" ];
+      dcterms:created "2012-09-28T14:59:37-04:00"^^xsd:dateTime;
+
+      conversion:delimits_cell ",";
+      #conversion:delimits_cell "	"; # tab
+      #conversion:delimits_cell "|";   # pipe
+      #conversion:delimits_cell ",";   # comma
+
+      #conversion:interpret [
+      #   conversion:symbol        "";
+      #   conversion:interpretation conversion:null; 
+      #];
+      #conversion:enhance [
+      #   conversion:domain_template "thing_[r]";
+      #   conversion:domain_name     "Thing";
+      #];
+      #conversion:enhance [
+      #   conversion:class_name "Thing";
+      #   conversion:subclass_of <http://purl.org/...>;
+      #];
+      conversion:enhance [
+         ov:csvCol          1;
+         ov:csvHeader       "SNF_BENE_ID";
+         #conversion:label   "SNF_BENE_ID";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          2;
+         ov:csvHeader       "BENE_SEX_IDENT_CD";
+         #conversion:label   "BENE_SEX_IDENT_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+	 conversion:interpret [
+		conversion:symbol "1";
+		conversion:interpretation obo:PATO_0000384;
+	];
+	conversion:interpret [
+		conversion:symbol "2";
+		conversion:interpretation obo:PATO_0000383;
+	];
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          3;
+         ov:csvHeader       "BENE_AGE_CAT_CD";
+         #conversion:label   "BENE_AGE_CAT_CD";
+         conversion:comment "";
+         conversion:interpret [
+		conversion:symbol "1";
+		conversion:interpretation health:AgeUnder65;];
+	conversion:interpret [
+		conversion:symbol "2";
+		conversion:interpretation health:AgeBetween65And69;];
+	conversion:interpret [
+		conversion:symbol "3";
+		conversion:interpretation health:AgeBetween70And74;];
+	conversion:interpret [
+		conversion:symbol "4";
+		conversion:interpretation health:AgeBetween75And79;];
+	conversion:interpret [
+		conversion:symbol "5";
+		conversion:interpretation health:AgeBetween80And84;];
+	conversion:interpret [
+		conversion:symbol "6";
+		conversion:interpretation health:AgeOver85;];
+		
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          4;
+         ov:csvHeader       "SNF_ADM_CD";
+         #conversion:label   "SNF_ADM_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:interpret [
+            conversion:symbol "1";
+            conversion:interpretation "One admission";
+         ];
+         conversion:interpret [
+            conversion:symbol "2";
+            conversion:interpretation "Two or more admissions";
+         ];
+         conversion:range_template "[/sd]vocab/[.]";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          5;
+         ov:csvHeader       "SNF_RHB_CD";
+         #conversion:label   "SNF_RHB_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:interpret [
+            conversion:symbol "0";
+            conversion:interpretation "0 day";
+         ];
+         conversion:interpret [
+            conversion:symbol "1";
+            conversion:interpretation "1 to 8 days";
+         ];
+         conversion:interpret [
+            conversion:symbol "2";
+            conversion:interpretation "9 to 20 days";
+         ];
+         conversion:interpret [
+            conversion:symbol "3";
+            conversion:interpretation "21 to 40 days";
+         ];
+         conversion:interpret [
+            conversion:symbol "4";
+            conversion:interpretation "41 or more days";
+         ];
+         conversion:range_template "[/sd]vocab/[.]";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          6;
+         ov:csvHeader       "SNF_RHBXS_CD";
+         #conversion:label   "SNF_RHBXS_CD";
+         conversion:comment "";
+         conversion:equivalent_property rdfs:subClassOf;
+         conversion:interpret [
+            conversion:symbol "0";
+            conversion:interpretation "0 day";
+         ];
+         conversion:interpret [
+            conversion:symbol "1";
+            conversion:interpretation "1 to 20 days";
+         ];
+         conversion:interpret [
+            conversion:symbol "2";
+            conversion:interpretation "21 or more days";
+         ];
+      ];
+      conversion:enhance [
+         ov:csvCol          7;
+         ov:csvHeader       "SNF_PMT_AMT";
+         #conversion:label   "SNF_PMT_AMT";
+         conversion:comment "";
+         conversion:equivalent_property health:hasPayment;
+         conversion:range   xsd:decimal;
+      ];
+      #conversion:enhance [            
+      #   ov:csvRow 3,4,5;             
+      #   a conversion:ExampleResource;
+      #];                              
+   ];
+.

@@ -7,7 +7,7 @@ prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#>
 select distinct ?ours ?theirs
 where {
    <{{uri}}>
-      a void:Dataset, dcat:Dataset;
+#      a void:Dataset, dcat:Dataset;
       prov:wasDerivedFrom ?distribution
    .
 

@@ -1,0 +1,17 @@
+    {%include "../../menu.inc"%}
+    <div class="container">
+     <div class="span8">
+      <table class="table table-striped" about="{{uri}}">
+       <thead>
+        <tr><th>Predicate</th></tr>
+       </thead>
+       {% for row in models.main %}
+       <tr>
+        <td>{{row.p.curie}}</td>
+       </tr>
+       {% endfor %}
+      </table>
+     </div>
+    </div>
+  </body>
+</html>

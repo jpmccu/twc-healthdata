@@ -1,0 +1,8 @@
+SELECT DISTINCT ?dataset
+WHERE {
+  <{{uri}}> a conversion:LayerDataset;
+            conversion:uses_predicate ?p .
+  ?dataset  conversion:uses_predicate ?p .
+  FILTER(?dataset != <{{uri}}>)
+}
+order by ?dataset

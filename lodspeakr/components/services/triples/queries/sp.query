@@ -1,0 +1,10 @@
+SELECT DISTINCT ?s ?p  WHERE {
+  {
+    GRAPH ?g{
+                ?s ?p <{{lodspk.args.all|deurifier}}> .
+    }
+  }UNION{     
+                ?s ?p <{{lodspk.args.all|deurifier}}> . 
+  }
+}
+

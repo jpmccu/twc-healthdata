@@ -1,6 +1,6 @@
 export CSV2RDF4LOD_PUBLISH='true' # enables aggregation from automatic/* into publish/*
 
-export CSV2RDF4LOD_CONVERT_SAMPLE_NUMBER_OF_ROWS='100'
+export CSV2RDF4LOD_CONVERT_SAMPLE_NUMBER_OF_ROWS='1000'
 
 export CSV2RDF4LOD_PUBLISH_DELAY_UNTIL_ENHANCED='false'
 

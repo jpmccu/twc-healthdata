@@ -1,6 +1,6 @@
 export CSV2RDF4LOD_PUBLISH='true' # enables aggregation from automatic/* into publish/*
 
-export CSV2RDF4LOD_CONVERT_SAMPLE_NUMBER_OF_ROWS='100'
+export CSV2RDF4LOD_CONVERT_SAMPLE_NUMBER_OF_ROWS='1000'
 
 export CSV2RDF4LOD_PUBLISH_DELAY_UNTIL_ENHANCED='false'
 
@@ -9,6 +9,7 @@ export CSV2RDF4LOD_PUBLISH_COMPRESS='true'
 
 export CSV2RDF4LOD_PUBLISH_PURGE_AUTODIR='false'
 export CSV2RDF4LOD_PUBLISH_TTL_LAYERS='false'
+export CSV2RDF4LOD_PUBLISH_FULL_CONVERSIONS='false'
 
 export CSV2RDF4LOD_PUBLISH_TDB='false'
 export CSV2RDF4LOD_PUBLISH_VIRTUOSO='true' # will only do samples, don't worry.

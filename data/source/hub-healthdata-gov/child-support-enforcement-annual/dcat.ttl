@@ -20,5 +20,5 @@
 <http://hub.healthdata.gov/dataset/child-support-enforcement-annual>
    a dcat:Dataset;
    dcat:distribution :as_a_csv_a9e51340-6671-4b74-8f68-9dd960d13721;
-   prov:wasAttributedToA <http://hub.healthdata.gov>;
+   prov:wasAttributedTo <http://hub.healthdata.gov>;
 .

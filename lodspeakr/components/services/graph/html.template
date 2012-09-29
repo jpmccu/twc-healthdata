@@ -53,19 +53,22 @@
             <p>The SPARQL endpoint at <a href="http://healthdata.tw.rpi.edu/sparql">http://healthdata.tw.rpi.edu/sparql</a> contains a graph with the 
                <a href="http://www.w3.org/TR/sparql11-service-description/#sd-name">name</a>:</p>
             <p><i>{{lodspk.args.all|deurifier}}</i></p>
-            <p>This page describes of the contents of that graph, which can be queried using a SPARQL query with the following structure:</p>
-            <div class="alert alert-info">
-               <p>
-select distinct ?type<br/>
-where {<br/>
-  graph &lt;{{lodspk.args.all|deurifier}}&gt; { <br/>
-    [] a ?type<br/>
-  }<br/>
-}<br/>
-               </p>
+            <p>This page describes the contents of that graph, which can be queried using SPARQL queries similar to the following structure:</p>
+            <div class="span10">
+             <pre>
+SELECT DISTINCT ?type
+WHERE {
+  GRAPH &lt;{{lodspk.args.all|deurifier}}&gt; { 
+    [] a ?type
+  }
+}            </pre>
             </div>
          </div>
       </div>
+
+      {%if first.data_rows.total.value%}
+      <p>This graph is the result of converting {{first.data_rows.total.value}} data rows.</p>
+      {%endif%}
 
       <h3>Classes ({{models.main|length}})</h3>
  	    <ul>

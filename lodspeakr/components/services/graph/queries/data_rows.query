@@ -1,0 +1,8 @@
+PREFIX ov: <http://open.vocab.org/terms/>
+
+SELECT (COUNT(?row) AS ?total)
+WHERE {
+ GRAPH <{{lodspk.args.all|deurifier}}> {
+  [] ov:csvRow ?row
+ }
+}

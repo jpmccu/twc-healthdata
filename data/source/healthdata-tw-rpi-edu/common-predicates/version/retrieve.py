@@ -41,7 +41,7 @@ def retrieve():
         os.makedirs(str(date.today())+"/automatic")
     except:
         pass
-    o = open(str(date.today())+"/automatic/common-predicates.ntp","w")
+    o = open(str(date.today())+"/automatic/common-predicates.nt","w")
     for row in result:
         o.write(row+"\n")
     

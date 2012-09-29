@@ -1,0 +1,16 @@
+PREFIX dcterms:    <http://purl.org/dc/terms/>
+PREFIX void:       <http://rdfs.org/ns/void#>
+PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
+PREFIX health:     <http://purl.org/twc/health/vocab/>
+
+select distinct ?abstract ?id
+where {
+  { ?dataset health:sharesColumnNamesWith [] }
+  union 
+  { [] health:sharesColumnNamesWith ?dataset }
+  ?abstract a conversion:AbstractDataset;
+            void:subset ?versioned .
+  ?versioned a conversion:VersionedDataset;
+             void:subset ?dataset .
+  optional { ?abstract dcterms:identifier ?id }
+}

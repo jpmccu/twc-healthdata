@@ -9,6 +9,7 @@ export CSV2RDF4LOD_PUBLISH_COMPRESS='true'
 
 export CSV2RDF4LOD_PUBLISH_PURGE_AUTODIR='false'
 export CSV2RDF4LOD_PUBLISH_TTL_LAYERS='false'
+export CSV2RDF4LOD_PUBLISH_FULL_CONVERSIONS='false'
 
 export CSV2RDF4LOD_PUBLISH_TDB='false'
 export CSV2RDF4LOD_PUBLISH_VIRTUOSO='true' # will only do samples, don't worry.

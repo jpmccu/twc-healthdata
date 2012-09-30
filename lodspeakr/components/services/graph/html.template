@@ -72,7 +72,7 @@ WHERE {
 
       {%if first.loads.input.value%}
       <h3>Loads</h3>
-        <p>The following web URLs were loaded into this graph, at the given times.</p>
+        <p>The following web URLs were loaded into this graph, at the shown times.</p>
  	     <table>
         {% for row in models.loads %}
           <tr>

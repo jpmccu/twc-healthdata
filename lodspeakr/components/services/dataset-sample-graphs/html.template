@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dataset Sample Graphs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="alternate" type="application/rdf+xml" title="RDF/XML Version" href="{{lodspk.local.value}}.rdf" />
+    <link rel="alternate" type="text/turtle" title="Turtle Version" href="{{lodspk.local.value}}.ttl" />
+    <link rel="alternate" type="text/plain" title="N-Triples Version" href="{{lodspk.local.value}}.nt" />
+    <link rel="alternate" type="application/json" title="RDFJSON Version" href="{{lodspk.local.value}}.json" />
+    <link href="{{lodspk.home}}css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+      .wait{
+        background-image:url('{{lodspk.home}}img/wait.gif');
+        background-repeat:no-repeat;
+        padding-right:20px;
+        background-position: right;
+      }
+    </style>
+    <link href="{{lodspk.home}}css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <script type="text/javascript" src="{{lodspk.home}}js/jquery.js"></script>
+    <script type="text/javascript" src="{{lodspk.home}}js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{lodspk.home}}js/bootstrap-typeahead.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.typeahead').typeahead({
+            source: function (typeahead, query) {
+              $('.typeahead').addClass('wait');[]
+              return $.get('{{lodspk.home}}search/'+encodeURIComponent(query), { }, function (data) {
+                  $('.typeahead').removeClass('wait');[]
+                  return typeahead.process(data);
+              }, 'json');
+            },
+            onselect: function (obj) {
+              $('.typeahead').attr('disabled', true);
+              window.location = obj.uri;
+            }
+        });
+    });
+    </script>
+  </head>
+  <body>
+    {%include  "../../menu.inc"%}
+    <div class="container">
+      {%if first.main.g%}
+         <p>The following graphs contain dataset samples.
+         </p>
+         <table>
+            <tr>
+              <td>Graph name</td>
+              <td>Converted rows</td>
+            </tr>
+          {% for row in models.main %}
+            <tr>
+              <td><a href='graph/{{row.g.mirroredUri|urifier}}'>{{row.g.mirroredUri}}</a></td>
+              <td>{{row.size.value}}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      {%else%}
+         <span>All conversion:base_uri appear to be within the right namespace.</span>
+      {%endif%}
+    </div>
+
+  </body>
+</html>
+

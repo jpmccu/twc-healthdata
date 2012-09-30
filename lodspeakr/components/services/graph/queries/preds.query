@@ -1,6 +1,7 @@
-SELECT DISTINCT (COUNT(?p) AS ?total) ?p WHERE {
+SELECT DISTINCT (COUNT(?p) AS ?total) ?p MAX(?label) as ?label WHERE {
  GRAPH <{{lodspk.args.all|deurifier}}>{
   [] ?p []
  }
+ OPTIONAL {?p rdfs:label ?label}
 }GROUP BY ?p
 ORDER BY DESC(?total)

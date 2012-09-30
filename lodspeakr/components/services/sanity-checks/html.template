@@ -48,7 +48,7 @@
 {%include  "../../menu.inc"%}
     <div class="container">
       <h1>conversion:base_uri</h1>
-      {% if models.base_uri|length == 0 %}
+      {% if models.base_uri|length > 0 %}
          <p>The following datasets have the incorrect conversion:base_uri asserted. This can happen when third parties contribute enhancement parameters, but do not set their environment variables to the project that they are contributing to.
          </p>
          <ul>
@@ -58,6 +58,19 @@
         </ul>
       {%else%}
          <span>All conversion:base_uri appear to be within the right namespace.</span>
+      {%endif%}
+
+      <h1>Missing Predicate Labels</h1>
+      {% if models.base_uri|length > 0 %}
+         <p>The following properties are missing their labels. This can happen because the relevant ontology hasn't been loaded, because of an error in the URI, or because it hasn't been defined yet. These are all things to fix.
+         </p>
+         <ul>
+         {% for row in models.unlabeled_predicates %}
+             <li><a href="{{ row.property.mirroredUri }}">{{row.property.curie}}</a></li>
+         {% endfor %}
+        </ul>
+      {%else%}
+         <span>All predicates appear to have labels. Please check that you've loaded data.</span>
       {%endif%}
     </div>
 

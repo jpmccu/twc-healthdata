@@ -1,4 +1,4 @@
-SELECT DISTINCT ?dataset WHERE{
+SELECT DISTINCT ?dataset ?datasetLabel WHERE{
   {
   ?dataset     dcat:distribution ?x .
   <{{uri}}> prov:wasDerivedFrom ?x;
@@ -18,4 +18,5 @@ SELECT DISTINCT ?dataset WHERE{
   <{{uri}}> a conversion:LayerDataset .
 
   }
+  OPTIONAL{?dataset rdfs:label ?datasetLabel}
 }

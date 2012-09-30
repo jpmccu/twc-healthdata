@@ -10,7 +10,7 @@
 
      <div class="fluid-row">
       <div class="span10">
-         <h3>Type{% if models.types | length > 0 %}s{%endif%}: {%for i in models.types%}{%if !forloop.first%}, {%endif%}<span about="{{uri}}" typeof='{{i.type.curie}}'><a href="{{i.type.mirroredUri}}">{%if i.label.value %}{{i.label.value}}{%else%}{{i.type.curie}}{%endif%}</span>{%endfor%}</h3>
+         <h3>Type{% if models.types | length > 0 %}s{%endif%}: {%for i in models.types%}{%if !forloop.first%}, {%endif%}<span about="{{uri}}" typeof='{{i.type.curie}}'><a href="{{i.type.mirroredUri}}">{%if i.label.value %}{{i.label.value}}{%else%}{{i.type.curie}}{%endif%}</a></span>{%endfor%}</h3>
       </div>
      </div>
 

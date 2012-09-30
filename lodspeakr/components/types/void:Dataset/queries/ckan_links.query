@@ -25,7 +25,7 @@ where {
    optional {
       ?theirs
          a dcat:Dataset, datafaqs:CKANDataset;
-         prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/hospital-compare>;
+         prov:alternateOf <{{uri}}>;
          prov:wasAttributedTo <http://hub.healthdata.gov>
       .
    }

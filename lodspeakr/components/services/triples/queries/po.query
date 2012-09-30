@@ -1,4 +1,4 @@
-SELECT DISTINCT ?p ?o  WHERE {
+SELECT DISTINCT ?p ?o ?pLabel ?oLabel  WHERE {
   {
     GRAPH ?g{
       <{{lodspk.args.all|deurifier}}> ?p ?o.
@@ -6,5 +6,8 @@ SELECT DISTINCT ?p ?o  WHERE {
   }UNION{     
       <{{lodspk.args.all|deurifier}}> ?p ?o .
   }
+
+  OPTIONAL { ?p rdfs:label ?pLabel}
+  OPTIONAL { ?o rdfs:label ?oLabel}
 }
 

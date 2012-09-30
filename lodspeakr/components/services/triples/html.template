@@ -10,11 +10,11 @@
     {% for row in models.po %}
      <tr>
 <td>{%if forloop.first%}<a href='{{lodspk.this.value}}'>{{lodspk.this.curie}}</a>{%endif%}</td>
-     <td><a href='{{row.p.value}}'>{{row.p.curie}}</a></td>
+     <td><a href='{{row.p.value}}'>{%if row.pLabel.value%}{{row.pLabel.value}}{%else%}{{row.p.curie}}{%endif%}</a></td>
      
         <td>
         {%if row.o.uri == 1%}
-        <a rel='{{row.p.value}}' href='{{row.o.value}}'>{{row.o.curie}}</a>
+        <a rel='{{row.p.value}}' href='{{row.o.value}}'>{%if row.oLabel.value%}{{row.oLabel.value}}{%else%}{{row.o.curie}}{%endif%}</a>
         {%endif%}
         {%if row.o.blank == 1%}
         <span property='{{row.p.value}}'>{{row.o.value}}</span>
@@ -33,9 +33,9 @@
     </thead>
     {% for row in models.sp %}
       <tr>
-        <td><a href='{{row.s.value}}'>{{row.s.curie}}</a></td>
+        <td><a href='{{row.s.value}}'>{%if row.sLabel.value%}{{row.sLabel.value}}{%else%}{{row.s.curie}}{%endif%}</a></td>
 
-        <td><a rel='{{row.s.curie}}' href='{{row.p.value}}'>{{row.p.curie}}</a></td>
+        <td><a rel='{{row.s.curie}}' href='{{row.p.value}}'>{%if row.pLabel.value%}{{row.pLabel.value}}{%else%}{{row.p.curie}}{%endif%}</a></td>
 <td>{%if forloop.first%}<a href='{{lodspk.this.value}}'>{{lodspk.this.curie}}</a>{%endif%}</td>
         </tr>
     {% endfor %}

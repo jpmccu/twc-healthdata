@@ -1,7 +1,25 @@
-SELECT DISTINCT ?dataset
+SELECT DISTINCT ?dataset  ?id
 WHERE {
-  <{{uri}}> void:vocabulary ?p .
-  ?dataset void:vocabulary ?p .
+?dataset void:subset ?versioned .
+ ?versioned void:subset ?layer .
+ {
+   <{{uri}}> void:vocabulary ?p .
+   ?layer void:vocabulary ?p .
+ }UNION{
+  <{{uri}}> void:subset ?thisLayer .
+   ?thisLayer void:vocabulary ?p .
+   ?layer void:vocabulary ?p .
+  }
+ }UNION{
+  <{{uri}}> void:subset ?thisVersioned .
+  ?thisVersioned void:subset ?thisLayer .
+   ?thisLayer void:vocabulary ?p .
+   ?layer void:vocabulary ?p .
+ }
+
+  OPTIONAL{ ?dataset dcterms:identifier ?id}
   FILTER(?dataset != <{{uri}}>)
+  OPTIONAL { ?dataset a ?type }
+  FILTER( ?type != <http://purl.org/twc/vocab/conversion/MetaDataset> )
 }
 order by ?dataset

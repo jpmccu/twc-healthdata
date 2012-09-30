@@ -229,7 +229,8 @@
          a scovo:Item;
          conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:object    "[/sd]vocab/[#2]";
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate qb:measureType;
              conversion:object "[/sd]measures/ahrq/[H]";
          ];
@@ -252,7 +253,8 @@
          a scovo:Item;
          conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:object    "[/]vocab/[.]";
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate qb:measureType;
              conversion:object "[/sd]measures/ahrq/[H]";
          ];
@@ -275,7 +277,8 @@
          a scovo:Item;
          conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:object    "[/sd]vocab/[.]";
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate qb:measureType;
              conversion:object "[/sd]measures/ahrq/[H]";
          ];
@@ -298,7 +301,8 @@
          a scovo:Item;
          conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:object    "[/sd]vocab/[.]";
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate qb:measureType;
              conversion:object "[/sd]measures/ahrq/[H]";
          ];
@@ -321,7 +325,8 @@
          a scovo:Item;
          conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:object    "[/sd]vocab/[.]";
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate qb:measureType;
              conversion:object "[/sd]measures/ahrq/[H]";
          ];
@@ -343,7 +348,8 @@
          a scovo:Item;
          conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:object    "[/sd]vocab/[.]";
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate qb:measureType;
              conversion:object "[/sd]measures/ahrq/[H]";
          ];
@@ -366,7 +372,8 @@
          a scovo:Item;
          conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:object    "[/sd]vocab/[.]";
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate qb:measureType;
              conversion:object "[/sd]measures/ahrq/[H]";
          ];
@@ -389,7 +396,8 @@
          a scovo:Item;
          conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:object    "[/sd]vocab/[.]";
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate qb:measureType;
              conversion:object "[/sd]measures/ahrq/[H]";
          ];
@@ -412,7 +420,8 @@
          a scovo:Item;
          conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:object    "[/sd]vocab/[.]";
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate qb:measureType;
              conversion:object "[/sd]measures/ahrq/[H]";
          ];
@@ -435,7 +444,8 @@
          a scovo:Item;
          conversion:equivalent_property "[/sd]measures/ahrq/[H]";
          conversion:object    "[/sd]vocab/[.]";
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate qb:measureType;
              conversion:object "[/sd]measures/ahrq/[H]";
          ];

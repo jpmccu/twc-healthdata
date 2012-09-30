@@ -1,5 +1,24 @@
-SELECT DISTINCT ?g WHERE {
-  GRAPH ?g{
-  	[] a ?class .
+prefix sd:         <http://www.w3.org/ns/sparql-service-description#>
+prefix foaf:       <http://xmlns.com/foaf/0.1/>
+prefix prov:       <http://www.w3.org/ns/prov#>
+prefix ov:         <http://open.vocab.org/terms/>
+prefix conversion: <http://purl.org/twc/vocab/conversion/>
+
+select distinct ?g ?when
+where {
+  graph ?g {
+    [] a ?class .
+    optional {
+      ?activity
+        a prov:Activity;
+        prov:used ?input, [
+           a sd:NamedGraph;
+           sd:name ?g
+        ];
+        prov:startedAtTime ?when
+      .
+      ?input a foaf:Document .
+    }
   }
-} order by ?g
+}
+order by desc(?when)

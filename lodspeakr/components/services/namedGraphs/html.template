@@ -13,5 +13,12 @@
     </div>
   {%endif%}
     </div>
+
+   <div>
+      <p>
+         See also <a href="{{lodspk.home}}/dataset-sample-graphs">Dataset sample graphs</a>.
+      </p>
+   </div>
+
   </body>
 </html>

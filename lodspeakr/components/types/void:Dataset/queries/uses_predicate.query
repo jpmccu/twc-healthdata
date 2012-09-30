@@ -1,8 +1,23 @@
-SELECT DISTINCT ?dataset
+PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
+PREFIX void: <http://rdfs.org/ns/void#>
+SELECT DISTINCT ?dataset ?id
 WHERE {
-  <{{uri}}> a conversion:LayerDataset;
-            conversion:uses_predicate ?p .
-  ?dataset  conversion:uses_predicate ?p .
-  FILTER(?dataset != <{{uri}}>)
+ ?dataset void:subset ?versioned .
+ ?versioned void:subset ?layer .
+ {
+   <{{uri}}> conversion:uses_predicate ?p .
+   ?layer conversion:uses_predicate ?p .
+ }UNION{
+  <{{uri}}> void:subset ?thisLayer .
+   ?thisLayer conversion:uses_predicate ?p .
+   ?layer conversion:uses_predicate ?p .
+  }
+ }UNION{
+  <{{uri}}> void:subset ?thisVersioned .
+  ?thisVersioned void:subset ?thisLayer .
+   ?thisLayer conversion:uses_predicate ?p .
+   ?layer conversion:uses_predicate ?p .
+ }
+  optional { ?dataset dcterms:identifier ?id }
 }
 order by ?dataset

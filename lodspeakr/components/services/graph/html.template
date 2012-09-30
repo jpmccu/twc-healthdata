@@ -76,26 +76,39 @@ WHERE {
  	     <table>
         {% for row in models.loads %}
           <tr>
-            <td><a href="{{row.input.value}}">{{row.input.value}}</a><td>
-            <td>{{row.when.value}}</a></td>
+            <td><a href="{{row.input.value}}">{{row.input.value|uripath|explode:"/"|pop}}</a><td>
+            <td>at {{row.when.value}}</a></td>
           </tr>
         {% endfor %}
        </table>
       {%endif%}
 
+      <div class="fluid-row">
+         <div class="span6">
       <h3>Classes ({{models.main|length}})</h3>
  	    <ul>
         {% for row in models.main %}
           <li>{{row.class.curie}} ({{row.total.value}} instances)</a></li>
         {% endfor %}
       </ul>
-
+         </div>
+         <div class="span5">
+          {{models.main|GoogleVizColumnChart:"class,total,title='Number of instances per class in this named graph'"}}
+         </div>
+      </div>
+      <div class="fluid-row">
+         <div class="span6">
       <h3>Predicates ({{models.preds|length}})</h3>
  	    <ul>
         {% for row in models.preds %}
           <li>{{row.p.curie}} (used in {{row.total.value}} triples)</a></li>
         {% endfor %}
       </ul>
+         </div>
+         <div class="span5">
+          {{models.preds|GoogleVizColumnChart:"p,total,title='Number of triples using each predicate in this named graph"}}
+         </div>
+      </div>
     </div>
   </body>
 </html>

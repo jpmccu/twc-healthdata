@@ -1,4 +1,5 @@
-SELECT DISTINCT ?p ?o WHERE{
+SELECT DISTINCT ?p ?o ?pLabel WHERE{
   <{{uri}}> ?p ?o
+  OPTIONAL {?p rdfs:label ?pLabel}
   FILTER(isLiteral(?o))
 } ORDER BY ?p ?o

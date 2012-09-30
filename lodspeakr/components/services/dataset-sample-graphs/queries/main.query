@@ -1,0 +1,13 @@
+prefix ov:         <http://open.vocab.org/terms/>
+prefix conversion: <http://purl.org/twc/vocab/conversion/>
+
+select distinct ?g (count(?row) as ?size)
+where {
+  graph ?g {
+    ?g a conversion:DatasetSample .
+    [] ov:csvRow ?row .
+  }
+}
+group by ?g
+having (count(?row) > 1)
+order by desc(?size) 

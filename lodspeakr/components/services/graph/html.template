@@ -70,12 +70,26 @@ WHERE {
       <p>This graph is the result of converting {{first.data_rows.total.value}} data rows.</p>
       {%endif%}
 
+      {%if first.loads.input.value%}
+      <h3>Loads</h3>
+        <p>The following web URLs were loaded into this graph.</p>
+ 	     <table>
+        {% for row in models.loads %}
+          <tr>
+            <td><a href="{{row.input.value}}">{{row.input.value}}</a><td>
+            <td>{{row.when.value}}</a></td>
+          </tr>
+        {% endfor %}
+       </table>
+      {%endif%}
+
       <h3>Classes ({{models.main|length}})</h3>
  	    <ul>
         {% for row in models.main %}
           <li>{{row.class.curie}} ({{row.total.value}} instances)</a></li>
         {% endfor %}
       </ul>
+
       <h3>Predicates ({{models.preds|length}})</h3>
  	    <ul>
         {% for row in models.preds %}

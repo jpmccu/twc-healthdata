@@ -45,6 +45,8 @@
    sioc:account_of  <http://tw.rpi.edu/instances/JamesMcCusker>;
 .
 
+<http://logd.tw.rpi.edu/id/medicare-gov/provider> skos:inScheme <http://logd.tw.rpi.edu/id>.
+
 :address
    a conversion:ImplicitBundle;
    conversion:property_name vcard:adr; # Can also be a URI, e.g. dcterms:title.
@@ -120,6 +122,11 @@
          conversion:range_template "http://logd.tw.rpi.edu/id/medicare-gov/provider/[>.<]";
          conversion:range   rdfs:Resource;
          conversion:equivalent_property prov:specializationOf;
+         conversion:range_name "provider";
+      ];
+      conversion:enhance [
+         conversion:class_name "provider";
+         conversion:subclass_of <http://logd.tw.rpi.edu/id/medicare-gov/provider>;
       ];
       
       conversion:enhance [

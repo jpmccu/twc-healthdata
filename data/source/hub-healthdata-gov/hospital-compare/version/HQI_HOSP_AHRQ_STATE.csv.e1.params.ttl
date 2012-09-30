@@ -120,7 +120,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Worse_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -136,7 +137,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:No_Different_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -151,7 +153,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Better_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -166,7 +169,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Too_Few_For_Analysis;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -181,7 +185,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Worse_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -196,7 +201,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:No_Different_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -211,7 +217,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Better_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -226,7 +233,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Too_Few_For_Analysis;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -241,7 +249,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Worse_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -256,7 +265,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:No_Different_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -271,7 +281,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Better_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -286,7 +297,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Too_Few_For_Analysis;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -301,7 +313,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Worse_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -316,7 +329,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:No_Different_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -331,7 +345,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Better_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -346,7 +361,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Too_Few_For_Analysis;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -361,7 +377,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Worse_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -376,7 +393,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:No_Different_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -391,7 +409,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Better_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -406,7 +425,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Too_Few_For_Analysis;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -421,7 +441,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Worse_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -436,7 +457,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:No_Different_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -451,7 +473,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Better_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -466,7 +489,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Too_Few_For_Analysis;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -481,7 +505,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Worse_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -496,7 +521,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:No_Different_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -511,7 +537,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Better_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -526,7 +553,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Too_Few_For_Analysis;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -541,7 +569,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Worse_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -556,7 +585,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:No_Different_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -571,7 +601,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Worse_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -586,7 +617,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Too_Few_For_Analysis;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -601,7 +633,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Worse_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -616,7 +649,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Worse_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -631,7 +665,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Better_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -646,7 +681,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Too_Few_For_Analysis;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -661,7 +697,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Worse_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -676,7 +713,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:No_Different_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -691,7 +729,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Better_than_U_S_National_Rate;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];
@@ -706,7 +745,8 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:range   xsd:decimal;
          conversion:object    health:Too_Few_For_Analysis;
          a scovo:Item;
-         conversion:subject_annotation [
+         conversion:object_search [
+             conversion:regex     ".*";
              conversion:predicate rdfs:label;
              conversion:object "[#1] hospital where [H]"
          ];

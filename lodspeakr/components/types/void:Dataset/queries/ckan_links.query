@@ -7,13 +7,12 @@ prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#>
 select distinct ?ours ?theirs
 where {
    <{{uri}}>
-#      a void:Dataset, dcat:Dataset;
+      a void:Dataset, dcat:Dataset;
       prov:wasDerivedFrom ?distribution
    .
 
    ?distribution
-      a dcat:Distribution;
-      dcat:downloadURL <http://www.medicare.gov/Download/Hospital_flatfiles.zip>
+      a dcat:Distribution
    .
 
    ?ours

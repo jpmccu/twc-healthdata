@@ -9,39 +9,12 @@
      </div>
 
      <div class="fluid-row">
-      <div class="span12">
-         <h3>Type{% if models.types | length > 0 %}s{%endif%}: {%for i in models.types%}{%if !forloop.first%}, {%endif%}<span about="{{uri}}" typeof='{{i.type.curie}}'>{{i.type.curie}}</span>{%endfor%}</h3>
+      <div class="span10">
+         <h3>Type{% if models.types | length > 0 %}s{%endif%}: {%for i in models.types%}{%if !forloop.first%}, {%endif%}<span about="{{uri}}" typeof='{{i.type.curie}}'><a href="{{i.type.mirroredUri}}">{%if i.label.value %}{{i.label.value}}{%else%}{{i.type.curie}}{%endif%}</span>{%endfor%}</h3>
       </div>
      </div>
 
 
-    <div class="fluid-row">
-     <div class="span5">
-      <h3>Datasets with common predicates</h3>
-      {%if models.uses_predicate|length == 0%}
-      <div class="alert alert-info">No datasets found</div>
-      {%else%}
-      <ul>
-      {% for row in models.uses_predicate %}
-       <li><a href='{{row.dataset.mirroredUri}}'>{{row.dataset.mirroredUri}}</a></li>
-      {% endfor %}
-      </ul>
-{%endif%}
-     </div>
-
-     <div class="span5">
-      <h3>Datasets with common vocabularies</h3>
-      {%if models.vocabulary|length == 0%}
-      <div class="alert alert-info">No datasets found</div>
-      {%else%}
-      <ul>
-      {% for row in models.vocabulary %}
-       <li><a href='{{row.dataset.mirroredUri}}'>{{row.dataset.mirroredUri}}</a></li>
-      {% endfor %}
-      </ul>
-{%endif%}
-     </div>
-    </div>
 
     <div class="fluid-row">
      <div class="span19">
@@ -92,24 +65,88 @@
      <div class="fluid-row">
       <div class="span8">
          <h3>CKAN listings</h3>
+         
+         {%if models.ckan_links|length > 0%}
+           <p>This RDF dataset is derived from the following CKAN dataset listings.</p>
+           <ul>
+             <li>Listed at <a href='{{first.ckan_links.theirs.value}}'>{{first.ckan_links.theirs.value|urischeme}}://{{first.ckan_links.theirs.value|hostname}}</a></li>
+             {%if first.ckan_links.ours.value %}
+                <li>Listed at <a href='{{first.ckan_links.ours.value}}'>{{first.ckan_links.ours.value|urischeme}}://{{first.ckan_links.ours.value|hostname}}</a></li>
+             {%endif%}
+           </ul>
+         {%else%}
+           <div class="alert alert-info">No CKAN links found</div>
+         {%endif%}
+
          {%if models.ckan|length == 0%}
            <div class="alert alert-info">No CKAN links found</div>
          {%else%}
           <ul>
             {% for row in models.ckan %}
-             <li><a href='{{row.dataset.value}}'>{{row.dataset.curie}}</a></li>
+             <li><a href='{{row.dataset.value}}'>{%if row.datasetLabel.value%}{{row.datasetLabel.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
             {% endfor %}
            </ul>
          {%endif%}
      </div>
     </div>
 
-     <div class="fluid-row">
-      <div class="span8 well">
-         <h3>See all triples about</h3>
-         <p><a href='{{lodspk.home}}triples/{{uri|urifier}}'>{{uri}}</a></p>
+
+    <div class="fluid-row">
+     <div class="span5">
+      <h3>Datasets with common predicates</h3>
+      {%if models.uses_predicate|length == 0%}
+      <div class="alert alert-info">No datasets found</div>
+      {%else%}
+      <ul>
+      {% for row in models.uses_predicate %}
+       <li><a href='{{row.dataset.mirroredUri}}'>{%if row.id.value%}{{row.id.value}}{%else%}{{row.dataset.mirroredUri}}{%endif%}</a></li>
+      {% endfor %}
+      </ul>
+{%endif%}
+     </div>
+
+     <div class="span5">
+      <h3>Datasets with common vocabularies</h3>
+      {%if models.vocabulary|length == 0%}
+      <div class="alert alert-info">No datasets found</div>
+      {%else%}
+      <ul>
+      {% for row in models.vocabulary %}
+       <li><a href='{{row.dataset.mirroredUri}}'>{%if row.id.value%}{{row.id.value}}{%else%}{{row.dataset.mirroredUri}}{%endif%}</a></li>
+      {% endfor %}
+      </ul>
+{%endif%}
      </div>
     </div>
+
+    <div class="fluid-row">
+     <div class="span5">
+      <h3>Datasets with shared raw columns</h3>
+      {%if models.shared_raw_columns|length == 0%}
+      <div class="alert alert-info">No datasets found</div>
+      {%else%}
+      <ul>
+      {% for row in models.shared_raw_columns %}
+       <li><a href='{{row.abstract.mirroredUri}}'>{%if row.id.value%}{{row.id.value}}{%else%}{{row.abstract.mirroredUri}}{%endif%}</a></li>
+      {% endfor %}
+      </ul>
+{%endif%}
+     </div>
+
+     <div class="span5">
+      <h3>Datasets with shared raw objects</h3>
+      {%if models.shared_raw_objects|length == 0%}
+      <div class="alert alert-info">No datasets found</div>
+      {%else%}
+      <ul>
+      {% for row in models.shared_raw_objects %}
+       <li><a href='{{row.dataset.mirroredUri}}'>{%if row.id.value%}{{row.id.value}}{%else%}{{row.abstract.mirroredUri}}{%endif%}</a></li>
+      {% endfor %}
+      </ul>
+{%endif%}
+     </div>
+    </div>
+
 
      <div class="fluid-row">
      <div id="timeline1" class="span10">
@@ -124,7 +161,7 @@
         </thead>
         {% for row in models.attributes %}
          <tr>
-         <td>{{row.p.curie}}</td>
+         <td><a href="{{row.p.mirroredUri}}">{%if row.pLabel.value%}{{row.pLabel.value}}{%else%}{{row.p.curie}}{%endif%}</td>
          <td>{{row.o.value}}</td>
          </tr>
         {% endfor %}
@@ -138,16 +175,26 @@
 <script src="{{lodspk.home}}js/timeknots/src/timeknots-min.js" type="text/javascript"></script>
 <script type="text/javascript">
 
-                var apple_products = [
-                 {%for i in models.modified%}
-                 {%if !forloop.first%},{%endif%}{name: "{{i.time.value|date:"r"}}", date: "{{i.time.value}}"}
+                var modifications = [
+                 {%for i in models.modification_landscape%}
+                 {%if !forloop.first%},{%endif%}{color: "#aaa", name: "{{i.total.value}} modifications of other datasets", date: "{{i.date.value}}", radius: Math.floor(3*Math.log({{i.total.value}})+4), background: "#ddd"}
+                 {%endfor%},
+                 {%for i in models.modification_dataset%}
+                 {%if !forloop.first%},{%endif%}{name: "{{i.total.value}} modifications of this dataset", date: "{{i.date.value}}", color:"#3A87AD", radius: Math.floor(3*Math.log({{i.total.value}})+4)}
                  {%endfor%}
                 ];
                                      
                                         
 
-                TimeKnots.draw("#timeline1", apple_products, { color:'#699', w:630, h:100});
+                TimeKnots.draw("#timeline1", modifications, { color: "black", w:630, h:100, dateFormat: "%m/%d/%Y"});
 </script>
+     </div>
+    </div>
+
+     <div class="fluid-row">
+      <div class="span8 well">
+         <h3>See all triples about</h3>
+         <p><a href='{{lodspk.home}}triples/{{uri|urifier}}'>{{uri}}</a></p>
      </div>
     </div>
 

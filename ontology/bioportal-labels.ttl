@@ -1,0 +1,284 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+<http://bioportal.bioontology.org/ontologies/umls/cui> rdfs:label "cui" .
+
+<http://bioportal.bioontology.org/ontologies/umls/hasSTY> rdfs:label "has STY" .
+
+<http://bioportal.bioontology.org/ontologies/umls/isRoot> rdfs:label "is Root" .
+
+<http://bioportal.bioontology.org/ontologies/umls/tui> rdfs:label "tui" .
+
+<http://purl.bioontology.org/ontology/ICD9CM/ICA> rdfs:label "ICA" .
+
+<http://purl.bioontology.org/ontology/ICD9CM/ICC> rdfs:label "ICC" .
+
+<http://purl.bioontology.org/ontology/ICD9CM/ICE> rdfs:label "ICE" .
+
+<http://purl.bioontology.org/ontology/ICD9CM/ICF> rdfs:label "ICF" .
+
+<http://purl.bioontology.org/ontology/ICD9CM/ICN> rdfs:label "ICN" .
+
+<http://purl.bioontology.org/ontology/ICD9CM/SIB> rdfs:label "SIB" .
+
+<http://purl.bioontology.org/ontology/ICD9CM/SOS> rdfs:label "SOS" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/AQ> rdfs:label "AQ" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/CONCEPTSTATUS> rdfs:label "concept status" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/CTV3ID> rdfs:label "CTV3 identifier" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/DESCRIPTIONSTATUS> rdfs:label "description status" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/DESCRIPTIONTYPE> rdfs:label "description type" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/INITIALCAPITALSTATUS> rdfs:label "initial capital status" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/ISPRIMITIVE> rdfs:label "is primitive" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/LANGUAGECODE> rdfs:label "language code" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/SNOMEDID> rdfs:label "SNOMED identifier" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/SUBSETMEMBER> rdfs:label "subset member" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/UMLSREL> rdfs:label "UMLS REL" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/UMLSRELA> rdfs:label "UMLS RELA" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/access_device_used_by> rdfs:label "access device used by" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/active_ingredient_of> rdfs:label "active ingredient of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/alternatively_used_for> rdfs:label "alternatively used for" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/associated_finding_of> rdfs:label "associated finding of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/associated_morphology_of> rdfs:label "associated morphology of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/associated_procedure_of> rdfs:label "associated procedure of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/associated_with> rdfs:label "associated with" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/causative_agent_of> rdfs:label "causative agent of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/cause_of> rdfs:label "cause of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/clinical_course_of> rdfs:label "clinical course of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/component_of> rdfs:label "component of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/definitional_manifestation_of> rdfs:label "definitional manifestation of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/device_used_by> rdfs:label "device used by" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/direct_device_of> rdfs:label "direct device of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/direct_morphology_of> rdfs:label "direct morphology of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/direct_procedure_site_of> rdfs:label "direct procedure site of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/direct_substance_of> rdfs:label "direct substance of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/dose_form_of> rdfs:label "dose form of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/due_to> rdfs:label "due to" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/energy_used_by> rdfs:label "energy used by" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/finding_method_of> rdfs:label "finding method of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/finding_site_of> rdfs:label "finding site of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/focus_of> rdfs:label "focus of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_access> rdfs:label "has access" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_active_ingredient> rdfs:label "has active ingredient" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_associated_finding> rdfs:label "has associated finding" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_associated_morphology> rdfs:label "has associated morphology" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_associated_procedure> rdfs:label "has associated procedure" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_causative_agent> rdfs:label "has causative agent" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_clinical_course> rdfs:label "has clinical course" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_component> rdfs:label "has component" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_definitional_manifestation> rdfs:label "has definitional manifestation" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_direct_device> rdfs:label "has direct device" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_direct_morphology> rdfs:label "has direct morphology" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_direct_procedure_site> rdfs:label "has direct procedure site" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_direct_substance> rdfs:label "has direct substance" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_dose_form> rdfs:label "has dose form" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_episodicity> rdfs:label "has episodicity" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_finding_context> rdfs:label "has finding context" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_finding_informer> rdfs:label "has finding informer" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_finding_method> rdfs:label "has finding method" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_finding_site> rdfs:label "has finding site" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_focus> rdfs:label "has focus" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_indirect_device> rdfs:label "has indirect device" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_indirect_morphology> rdfs:label "has indirect morphology" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_indirect_procedure_site> rdfs:label "has indirect procedure site" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_intent> rdfs:label "has intent" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_interpretation> rdfs:label "has interpretation" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_laterality> rdfs:label "has laterality" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_measurement_method> rdfs:label "has measurement method" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_method> rdfs:label "has method" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_part> rdfs:label "has part" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_pathological_process> rdfs:label "has pathological process" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_priority> rdfs:label "has priority" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_procedure_context> rdfs:label "has procedure context" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_procedure_device> rdfs:label "has procedure device" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_procedure_morphology> rdfs:label "has procedure morphology" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_procedure_site> rdfs:label "has procedure site" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_property> rdfs:label "has property" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_recipient_category> rdfs:label "has recipient category" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_revision_status> rdfs:label "has revision status" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_route_of_administration> rdfs:label "has route of administration" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_scale_type> rdfs:label "has scale type" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_severity> rdfs:label "has severity" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_specimen> rdfs:label "has specimen" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_specimen_procedure> rdfs:label "has specimen procedure" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_specimen_source_identity> rdfs:label "has specimen source identity" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_specimen_source_morphology> rdfs:label "has specimen source morphology" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_specimen_source_topography> rdfs:label "has specimen source topography" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_specimen_substance> rdfs:label "has specimen substance" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_subject_relationship_context> rdfs:label "has subject relationship context" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_surgical_approach> rdfs:label "has surgical approach" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/has_temporal_context> rdfs:label "has temporal context" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/indirect_device_of> rdfs:label "indirect device of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/indirect_morphology_of> rdfs:label "indirect morphology of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/indirect_procedure_site_of> rdfs:label "indirect procedure site of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/intent_of> rdfs:label "intent of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/interpretation_of> rdfs:label "interpretation of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/interprets> rdfs:label "interprets" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/inverse_may_be_a> rdfs:label "inverse may be a" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/inverse_was_a> rdfs:label "inverse was a" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/is_alternative_use> rdfs:label "is alternative use" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/is_interpreted_by> rdfs:label "is interpreted by" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/may_be_a> rdfs:label "may be a" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/measurement_method_of> rdfs:label "measurement method of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/method_of> rdfs:label "method of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/moved_to> rdfs:label "moved to" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/occurs_after> rdfs:label "occurs after" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/occurs_before> rdfs:label "occurs before" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/occurs_in> rdfs:label "occurs in" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/part_of> rdfs:label "part of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/procedure_context_of> rdfs:label "procedure context of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/procedure_device_of> rdfs:label "procedure device of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/procedure_morphology_of> rdfs:label "procedure morphology of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/procedure_site_of> rdfs:label "procedure site of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/referred_to_by> rdfs:label "referred to by" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/refers_to> rdfs:label "refers to" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/replaced_by> rdfs:label "replaced by" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/replaces> rdfs:label "replaces" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/route_of_administration_of> rdfs:label "route of administration of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/same_as> rdfs:label "same as" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/specimen_of> rdfs:label "specimen of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/specimen_procedure_of> rdfs:label "specimen procedure of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/specimen_source_identity_of> rdfs:label "specimen source identity of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/specimen_source_morphology_of> rdfs:label "specimen source morphology of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/specimen_source_topography_of> rdfs:label "specimen source topography of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/specimen_substance_of> rdfs:label "specimen substance of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/subject_relationship_context_of> rdfs:label "subject relationship context of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/substance_used_by> rdfs:label "substance used by" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/surgical_approach_of> rdfs:label "surgical approach of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/temporal_context_of> rdfs:label "temporal context of" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/uses_access_device> rdfs:label "uses access device" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/uses_device> rdfs:label "uses device" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/uses_energy> rdfs:label "uses energy" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/uses_substance> rdfs:label "uses substance" .
+
+<http://purl.bioontology.org/ontology/SNOMEDCT/was_a> rdfs:label "was a" .

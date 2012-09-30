@@ -48,7 +48,7 @@
     {%include  "../../menu.inc"%}
     <div class="container">
       {%if first.main.g%}
-         <p>The following graphs contain dataset samples.
+         <p>The following graphs contain dataset samples. See also <a href="{{lodspk.home}}/namedGraphs">all graphs</a>.
          </p>
          <table>
             <tr>

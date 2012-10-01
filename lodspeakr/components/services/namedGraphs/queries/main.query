@@ -4,7 +4,7 @@ prefix prov:       <http://www.w3.org/ns/prov#>
 prefix ov:         <http://open.vocab.org/terms/>
 prefix conversion: <http://purl.org/twc/vocab/conversion/>
 
-select distinct ?g ?when
+select distinct ?g (max(?start) as ?when)
 where {
   graph ?g {
     [] a ?class .
@@ -15,10 +15,11 @@ where {
            a sd:NamedGraph;
            sd:name ?g
         ];
-        prov:startedAtTime ?when
+        prov:startedAtTime ?start
       .
       ?input a foaf:Document .
     }
   }
 }
+group by ?g
 order by desc(?when)

@@ -193,7 +193,7 @@
          <h3>Dataset Modifications</h3>
           <p>The following graphic shows the days that this and other datasets have been modified as we work to create Linked Data that is even more well-structured, interconnected, and useful.
             The blue circles show the number of modifications of this dataset on a given day, while the gray circles show the number of modifications of other datasets. The size of the
-            circles is proportional to the number of modifications on a given day (on a log scale).</p>
+            circles is proportional (on a log scale) to the number of modifications on a given day.</p>
        </div>
      </div>
 

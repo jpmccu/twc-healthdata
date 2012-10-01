@@ -17,18 +17,33 @@
 
 
     <div class="fluid-row">
-     <div class="span19">
-      <h3>Samples loaded</h3>
-      {%if models.samples|length == 0%}
-      <div class="alert alert-info">No samples found</div>
-      {%else%}
-      <ul>
-      {% for row in models.samples %}
-       <li><a href='{{lodspk.home}}graph/{{row.s.mirroredUri|urifier}}'>{{row.s.mirroredUri}}</a> </li>
-      {% endfor %}
-      </ul>
-      {%endif%}
-     </div>
+      <div class="span19">
+        <h3>Data Dumps</h3>
+        {%if models.void_data_dumps|length == 0%}
+           <div class="alert alert-info">No dumps found</div>
+        {%else%}
+           <ul>
+             {% for row in models.void_data_dumps %}
+               <li><a href='{{lodspk.home}}graph/{{row.dump.mirroredUri|urifier}}'>{{row.dump.mirroredUri}}</a> </li>
+             {% endfor %}
+           </ul>
+        {%endif%}
+      </div>
+    </div>
+
+    <div class="fluid-row">
+      <div class="span19">
+        <h3>Loaded Samples</h3>
+        {%if models.samples|length == 0%}
+           <div class="alert alert-info">No samples found</div>
+        {%else%}
+           <ul>
+             {% for row in models.samples %}
+               <li><a href='{{lodspk.home}}graph/{{row.s.mirroredUri|urifier}}'>{{row.s.mirroredUri}}</a> </li>
+             {% endfor %}
+           </ul>
+        {%endif%}
+      </div>
     </div>
 
     <div class="fluid-row">

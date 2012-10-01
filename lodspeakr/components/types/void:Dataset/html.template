@@ -64,14 +64,16 @@
 
      <div class="fluid-row">
       <div class="span8">
-         <h3>CKAN listings</h3>
+         <h3>CKAN listings <img width="30px" src="{{lodspk.home}}img/logo_64px_wide.png" alt="Comprehensive Knowledge Archive Network"/> </h3>
          
          {%if models.ckan_links|length > 0%}
            <p>This RDF dataset is derived from the following CKAN dataset listings.</p>
            <ul>
-             <li>Listed at <a href='{{first.ckan_links.theirs.value}}'>{{first.ckan_links.theirs.value|urischeme}}://{{first.ckan_links.theirs.value|hostname}}</a></li>
+             <li>Listed at <a href='{{first.ckan_links.theirs.value}}'>{{first.ckan_links.theirs.value|urischeme}}://{{first.ckan_links.theirs.value|hostname}}</a>
+             </li>
              {%if first.ckan_links.ours.value %}
-                <li>Listed at <a href='{{first.ckan_links.ours.value}}'>{{first.ckan_links.ours.value|urischeme}}://{{first.ckan_links.ours.value|hostname}}</a></li>
+                <li>Listed at <a href='{{first.ckan_links.ours.value}}'>{{first.ckan_links.ours.value|urischeme}}://{{first.ckan_links.ours.value|hostname}}</a>
+                </li>
              {%endif%}
            </ul>
          {%else%}

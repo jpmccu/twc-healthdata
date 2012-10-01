@@ -44,7 +44,7 @@
     });
     </script>
   </head>
-  <body about="{{lodspk.local.value}}">
+  <body>
  <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -53,7 +53,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="{{lodspk.home}}">healthdata.tw.rpi.edu</a>
+          <a class="brand" href="{{lodspk.home}}"><img src='/img/health-tw-logo.png' width="24px"/> healthdata.tw.rpi.edu</a>
           <div class="nav-collapse">
             <ul class="nav">
               <li><a href="/">Home</a></li>

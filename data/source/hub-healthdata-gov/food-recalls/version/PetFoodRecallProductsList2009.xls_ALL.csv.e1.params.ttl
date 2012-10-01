@@ -71,6 +71,11 @@
          a conversion:HeaderRow;
       ];                        
 
+      conversion:enhance [      
+         ov:csvRow 4;
+         a conversion:ExampleResource;
+      ];                        
+
       conversion:interpret [
          conversion:symbol        "", " ";
          conversion:interpretation conversion:null; 

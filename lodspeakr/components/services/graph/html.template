@@ -99,7 +99,23 @@ WHERE {
       {%endif%}
 
       <div class="fluid-row">
-         <div class="span6">
+
+         <div class="span4">
+           <h3>Vocabulary Popularity</h3>
+           <p>The following chart shows the vocabularies used in this RDF graph along with how frequently each is used in the triples.</p>
+           {{models.total_vocab|GoogleVizColumnChart:"vocab.curie,totalVocab"}}
+         </div>
+
+         <div class="span4">
+           <h3>Term Popularity</h3>
+           <p>The following chart shows the predicates used in this RDF graph along with how frequently each is used in the triples.</p>
+           {{models.preds|GoogleVizColumnChart:"p.curie,total"}}
+         </div>
+      </div>
+
+      <div class="fluid-row">
+
+         <div class="span5">
             <h3>Classes ({{models.main|length}})</h3>
             <p>The RDF in this graph contains instances of the following classes, <i>grouped</i> by the vocabulary in which they are defined and <i>ordered</i> by popularity.</p>
             <ul>
@@ -126,12 +142,6 @@ WHERE {
          </div>
 
          <div class="span5">
-          {{models.total_vocab|GoogleVizColumnChart:"vocab.curie,totalVocab"}}
-         </div>
-      </div>
-
-      <div class="fluid-row">
-         <div class="span6">
             <h3>Predicates ({{models.preds|length}})</h3>
              <ul>
               {% for row in models.preds %}
@@ -139,9 +149,7 @@ WHERE {
               {% endfor %}
             </ul>
          </div>
-         <div class="span5">
-          {{models.preds|GoogleVizColumnChart:"p.curie,total,title='Number of triples using each predicate in this named graph"}}
-         </div>
+
       </div>
 
     </div>

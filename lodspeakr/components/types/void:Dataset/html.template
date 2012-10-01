@@ -1,6 +1,6 @@
     {%include "../../menu.inc"%}
     <span rev="void:subset" resource="{{lodspk.home}}void"></span>
-    <div class="container">
+    <div class="container" about="{{lodspk.this.value}}">
 
      <div class="fluid-row">
       <div class="span12">
@@ -10,7 +10,14 @@
 
      <div class="fluid-row">
       <div class="span10">
-         <h3>Type{% if models.types | length > 0 %}s{%endif%}: {%for i in models.types%}{%if !forloop.first%}, {%endif%}<span about="{{uri}}" typeof='{{i.type.curie}}'><a href="{{i.type.mirroredUri}}">{%if i.label.value %}{{i.label.value}}{%else%}{{i.type.curie}}{%endif%}</a></span>{%endfor%}</h3>
+         <h3>is a 
+            {%for i in models.types%}
+               {%if !forloop.first%}, {%endif%}
+              <span about="{{uri}}" typeof='{{i.type.curie}}'>
+                  <a href="{{i.type.mirroredUri}}">{%if i.label.value %}{{i.label.value}}{%else%}{{i.type.curie}}{%endif%}</a>
+              </span>
+            {%endfor%}.
+         </h3>
       </div>
      </div>
 
@@ -20,11 +27,11 @@
       <div class="span19">
         <h3>Data Dumps</h3>
         {%if models.void_data_dumps|length == 0%}
-           <div class="alert alert-info">No dumps found</div>
+           <div class="alert alert-info">Dump files are not available at this level of abstraction. Access the dump files from more specific subsets.</div>
         {%else%}
            <ul>
              {% for row in models.void_data_dumps %}
-               <li><a href='{{lodspk.home}}graph/{{row.dump.mirroredUri|urifier}}'>{{row.dump.mirroredUri}}</a> </li>
+               <li><a rel="void:dataDump" href='{{row.dump.mirroredUri}}'>{{row.dump.mirroredUri}}</a> </li>
              {% endfor %}
            </ul>
         {%endif%}
@@ -32,7 +39,7 @@
     </div>
 
     <div class="fluid-row">
-      <div class="span19">
+      <div class="span12">
         <h3>Loaded Samples</h3>
         {%if models.samples|length == 0%}
            <div class="alert alert-info">No samples found</div>
@@ -40,6 +47,22 @@
            <ul>
              {% for row in models.samples %}
                <li><a href='{{lodspk.home}}graph/{{row.s.mirroredUri|urifier}}'>{{row.s.mirroredUri}}</a> </li>
+             {% endfor %}
+           </ul>
+        {%endif%}
+      </div>
+    </div>
+
+
+    <div class="fluid-row">
+      <div class="span12">
+        <h3>Dataset loaded in triple store</h3>
+        {%if models.in_triple_store|length == 0%}
+           <div class="alert alert-info">Dataset is not loaded in the triple store at this granularity.</div>
+        {%else%}
+           <ul>
+             {% for row in models.in_triple_store %}
+               <li><a href='/sparql?query=SELECT ?s ?p ?o WHERE{GRAPH <{{row.name.mirroredUri}}>{?s ?p ?o}}'>{{row.name.mirroredUri}}</a></li>
              {% endfor %}
            </ul>
         {%endif%}
@@ -54,7 +77,7 @@
          {%else%}
           <ul>
             {% for row in models.subsets %}
-             <li><a href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
+             <li><a rel="void:subset" href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
             {% endfor %}
            </ul>
          {%endif%}
@@ -69,7 +92,7 @@
      {%else%}
    <ul>
     {% for row in models.supersets %}
-     <li><a href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
+     <li><a rev="void:subset" href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
     {% endfor %}
     </ul>
 {%endif%}
@@ -166,53 +189,67 @@
 
 
      <div class="fluid-row">
-     <div id="timeline1" class="span10">
-     <h2>Modifications</h2>
+       <div id="timeline1" class="span10">
+         <h3>Dataset Modifications</h3>
+          <p>The following graphic shows the days that this and other datasets have been modified as we work to create Linked Data that is even more well-structured, interconnected, and useful.
+            The blue circles show the number of modifications of this dataset on a given day, while the gray circles show the number of modifications of other datasets. The size of the
+            circles is proportional (on a log scale) to the number of modifications on a given day.</p>
+       </div>
      </div>
-     </div>
-     <div class="fluid-row">
-      <div class="span8">
-        <table class="table table-striped" about="{{uri}}">
-        <thead>
-          <tr><th>Attribute</th><th>Value</th></tr>
-        </thead>
-        {% for row in models.attributes %}
-         <tr>
-         <td><a href="{{row.p.mirroredUri}}">{%if row.pLabel.value%}{{row.pLabel.value}}{%else%}{{row.p.curie}}{%endif%}</td>
-         <td>{{row.o.value}}</td>
-         </tr>
-        {% endfor %}
-        </table>
-     </div>
-    </div>
 
-    <div class='fluid-row'>
-     <div class='span8'>
-<script src="http://d3js.org/d3.v2.js"></script>
-<script src="{{lodspk.home}}js/timeknots/src/timeknots-min.js" type="text/javascript"></script>
-<script type="text/javascript">
+   <!-- TODO: ^^^^ this is \\/// this -->
 
+   <div class='fluid-row'>
+       <div class='span8'>
+         <script src="http://d3js.org/d3.v2.js"></script>
+         <script src="{{lodspk.home}}js/timeknots/src/timeknots-min.js" type="text/javascript"></script>
+         <script type="text/javascript">
                 var modifications = [
                  {%for i in models.modification_landscape%}
-                 {%if !forloop.first%},{%endif%}{color: "#aaa", name: "{{i.total.value}} modifications of other datasets", date: "{{i.date.value}}", radius: Math.floor(3*Math.log({{i.total.value}})+4), background: "#ddd"}
+                    {%if !forloop.first%},{%endif%}
+                    {color: "#aaa", 
+                     name: "{{i.total.value}} modifications of other datasets", 
+                     date: "{{i.date.value}}", 
+                     radius: Math.floor(3*Math.log({{i.total.value}})+4), 
+                     background: "#ddd"}
                  {%endfor%},
+
                  {%for i in models.modification_dataset%}
-                 {%if !forloop.first%},{%endif%}{name: "{{i.total.value}} modifications of this dataset", date: "{{i.date.value}}", color:"#3A87AD", radius: Math.floor(3*Math.log({{i.total.value}})+4)}
+                    {%if !forloop.first%},{%endif%}
+                    {name: "{{i.total.value}} modifications of this dataset", 
+                     date: "{{i.date.value}}", 
+                     color:"#3A87AD", 
+                     radius: Math.floor(3*Math.log({{i.total.value}})+4)}
                  {%endfor%}
                 ];
-                                     
-                                        
 
                 TimeKnots.draw("#timeline1", modifications, { color: "black", w:630, h:100, dateFormat: "%m/%d/%Y"});
-</script>
-     </div>
+         </script>
+       </div>
     </div>
 
      <div class="fluid-row">
+       <div class="span8">
+         <table class="table table-striped" about="{{uri}}">
+           <thead>
+             <tr><th>Attribute</th><th>Value</th></tr>
+           </thead>
+           {% for row in models.attributes %}
+             <tr>
+               <td><a href="{{row.p.mirroredUri}}">{%if row.pLabel.value%}{{row.pLabel.value}}{%else%}{{row.p.curie}}{%endif%}</td>
+               <td><span property="{{row.p.mirroredUri}}">{{row.o.value}}</span></td>
+             </tr>
+          {% endfor %}
+         </table>
+       </div>
+    </div>
+
+ 
+    <div class="fluid-row">
       <div class="span8 well">
          <h3>See all triples about</h3>
          <p><a href='{{lodspk.home}}triples/{{uri|urifier}}'>{{uri}}</a></p>
-     </div>
+      </div>
     </div>
 
    </div>    

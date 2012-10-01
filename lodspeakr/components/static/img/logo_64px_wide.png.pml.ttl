@@ -1,0 +1,135 @@
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:    <http://purl.org/dc/terms/> .
+@prefix pmlp:       <http://inference-web.org/2.0/pml-provenance.owl#> .
+@prefix pmlj:       <http://inference-web.org/2.0/pml-justification.owl#> .
+@prefix foaf:       <http://xmlns.com/foaf/0.1/> .
+@prefix sioc:       <http://rdfs.org/sioc/ns#> .
+@prefix oboro:      <http://obofoundry.org/ro/ro.owl#> .
+@prefix oprov:      <http://openprovenance.org/ontology#> .
+@prefix hartigprov: <http://purl.org/net/provenance/ns#> .
+@prefix irw:        <http://www.ontologydesignpatterns.org/ont/web/irw.owl#> .
+@prefix nfo:        <http://www.semanticdesktop.org/ontologies/nfo/#> .
+@prefix conv:       <http://purl.org/twc/vocab/conversion/> .
+@prefix httphead:   <http://inference-web.org/registry/MPR/HTTP_1_1_HEAD.owl#> .
+@prefix httpget:    <http://inference-web.org/registry/MPR/HTTP_1_1_GET.owl#> .
+@prefix httppost:   <http://inference-web.org/registry/MPR/HTTP_1_1_POST.owl#> .
+
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix sioc:    <http://rdfs.org/sioc/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+<http://tw.rpi.edu/instances/TimLebo> foaf:holdsAccount <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot> .
+<http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>
+   a foaf:OnlineAccount;
+   foaf:accountName "lebot";
+   dcterms:isPartOf <http://purl.org/twc/id/machine/lebot/MacBookPro6_2>;
+   sioc:account_of  <http://tw.rpi.edu/instances/TimLebo>;
+.
+
+<http://healthdata.tw.rpi.edu/hub/img/logo_64px_wide.png>
+   a pmlp:Source;
+.
+
+<http://healthdata.tw.rpi.edu/hub/img/logo_64px_wide.png>
+   a pmlp:Source;
+   pmlp:hasModificationDateTime "2012-06-20T16:18:37"^^xsd:dateTime;
+.
+
+<logo_64px_wide.png>
+   a pmlp:Information;
+   pmlp:hasReferenceSourceUsage <sourceUsage_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_content>;
+.
+<logo_64px_wide.png>
+   a pmlp:Information;
+   nfo:hasHash <md5_b3bed32e5aa4cfeb9163f4210c6b759e_time_1349096644>;
+.
+<md5_b3bed32e5aa4cfeb9163f4210c6b759e_time_1349096644>
+   a nfo:FileHash; 
+   dcterms:date      "2012-10-01T09:04:04-04:00"^^xsd:dateTime;
+   nfo:hashAlgorithm "md5";
+   nfo:hashValue     "b3bed32e5aa4cfeb9163f4210c6b759e";
+.
+
+<nodeSet_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_content>
+   a pmlj:NodeSet;
+   pmlj:hasConclusion <logo_64px_wide.png>;
+   pmlj:isConsequentOf <inferenceStep_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_content>;
+.
+<inferenceStep_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_content>
+   a pmlj:InferenceStep;
+   pmlj:hasIndex 0;
+   pmlj:hasAntecedentList ();
+   pmlj:hasSourceUsage     <sourceUsage_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_content>;
+   pmlj:hasInferenceEngine conv:curl_md5_13321509d47dc1c247e710c813f6f189;
+   pmlj:hasInferenceRule   httpget:HTTP_1_1_GET;
+   oboro:has_agent          <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+   hartigprov:involvedActor <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+.
+
+<sourceUsage_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_content>
+   a pmlp:SourceUsage;
+   pmlp:hasSource        <http://healthdata.tw.rpi.edu/hub/img/logo_64px_wide.png>;
+   pmlp:hasUsageDateTime "2012-10-01T09:04:04-04:00"^^xsd:dateTime;
+.
+
+<wasControlledBy_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_content>
+   a oprov:WasControlledBy;
+   oprov:cause  <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+   oprov:effect <inferenceStep_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_content>;
+   oprov:endTime "2012-10-01T09:04:04-04:00"^^xsd:dateTime;
+.
+ 
+<info_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_url_header>
+   a pmlp:Information, conv:HTTPHeader;
+   pmlp:hasRawString """HTTP/1.1 200 OK
+Date: Mon, 01 Oct 2012 13:03:54 GMT
+Server: Apache/2.2.14 (Ubuntu)
+Accept-Ranges: bytes
+Last-Modified: Wed, 20 Jun 2012 16:18:37 GMT
+ETag: 1340209117.0-5895
+Content-Range: bytes 0-5894/5895
+Content-Length: 5895
+Content-Type: image/png
+Via: 1.1 healthdata.tw.rpi.edu
+""";
+   pmlp:hasReferenceSourceUsage <sourceUsage_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_url_header>;
+.
+ 
+<nodeSet_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_url_header>
+   a pmlj:NodeSet;
+   pmlj:hasConclusion <info_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_url_header>;
+   pmlj:isConsequentOf <inferenceStep_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_url_header>;
+.
+<inferenceStep_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_url_header>
+   a pmlj:InferenceStep;
+   pmlj:hasIndex 0;
+   pmlj:hasAntecedentList ();
+   pmlj:hasSourceUsage     <sourceUsage_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_url_header>;
+   pmlj:hasInferenceEngine conv:curl_md5_13321509d47dc1c247e710c813f6f189;
+   pmlj:hasInferenceRule   httphead:HTTP_1_1_HEAD;
+   oboro:has_agent          <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+   hartigprov:involvedActor <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+.
+
+<sourceUsage_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_url_header>
+   a pmlp:SourceUsage;
+   pmlp:hasSource        <http://healthdata.tw.rpi.edu/hub/img/logo_64px_wide.png>;
+   pmlp:hasUsageDateTime "2012-10-01T09:04:04-04:00"^^xsd:dateTime;
+.
+<wasControlledBy_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_url_header>
+   a oprov:WasControlledBy;
+   oprov:cause  <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+   oprov:effect <nodeSet_62fff6b1-1cb6-45dc-9c6d-85f23fbbf08b_url_header>;
+   oprov:endTime "2012-10-01T09:04:04-04:00"^^xsd:dateTime;
+.
+
+
+conv:curl_md5_13321509d47dc1c247e710c813f6f189
+   a pmlp:InferenceEngine, conv:Curl;
+   dcterms:identifier "md5_13321509d47dc1c247e710c813f6f189";
+   dcterms:description """curl 7.24.0 (x86_64-apple-darwin12.0) libcurl/7.24.0 OpenSSL/0.9.8r zlib/1.2.5
+Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtsp smtp smtps telnet tftp 
+Features: AsynchDNS GSS-Negotiate IPv6 Largefile NTLM NTLM_WB SSL libz """;
+.
+
+conv:Curl rdfs:subClassOf pmlp:InferenceEngine .

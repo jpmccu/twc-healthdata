@@ -4,4 +4,4 @@ SELECT DISTINCT (COUNT(?instance) AS ?total) ?class max(?label) as ?label WHERE 
  }
  OPTIONAL {?class rdfs:label ?label}
 }GROUP BY ?class
-ORDER BY DESC(?total)
+ORDER BY ?class DESC(?total)

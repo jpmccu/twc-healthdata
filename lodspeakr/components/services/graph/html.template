@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LODSPeaKr Basic Menu</title>
+    <title>Graph View</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -21,6 +21,9 @@
         padding-right:20px;
         background-position: right;
       }
+      p.provenance {
+         color: gray;
+      }      
     </style>
     <link href="{{lodspk.home}}css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="screen" />
     <script type="text/javascript" src="{{lodspk.home}}js/jquery.js"></script>
@@ -66,49 +69,81 @@ WHERE {
          </div>
       </div>
 
+      <div class="fluid-row">
+         <div class="span12">
+            {%if first.loads.input.value%}
+            <h3>Graph Loads</h3>
+              <p>The following web URLs were loaded into this graph, at the times shown.</p>
+              <p>
+                 <table>
+                 {% for row in models.loads %}
+                   <tr>
+                     <td><a href="{{row.input.value}}">{{row.input.value|uripath|explode:"/"|pop}}</a><td>
+                     <td>at {{row.when.value}}</a></td>
+                   </tr>
+                 {% endfor %}
+                </table>
+             </p>
+             <p class="provenance query">[show <a href="{{lodspk.queries.loads}}">query</a>]</p>
+            {%endif%}
+         </div>
+      </div>
+
       {%if first.data_rows.total.value%}
-      <p>This graph is the result of converting {{first.data_rows.total.value}} data rows.</p>
-      {%endif%}
-
-      {%if first.loads.input.value%}
-      <h3>Loads</h3>
-        <p>The following web URLs were loaded into this graph, at the shown times.</p>
- 	     <table>
-        {% for row in models.loads %}
-          <tr>
-            <td><a href="{{row.input.value}}">{{row.input.value|uripath|explode:"/"|pop}}</a><td>
-            <td>at {{row.when.value}}</a></td>
-          </tr>
-        {% endfor %}
-       </table>
+         <div class="fluid-row">
+            <div class="span12">
+               <h3>Tabular Conversion</h3>
+               <p>This graph is the result of converting {{first.data_rows.total.value}} data rows.</p>
+            </div>
+         </div>
       {%endif%}
 
       <div class="fluid-row">
          <div class="span6">
-      <h3>Classes ({{models.main|length}})</h3>
- 	    <ul>
-        {% for row in models.main %}
-          <li>{{row.class.curie}} ({{row.total.value}} instances)</a></li>
-        {% endfor %}
-      </ul>
+            <h3>Classes ({{models.main|length}})</h3>
+            <p>The RDF in this graph contains instances of the following classes, <i>grouped</i> by the vocabulary in which they are defined and <i>ordered</i> by popularity.</p>
+            <ul>
+            {% for row in models.total_vocab %}
+               {%if row.totalVocab.value == 0%}
+                  <li>Other predicates</a>
+               {%else%}
+                  <li><a href='vocabulary/{{row.vocab.mirroredUri|urifier}}'>{{row.vocab.mirroredUri}}</a> ({{row.totalVocab.value}} instances)</a>
+               {%endif%}
+               <ul>
+               {% for i in models.total_class %}
+                   {%if i.vocab.value == row.vocab.value%}
+                      {%if i.totalClass.value > 1 %}
+                         <li>{{i.class.curie}} ({{i.totalClass.value}} instances)</li>
+                      {%else%}
+                         <li>{{i.class.curie}} ({{i.totalClass.value}} instance)</li>
+                      {%endif%}
+                   {%endif%}
+               {% endfor %}
+               </ul>
+              </li>
+            {% endfor %}
+           </ul>
          </div>
+
          <div class="span5">
-          {{models.main|GoogleVizColumnChart:"class,total,title='Number of instances per class in this named graph'"}}
+          {{models.total_vocab|GoogleVizColumnChart:"vocab.curie,totalVocab"}}
          </div>
       </div>
+
       <div class="fluid-row">
          <div class="span6">
-      <h3>Predicates ({{models.preds|length}})</h3>
- 	    <ul>
-        {% for row in models.preds %}
-          <li>{{row.p.curie}} (used in {{row.total.value}} triples)</a></li>
-        {% endfor %}
-      </ul>
+            <h3>Predicates ({{models.preds|length}})</h3>
+             <ul>
+              {% for row in models.preds %}
+                <li>{{row.p.curie}} (used in {{row.total.value}} triples)</a></li>
+              {% endfor %}
+            </ul>
          </div>
          <div class="span5">
-          {{models.preds|GoogleVizColumnChart:"p,total,title='Number of triples using each predicate in this named graph"}}
+          {{models.preds|GoogleVizColumnChart:"p.curie,total,title='Number of triples using each predicate in this named graph"}}
          </div>
       </div>
+
     </div>
   </body>
 </html>

@@ -1,5 +1,5 @@
 #3> <> prov:specializationOf 
-#3>    <https://github.com/jimmccusker/twc-healthdata/blob/master/ckan/mirror.py> .
+#3>    <https://github.com/jimmccusker/twc-healthdata/blob/master/ckan/promoteDataDictionary.py> .
 
 import os, json
 

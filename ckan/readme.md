@@ -1,0 +1,3 @@
+* For more about [mirror.py](https://github.com/jimmccusker/twc-healthdata/blob/master/ckan/mirror.py), see [Mirroring a Source CKAN Instance](https://github.com/jimmccusker/twc-healthdata/wiki/Mirroring-a-Source-CKAN-Instance).
+* For more about [promoteDataDictionary.py](https://github.com/jimmccusker/twc-healthdata/blob/master/ckan/promoteDataDictionary.py), see [CKAN Datast Listing Augmentations](https://github.com/jimmccusker/twc-healthdata/wiki/CKAN-Datast-Listing-Augmentations).
+* For more about [annotateLOD.py](https://github.com/jimmccusker/twc-healthdata/blob/master/ckan/annotateLOD.py), see [CKAN Datast Listing Augmentations](https://github.com/jimmccusker/twc-healthdata/wiki/CKAN-Datast-Listing-Augmentations).

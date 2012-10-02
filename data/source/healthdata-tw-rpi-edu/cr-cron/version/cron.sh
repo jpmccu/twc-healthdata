@@ -15,18 +15,21 @@ pushd `dirname $0` &> /dev/null
    mkdir -p $versionID/doc/logs
    log=$versionID/doc/logs/cron-$logID.log
 
+   echo "BEGIN cron cr-vars.sh" >> $log
    cr-vars.sh >> $log
 
+   echo "BEGIN cron cr-mirror-ckan.py" >> $log
    if [[ "$CSV2RDF4LOD_CKAN" == "true" && \
          ${#CSV2RDF4LOD_CKAN_SOURCE} -gt 0 && ${#CSV2RDF4LOD_CKAN_WRITABLE} -gt 0 && \
          `which cr-mirror-ckan.py` && ${#X_CKAN_API_Key} -gt 0 ]]; then
-      echo cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE $CSV2RDF4LOD_CKAN_WRITABLE
+      echo cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE $CSV2RDF4LOD_CKAN_WRITABLE >> $log
+      cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE $CSV2RDF4LOD_CKAN_WRITABLE      >> $log
    else
-      echo "ERROR: Failed to invoke cr-mirror-ckan.py:"
-      echo "   CSV2RDF4LOD_CKAN:               $CSV2RDF4LOD_CKAN"
-      echo "   CSV2RDF4LOD_CKAN_SOURCE:        $CSV2RDF4LOD_CKAN_SOURCE"
-      echo "   CSV2RDF4LOD_CKAN_CKAN_WRITABLE: $CSV2RDF4LOD_CKAN_CKAN_WRITABLE"
-      echo "   `which cr-mirror-ckan.py`"
-      echo "   X_CKAN_API_Key:                 $X_CKAN_API_Key" 
+      echo "ERROR: Failed to invoke cr-mirror-ckan.py:"                          >> $log
+      echo "   CSV2RDF4LOD_CKAN:               $CSV2RDF4LOD_CKAN"                >> $log
+      echo "   CSV2RDF4LOD_CKAN_SOURCE:        $CSV2RDF4LOD_CKAN_SOURCE"         >> $log
+      echo "   CSV2RDF4LOD_CKAN_CKAN_WRITABLE: $CSV2RDF4LOD_CKAN_CKAN_WRITABLE"  >> $log
+      echo "   `which cr-mirror-ckan.py`"                                        >> $log
+      echo "   X_CKAN_API_Key:                 $X_CKAN_API_Key"                  >> $log
    fi
 popd &> /dev/null

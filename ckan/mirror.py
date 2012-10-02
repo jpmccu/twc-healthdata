@@ -103,7 +103,6 @@ if __name__=='__main__':
 
    update = not dryrun and len(sys.argv) > 3 and sys.argv[3] == '--update-if-exists'
 
-   print source, target, api_key, dryrun, update
    mirror_ckan(source, target, api_key, dryrun, update) 
 
 # ./mirror.py S T

@@ -1,7 +1,9 @@
+#!/usr/bin/env python
+#
 #3> <> prov:specializationOf 
 #3>    <https://github.com/jimmccusker/twc-healthdata/blob/master/ckan/mirror.py> .
 
-import os, json
+import os, sys, json
 
 import ckanclient  # see https://github.com/okfn/ckanclient README
 # Get latest download URL from http://pypi.python.org/pypi/ckanclient#downloads --\/
@@ -10,20 +12,15 @@ import ckanclient  # see https://github.com/okfn/ckanclient README
 # See also https://github.com/timrdf/DataFAQs/wiki/CKAN
 #    section "Automatically publish dataset on CKAN"
 
-source = 'http://hub.healthdata.gov/api'
-target = 'http://aquarius.tw.rpi.edu/projects/healthdata/api'
+def mirror_ckan(source, target, api_key, dryrun, update):
 
-MIRROR = False            # Modify target CKAN with listings from source CKAN.
-UPDATE = MIRROR and False # If a dataset already exists in target, update it.
+   sourceCKAN = ckanclient.CkanClient(base_location=source)
+   targetCKAN = ckanclient.CkanClient(base_location=target, api_key=api_key)
 
-sourceCKAN = ckanclient.CkanClient(base_location=source)
-api_key = os.environ['X_CKAN_API_Key'] # api_key must be defined to POST/PUT.
-targetCKAN = ckanclient.CkanClient(base_location=target, api_key=api_key)
-
-indent = '    '
-for name in sourceCKAN.package_register_get():
-   
-   if name == 'hospital-compare':
+   indent = '    '
+   for name in sourceCKAN.package_register_get():
+      
+      #if name == 'hospital-compare':
 
       sourceCKAN.package_entity_get(name) # Get the dataset description.
       dataset = sourceCKAN.last_message
@@ -33,21 +30,21 @@ for name in sourceCKAN.package_register_get():
       dataset['extras']['prov_alternateOf'] = altName
       # Would like to assert two alternates, but their model is limiting.
 
-      if MIRROR: del dataset['id'] # DELETING
+      if not dryrun: del dataset['id']     # DELETING
       print name + ' ' + dataset['name']
       if 'download_url' in dataset:
          print indent + 'download_url: ' + dataset['download_url']
       if 'url' in dataset:
          print indent + 'url:          ' + dataset['url']
       for resource in dataset['resources']:
-         if MIRROR: del resource['id'] # DELETING
+         if not dryrun: del resource['id'] # DELETING
          if 'url' in resource:
             print indent + 'resource:     ' + resource['url']
             print indent + 'format:       ' + resource['format']
             # Formats seen on healthdata.gov: 
             #    CSV Text XLS XML Feed Query API Widget RDF
       #print json.dumps(dataset,sort_keys=True, indent=4)
-      if MIRROR:
+      if not dryrun:
          try: # See if dataset is listed in targetCKAN
             targetCKAN.package_entity_get(dataset['name'])
             if UPDATE: 
@@ -70,7 +67,56 @@ for name in sourceCKAN.package_register_get():
                print ('WARNING: '+
                      'Conflict error when trying to POST ' + dataset['name'])
 
-#new_dataset = {
-# 'name':  'test-dataset-3',
-# 'notes': 'automatic submission',
-#}
+   #new_dataset = {
+   # 'name':  'test-dataset-3',
+   # 'notes': 'automatic submission',
+   #}
+
+if __name__=='__main__':
+
+   if len(sys.argv) < 3 or sys.argv[1] == '--help':
+      print "Usage: {} source target [--api-key key] [--dryrun] [--update-if-exists]".format(os.path.basename(sys.argv[0]))
+      print "              source: the URL of the CKAN to replicate."
+      print "                      e.g. http://hub.healthdata.gov/api"
+      print "              target: the URL of the writable CKAN that should replicate 'source'."
+      print "                      e.g. http://aquarius.tw.rpi.edu/projects/healthdata/api"
+      print "           --api-key: the API key to 'target' (if omitted, will access X_CKAN_API_Key environment variable)."
+      print "            --dryrun: do NOT modify 'target'; just print a description of what would happen."
+      print "  --update-if-exists: if not a dryrun, update the entry in 'target' if it already exists."
+      sys.exit(1)
+   
+   source = sys.argv[1] # e.g. http://hub.healthdata.gov/api
+   target = sys.argv[2] # e.g. http://aquarius.tw.rpi.edu/projects/healthdata/api
+
+   api_key = '' # api_key must be defined to POST/PUT.
+   if len(sys.argv) > 4 and sys.argv[3] == '--api-key':
+      api_key = sys.argv[4] 
+      sys.argv.remove('--api-key')
+      sys.argv.remove(api_key)
+   else:
+      api_key = os.environ['X_CKAN_API_Key']
+
+   dryrun = False
+   if len(sys.argv) > 3 and sys.argv[3] == '--dryrun':
+      dryrun = True 
+      sys.argv.remove('--dryrun')
+
+   update = not dryrun and len(sys.argv) > 3 and sys.argv[3] == '--update-if-exists'
+
+   print source, target, api_key, dryrun, update
+   mirror_ckan(source, target, api_key, dryrun, update) 
+
+# ./mirror.py S T
+# S T api-key-in-envvars False False
+# 
+# ./mirror.py S T --update-if-exists
+# S T api-key-in-envvars False True
+# 
+# ./mirror.py S T --api-key my-key! --update-if-exists
+# S T my-key! False True
+# 
+# ./mirror.py S T --api-key my-key! --dryrun --update-if-exists
+# S T my-key! True False
+# 
+# ./mirror.py S T --api-key my-key! --dryrun
+# S T my-key! True False

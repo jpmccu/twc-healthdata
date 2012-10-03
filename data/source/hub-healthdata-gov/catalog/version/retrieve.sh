@@ -10,6 +10,7 @@
 #3>      "Script to retrieve and convert a new version of the dataset.";
 #3>    rdfs:seeAlso 
 #3>      <https://github.com/timrdf/csv2rdf4lod-automation/wiki/Automated-creation-of-a-new-Versioned-Dataset>;
+#3>    prov:wasDerivedFrom <https://github.com/jimmccusker/twc-healthdata/blob/master/data/source/hub-healthdata-gov/catalog/version/retrieve.sh>;
 #3> .
 
 today=`date +%Y-%b-%d`
@@ -23,7 +24,7 @@ if [ ! -e $today ]; then
    curl -sH "Content-Type: text/turtle" -d "<$hhs> a <http://purl.org/twc/vocab/datafaqs#CKAN> ." $sadi > $today/source/datasets.ttl
 
    echo $today/source/datasets.ttl
-   push $today &> /dev/null
+   pushd $today &> /dev/null
       aggregate-source-rdf.sh source/datasets.ttl
    popd &> /dev/null
 fi

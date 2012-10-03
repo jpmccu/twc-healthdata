@@ -15,8 +15,9 @@ pushd `dirname $0` &> /dev/null
    mkdir -p $versionID/doc/logs
    log=$versionID/doc/logs/cron-$logID.log
 
-   echo "BEGIN cron cr-vars.sh" >> $log
-   cr-vars.sh >> $log
+   echo "BEGIN cron cr-vars.sh"             >> $log
+   echo "user name: $SUDO_USER as `whoami`" >> $log
+   cr-vars.sh                               >> $log
 
    echo "BEGIN cron cr-mirror-ckan.py" >> $log
    if [[ "$CSV2RDF4LOD_CKAN" == "true" && \

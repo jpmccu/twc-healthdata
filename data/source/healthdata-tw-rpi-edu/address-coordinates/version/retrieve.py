@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from googlemaps import GoogleMaps
 import os, json
 from datetime import *
@@ -27,13 +29,14 @@ select distinct ?address ?streetAddress ?streetAddress2 ?locality ?region ?posta
 
   OPTIONAL { ?address wgs:latitude ?lat; wgs:longitude ?long }
   FILTER (!bound(?lat) && !bound(?long))
-} limit 10'''
+} limit 100'''
 
 outputTemplate = '<{uri}> wgs:latitude {lat} ; wgs:longitude {lng} .\n'
 
 def retrieve():
     
-    gmaps = GoogleMaps('AIzaSyBT8MvQf3fI6iAB9pMbGm1LiM7H1LIqcpw')
+    api_key = os.environ['X_GOOGLE_MAPS_API_Key'] # api_key must be defined to POST/PUT.
+    gmaps = GoogleMaps(api_key)
     
     try:
         os.makedirs(str(date.today())+"/automatic")

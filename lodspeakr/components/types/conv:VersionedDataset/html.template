@@ -1,0 +1,257 @@
+    {%include "../../menu.inc"%}
+    <span rev="void:subset" resource="{{lodspk.home}}void"></span>
+    <div class="container" about="{{lodspk.this.value}}">
+
+     <div class="fluid-row">
+      <div class="span12">
+        <h2>Dataset <a href='{{uri}}'><span property='dc:identifier'>{{first.details.id.value}}</span></a></h2>
+      </div>
+     </div>
+
+     <div class="fluid-row">
+      <div class="span10">
+         <h3>is a 
+            {%for i in models.types%}
+               {%if !forloop.first%}, {%endif%}
+              <span about="{{uri}}" typeof='{{i.type.curie}}'>
+                  <a href="{{i.type.mirroredUri}}">{%if i.label.value %}{{i.label.value}}{%else%}{{i.type.curie}}{%endif%}</a>
+              </span>
+            {%endfor%}.
+         </h3>
+      </div>
+     </div>
+
+
+
+    <div class="fluid-row">
+      <div class="span19">
+        <h3>Data Dumps</h3>
+        {%if models.void_data_dumps|length == 0%}
+           <div class="alert alert-info">Dump files are not available at this level of abstraction. Access the dump files from more specific subsets.</div>
+        {%else%}
+           <ul>
+             {% for row in models.void_data_dumps %}
+               <li><a rel="void:dataDump" href='{{row.dump.mirroredUri}}'>{{row.dump.mirroredUri}}</a> </li>
+             {% endfor %}
+           </ul>
+        {%endif%}
+      </div>
+    </div>
+
+    <div class="fluid-row">
+      <div class="span12">
+        <h3>Loaded Samples</h3>
+        {%if models.samples|length == 0%}
+           <div class="alert alert-info">No samples found</div>
+        {%else%}
+           <ul>
+             {% for row in models.samples %}
+               <li><a href='{{lodspk.home}}graph/{{row.s.mirroredUri|urifier}}'>{{row.s.mirroredUri}}</a> </li>
+             {% endfor %}
+           </ul>
+        {%endif%}
+      </div>
+    </div>
+
+
+    <div class="fluid-row">
+      <div class="span12">
+        <h3>Dataset loaded in triple store</h3>
+        {%if models.in_triple_store|length == 0%}
+           <div class="alert alert-info">Dataset is not loaded in the triple store at this granularity.</div>
+        {%else%}
+           <ul>
+             {% for row in models.in_triple_store %}
+               <li><a href='/sparql?query=SELECT ?s ?p ?o WHERE{GRAPH <{{row.name.mirroredUri}}>{?s ?p ?o}}'>{{row.name.mirroredUri}}</a></li>
+             {% endfor %}
+           </ul>
+        {%endif%}
+      </div>
+    </div>
+
+    <div class="fluid-row">
+      <div class="span8">
+         <h3>Subsets</h3>
+         {%if models.subsets|length == 0%}
+           <div class="alert alert-info">No subsets found</div>
+         {%else%}
+          <ul>
+            {% for row in models.subsets %}
+             <li><a rel="void:subset" href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
+            {% endfor %}
+           </ul>
+         {%endif%}
+     </div>
+    </div>
+
+     <div class="fluid-row">
+      <div class="span10">
+   <h3>Supersets</h3>
+     {%if models.supersets|length == 0%}
+         <div class="alert alert-info">No supersets found</div>
+     {%else%}
+   <ul>
+    {% for row in models.supersets %}
+     <li><a rev="void:subset" href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
+    {% endfor %}
+    </ul>
+{%endif%}
+     </div>
+    </div>
+
+
+     <div class="fluid-row">
+      <div class="span8">
+         <h3>CKAN listings <img width="30px" src="{{lodspk.home}}img/logo_64px_wide.png" alt="Comprehensive Knowledge Archive Network"/> </h3>
+         
+         {%if models.ckan_links|length > 0%}
+           <p>This RDF dataset is derived from the following CKAN dataset listings.</p>
+           <ul>
+             <li>Listed at <a href='{{first.ckan_links.theirs.value}}'>{{first.ckan_links.theirs.value|urischeme}}://{{first.ckan_links.theirs.value|hostname}}</a>
+             </li>
+             {%if first.ckan_links.ours.value %}
+                <li>Listed at <a href='{{first.ckan_links.ours.value}}'>{{first.ckan_links.ours.value|urischeme}}://{{first.ckan_links.ours.value|hostname}}</a>
+                </li>
+             {%endif%}
+           </ul>
+         {%else%}
+           <div class="alert alert-info">No CKAN links found</div>
+         {%endif%}
+
+         {%if models.ckan|length == 0%}
+           <div class="alert alert-info">No CKAN links found</div>
+         {%else%}
+          <ul>
+            {% for row in models.ckan %}
+             <li><a href='{{row.dataset.value}}'>{%if row.datasetLabel.value%}{{row.datasetLabel.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
+            {% endfor %}
+           </ul>
+         {%endif%}
+     </div>
+    </div>
+
+
+    <div class="fluid-row">
+     <div class="span5">
+      <h3>Datasets with common predicates</h3>
+      {%if models.uses_predicate|length == 0%}
+      <div class="alert alert-info">No datasets found</div>
+      {%else%}
+      <ul>
+      {% for row in models.uses_predicate %}
+       <li><a href='{{row.dataset.mirroredUri}}'>{%if row.id.value%}{{row.id.value}}{%else%}{{row.dataset.mirroredUri}}{%endif%}</a></li>
+      {% endfor %}
+      </ul>
+{%endif%}
+     </div>
+
+     <div class="span5">
+      <h3>Datasets with common vocabularies</h3>
+      {%if models.vocabulary|length == 0%}
+      <div class="alert alert-info">No datasets found</div>
+      {%else%}
+      <ul>
+      {% for row in models.vocabulary %}
+       <li><a href='{{row.dataset.mirroredUri}}'>{%if row.id.value%}{{row.id.value}}{%else%}{{row.dataset.mirroredUri}}{%endif%}</a></li>
+      {% endfor %}
+      </ul>
+{%endif%}
+     </div>
+    </div>
+
+    <div class="fluid-row">
+     <div class="span5">
+      <h3>Datasets with shared raw columns</h3>
+      {%if models.shared_raw_columns|length == 0%}
+      <div class="alert alert-info">No datasets found</div>
+      {%else%}
+      <ul>
+      {% for row in models.shared_raw_columns %}
+       <li><a href='{{row.abstract.mirroredUri}}'>{%if row.id.value%}{{row.id.value}}{%else%}{{row.abstract.mirroredUri}}{%endif%}</a></li>
+      {% endfor %}
+      </ul>
+{%endif%}
+     </div>
+
+     <div class="span5">
+      <h3>Datasets with shared raw objects</h3>
+      {%if models.shared_raw_objects|length == 0%}
+      <div class="alert alert-info">No datasets found</div>
+      {%else%}
+      <ul>
+      {% for row in models.shared_raw_objects %}
+       <li><a href='{{row.dataset.mirroredUri}}'>{%if row.id.value%}{{row.id.value}}{%else%}{{row.abstract.mirroredUri}}{%endif%}</a></li>
+      {% endfor %}
+      </ul>
+{%endif%}
+     </div>
+    </div>
+
+
+     <div class="fluid-row">
+       <div id="timeline1" class="span10">
+         <h3>Dataset Modifications</h3>
+          <p>The following graphic shows the days that this and other datasets have been modified as we work to create Linked Data that is even more well-structured, interconnected, and useful.
+            The blue circles show the number of modifications of this dataset on a given day, while the gray circles show the number of modifications of other datasets. The size of the
+            circles is proportional (on a log scale) to the number of modifications on a given day.</p>
+       </div>
+     </div>
+
+   <!-- TODO: ^^^^ this is \\/// this -->
+
+   <div class='fluid-row'>
+       <div class='span8'>
+         <script src="http://d3js.org/d3.v2.js"></script>
+         <script src="{{lodspk.home}}js/timeknots/src/timeknots-min.js" type="text/javascript"></script>
+         <script type="text/javascript">
+                var modifications = [
+                 {%for i in models.modification_landscape%}
+                    {%if !forloop.first%},{%endif%}
+                    {color: "#aaa", 
+                     name: "{{i.total.value}} modifications of other datasets", 
+                     date: "{{i.date.value}}", 
+                     radius: Math.floor(3*Math.log({{i.total.value}})+4), 
+                     background: "#ddd"}
+                 {%endfor%},
+
+                 {%for i in models.modification_dataset%}
+                    {%if !forloop.first%},{%endif%}
+                    {name: "{{i.total.value}} modifications of this dataset", 
+                     date: "{{i.date.value}}", 
+                     color:"#3A87AD", 
+                     radius: Math.floor(3*Math.log({{i.total.value}})+4)}
+                 {%endfor%}
+                ];
+
+                TimeKnots.draw("#timeline1", modifications, { color: "black", w:630, h:100, dateFormat: "%m/%d/%Y"});
+         </script>
+       </div>
+    </div>
+
+     <div class="fluid-row">
+       <div class="span8">
+         <table class="table table-striped" about="{{uri}}">
+           <thead>
+             <tr><th>Attribute</th><th>Value</th></tr>
+           </thead>
+           {% for row in models.attributes %}
+             <tr>
+               <td><a href="{{row.p.mirroredUri}}">{%if row.pLabel.value%}{{row.pLabel.value}}{%else%}{{row.p.curie}}{%endif%}</td>
+               <td><span property="{{row.p.mirroredUri}}">{{row.o.value}}</span></td>
+             </tr>
+          {% endfor %}
+         </table>
+       </div>
+    </div>
+
+ 
+    <div class="fluid-row">
+      <div class="span8 well">
+         <h3>See all triples about</h3>
+         <p><a href='{{lodspk.home}}triples/{{uri|urifier}}'>{{uri}}</a></p>
+      </div>
+    </div>
+
+   </div>    
+  </body>
+</html>

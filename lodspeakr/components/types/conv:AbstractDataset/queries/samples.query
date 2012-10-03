@@ -1,0 +1,7 @@
+SELECT DISTINCT ?s where{
+ {
+  <{{uri}}> void:subset ?versioned .
+  ?versioned void:subset ?layered .
+  ?layered void:subset  ?s .
+  ?s a conversion:DatasetSample .
+}

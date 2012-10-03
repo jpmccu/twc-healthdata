@@ -1,0 +1,22 @@
+SELECT DISTINCT ?dataset ?datasetLabel WHERE{
+  {
+  ?dataset     dcat:distribution ?x .
+  <{{uri}}> prov:wasDerivedFrom ?x;
+            a void:Dataset .
+  }UNION{
+  ?dataset     dcat:distribution ?x .
+  ?super prov:wasDerivedFrom ?x;
+            a void:Dataset ;
+            void:subset <{{uri}}> .
+  <{{uri}}> a conversion:VersionedDataset .
+
+  }UNION{
+  ?dataset     dcat:distribution ?x .
+  ?super prov:wasDerivedFrom ?x;
+            a void:Dataset ;
+            void:subset [ void:subset <{{uri}}> ] .
+  <{{uri}}> a conversion:LayerDataset .
+
+  }
+  OPTIONAL{?dataset rdfs:label ?datasetLabel}
+}

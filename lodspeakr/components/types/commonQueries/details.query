@@ -1,0 +1,3 @@
+SELECT DISTINCT ?id WHERE{
+  <{{uri}}> dcterms:identifier ?id 
+}

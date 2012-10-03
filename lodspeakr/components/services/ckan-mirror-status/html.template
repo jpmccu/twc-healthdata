@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LODSPeaKr Basic Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="alternate" type="application/rdf+xml" title="RDF/XML Version" href="{{lodspk.local.value}}.rdf" />
+    <link rel="alternate" type="text/turtle" title="Turtle Version" href="{{lodspk.local.value}}.ttl" />
+    <link rel="alternate" type="text/plain" title="N-Triples Version" href="{{lodspk.local.value}}.nt" />
+    <link rel="alternate" type="application/json" title="RDFJSON Version" href="{{lodspk.local.value}}.json" />
+    <link href="{{lodspk.home}}css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+      .wait{
+        background-image:url('{{lodspk.home}}img/wait.gif');
+        background-repeat:no-repeat;
+        padding-right:20px;
+        background-position: right;
+      }
+    </style>
+    <link href="{{lodspk.home}}css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <script type="text/javascript" src="{{lodspk.home}}js/jquery.js"></script>
+    <script type="text/javascript" src="{{lodspk.home}}js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{lodspk.home}}js/bootstrap-typeahead.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.typeahead').typeahead({
+            source: function (typeahead, query) {
+              $('.typeahead').addClass('wait');[]
+              return $.get('{{lodspk.home}}search/'+encodeURIComponent(query), { }, function (data) {
+                  $('.typeahead').removeClass('wait');[]
+                  return typeahead.process(data);
+              }, 'json');
+            },
+            onselect: function (obj) {
+              $('.typeahead').attr('disabled', true);
+              window.location = obj.uri;
+            }
+        });
+    });
+    </script>
+  </head>
+  <body>
+    {%include  "../../menu.inc"%}
+
+    <div class="container">
+      {% if models.we_are_missing|length > 0 %}
+        <h1>We're behind!</h1>
+        <p>The following datasets (<span class="provenance query"><a href="{{lodspk.queries.we_are_missing}}">query</a></span>) appear in <a href="http://hub.healthdata.gov">http://hub.healthdata.gov</a>, but not in <a href="http://healthdata.tw.rpi.edu/hub">http://healthdata.tw.rpi.edu/hub</a>.
+        </p>
+        <ul>
+          {% for row in models.we_are_missing %}
+             <li><a href="{{ row.theirs.mirroredUri }}">{{row.id.curie}}</a> should also be in
+                 <a href="http://healthdata.tw.rpi.edu/hub/dataset/{{row.id.curie}}">http://healthdata.tw.rpi.edu/hub</a>.</li>
+          {% endfor %}
+        </ul>
+      {%else%}
+         <span>It appears that all datasets in <a href="http://hub.healthdata.gov">http://hub.healthdata.gov</a> are also in <a href="http://healthdata.tw.rpi.edu/hub">http://healthdata.tw.rpi.edu/hub</a>.</span>
+      {%endif%}
+    </div>
+
+  </body>
+</html>
+

@@ -1,9 +1,0 @@
-PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
-PREFIX dcterms:    <http://purl.org/dc/terms/>
-
-select distinct xsd:date(?modified) as ?date (count(?modified) as ?total)
-where {
-?d a conversion:LayerDataset; 
-   dcterms:modified ?modified
-FILTER(?d != <{{uri}}>)
-}group by xsd:date(?modified)

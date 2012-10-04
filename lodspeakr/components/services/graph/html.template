@@ -79,7 +79,7 @@ WHERE {
                  {% for row in models.loads %}
                    <tr>
                      <td><a href="{{row.input.value}}">{{row.input.value|uripath|explode:"/"|pop}}</a><td>
-                     <td>at {{row.when.value}}</a></td>
+                     <td>on {{row.when.value|date:"jS F Y \\a\\t H:i:s"}}</a></td>
                    </tr>
                  {% endfor %}
                 </table>

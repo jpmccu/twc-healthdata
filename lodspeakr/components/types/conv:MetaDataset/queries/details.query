@@ -1,1 +1,3 @@
-../../commonQueries/details.query
+SELECT DISTINCT ?id WHERE{
+  <{{uri}}> dcterms:identifier ?id 
+}

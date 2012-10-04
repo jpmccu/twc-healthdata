@@ -1,1 +1,4 @@
-../../commonQueries/types.query
+SELECT DISTINCT ?type ?label WHERE{
+  <{{uri}}> a ?type
+  OPTIONAL { ?type rdfs:label ?label}
+} ORDER BY ?type

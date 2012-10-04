@@ -1,6 +1,0 @@
-PREFIX void: <http://rdfs.org/ns/void#>
-
-select distinct ?dump 
-where {
-  <{{uri}}> void:dataDump ?dump
-}

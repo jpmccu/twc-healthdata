@@ -21,4 +21,13 @@ $conf['ns']['inf'] = 'http://inference-web.org/2.1exper/pml-provenance.owl#';
 //$conf['ns']['local']   = 'http://healthdata.tw.rpi.edu/source/';
 $conf['mirror_external_uris'] = $conf['ns']['local'];
 //$conf['root'] = "http://healthdata.tw.rpi.edu/";
+
+$conf['ns']['nfo'] = 'http://www.semanticdesktop.org/ontologies/nfo/#';
+
+
+$conf['type']['priority']['void:Dataset']          = 0;
+$conf['type']['priority']['conv:AbstractDataset']  = 1;
+$conf['type']['priority']['conv:VersionedDataset'] = 1;
+$conf['type']['priority']['conv:LayerDataset']     = 1;
+
 ?>

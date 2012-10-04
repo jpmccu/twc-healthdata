@@ -54,20 +54,8 @@
     </div>
 
 
-    <div class="fluid-row">
-      <div class="span12">
-        <h3>Dataset loaded in triple store</h3>
-        {%if models.in_triple_store|length == 0%}
-           <div class="alert alert-info">Dataset is not loaded in the triple store at this granularity.</div>
-        {%else%}
-           <ul>
-             {% for row in models.in_triple_store %}
-               <li><a href='/sparql?query=SELECT ?s ?p ?o WHERE{GRAPH <{{row.name.mirroredUri}}>{?s ?p ?o}}'>{{row.name.mirroredUri}}</a></li>
-             {% endfor %}
-           </ul>
-        {%endif%}
-      </div>
-    </div>
+   {% include '../void\:Dataset/in_triple_store.html.template' %}
+
 
     <div class="fluid-row">
       <div class="span8">

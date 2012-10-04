@@ -23,20 +23,8 @@
 
 
 
-    <div class="fluid-row">
-      <div class="span19">
-        <h3>Data Dumps</h3>
-        {%if models.void_data_dumps|length == 0%}
-           <div class="alert alert-info">Dump files are not available at this level of abstraction. Access the dump files from more specific subsets.</div>
-        {%else%}
-           <ul>
-             {% for row in models.void_data_dumps %}
-               <li><a rel="void:dataDump" href='{{row.dump.mirroredUri}}'>{{row.dump.mirroredUri}}</a> </li>
-             {% endfor %}
-           </ul>
-        {%endif%}
-      </div>
-    </div>
+    {% include '../void\:Dataset/void_data_dumps.html.template'%}
+
 
     <div class="fluid-row">
       <div class="span12">

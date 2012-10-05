@@ -58,6 +58,9 @@
                  <a href="http://healthdata.tw.rpi.edu/hub/dataset/{{row.id.curie}}">http://healthdata.tw.rpi.edu/hub</a>.</li>
           {% endfor %}
         </ul>
+        <p>See <a href="https://github.com/jimmccusker/twc-healthdata/wiki/Mirroring-a-Source-CKAN-Instance">Mirroring a Source CKAN Instance</a> 
+           for details on how to get up to date.
+        </p>
       {%else%}
          <span>It appears that all datasets in <a href="http://hub.healthdata.gov">http://hub.healthdata.gov</a> are also in <a href="http://healthdata.tw.rpi.edu/hub">http://healthdata.tw.rpi.edu/hub</a>.</span>
       {%endif%}

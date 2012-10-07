@@ -1,17 +1,4 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY dc "http://purl.org/dc/terms/" >
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY annotator "http://purl.org/twc/health/vocab/annotator#" >
-]>
-
-
 <rdf:RDF xmlns="http://purl.org/twc/health/vocab/annotator#"
      xml:base="http://purl.org/twc/health/vocab/annotator"
      xmlns:dc="http://purl.org/dc/terms/"
@@ -49,13 +36,13 @@
 
     <!-- http://purl.org/dc/terms/subject -->
 
-    <owl:ObjectProperty rdf:about="&dc;subject"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/subject"/>
     
 
 
     <!-- http://www.w3.org/2000/01/rdf-schema#seeAlso -->
 
-    <owl:ObjectProperty rdf:about="&rdfs;seeAlso"/>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
     
 
 
@@ -72,37 +59,37 @@
 
     <!-- http://purl.org/dc/terms/abstract -->
 
-    <owl:DatatypeProperty rdf:about="&dc;abstract"/>
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/abstract"/>
     
 
 
     <!-- http://purl.org/dc/terms/description -->
 
-    <owl:DatatypeProperty rdf:about="&dc;description"/>
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/description"/>
     
 
 
     <!-- http://purl.org/dc/terms/title -->
 
-    <owl:DatatypeProperty rdf:about="&dc;title"/>
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title"/>
     
 
 
     <!-- http://www.w3.org/2000/01/rdf-schema#label -->
 
-    <owl:DatatypeProperty rdf:about="&rdfs;label"/>
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
     
 
 
     <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
 
-    <owl:DatatypeProperty rdf:about="&skos;altLabel"/>
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
     
 
 
     <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
 
-    <owl:DatatypeProperty rdf:about="&skos;prefLabel"/>
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
     
 
 
@@ -119,13 +106,13 @@
 
     <!-- http://purl.org/twc/health/vocab/annotator#AnnotatedThing -->
 
-    <owl:Class rdf:about="&annotator;AnnotatedThing">
-        <rdfs:subClassOf rdf:resource="&annotator;DescribedThing"/>
+    <owl:Class rdf:about="http://purl.org/twc/health/vocab/annotator#AnnotatedThing">
+        <rdfs:subClassOf rdf:resource="http://purl.org/twc/health/vocab/annotator#DescribedThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dc;subject"/>
-                <owl:onClass rdf:resource="&skos;Concept"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/subject"/>
+                <owl:onClass rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -134,21 +121,21 @@
 
     <!-- http://purl.org/twc/health/vocab/annotator#DescribedThing -->
 
-    <owl:Class rdf:about="&annotator;DescribedThing">
+    <owl:Class rdf:about="http://purl.org/twc/health/vocab/annotator#DescribedThing">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&rdfs;seeAlso"/>
-                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&dc;description"/>
-                        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                        <owl:onProperty rdf:resource="http://purl.org/dc/terms/description"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&dc;title"/>
-                        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                        <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
                     </owl:Restriction>
                 </owl:unionOf>
             </owl:Class>
@@ -159,7 +146,7 @@
 
     <!-- http://www.w3.org/2004/02/skos/core#Concept -->
 
-    <owl:Class rdf:about="&skos;Concept"/>
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:RDF>
 
 

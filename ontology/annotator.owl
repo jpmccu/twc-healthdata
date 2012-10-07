@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 
-<!DOCTYPE rdf:RDF [
+<!DOCTYPE rdf:RDF "" [
     <!ENTITY dc "http://purl.org/dc/terms/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
@@ -9,7 +9,7 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY annotator "http://purl.org/twc/health/vocab/annotator#" >
-] "">
+] >
 
 
 <rdf:RDF xmlns="http://purl.org/twc/health/vocab/annotator#"

@@ -23,16 +23,18 @@ popd &> /dev/null
 
 pushd $conversion_root &> /dev/null
 
-   echo "BEGIN cron ps --user `whoami` `date`"     >> $log
-   ps --user healthdata                            >> $log
-   echo "END cron ps --user `whoami` `date`"       >> $log
-   echo                                            >> $log
-   already_running=`ps --user healthdata | grep 'bash' | wc -l | awk '{printf("%s",$1)}'`
-   echo "already_running:$already_running:"        >> $log
+   echo "BEGIN cron ps --user `whoami` `date`"                >> $log
+   ps --user healthdata                                       >> $log
+   already_running=`ps --user `whoami` | grep 'bash' | wc -l | awk '{printf("%s",$1)}'`
+   echo                                                       >> $log
+   echo "Number of cron.sh already_running:$already_running:" >> $log
    if [[ ${#already_running} -gt 0 && "$already_running" -gt 1 ]]; then
-      echo "cron.sh is already running; aborting." >> $log
+      echo                                                    >> $log
+      echo "cron.sh is already running; aborting."            >> $log
       exit 1
    fi
+   echo "END cron ps --user `whoami` `date`"                  >> $log
+   echo                                                       >> $log
 
 
    echo "BEGIN cron git pull `date`"    >> $log

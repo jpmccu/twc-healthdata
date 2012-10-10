@@ -16,8 +16,8 @@ pushd `dirname $0` &> /dev/null
    versionID=`md5.sh $0` # < - - - needs - /\
    mkdir -p $versionID/doc/logs
    logID=`date +%Y-%b-%d_%H_%M`
-   log=`pwd`/$versionID/doc/logs/cron-$logID.log # - - - - - - - - - log - - - - - - - - - - - -
 
+   log=`pwd`/$versionID/doc/logs/cron-$logID.log # - - - - - - - - - log - - - - - - - - - - - -
    conversion_root=`cr-conversion-root.sh`
 popd &> /dev/null
 

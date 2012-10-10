@@ -19,7 +19,7 @@ pushd `dirname $0` &> /dev/null
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh
 
    echo "BEGIN cron git pull `date`"        >> $log
-   /usr/bin/git pull 2>&1                   >> $log
+   #/usr/bin/git pull 2>&1                   >> $log
    echo "END cron git pull `date`"          >> $log
 
    echo "BEGIN cron cr-vars.sh `date`"      >> $log

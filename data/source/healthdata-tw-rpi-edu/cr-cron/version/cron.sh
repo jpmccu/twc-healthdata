@@ -27,8 +27,8 @@ pushd $conversion_root &> /dev/null
    echo "BEGIN cron ps --user `whoami` `date`"                >> $log
    ps --user healthdata                                       >> $log
    echo "END cron ps --user `whoami` `date`"                  >> $log
+   echo                                                       >> $log
    #already_running=`ps --user \`whoami\` | grep 'cron.sh' | grep -v 'grep' | wc -l | awk '{printf("%s",$1)}'`
-   #echo                                                       >> $log
    #echo "Number of cron.sh already_running:$already_running:" >> $log
    #if [[ ${#already_running} -gt 0 && "$already_running" -gt 1 ]]; then
    #   echo                                                    >> $log

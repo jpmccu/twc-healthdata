@@ -27,7 +27,7 @@ pushd $conversion_root &> /dev/null
    if [ `which git` ]; then
       git pull 2>&1                     >> $log
    else
-      echo "ERROR: git is not on PATH"  >> $log
+      echo "ERROR: git is not on PATH." >> $log
    fi
    echo "END cron git pull `date`"      >> $log
    echo                                 >> $log

@@ -29,7 +29,7 @@ pushd $conversion_root &> /dev/null
    echo                                            >> $log
    already_running=`ps --user healthdata | grep 'bash' | wc -l | awk '{printf("%s",$1)}'`
    echo "already_running:$already_running:"        >> $log
-   if [ ${#already_running} -gt 1 ]; then
+   if [[ ${#already_running} -gt 0 && "$already_running" -gt 1 ]]; then
       echo "cron.sh is already running; aborting." >> $log
       exit 1
    fi

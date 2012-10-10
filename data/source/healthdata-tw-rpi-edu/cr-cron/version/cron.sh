@@ -30,12 +30,14 @@ pushd $conversion_root &> /dev/null
       echo "ERROR: git is not on PATH"  >> $log
    fi
    echo "END cron git pull `date`"      >> $log
+   echo                                 >> $log
   
  
    echo "BEGIN cron cr-vars.sh `date`"      >> $log
    echo "user name: $SUDO_USER as `whoami`" >> $log
    cr-vars.sh                               >> $log
    echo "END cron cr-vars.sh `date`"        >> $log
+   echo                                     >> $log
 
 
    echo "BEGIN cron cr-mirror-ckan.py"                                                   >> $log
@@ -54,7 +56,8 @@ pushd $conversion_root &> /dev/null
       echo "      cr-mirror-ckan.py path:    `which cr-mirror-ckan.py`"  >> $log
       echo "      X_CKAN_API_Key:            $X_CKAN_API_Key"            >> $log
    fi
-   echo "BEGIN cron cr-mirror-ckan.py"                                                   >> $log
+   echo "END cron cr-mirror-ckan.py"                                                     >> $log
+   echo                                                                                  >> $log
 
 popd &> /dev/null
 

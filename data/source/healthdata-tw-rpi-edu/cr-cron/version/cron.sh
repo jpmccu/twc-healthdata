@@ -16,6 +16,10 @@ pushd `dirname $0` &> /dev/null
    logID=`date +%Y-%b-%d_%H_%M`
    log=$versionID/doc/logs/cron-$logID.log # - - - - - - - - - log - - - - - - - - - - - - - - -
 
+   echo "BEGIN cron git pull `date`"    >> $log
+   which git                            &> $log
+   echo "END cron git pull `date`"      >> $log
+   
    echo "BEGIN cron cr-vars.sh `date`"      >> $log
    echo "user name: $SUDO_USER as `whoami`" >> $log
    cr-vars.sh                               >> $log

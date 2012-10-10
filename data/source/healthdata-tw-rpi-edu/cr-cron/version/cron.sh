@@ -17,6 +17,7 @@ pushd `dirname $0` &> /dev/null
    mkdir -p $versionID/doc/logs
    logID=`date +%Y-%b-%d_%H_%M`
    log=$versionID/doc/logs/cron-$logID.log # - - - - - - - - - - - - - - - - - - - - - - - - - -
+   echo log $log >> $grr
 
    source ../../../csv2rdf4lod-source-me-as-healthdata.sh
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh

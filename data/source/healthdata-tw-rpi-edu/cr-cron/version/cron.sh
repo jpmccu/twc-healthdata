@@ -7,17 +7,23 @@
 #3>    foaf:homepage <https://github.com/jimmccusker/twc-healthdata/blob/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh> .
 
 pushd `dirname $0` &> /dev/null
+
+   versionID=`md5.sh $0`
+   mkdir -p $versionID/doc/logs
+   logID=`date +%Y-%b-%d_%H_%M`
+   log=$versionID/doc/logs/cron-$logID.log # - - - - - - - - - - - - - - - - - - - - - - - - - -
+
    source ../../../csv2rdf4lod-source-me-as-healthdata.sh
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh
 
-   versionID=`md5.sh $0`
-   logID=`date +%Y-%b-%d_%H_%M`
-   mkdir -p $versionID/doc/logs
-   log=$versionID/doc/logs/cron-$logID.log
+   echo "BEGIN cron git pull `date`"        >> $log
+   git pull 2>&1                            >> $log
+   echo "END cron git pull `date`"          >> $log
 
    echo "BEGIN cron cr-vars.sh `date`"      >> $log
    echo "user name: $SUDO_USER as `whoami`" >> $log
    cr-vars.sh                               >> $log
+   echo "END cron cr-vars.sh `date`"        >> $log
 
    echo "BEGIN cron cr-mirror-ckan.py"                                                   >> $log
    if [[ "$CSV2RDF4LOD_CKAN" == "true" && \

@@ -8,13 +8,20 @@
 
 pushd `dirname $0` &> /dev/null
 
+   # Boostrap ourselves with the environment variables
+   # and paths that we need to know.
    source ../../../csv2rdf4lod-source-me-as-`whoami`.sh
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh
 
-   versionID=`md5.sh $0` # - - - needs - /\
+   versionID=`md5.sh $0` # < - - - needs - /\
    mkdir -p $versionID/doc/logs
    logID=`date +%Y-%b-%d_%H_%M`
-   log=$versionID/doc/logs/cron-$logID.log # - - - - - - - - - log - - - - - - - - - - - - - - -
+   log=`pwd`/$versionID/doc/logs/cron-$logID.log # - - - - - - - - - log - - - - - - - - - - - -
+
+   conversion_root=`cr-conversion-root.sh`
+popd &> /dev/null
+
+pushd $conversion_root &> /dev/null
 
    echo "BEGIN cron git pull `date`"    >> $log
    if [ `which git` ]; then
@@ -49,6 +56,6 @@ pushd `dirname $0` &> /dev/null
    fi
    echo "BEGIN cron cr-mirror-ckan.py"                                                   >> $log
 
-
-   echo "END cron" >> $log
 popd &> /dev/null
+
+echo "END cron" >> $log

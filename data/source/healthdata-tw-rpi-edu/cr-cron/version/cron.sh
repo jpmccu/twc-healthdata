@@ -18,9 +18,9 @@ pushd `dirname $0` &> /dev/null
    source ../../../csv2rdf4lod-source-me-as-healthdata.sh
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh
 
-   #echo "BEGIN cron git pull `date`"        >> $log
-   #which git 2>&1                           >> $log
-   #echo "END cron git pull `date`"          >> $log
+   echo "BEGIN cron git pull `date`"        >> $log
+   /usr/bin/git pull 2>&1                   >> $log
+   echo "END cron git pull `date`"          >> $log
 
    echo "BEGIN cron cr-vars.sh `date`"      >> $log
    echo "user name: $SUDO_USER as `whoami`" >> $log

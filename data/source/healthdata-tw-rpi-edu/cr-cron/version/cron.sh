@@ -6,21 +6,15 @@
 #3> <https://raw.github.com/jimmccusker/twc-healthdata/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh>
 #3>    foaf:homepage <https://github.com/jimmccusker/twc-healthdata/blob/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh> .
 
-grr='/srv/twc-healthdata/data/source/healthdata-tw-rpi-edu/cr-cron/version/hi'
-date > $grr
-
 pushd `dirname $0` &> /dev/null
 
    source ../../../csv2rdf4lod-source-me-as-healthdata.sh
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh
 
-   echo pre version `pwd`       >> $grr
-   versionID=`md5.sh $0`
-   echo post version $versionID >> $grr
+   versionID=`md5.sh $0` # - - - needs - /\
    mkdir -p $versionID/doc/logs
    logID=`date +%Y-%b-%d_%H_%M`
    log=$versionID/doc/logs/cron-$logID.log # - - - - - - - - - log - - - - - - - - - - - - - - -
-   echo log $log >> $grr
 
    echo "BEGIN cron cr-vars.sh `date`"      >> $log
    echo "user name: $SUDO_USER as `whoami`" >> $log
@@ -28,9 +22,11 @@ pushd `dirname $0` &> /dev/null
    echo "END cron cr-vars.sh `date`"        >> $log
 
    echo "BEGIN cron cr-mirror-ckan.py"                                                   >> $log
-   if [[ "$CSV2RDF4LOD_CKAN" == "true" && \
-         ${#CSV2RDF4LOD_CKAN_SOURCE} -gt 0 && ${#CSV2RDF4LOD_CKAN_WRITABLE} -gt 0 && \
-         `which cr-mirror-ckan.py` && ${#X_CKAN_API_Key} -gt 0 ]]; then
+   if [[  "$CSV2RDF4LOD_CKAN" == "true"      && \
+         ${#CSV2RDF4LOD_CKAN_SOURCE}   -gt 0 && \
+         ${#CSV2RDF4LOD_CKAN_WRITABLE} -gt 0 && \
+         ${#X_CKAN_API_Key}            -gt 0 && \
+         `which cr-mirror-ckan.py` ]]; then
       echo "cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE $CSV2RDF4LOD_CKAN_WRITABLE"       >> $log
       cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE/api $CSV2RDF4LOD_CKAN_WRITABLE/api 2>&1 >> $log
    else

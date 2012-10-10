@@ -11,16 +11,16 @@ date > $grr
 
 pushd `dirname $0` &> /dev/null
 
-   echo pre version `pwd` >> $grr
+   source ../../../csv2rdf4lod-source-me-as-healthdata.sh
+   source ../../../csv2rdf4lod-source-me-when-ckaning.sh
+
+   echo pre version `pwd`       >> $grr
    versionID=`md5.sh $0`
    echo post version $versionID >> $grr
    mkdir -p $versionID/doc/logs
    logID=`date +%Y-%b-%d_%H_%M`
-   log=$versionID/doc/logs/cron-$logID.log # - - - - - - - - - - - - - - - - - - - - - - - - - -
+   log=$versionID/doc/logs/cron-$logID.log # - - - - - - - - - log - - - - - - - - - - - - - - -
    echo log $log >> $grr
-
-   source ../../../csv2rdf4lod-source-me-as-healthdata.sh
-   source ../../../csv2rdf4lod-source-me-when-ckaning.sh
 
    echo "BEGIN cron cr-vars.sh `date`"      >> $log
    echo "user name: $SUDO_USER as `whoami`" >> $log

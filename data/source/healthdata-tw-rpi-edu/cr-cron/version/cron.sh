@@ -6,6 +6,8 @@
 #3> <https://raw.github.com/jimmccusker/twc-healthdata/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh>
 #3>    foaf:homepage <https://github.com/jimmccusker/twc-healthdata/blob/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh> .
 
+date > /home/lebot/twc-healthdata/data/source/healthdata-tw-rpi-edu/cr-cron/version/hi
+
 pushd `dirname $0` &> /dev/null
 
    versionID=`md5.sh $0`

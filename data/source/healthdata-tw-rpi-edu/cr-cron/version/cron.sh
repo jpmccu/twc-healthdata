@@ -11,7 +11,7 @@ date > $grr
 
 pushd `dirname $0` &> /dev/null
 
-   echo pre version >> $grr
+   echo pre version `pwd` >> $grr
    versionID=`md5.sh $0`
    echo post version >> $grr
    mkdir -p $versionID/doc/logs

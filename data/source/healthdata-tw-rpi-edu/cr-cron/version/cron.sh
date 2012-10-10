@@ -6,9 +6,6 @@
 #3> <https://raw.github.com/jimmccusker/twc-healthdata/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh>
 #3>    foaf:homepage <https://github.com/jimmccusker/twc-healthdata/blob/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh> .
 
-echo "BEGIN cron `date`"                 >> $log
-echo "user name: $SUDO_USER as `whoami`" >> $log
-
 pushd `dirname $0` &> /dev/null
 
    # Name this cron invocation
@@ -17,13 +14,20 @@ pushd `dirname $0` &> /dev/null
    logID=`date +%Y-%b-%d_%H_%M`
    log=$versionID/doc/logs/cron-$logID.log
 
+   echo "BEGIN cron `date`"                 >> $log
+   echo "user name: $SUDO_USER as `whoami`" >> $log
+
+   echo "BEGIN cron git pull `date`"        >> $log
+   git pull                                 >> $log
+   echo "END cron git pull `date`"          >> $log
+
    # Set environment variables
    source ../../../csv2rdf4lod-source-me-as-healthdata.sh
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh
 
-   echo "BEGIN cron cr-vars.sh"             >> $log
+   echo "BEGIN cron cr-vars.sh `date`"      >> $log
    cr-vars.sh                               >> $log
-   echo "END cron cr-vars.sh"               >> $log
+   echo "END cron cr-vars.sh `date`"        >> $log
    echo                                     >> $log
 
    echo "BEGIN cron cr-mirror-ckan.py `date`"                                            >> $log

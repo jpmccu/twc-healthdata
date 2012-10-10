@@ -31,6 +31,8 @@ pushd $conversion_root &> /dev/null
    if [[ ${#already_running} -gt 0 && "$already_running" -gt 1 ]]; then
       echo                                                    >> $log
       echo "cron.sh is already running; aborting."            >> $log
+      ps --user \`whoami\` | grep 'cron.sh'                   >> $log
+      ps --user \`whoami\` | grep 'cron.sh' | wc -l           >> $log
       exit 1
    fi
    echo "END cron ps --user `whoami` `date`"                  >> $log

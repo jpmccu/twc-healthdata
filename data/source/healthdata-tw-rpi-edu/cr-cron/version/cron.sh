@@ -23,6 +23,11 @@ popd &> /dev/null
 
 pushd $conversion_root &> /dev/null
 
+   echo "BEGIN cron ps --user healthdata `date`" >> $log
+   ps --user healthdata >> $log
+   echo "END cron ps --user healthdata `date`" >> $log
+
+
    echo "BEGIN cron git pull `date`"    >> $log
    if [ `which git` ]; then
       git pull 2>&1                     >> $log

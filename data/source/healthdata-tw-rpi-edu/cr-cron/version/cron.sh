@@ -6,11 +6,14 @@
 #3> <https://raw.github.com/jimmccusker/twc-healthdata/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh>
 #3>    foaf:homepage <https://github.com/jimmccusker/twc-healthdata/blob/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh> .
 
-date > /srv/twc-healthdata/data/source/healthdata-tw-rpi-edu/cr-cron/version/hi
+grr='/srv/twc-healthdata/data/source/healthdata-tw-rpi-edu/cr-cron/version/hi'
+date > $grr
 
 pushd `dirname $0` &> /dev/null
 
+   echo pre version > $grr
    versionID=`md5.sh $0`
+   echo post version > $grr
    mkdir -p $versionID/doc/logs
    logID=`date +%Y-%b-%d_%H_%M`
    log=$versionID/doc/logs/cron-$logID.log # - - - - - - - - - - - - - - - - - - - - - - - - - -

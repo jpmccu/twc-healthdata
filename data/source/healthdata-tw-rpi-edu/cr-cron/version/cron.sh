@@ -27,7 +27,7 @@ pushd $conversion_root &> /dev/null
    ps --user healthdata                            >> $log
    echo "END cron ps --user `whoami` `date`"       >> $log
    echo                                            >> $log
-   already_running=`ps --user healthdata | grep 'cron.sh' | wc -l`
+   already_running=`ps --user healthdata | grep 'bash' | wc -l`
    if [ ${#already_running} -gt 1 ]; then
       echo "cron.sh is already running; aborting." >> $log
       exit 1

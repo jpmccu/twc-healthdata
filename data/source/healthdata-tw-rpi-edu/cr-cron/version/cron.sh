@@ -17,6 +17,7 @@ pushd `dirname $0` &> /dev/null
    mkdir -p $versionID/doc/logs
    logID=`date +%Y-%b-%d_%H_%M`
 
+   lock=`pwd`/.lock
    log=`pwd`/$versionID/doc/logs/cron-$logID.log # - - - - - - - - - log - - - - - - - - - - - -
    conversion_root=`cr-conversion-root.sh`
 popd &> /dev/null
@@ -25,17 +26,23 @@ pushd $conversion_root &> /dev/null
 
    echo "BEGIN cron ps --user `whoami` `date`"                >> $log
    ps --user healthdata                                       >> $log
-   already_running=`ps --user \`whoami\` | grep 'cron.sh' | grep -v 'grep' | wc -l | awk '{printf("%s",$1)}'`
-   echo                                                       >> $log
-   echo "Number of cron.sh already_running:$already_running:" >> $log
-   if [[ ${#already_running} -gt 0 && "$already_running" -gt 1 ]]; then
-      echo                                                    >> $log
-      echo "cron.sh is already running; aborting."            >> $log
-      ps --user `whoami` | grep 'cron.sh'                     >> $log
-      ps --user `whoami` | grep 'cron.sh' | wc -l             >> $log
-      exit 1
-   fi
    echo "END cron ps --user `whoami` `date`"                  >> $log
+   #already_running=`ps --user \`whoami\` | grep 'cron.sh' | grep -v 'grep' | wc -l | awk '{printf("%s",$1)}'`
+   #echo                                                       >> $log
+   #echo "Number of cron.sh already_running:$already_running:" >> $log
+   #if [[ ${#already_running} -gt 0 && "$already_running" -gt 1 ]]; then
+   #   echo                                                    >> $log
+   #   echo "cron.sh is already running; aborting."            >> $log
+   #   ps --user `whoami` | grep 'cron.sh'                     >> $log
+   #   ps --user `whoami` | grep 'cron.sh' | wc -l             >> $log
+   #   exit 1
+   #fi
+   if [ -e $lock ]; then
+      echo "cron.sh lock exists; aborting ($lock)."           >> $log
+      exit 1
+   else
+      echo $$ `date` > $lock
+   fi
    echo                                                       >> $log
 
 
@@ -93,3 +100,4 @@ pushd $conversion_root &> /dev/null
 popd &> /dev/null
 
 echo "END cron" >> $log
+rm $lock

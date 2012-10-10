@@ -18,7 +18,7 @@ pushd `dirname $0` &> /dev/null
    echo "user name: $SUDO_USER as `whoami`" >> $log
 
    echo "BEGIN cron git pull `date`"        >> $log
-   git pull                                 >> $log
+   which git                                >> $log
    echo "END cron git pull `date`"          >> $log
 
    # Set environment variables

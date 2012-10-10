@@ -13,7 +13,7 @@ pushd `dirname $0` &> /dev/null
 
    echo pre version `pwd` >> $grr
    versionID=`md5.sh $0`
-   echo post version >> $grr
+   echo post version $versionID >> $grr
    mkdir -p $versionID/doc/logs
    logID=`date +%Y-%b-%d_%H_%M`
    log=$versionID/doc/logs/cron-$logID.log # - - - - - - - - - - - - - - - - - - - - - - - - - -

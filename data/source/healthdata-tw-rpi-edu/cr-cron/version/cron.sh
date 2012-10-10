@@ -7,7 +7,7 @@
 #3>    foaf:homepage <https://github.com/jimmccusker/twc-healthdata/blob/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh> .
 
 pushd `dirname $0` &> /dev/null
-   source ../../../csv2rdf4lod-source-me-as-root.sh
+   source ../../../csv2rdf4lod-source-me-as-healthdata.sh
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh
 
    versionID=`md5.sh $0`

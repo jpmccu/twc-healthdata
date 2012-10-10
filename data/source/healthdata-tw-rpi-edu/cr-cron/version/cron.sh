@@ -40,7 +40,7 @@ pushd $conversion_root &> /dev/null
    echo                                     >> $log
 
 
-   echo "BEGIN cron cr-mirror-ckan.py"                                                   >> $log
+   echo "BEGIN cron cr-mirror-ckan.py `date`"                                            >> $log
    if [[  "$CSV2RDF4LOD_CKAN" == "true"      && \
          ${#CSV2RDF4LOD_CKAN_SOURCE}   -gt 0 && \
          ${#CSV2RDF4LOD_CKAN_WRITABLE} -gt 0 && \
@@ -56,8 +56,23 @@ pushd $conversion_root &> /dev/null
       echo "      cr-mirror-ckan.py path:    `which cr-mirror-ckan.py`"  >> $log
       echo "      X_CKAN_API_Key:            $X_CKAN_API_Key"            >> $log
    fi
-   echo "END cron cr-mirror-ckan.py"                                                     >> $log
+   echo "END cron cr-mirror-ckan.py `date`"                                              >> $log
    echo                                                                                  >> $log
+
+
+   echo "BEGIN cron cr-retrieve.sh `date`"           >> $log
+   example=""
+   example="hub-healthdata-gov/drug-label-data"
+   if [ ${#example} -gt 0 ]; then
+      pushd $example
+      echo "(only working with example `cr-pwd.sh`)" >> $log
+   fi
+   cr-retrieve.sh -w --skip-if-exists 2>&1           >> $log
+   if [ ${#example} -gt 0 ]; then
+      popd
+   fi
+   echo "END cron cr-retrieve.sh `date`"             >> $log
+
 
 popd &> /dev/null
 

@@ -6,33 +6,44 @@
 #3> <https://raw.github.com/jimmccusker/twc-healthdata/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh>
 #3>    foaf:homepage <https://github.com/jimmccusker/twc-healthdata/blob/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh> .
 
+echo "BEGIN cron `date`"                 >> $log
+echo "user name: $SUDO_USER as `whoami`" >> $log
+
 pushd `dirname $0` &> /dev/null
+
+   # Name this cron invocation
+   versionID=`md5.sh $0`
+   mkdir -p $versionID/doc/logs
+   logID=`date +%Y-%b-%d_%H_%M`
+   log=$versionID/doc/logs/cron-$logID.log
+
+   # Set environment variables
    source ../../../csv2rdf4lod-source-me-as-healthdata.sh
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh
 
-   versionID=`md5.sh $0`
-   logID=`date +%Y-%b-%d_%H_%M`
-   mkdir -p $versionID/doc/logs
-   log=$versionID/doc/logs/cron-$logID.log
-
    echo "BEGIN cron cr-vars.sh"             >> $log
-   echo "user name: $SUDO_USER as `whoami`" >> $log
    cr-vars.sh                               >> $log
+   echo "END cron cr-vars.sh"               >> $log
+   echo                                     >> $log
 
-   echo "BEGIN cron cr-mirror-ckan.py"                                                   >> $log
-   if [[ "$CSV2RDF4LOD_CKAN" == "true" && \
-         ${#CSV2RDF4LOD_CKAN_SOURCE} -gt 0 && ${#CSV2RDF4LOD_CKAN_WRITABLE} -gt 0 && \
-         `which cr-mirror-ckan.py` && ${#X_CKAN_API_Key} -gt 0 ]]; then
+   echo "BEGIN cron cr-mirror-ckan.py `date`"                                            >> $log
+   if [[  "$CSV2RDF4LOD_CKAN" == "true"      && \
+         ${#CSV2RDF4LOD_CKAN_SOURCE}   -gt 0 && \
+         ${#CSV2RDF4LOD_CKAN_WRITABLE} -gt 0 && \
+         ${#X_CKAN_API_Key}            -gt 0 && \
+         `which cr-mirror-ckan.py` ]]; then
       echo "cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE $CSV2RDF4LOD_CKAN_WRITABLE"       >> $log
       cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE/api $CSV2RDF4LOD_CKAN_WRITABLE/api 2>&1 >> $log
    else
-      echo "   ERROR: Failed to invoke cr-mirror-ckan.py:"               >> $log
-      echo "      CSV2RDF4LOD_CKAN:          $CSV2RDF4LOD_CKAN"          >> $log
-      echo "      CSV2RDF4LOD_CKAN_SOURCE:   $CSV2RDF4LOD_CKAN_SOURCE"   >> $log
-      echo "      CSV2RDF4LOD_CKAN_WRITABLE: $CSV2RDF4LOD_CKAN_WRITABLE" >> $log
-      echo "      cr-mirror-ckan.py path:    `which cr-mirror-ckan.py`"  >> $log
-      echo "      X_CKAN_API_Key:            $X_CKAN_API_Key"            >> $log
+      echo "ERROR: Failed to invoke cr-mirror-ckan.py:"                                  >> $log
+      echo "   CSV2RDF4LOD_CKAN:               $CSV2RDF4LOD_CKAN"                        >> $log
+      echo "   CSV2RDF4LOD_CKAN_SOURCE:        $CSV2RDF4LOD_CKAN_SOURCE"                 >> $log
+      echo "   CSV2RDF4LOD_CKAN_CKAN_WRITABLE: $CSV2RDF4LOD_CKAN_CKAN_WRITABLE"          >> $log
+      echo "   `which cr-mirror-ckan.py`"                                                >> $log
+      echo "   X_CKAN_API_Key:                 $X_CKAN_API_Key"                          >> $log
    fi
+   echo "END cron cr-mirror-ckan.py `date`"                                              >> $log
+   echo                                                                                  >> $log
 
-   echo "END cron" >> $log
 popd &> /dev/null
+echo "END cron `date`" >> $log

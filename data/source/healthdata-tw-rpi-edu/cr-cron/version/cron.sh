@@ -8,7 +8,7 @@
 
 pushd `dirname $0` &> /dev/null
 
-   source ../../../csv2rdf4lod-source-me-as-healthdata.sh
+   source ../../../csv2rdf4lod-source-me-as-`whoami`.sh
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh
 
    versionID=`md5.sh $0` # - - - needs - /\
@@ -27,7 +27,7 @@ pushd `dirname $0` &> /dev/null
          ${#CSV2RDF4LOD_CKAN_WRITABLE} -gt 0 && \
          ${#X_CKAN_API_Key}            -gt 0 && \
          `which cr-mirror-ckan.py` ]]; then
-      echo "cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE $CSV2RDF4LOD_CKAN_WRITABLE"       >> $log
+      echo cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE/api $CSV2RDF4LOD_CKAN_WRITABLE/api >> $log
       cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE/api $CSV2RDF4LOD_CKAN_WRITABLE/api 2>&1 >> $log
    else
       echo "   ERROR: Failed to invoke cr-mirror-ckan.py:"               >> $log

@@ -12,7 +12,7 @@ $conf['debug'] = false;
  */ 
 $conf['export'] = true;
 
-#If you want to add/overrid a namespace, add it here
+# If you want to add/override a namespace, add it here
 $conf['ns']['health'] = 'http://healthdata.tw.rpi.edu/source/hub-healthdata-gov/vocab/';
 $conf['ns']['local']   = 'http://purl.org/twc/health/';
 $conf['ns']['base']   = 'http://healthdata.tw.rpi.edu/';

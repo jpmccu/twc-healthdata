@@ -100,5 +100,6 @@ pushd $conversion_root &> /dev/null
 
 popd &> /dev/null
 
-echo "END cron" >> $log
+echo                   >> $log
+echo "END cron `date`" >> $log
 rm $lock

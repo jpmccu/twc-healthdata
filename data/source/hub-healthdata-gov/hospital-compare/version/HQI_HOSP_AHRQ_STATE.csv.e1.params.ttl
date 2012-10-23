@@ -108,7 +108,7 @@ rdf:value conversion:equivalent_property fn:count.
          conversion:equivalent_property  prov:atLocation;
          conversion:comment "";
          conversion:range   rdfs:Resource;
-         conversion:links_via <http://logd.tw.rpi.edu/source/twc-rpi-edu/file/instance-hub-us-states-and-territories/version/2011-Apr-09/conversion/instance-hub-us-states-and-territories.csv.e1.ttl>;
+         conversion:links_via <http://logd.tw.rpi.edu/source/twc-rpi-edu/file/instance-hub-us-counties/version/2012-Sep-29/conversion/twc-rpi-edu-instance-hub-us-counties-2012-Sep-29.ttl>;
       ];
       conversion:enhance [
          ov:csvCol          2;

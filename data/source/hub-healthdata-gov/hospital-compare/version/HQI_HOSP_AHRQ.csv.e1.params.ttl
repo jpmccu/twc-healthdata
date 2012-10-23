@@ -163,61 +163,61 @@
          conversion:object_search [
             conversion:regex     ".*";
             conversion:predicate "[/sd]measures/ahrq/PSI_4_SURG_COMP";
-            conversion:object    "[/sd]vocab/[#2]";
+            conversion:object    "[/sd]vocab/[>#2<]";
             conversion:range   rdfs:Resource;
          ];
          conversion:object_search [
             conversion:regex     ".*";
             conversion:predicate "[/sd]measures/ahrq/PSI_6_IAT_PTX";
-            conversion:object    "[/sd]vocab/[#4]";
+            conversion:object    "[/sd]vocab/[>#4<]";
             conversion:range   rdfs:Resource;
          ];
          conversion:object_search [
             conversion:regex     ".*";
             conversion:predicate "[/sd]measures/ahrq/PSI_11_POSTOP_RESPFAIL";
-            conversion:object    "[/sd]vocab/[#6]";
+            conversion:object    "[/sd]vocab/[>#6<]";
             conversion:range   rdfs:Resource;
          ];
          conversion:object_search [
             conversion:regex     ".*";
             conversion:predicate "[/sd]measures/ahrq/PSI_12_POSTOP_PULMEMB_DVT";
-            conversion:object    "[/sd]vocab/[#8]";
+            conversion:object    "[/sd]vocab/[>#8<]";
             conversion:range   rdfs:Resource;
          ];
          conversion:object_search [
             conversion:regex     ".*";
             conversion:predicate "[/sd]measures/ahrq/PSI_14_POSTOP_DEHIS";
-            conversion:object    "[/sd]vocab/[#10]";
+            conversion:object    "[/sd]vocab/[>#10<]";
             conversion:range   rdfs:Resource;
          ];
          conversion:object_search [
             conversion:regex     ".*";
             conversion:predicate "[/sd]measures/ahrq/PSI_15_ACC_LAC";
-            conversion:object    "[/sd]vocab/[#12]";
+            conversion:object    "[/sd]vocab/[>#12<]";
             conversion:range   rdfs:Resource;
          ];
          conversion:object_search [
             conversion:regex     ".*";
             conversion:predicate "[/sd]measures/ahrq/PSI_90_SAFETY";
-            conversion:object    "[/sd]vocab/[#14]";
+            conversion:object    "[/sd]vocab/[>#14<]";
             conversion:range   rdfs:Resource;
          ];
          conversion:object_search [
             conversion:regex     ".*";
             conversion:predicate "[/sd]measures/ahrq/IQI_11_AAA";
-            conversion:object    "[/sd]vocab/[#16]";
+            conversion:object    "[/sd]vocab/[>#16<]";
             conversion:range   rdfs:Resource;
          ];
          conversion:object_search [
             conversion:regex     ".*";
             conversion:predicate "[/sd]measures/ahrq/IQI_19_HIP_FX";
-            conversion:object    "[/sd]vocab/[#18]";
+            conversion:object    "[/sd]vocab/[>#18<]";
             conversion:range   rdfs:Resource;
          ];
          conversion:object_search [
             conversion:regex     ".*";
             conversion:predicate "[/sd]measures/ahrq/IQI_91_CONDS";
-            conversion:object    "[/sd]vocab/[#20]";
+            conversion:object    "[/sd]vocab/[>#20<]";
             conversion:range   rdfs:Resource;
          ];
       ];
@@ -280,7 +280,7 @@
          conversion:object_search [
              conversion:regex     ".*";
              conversion:predicate qb:measureType;
-             conversion:object "[/sd]measures/ahrq/[H]";
+             conversion:object "[/sd]measures/ahrq/[>H<]";
          ];
          conversion:domain_template "[/sdv]provider/[#1]/[H]";
          conversion:range   rdfs:Resource;
@@ -304,7 +304,7 @@
          conversion:object_search [
              conversion:regex     ".*";
              conversion:predicate qb:measureType;
-             conversion:object "[/sd]measures/ahrq/[H]";
+             conversion:object "[/sd]measures/ahrq/[>H<]";
          ];
          conversion:domain_template "[/sdv]provider/[#1]/[H]";
          conversion:range   rdfs:Resource;
@@ -423,7 +423,7 @@
          conversion:object_search [
              conversion:regex     ".*";
              conversion:predicate qb:measureType;
-             conversion:object "[/sd]measures/ahrq/[H]";
+             conversion:object "[/sd]measures/ahrq/[>H<]";
          ];
          conversion:domain_template "[/sdv]provider/[#1]/[H]";
          conversion:range   rdfs:Resource;
@@ -464,7 +464,7 @@
          ov:csvCol          22;
          ov:csvHeader       "PSI_4_SURG_COMP_NUM_DC";
          conversion:bundled_by [ov:csvCol 2];
-         conversion:equivalent_property fn:count;
+         conversion:equivalent_property agg:sample;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
@@ -498,7 +498,7 @@
          conversion:label   "Deaths among Patients with Serious Treatable Complications after Surgery - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:bundled_by [ov:csvCol 4];
-         conversion:equivalent_property fn:count;
+         conversion:equivalent_property agg:sample;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
@@ -532,7 +532,7 @@
          ov:csvCol          30;
          ov:csvHeader       "PSI_11_POSTOP_RESPFAIL_NUM_DC";
          conversion:bundled_by [ov:csvCol 6];
-         conversion:equivalent_property fn:count;
+         conversion:equivalent_property agg:sample;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
@@ -568,7 +568,7 @@
          conversion:label   "Postoperative Pulmonary Embolism or Deep Vein Thrombosis - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:bundled_by [ov:csvCol 8];
-         conversion:equivalent_property fn:count;
+         conversion:equivalent_property agg:sample;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
@@ -604,7 +604,7 @@
          conversion:label   "Postoperative Wound Dehiscence - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:bundled_by [ov:csvCol 10];
-         conversion:equivalent_property fn:count;
+         conversion:equivalent_property agg:sample;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
@@ -640,7 +640,7 @@
          conversion:label   "Accidental Puncture or Laceration - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:bundled_by [ov:csvCol 12];
-         conversion:equivalent_property fn:count;
+         conversion:equivalent_property agg:sample;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
@@ -676,7 +676,7 @@
          conversion:label   "Patient Safety for Selected Indicators - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:bundled_by [ov:csvCol 14];
-         conversion:equivalent_property fn:count;
+         conversion:equivalent_property agg:sample;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
@@ -712,7 +712,7 @@
          conversion:label   "Abdominal Aortic Aneurysm Repair Mortality - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:bundled_by [ov:csvCol 16];
-         conversion:equivalent_property fn:count;
+         conversion:equivalent_property agg:sample;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
@@ -748,7 +748,7 @@
          conversion:label   "Hip Fracture Mortality - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:bundled_by [ov:csvCol 18];
-         conversion:equivalent_property fn:count;
+         conversion:equivalent_property agg:sample;
          conversion:range   xsd:decimal;
       ];
       conversion:enhance [
@@ -784,7 +784,7 @@
          conversion:label   "Mortality for Selected Conditions - Number of Patients";
          conversion:comment "Lists the number of patients surveyed for each hospital submitted.";
          conversion:bundled_by [ov:csvCol 20];
-         conversion:equivalent_property fn:count;
+         conversion:equivalent_property agg:sample;
          conversion:range   xsd:decimal;
          conversion:range   rdfs:Resource;
       ];

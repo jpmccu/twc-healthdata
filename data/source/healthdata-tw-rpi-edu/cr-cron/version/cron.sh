@@ -85,8 +85,8 @@ pushd $conversion_root &> /dev/null
 
 
    echo "BEGIN cron cr-retrieve.sh `date`"           >> $log
-   example=""
    example="hub-healthdata-gov/food-recalls"
+   example=""
    if [ ${#example} -gt 0 ]; then
       pushd $example
       echo "(only working with example `cr-pwd.sh`)" >> $log

@@ -5,6 +5,7 @@ $conf['home'] = '/var/www/lodspeakr/';
 $conf['basedir'] = 'http://healthdata.tw.rpi.edu/';
 $conf['debug'] = false;
 
+$conf['static']['haanga'] = true;
 $lodspk['sitetitle'] = 'healthdata.tw.rpi.edu';
 
 /*ATTENTION: By default this application is available to

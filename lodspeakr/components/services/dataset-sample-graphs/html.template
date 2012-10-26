@@ -45,7 +45,7 @@
     </script>
   </head>
   <body>
-    {%include  "../../menu.inc"%}
+    {%include  "../../includes/menu.inc"%}
     <div class="container">
       {%if first.main.g%}
          <p>The following graphs contain dataset samples. See also <a href="{{lodspk.home}}namedGraphs">all graphs</a>.

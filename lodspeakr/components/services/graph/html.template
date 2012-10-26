@@ -48,7 +48,7 @@
     </script>
   </head>
   <body>
-    {%include "../../menu.inc"%}
+    {%include "../../includes/menu.inc"%}
     <div class="container">
 
       <div class="fluid-row">

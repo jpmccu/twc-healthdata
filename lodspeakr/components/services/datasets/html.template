@@ -1,4 +1,4 @@
-    {%include "../../menu.inc"%}
+    {%include "../../includes/menu.inc"%}
     <div class="container">
       <p>The datasets listed here were derived from the datasets listed at <a href="http://hub.healthdata.gov">http://hub.healthdata.gov</a>.
         The CKAN instance at <a href="hub">http://healthdata.tw.rpi.edu/hub</a> mirrors the listings at http://hub.healthdata.gov and contains additional annotations.

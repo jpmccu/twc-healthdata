@@ -1,4 +1,4 @@
-{%include "../../menu.inc"%}
+{%include "../../includes/menu.inc"%}
     <div class="container">
       <h1>Named graphs available</h1>
   {%if first.main.g%}

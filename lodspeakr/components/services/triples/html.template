@@ -1,4 +1,4 @@
-{%include "../../menu.inc"%}
+{%include "../../includes/menu.inc"%}
     <div class="container">
     <h1>Triples of <a href='{{lodspk.args.all|deurifier}}'>{{lodspk.args.all|deurifier}}</a></h1>
 

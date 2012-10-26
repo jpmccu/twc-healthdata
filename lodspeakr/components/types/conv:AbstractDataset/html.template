@@ -1,4 +1,4 @@
-    {%include "../../menu.inc"%}
+    {%include "../../includes/menu.inc"%}
     <span rev="void:subset" resource="{{lodspk.home}}void"></span>
     <div class="container" about="{{lodspk.this.value}}">
 

@@ -5,6 +5,8 @@ $conf['home'] = '/var/www/lodspeakr/';
 $conf['basedir'] = 'http://healthdata.tw.rpi.edu/';
 $conf['debug'] = false;
 
+$lodspk['sitetitle'] = 'healthdata.tw.rpi.edu';
+
 /*ATTENTION: By default this application is available to
  * be exported and copied (its configuration)
  * by others. If you do not want that, 

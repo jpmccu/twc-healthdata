@@ -2,7 +2,7 @@
 <html lang="en" prefix="foaf: http://xmlns.com/foaf/0.1/ dc: http://purl.org/dc/terms/ conv: http://purl.org/twc/vocab/conversion/ void: http://rdfs.org/ns/void# health: http://healthdata.tw.rpi.edu/source/hub-healthdata-gov/vocab/ dcat: http://www.w3.org/ns/dcat#">
   <head>
     <meta charset="utf-8"/>
-    <title>{{lodspk.sitetitle}} HI</title>
+    <title>{{lodspk.sitetitle}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
@@ -53,7 +53,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="{{lodspk.home}}"><img src='/img/health-tw-logo.png' width="24px"/> healthdata.tw.rpi.edu</a>
+          <a class="brand" href="{{lodspk.home}}"><img src='/img/logo.png' width="24px"/>{{lodspk.sitetitle}}</a>
           <div class="nav-collapse">
             <ul class="nav">
               <li><a href="/">Home</a></li>

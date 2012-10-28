@@ -5,8 +5,8 @@ $conf['home'] = '/var/www/lodspeakr/';
 $conf['basedir'] = 'http://healthdata.tw.rpi.edu/';
 $conf['debug'] = false;
 
-$conf['static']['haanga'] = true;
-$lodspk['sitetitle'] = 'healthdata.tw.rpi.edu';
+$lodspk['sitetitle'] = 'healthdata.tw.rpi.edu'; # https://github.com/alangrafu/lodspeakr/wiki/Include-your-own-variables
+$conf['static']['haanga'] = true;               # $lodspk['sitetitle'] is used in includes/menu.inc
 
 /*ATTENTION: By default this application is available to
  * be exported and copied (its configuration)

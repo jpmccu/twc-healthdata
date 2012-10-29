@@ -104,7 +104,7 @@ pushd $conversion_root &> /dev/null
          ${#CSV2RDF4LOD_PUBLISH_SPARQL_ENDPOINT} -gt 0 && \
          `which cr-publish-isdefinedby-to-endpoint.sh` ]]; then
       echo "pwd: `pwd`"                                                                      >> $log
-      cr-publish-isdefinedby-to-endpoint.sh                                             2>&1 >> $log
+      cr-publish-isdefinedby-to-endpoint.sh cr:auto                                     2>&1 >> $log
    else
       echo "   ERROR: Failed to invoke cr-publish-isdefinedby-to-endpoint.sh:"               >> $log
       echo "      CSV2RDF4LOD_BASE_URI:                $CSV2RDF4LOD_BASE_URI"                >> $log

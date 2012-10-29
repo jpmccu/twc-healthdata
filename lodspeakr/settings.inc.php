@@ -1,6 +1,6 @@
 <?
 
-$conf['endpoint']['local'] = 'http://localhost:8890/sparql';
+$conf['endpoint']['local'] = 'http://localhost:8890/sparql'; # {{conf.endpoint.local}} in a template.
 $conf['home'] = '/var/www/lodspeakr/';
 $conf['basedir'] = 'http://healthdata.tw.rpi.edu/';
 $conf['debug'] = false;

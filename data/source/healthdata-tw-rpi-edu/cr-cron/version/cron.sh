@@ -68,6 +68,7 @@ pushd $conversion_root &> /dev/null
    #fi
    if [ -e $lock ]; then
       echo "cron.sh lock exists; aborting ($lock)."           >> $log
+      echo "END cron `date`"                                  >> $log
       exit 1
    else
       echo $$ `date` > $lock

@@ -124,7 +124,7 @@ WHERE {
                {%if row.totalVocab.value == 0%}
                   <li>Other predicates</a>
                {%else%}
-                  <li><a href='vocabulary/{{row.vocab.mirroredUri|urifier}}'>{{row.vocab.mirroredUri}}</a> ({{row.totalVocab.value}} instances)</a>
+                  <li>hi <a href='vocabulary/{{row.vocab.mirroredUri|urifier}}'>{{row.vocab.mirroredUri}}</a> ({{row.totalVocab.value}} instances)</a>
                {%endif%}
                <ul>
                {% for i in models.total_class %}

@@ -27,17 +27,18 @@ fi
 
 pushd `dirname $0` &> /dev/null
 
-   # Boostrap ourselves with the environment variables
-   # and paths that we need to know.
+   # Boostrap ourselves with environment variables and paths.
    source ../../../csv2rdf4lod-source-me.sh
    source ../../../csv2rdf4lod-source-me-as-`whoami`.sh
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh
+   export CLASSPATH=$CLASSPATH`$CSV2RDF4LOD_HOME/bin/util/cr-situate-classpaths.sh`
+   export PATH=$PATH`$CSV2RDF4LOD_HOME/bin/util/cr-situate-paths.sh`
 
    see='https://github.com/timrdf/csv2rdf4lod-automation/wiki/CSV2RDF4LOD-not-set'
-   if [[ "${#CSV2RDF4LOD_BASE_URI}" -eq 0 ]]; then
-      echo "[ERROR] CSV2RDF4LOD_BASE_URI is not set; cannot continue." > `dirname $0`/bootstrap-error.txt
-      echo "        see $see"                                         >> `dirname $0`/bootstrap-error.txt
-      date                                                            >> `dirname $0`/bootstrap-error.txt
+   if [[ "${#CSV2RDF4LOD_HOME}" -eq 0 ]]; then
+      echo "[ERROR] CSV2RDF4LOD_HOME is not set; cannot continue." > `dirname $0`/bootstrap-error.txt
+      echo "        see $see"                                     >> `dirname $0`/bootstrap-error.txt
+      date                                                        >> `dirname $0`/bootstrap-error.txt
    fi
 
    versionID=`md5.sh $0` # < - - - needs - /\

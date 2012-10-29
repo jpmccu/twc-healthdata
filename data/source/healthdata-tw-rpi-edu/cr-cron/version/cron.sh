@@ -21,6 +21,7 @@ if [ "$1" == "--help" ]; then
    echo
    echo "# m h  dom mon dow   command"
    echo "`date +%M` `date +%k`  *   *   *     $script_home/`basename $0`"
+   echo "# Be sure to put an extra newline, or the last command will not invoke."
    exit
 fi
 

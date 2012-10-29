@@ -11,6 +11,7 @@
     <link rel="alternate" type="text/plain" title="N-Triples Version" href="{{lodspk.local.value}}.nt" />
     <link rel="alternate" type="application/json" title="RDFJSON Version" href="{{lodspk.local.value}}.json" />
     <link href="{{lodspk.home}}css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="{{lodspk.home}}css/provenance.css"    rel="stylesheet" type="text/css" media="screen" />
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -21,9 +22,6 @@
         padding-right:20px;
         background-position: right;
       }
-      p.provenance {
-         color: gray;
-      }      
     </style>
     <link href="{{lodspk.home}}css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="screen" />
     <script type="text/javascript" src="{{lodspk.home}}js/jquery.js"></script>

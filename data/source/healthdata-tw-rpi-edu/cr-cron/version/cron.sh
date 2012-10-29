@@ -19,8 +19,8 @@ if [ "$1" == "--help" ]; then
    echo
    echo "Place something similar to the following into your crontab (by running 'crontab -e')"
    echo
-   echo "# m h   dom mon dow   command"
-   echo "`date +%M` `date +%k`   *   *   *     $script_home/`basename $0`"
+   echo "# m h  dom mon dow   command"
+   echo "`date +%M` `date +%k`  *   *   *     $script_home/`basename $0`"
    exit
 fi
 

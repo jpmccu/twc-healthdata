@@ -103,9 +103,8 @@ pushd $conversion_root &> /dev/null
    if [[ ${#CSV2RDF4LOD_BASE_URI}                -gt 0 && \
          ${#CSV2RDF4LOD_PUBLISH_SPARQL_ENDPOINT} -gt 0 && \
          `which cr-publish-isdefinedby-to-endpoint.sh` ]]; then
-      echo cr-publish-isdefinedby-to-endpoint.sh                                             >> $log
-      pwd                                                                                    >> $log
-      #cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE/api $CSV2RDF4LOD_CKAN_WRITABLE/api 2>&1 >> $log
+      echo "pwd: `pwd`"                                                                      >> $log
+      cr-publish-isdefinedby-to-endpoint.sh                                             2>&1 >> $log
    else
       echo "   ERROR: Failed to invoke cr-publish-isdefinedby-to-endpoint.sh:"               >> $log
       echo "      CSV2RDF4LOD_BASE_URI:                $CSV2RDF4LOD_BASE_URI"                >> $log

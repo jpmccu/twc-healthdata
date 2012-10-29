@@ -117,7 +117,7 @@ WHERE {
             <h3>Classes ({{models.main|length}})</h3>
             <p>The RDF in this graph contains instances of the following classes, <i>grouped</i> 
                by the vocabulary in which they are defined and <i>ordered</i> by popularity.
-	       <a class "provenance query"href="{{lodspk.queries.total_vocab}}">query</a>
+	       <a class="provenance query" href="{{lodspk.queries.total_vocab}}">query</a>
             </p>
             <ul>
             {% for row in models.total_vocab %}

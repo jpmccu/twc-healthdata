@@ -73,12 +73,12 @@ pushd $conversion_root &> /dev/null
       echo cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE/api $CSV2RDF4LOD_CKAN_WRITABLE/api >> $log
       cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE/api $CSV2RDF4LOD_CKAN_WRITABLE/api 2>&1 >> $log
    else
-      echo "   ERROR: Failed to invoke cr-mirror-ckan.py:"               >> $log
-      echo "      CSV2RDF4LOD_CKAN:          $CSV2RDF4LOD_CKAN"          >> $log
-      echo "      CSV2RDF4LOD_CKAN_SOURCE:   $CSV2RDF4LOD_CKAN_SOURCE"   >> $log
-      echo "      CSV2RDF4LOD_CKAN_WRITABLE: $CSV2RDF4LOD_CKAN_WRITABLE" >> $log
-      echo "      cr-mirror-ckan.py path:    `which cr-mirror-ckan.py`"  >> $log
-      echo "      X_CKAN_API_Key:            $X_CKAN_API_Key"            >> $log
+      echo "   ERROR: Failed to invoke cr-mirror-ckan.py:"                               >> $log
+      echo "      CSV2RDF4LOD_CKAN:          $CSV2RDF4LOD_CKAN"                          >> $log
+      echo "      CSV2RDF4LOD_CKAN_SOURCE:   $CSV2RDF4LOD_CKAN_SOURCE"                   >> $log
+      echo "      CSV2RDF4LOD_CKAN_WRITABLE: $CSV2RDF4LOD_CKAN_WRITABLE"                 >> $log
+      echo "      cr-mirror-ckan.py path:    `which cr-mirror-ckan.py`"                  >> $log
+      echo "      X_CKAN_API_Key:            $X_CKAN_API_Key"                            >> $log
    fi
    echo "END cron cr-mirror-ckan.py `date`"                                              >> $log
    echo                                                                                  >> $log
@@ -97,6 +97,22 @@ pushd $conversion_root &> /dev/null
    fi
    echo "END cron cr-retrieve.sh `date`"             >> $log
 
+
+   echo "BEGIN cron cr-publish-isdefinedby-to-endpoint.sh `date`"                            >> $log
+   if [[ ${#CSV2RDF4LOD_BASE_URI}                -gt 0 && \
+         ${#CSV2RDF4LOD_PUBLISH_SPARQL_ENDPOINT} -gt 0 && \
+         `which cr-publish-isdefinedby-to-endpoint.sh` ]]; then
+      echo cr-publish-isdefinedby-to-endpoint.sh                                             >> $log
+      pwd                                                                                    >> $log
+      #cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE/api $CSV2RDF4LOD_CKAN_WRITABLE/api 2>&1 >> $log
+   else
+      echo "   ERROR: Failed to invoke cr-publish-isdefinedby-to-endpoint.sh:"               >> $log
+      echo "      CSV2RDF4LOD_BASE_URI:                $CSV2RDF4LOD_BASE_URI"                >> $log
+      echo "      CSV2RDF4LOD_PUBLISH_SPARQL_ENDPOINT: $CSV2RDF4LOD_PUBLISH_SPARQL_ENDPOINT" >> $log
+      echo "      cr-mirror-ckan.py path:    `which cr-publish-isdefinedby-to-endpoint.sh`"  >> $log
+   fi
+   echo "END cron cr-publish-isdefinedby-to-endpoint.sh `date`"                              >> $log
+   echo                                                                                      >> $log
 
 popd &> /dev/null
 

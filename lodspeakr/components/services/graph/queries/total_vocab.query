@@ -1,10 +1,12 @@
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT  ?vocab (count(?vocab) as ?totalVocab) WHERE {
- GRAPH <{{lodspk.args.all|deurifier}}>{
-  ?instance a ?class
- }
- OPTIONAL {?class rdfs:label ?label}
- OPTIONAL {?class rdfs:isDefinedBy ?vocab}
-}GROUP BY  ?vocab 
-ORDER BY  DESC(?totalVocab)
+select distinct ?vocab (count(?vocab) as ?totalVocab) 
+where {
+  graph <{{lodspk.args.all|deurifier}}> {
+    ?instance a ?class
+  }
+  optional {?class rdfs:label       ?label}
+  optional {?class rdfs:isDefinedBy ?vocab}
+}
+group by ?vocab 
+order by desc(?totalVocab)

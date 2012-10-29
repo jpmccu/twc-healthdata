@@ -29,6 +29,7 @@ pushd `dirname $0` &> /dev/null
 
    # Boostrap ourselves with the environment variables
    # and paths that we need to know.
+   source ../../../csv2rdf4lod-source-me.sh
    source ../../../csv2rdf4lod-source-me-as-`whoami`.sh
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh
 

@@ -1,7 +1,9 @@
-SELECT DISTINCT (COUNT(?instance) AS ?total) ?class max(?label) as ?label WHERE {
- GRAPH <{{lodspk.args.all|deurifier}}>{
-  ?instance a ?class
- }
- OPTIONAL {?class rdfs:label ?label}
-}GROUP BY ?class
-ORDER BY ?class DESC(?total)
+select distinct (count(?instance) as ?total) ?class max(?label) as ?label 
+where {
+  graph <{{lodspk.args.all|deurifier}}> {
+    ?instance a ?class
+  }
+  optional {?class rdfs:label ?label}
+}
+group by ?class
+order by ?class desc(?total)

@@ -25,7 +25,7 @@ popd &> /dev/null
 pushd $conversion_root &> /dev/null
 
    echo "BEGIN cron ps --user `whoami` `date`"                >> $log
-   ps --user healthdata                                       >> $log
+   ps --user `whoami`                                         >> $log
    echo "END cron ps --user `whoami` `date`"                  >> $log
    echo                                                       >> $log
    # Replaced with .lock:

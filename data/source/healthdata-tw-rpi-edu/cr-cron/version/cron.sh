@@ -32,6 +32,11 @@ pushd `dirname $0` &> /dev/null
    source ../../../csv2rdf4lod-source-me-as-`whoami`.sh
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh
 
+   if [[ "${#CSV2RDF4LOD_BASE_URI}" -eq 0 ]]; then
+      echo "[ERROR] CSV2RDF4LOD_BASE_URI is not set; cannot continue."
+      echo "        see https://github.com/timrdf/csv2rdf4lod-automation/wiki/CSV2RDF4LOD-not-set"
+   fi
+
    versionID=`md5.sh $0` # < - - - needs - /\
    mkdir -p $versionID/doc/logs
    logID=`date +%Y-%b-%d_%H_%M`

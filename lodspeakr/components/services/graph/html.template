@@ -53,7 +53,7 @@
 
       <div class="fluid-row">
          <div class="span12">
-            <p>The SPARQL endpoint at <a href="http://healthdata.tw.rpi.edu/sparql">http://healthdata.tw.rpi.edu/sparql</a> contains a graph with the 
+            <p>The SPARQL endpoint at <a href="{{conf.endpoint.local}}">{{conf.endpoint.local}}</a> contains a graph with the 
                <a href="http://www.w3.org/TR/sparql11-service-description/#sd-name">name</a>:</p>
             <p><i>{{lodspk.args.all|deurifier}}</i></p>
             <p>This page describes the contents of that graph, which can be queried using SPARQL queries similar to the following structure:</p>

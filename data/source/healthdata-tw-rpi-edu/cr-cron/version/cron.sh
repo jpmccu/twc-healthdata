@@ -96,6 +96,7 @@ pushd $conversion_root &> /dev/null
       popd
    fi
    echo "END cron cr-retrieve.sh `date`"             >> $log
+   echo                                                                                      >> $log
 
 
    echo "BEGIN cron cr-publish-isdefinedby-to-endpoint.sh `date`"                            >> $log

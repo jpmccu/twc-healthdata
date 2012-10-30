@@ -6,12 +6,41 @@
 #3> <https://raw.github.com/jimmccusker/twc-healthdata/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh>
 #3>    foaf:homepage <https://github.com/jimmccusker/twc-healthdata/blob/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh> .
 
+if [ "$1" == "--help" ]; then
+   # Determine the absolute path to this script.
+   D=`dirname "$0"`
+   script_home="`cd \"$D\" 2>/dev/null && pwd || echo \"$D\"`"
+
+   echo
+   echo "This script is run by cron to automate an installation of csv2rdf4lod-automation."
+   echo "  See:"
+   echo "    https://github.com/jimmccusker/twc-healthdata/wiki/Automation"
+   echo "    https://github.com/jimmccusker/twc-healthdata/blob/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh"
+   echo
+   echo "Place something similar to the following into your crontab (by running 'crontab -e')"
+   echo
+   echo "# m h  dom mon dow   command"
+   echo "`date +%M` `date +%k`  *   *   *     $script_home/`basename $0`"
+   echo
+   echo "# ^^ Be sure to put an extra newline, or the last command will not invoke."
+   exit
+fi
+
 pushd `dirname $0` &> /dev/null
 
-   # Boostrap ourselves with the environment variables
-   # and paths that we need to know.
+   # Boostrap ourselves with environment variables and paths.
+   source ../../../csv2rdf4lod-source-me.sh
    source ../../../csv2rdf4lod-source-me-as-`whoami`.sh
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh
+   export CLASSPATH=$CLASSPATH`$CSV2RDF4LOD_HOME/bin/util/cr-situate-classpaths.sh`
+   export PATH=$PATH`$CSV2RDF4LOD_HOME/bin/util/cr-situate-paths.sh`
+
+   see='https://github.com/timrdf/csv2rdf4lod-automation/wiki/CSV2RDF4LOD-not-set'
+   if [[ "${#CSV2RDF4LOD_HOME}" -eq 0 ]]; then
+      echo "[ERROR] CSV2RDF4LOD_HOME is not set; cannot continue." > `dirname $0`/bootstrap-error.txt
+      echo "        see $see"                                     >> `dirname $0`/bootstrap-error.txt
+      date                                                        >> `dirname $0`/bootstrap-error.txt
+   fi
 
    versionID=`md5.sh $0` # < - - - needs - /\
    mkdir -p $versionID/doc/logs
@@ -40,6 +69,7 @@ pushd $conversion_root &> /dev/null
    #fi
    if [ -e $lock ]; then
       echo "cron.sh lock exists; aborting ($lock)."           >> $log
+      echo "END cron `date`"                                  >> $log
       exit 1
    else
       echo $$ `date` > $lock

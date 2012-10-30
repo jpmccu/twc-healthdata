@@ -153,6 +153,10 @@ WHERE {
             </ul>
          </div>
 
+         <div class="span5">
+          {{lodspk.queryTimes|GoogleVizBarChart:"query,time,width=800"}}
+         </div>
+
       </div>
 
     </div>

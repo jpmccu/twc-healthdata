@@ -6,12 +6,41 @@
 #3> <https://raw.github.com/jimmccusker/twc-healthdata/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh>
 #3>    foaf:homepage <https://github.com/jimmccusker/twc-healthdata/blob/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh> .
 
+if [ "$1" == "--help" ]; then
+   # Determine the absolute path to this script.
+   D=`dirname "$0"`
+   script_home="`cd \"$D\" 2>/dev/null && pwd || echo \"$D\"`"
+
+   echo
+   echo "This script is run by cron to automate an installation of csv2rdf4lod-automation."
+   echo "  See:"
+   echo "    https://github.com/jimmccusker/twc-healthdata/wiki/Automation"
+   echo "    https://github.com/jimmccusker/twc-healthdata/blob/master/data/source/healthdata-tw-rpi-edu/cr-cron/version/cron.sh"
+   echo
+   echo "Place something similar to the following into your crontab (by running 'crontab -e')"
+   echo
+   echo "# m h  dom mon dow   command"
+   echo "`date +%M` `date +%k`  *   *   *     $script_home/`basename $0`"
+   echo
+   echo "# ^^ Be sure to put an extra newline, or the last command will not invoke."
+   exit
+fi
+
 pushd `dirname $0` &> /dev/null
 
-   # Boostrap ourselves with the environment variables
-   # and paths that we need to know.
+   # Boostrap ourselves with environment variables and paths.
+   source ../../../csv2rdf4lod-source-me.sh
    source ../../../csv2rdf4lod-source-me-as-`whoami`.sh
    source ../../../csv2rdf4lod-source-me-when-ckaning.sh
+   export CLASSPATH=$CLASSPATH`$CSV2RDF4LOD_HOME/bin/util/cr-situate-classpaths.sh`
+   export PATH=$PATH`$CSV2RDF4LOD_HOME/bin/util/cr-situate-paths.sh`
+
+   see='https://github.com/timrdf/csv2rdf4lod-automation/wiki/CSV2RDF4LOD-not-set'
+   if [[ "${#CSV2RDF4LOD_HOME}" -eq 0 ]]; then
+      echo "[ERROR] CSV2RDF4LOD_HOME is not set; cannot continue." > `dirname $0`/bootstrap-error.txt
+      echo "        see $see"                                     >> `dirname $0`/bootstrap-error.txt
+      date                                                        >> `dirname $0`/bootstrap-error.txt
+   fi
 
    versionID=`md5.sh $0` # < - - - needs - /\
    mkdir -p $versionID/doc/logs
@@ -25,7 +54,7 @@ popd &> /dev/null
 pushd $conversion_root &> /dev/null
 
    echo "BEGIN cron ps --user `whoami` `date`"                >> $log
-   ps --user healthdata                                       >> $log
+   ps --user `whoami`                                         >> $log
    echo "END cron ps --user `whoami` `date`"                  >> $log
    echo                                                       >> $log
    # Replaced with .lock:
@@ -40,6 +69,7 @@ pushd $conversion_root &> /dev/null
    #fi
    if [ -e $lock ]; then
       echo "cron.sh lock exists; aborting ($lock)."           >> $log
+      echo "END cron `date`"                                  >> $log
       exit 1
    else
       echo $$ `date` > $lock
@@ -73,12 +103,12 @@ pushd $conversion_root &> /dev/null
       echo cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE/api $CSV2RDF4LOD_CKAN_WRITABLE/api >> $log
       cr-mirror-ckan.py $CSV2RDF4LOD_CKAN_SOURCE/api $CSV2RDF4LOD_CKAN_WRITABLE/api 2>&1 >> $log
    else
-      echo "   ERROR: Failed to invoke cr-mirror-ckan.py:"               >> $log
-      echo "      CSV2RDF4LOD_CKAN:          $CSV2RDF4LOD_CKAN"          >> $log
-      echo "      CSV2RDF4LOD_CKAN_SOURCE:   $CSV2RDF4LOD_CKAN_SOURCE"   >> $log
-      echo "      CSV2RDF4LOD_CKAN_WRITABLE: $CSV2RDF4LOD_CKAN_WRITABLE" >> $log
-      echo "      cr-mirror-ckan.py path:    `which cr-mirror-ckan.py`"  >> $log
-      echo "      X_CKAN_API_Key:            $X_CKAN_API_Key"            >> $log
+      echo "   ERROR: Failed to invoke cr-mirror-ckan.py:"                               >> $log
+      echo "      CSV2RDF4LOD_CKAN:          $CSV2RDF4LOD_CKAN"                          >> $log
+      echo "      CSV2RDF4LOD_CKAN_SOURCE:   $CSV2RDF4LOD_CKAN_SOURCE"                   >> $log
+      echo "      CSV2RDF4LOD_CKAN_WRITABLE: $CSV2RDF4LOD_CKAN_WRITABLE"                 >> $log
+      echo "      cr-mirror-ckan.py path:    `which cr-mirror-ckan.py`"                  >> $log
+      echo "      X_CKAN_API_Key:            $X_CKAN_API_Key"                            >> $log
    fi
    echo "END cron cr-mirror-ckan.py `date`"                                              >> $log
    echo                                                                                  >> $log
@@ -96,7 +126,23 @@ pushd $conversion_root &> /dev/null
       popd
    fi
    echo "END cron cr-retrieve.sh `date`"             >> $log
+   echo                                                                                      >> $log
 
+
+   echo "BEGIN cron cr-publish-isdefinedby-to-endpoint.sh `date`"                            >> $log
+   if [[ ${#CSV2RDF4LOD_BASE_URI}                -gt 0 && \
+         ${#CSV2RDF4LOD_PUBLISH_SPARQL_ENDPOINT} -gt 0 && \
+         `which cr-publish-isdefinedby-to-endpoint.sh` ]]; then
+      echo "pwd: `pwd`"                                                                      >> $log
+      cr-publish-isdefinedby-to-endpoint.sh cr:auto                                     2>&1 >> $log
+   else
+      echo "   ERROR: Failed to invoke cr-publish-isdefinedby-to-endpoint.sh:"               >> $log
+      echo "      CSV2RDF4LOD_BASE_URI:                $CSV2RDF4LOD_BASE_URI"                >> $log
+      echo "      CSV2RDF4LOD_PUBLISH_SPARQL_ENDPOINT: $CSV2RDF4LOD_PUBLISH_SPARQL_ENDPOINT" >> $log
+      echo "      cr-mirror-ckan.py path:    `which cr-publish-isdefinedby-to-endpoint.sh`"  >> $log
+   fi
+   echo "END cron cr-publish-isdefinedby-to-endpoint.sh `date`"                              >> $log
+   echo                                                                                      >> $log
 
 popd &> /dev/null
 

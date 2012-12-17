@@ -34,4 +34,8 @@ $conf['type']['priority']['conv:AbstractDataset']  = 1;
 $conf['type']['priority']['conv:VersionedDataset'] = 1;
 $conf['type']['priority']['conv:LayerDataset']     = 1;
 
+
+$conf['modules']['available'] = array('admin','static','uri','type','service');
+$conf['admin']['pass'] = 'mary had a little lamb';
+$conf['cache']['global'] = 3600;
 ?>

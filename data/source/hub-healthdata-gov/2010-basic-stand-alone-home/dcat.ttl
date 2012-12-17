@@ -10,17 +10,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2010-basic-stand-alone-home";
-   prov:wasDerivedFrom :as_a_csv_8e2a4978-8a15-4cca-b616-21b1b76b2f24;
+   prov:wasDerivedFrom :as_a_csv_1833ec01cd73b276972abafeb015f8f0;
 .
 
-:as_a_csv_8e2a4978-8a15-4cca-b616-21b1b76b2f24
+:as_a_csv_1833ec01cd73b276972abafeb015f8f0
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/BSAPUFS/downloads/2010_BSA_HHA_Beneficiary_PUF.zip>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/2010-basic-stand-alone-home>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_8e2a4978-8a15-4cca-b616-21b1b76b2f24;
+   dcat:distribution :as_a_csv_1833ec01cd73b276972abafeb015f8f0;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

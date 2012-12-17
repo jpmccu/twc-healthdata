@@ -10,17 +10,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospital-medicare-cost-report-data-fy2004";
-   prov:wasDerivedFrom :as_a_csv_7c65ca56-3a50-4b31-9854-ae620642d3c3;
+   prov:wasDerivedFrom :as_a_csv_a8602a01d13d67673896d65e3c1315a6;
 .
 
-:as_a_csv_7c65ca56-3a50-4b31-9854-ae620642d3c3
+:as_a_csv_a8602a01d13d67673896d65e3c1315a6
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY2004.zip>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/hospital-medicare-cost-report-data-fy2004>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_7c65ca56-3a50-4b31-9854-ae620642d3c3;
+   dcat:distribution :as_a_csv_a8602a01d13d67673896d65e3c1315a6;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

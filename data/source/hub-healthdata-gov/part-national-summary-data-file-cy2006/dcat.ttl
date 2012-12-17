@@ -10,17 +10,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-national-summary-data-file-cy2006";
-   prov:wasDerivedFrom :as_a_csv_7ef96c1a-21b4-44e1-8992-b2a5a6771f66;
+   prov:wasDerivedFrom :as_a_csv_e2294cf72335443a18a02f5ef5a1cd8d;
 .
 
-:as_a_csv_7ef96c1a-21b4-44e1-8992-b2a5a6771f66
+:as_a_csv_e2294cf72335443a18a02f5ef5a1cd8d
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/downloads/PartBNational2006.zip>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/part-national-summary-data-file-cy2006>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_7ef96c1a-21b4-44e1-8992-b2a5a6771f66;
+   dcat:distribution :as_a_csv_e2294cf72335443a18a02f5ef5a1cd8d;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

@@ -10,17 +10,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "plainview-milk-cooperative";
-   prov:wasDerivedFrom :as_a_csv_0007f61c-cd7e-4970-aa6d-d97723bd8c0f;
+   prov:wasDerivedFrom :as_a_xls_ba83d504b9e301f8b3a5da6b189765ca;
 .
 
-:as_a_csv_0007f61c-cd7e-4970-aa6d-d97723bd8c0f
+:as_a_xls_ba83d504b9e301f8b3a5da6b189765ca
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/Milk/MilkRecallProducts2009.xls>;
+   dcterms:format [ rdfs:label "XLS" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/plainview-milk-cooperative>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_0007f61c-cd7e-4970-aa6d-d97723bd8c0f;
+   dcat:distribution :as_a_xls_ba83d504b9e301f8b3a5da6b189765ca;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

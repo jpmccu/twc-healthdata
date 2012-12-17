@@ -10,17 +10,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "abbott-infant-formula-recall";
-   prov:wasDerivedFrom :as_a_csv_6d3571ce-d3df-4ed1-bef5-ed562219a6ec;
+   prov:wasDerivedFrom :as_a_xls_334a25c2868bd025e04005fd23742690;
 .
 
-:as_a_csv_6d3571ce-d3df-4ed1-bef5-ed562219a6ec
+:as_a_xls_334a25c2868bd025e04005fd23742690
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/infantformula/InfantFormulaRecallList2010.xls>;
+   dcterms:format [ rdfs:label "XLS" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/abbott-infant-formula-recall>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_6d3571ce-d3df-4ed1-bef5-ed562219a6ec;
+   dcat:distribution :as_a_xls_334a25c2868bd025e04005fd23742690;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

@@ -10,17 +10,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "skilled-nursing-facility-medicare-cost-report-data-fy1997";
-   prov:wasDerivedFrom :as_a_csv_d02dcbd6-dee2-43c6-b65c-e1c103aed7bc;
+   prov:wasDerivedFrom :as_a_csv_ae2bde253e3e1b4c97916aa61837e5f6;
 .
 
-:as_a_csv_d02dcbd6-dee2-43c6-b65c-e1c103aed7bc
+:as_a_csv_ae2bde253e3e1b4c97916aa61837e5f6
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/SNFFY1997.zip>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/skilled-nursing-facility-medicare-cost-report-data-fy1997>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_d02dcbd6-dee2-43c6-b65c-e1c103aed7bc;
+   dcat:distribution :as_a_csv_ae2bde253e3e1b4c97916aa61837e5f6;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

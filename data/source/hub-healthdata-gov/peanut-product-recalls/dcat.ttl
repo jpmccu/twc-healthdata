@@ -10,17 +10,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "peanut-product-recalls";
-   prov:wasDerivedFrom :as_a_csv_19bdf152-60fd-4967-b3de-9e91edae6a07;
+   prov:wasDerivedFrom :as_a_xls_baa897e55f77e3a1bdb775f8aaa37fa8;
 .
 
-:as_a_csv_19bdf152-60fd-4967-b3de-9e91edae6a07
+:as_a_xls_baa897e55f77e3a1bdb775f8aaa37fa8
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/peanutbutterrecall/PeanutButterProducts2009.xls>;
+   dcterms:format [ rdfs:label "XLS" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/peanut-product-recalls>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_19bdf152-60fd-4967-b3de-9e91edae6a07;
+   dcat:distribution :as_a_xls_baa897e55f77e3a1bdb775f8aaa37fa8;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

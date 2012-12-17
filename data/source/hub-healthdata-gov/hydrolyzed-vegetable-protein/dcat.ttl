@@ -10,17 +10,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hydrolyzed-vegetable-protein";
-   prov:wasDerivedFrom :as_a_csv_017883ca-e840-488f-9cd3-1ea627016353;
+   prov:wasDerivedFrom :as_a_xls_7b902dc6772dd6cfabe3039219d51940;
 .
 
-:as_a_csv_017883ca-e840-488f-9cd3-1ea627016353
+:as_a_xls_7b902dc6772dd6cfabe3039219d51940
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/HVPCP/HydrolyzedVegetableProteinProductsList2010.xls>;
+   dcterms:format [ rdfs:label "XLS" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/hydrolyzed-vegetable-protein>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_017883ca-e840-488f-9cd3-1ea627016353;
+   dcat:distribution :as_a_xls_7b902dc6772dd6cfabe3039219d51940;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

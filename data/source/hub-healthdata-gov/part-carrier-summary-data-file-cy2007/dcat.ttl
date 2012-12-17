@@ -10,17 +10,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-carrier-summary-data-file-cy2007";
-   prov:wasDerivedFrom :as_a_csv_c5747cac-946a-49cc-afd9-afa233077d0b;
+   prov:wasDerivedFrom :as_a_csv_09989f141fb9881fd7eab010c6d29236;
 .
 
-:as_a_csv_c5747cac-946a-49cc-afd9-afa233077d0b
+:as_a_csv_09989f141fb9881fd7eab010c6d29236
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/2007AllCarriers.zip>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/part-carrier-summary-data-file-cy2007>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_c5747cac-946a-49cc-afd9-afa233077d0b;
+   dcat:distribution :as_a_csv_09989f141fb9881fd7eab010c6d29236;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

@@ -10,17 +10,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "child-support-enforcement-annual-data-report-form-2006-2";
-   prov:wasDerivedFrom :as_a_csv_a0f67bc1-591f-4df0-918e-7b154def8ee8;
+   prov:wasDerivedFrom :as_a_csv_37f80384ba53380bc470e29b9bea7185;
 .
 
-:as_a_csv_a0f67bc1-591f-4df0-918e-7b154def8ee8
+:as_a_csv_37f80384ba53380bc470e29b9bea7185
    a dcat:Distribution;
    dcat:downloadURL <http://www.acf.hhs.gov/datagov-datasets/ocse/dcs/157_CSE_ANNUAL_2006.csv>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/child-support-enforcement-annual-data-report-form-2006-2>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_a0f67bc1-591f-4df0-918e-7b154def8ee8;
+   dcat:distribution :as_a_csv_37f80384ba53380bc470e29b9bea7185;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

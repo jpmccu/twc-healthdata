@@ -10,17 +10,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "home-health-agency-medicare-cost-report-data-2010";
-   prov:wasDerivedFrom :as_a_csv_053ade35-4074-4d0f-917b-41afea13af52;
+   prov:wasDerivedFrom :as_a_csv_556c23af38c768878fa509123fc26ebb;
 .
 
-:as_a_csv_053ade35-4074-4d0f-917b-41afea13af52
+:as_a_csv_556c23af38c768878fa509123fc26ebb
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY2010.zip>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/home-health-agency-medicare-cost-report-data-2010>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_053ade35-4074-4d0f-917b-41afea13af52;
+   dcat:distribution :as_a_csv_556c23af38c768878fa509123fc26ebb;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

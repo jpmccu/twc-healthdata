@@ -10,17 +10,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "skilled-nursing-facility-medicare-cost";
-   prov:wasDerivedFrom :as_a_csv_6b916f47-922b-42bb-84ce-3bf3104baab6;
+   prov:wasDerivedFrom :as_a_csv_12fed4f19c8d70582525b82321fbdedc;
 .
 
-:as_a_csv_6b916f47-922b-42bb-84ce-3bf3104baab6
+:as_a_csv_12fed4f19c8d70582525b82321fbdedc
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/SNFFY2005.zip>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/skilled-nursing-facility-medicare-cost>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_6b916f47-922b-42bb-84ce-3bf3104baab6;
+   dcat:distribution :as_a_csv_12fed4f19c8d70582525b82321fbdedc;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

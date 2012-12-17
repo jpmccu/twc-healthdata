@@ -10,17 +10,17 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "electronic-animal-drug-product";
-   prov:wasDerivedFrom :as_a_csv_d020e661-694d-40f2-885f-c7e95f635e2a;
+   prov:wasDerivedFrom :as_a_csv_db8e2f0f1cfa504262ac6586fbac6425;
 .
 
-:as_a_csv_d020e661-694d-40f2-885f-c7e95f635e2a
+:as_a_csv_db8e2f0f1cfa504262ac6586fbac6425
    a dcat:Distribution;
    dcat:downloadURL <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/UCM198204.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/electronic-animal-drug-product>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_d020e661-694d-40f2-885f-c7e95f635e2a;
+   dcat:distribution :as_a_csv_db8e2f0f1cfa504262ac6586fbac6425;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

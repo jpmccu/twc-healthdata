@@ -10,17 +10,17 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospital-compare";
-   prov:wasDerivedFrom :as_a_csv_652c215c-d11f-43f5-8054-48714b329651;
+   prov:wasDerivedFrom :as_a_csv_1d3ed1dc70d2d0d165fd4901ebede027;
 .
 
-:as_a_csv_652c215c-d11f-43f5-8054-48714b329651
+:as_a_csv_1d3ed1dc70d2d0d165fd4901ebede027
    a dcat:Distribution;
-   dcat:downloadURL <http://www.medicare.gov/Download/Hospital_flatfiles.zip>;
+   dcat:downloadURL <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/hqi-hosp-hcahps-msr/version/2012-Jul-17/thing_133343>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/hospital-compare>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_652c215c-d11f-43f5-8054-48714b329651;
+   dcat:distribution :as_a_csv_1d3ed1dc70d2d0d165fd4901ebede027;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

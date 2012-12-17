@@ -10,17 +10,17 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-carrier";
-   prov:wasDerivedFrom :as_a_csv_00d60d3a-ac85-480f-a0e6-af68e1786a56;
+   prov:wasDerivedFrom :as_a_csv_bef2bf19688f67ba5d2804d810bfe787;
 .
 
-:as_a_csv_00d60d3a-ac85-480f-a0e6-af68e1786a56
+:as_a_csv_bef2bf19688f67ba5d2804d810bfe787
    a dcat:Distribution;
    dcat:downloadURL <http://downloads.cms.gov/BSAPUF/2008_BSA_Carrier_Line_Items_PUF_1.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-carrier>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_00d60d3a-ac85-480f-a0e6-af68e1786a56;
+   dcat:distribution :as_a_csv_bef2bf19688f67ba5d2804d810bfe787;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

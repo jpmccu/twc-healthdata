@@ -10,17 +10,17 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-skilled";
-   prov:wasDerivedFrom :as_a_csv_84414817-d8e7-4633-b1be-0375a4a4fa78;
+   prov:wasDerivedFrom :as_a_csv_a6e5aee9fcea32578e4ca08ea7d430b1;
 .
 
-:as_a_csv_84414817-d8e7-4633-b1be-0375a4a4fa78
+:as_a_csv_a6e5aee9fcea32578e4ca08ea7d430b1
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/BSAPUFS/downloads/2008_BSA_SNF_Beneficiary_PUF.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-skilled>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_84414817-d8e7-4633-b1be-0375a4a4fa78;
+   dcat:distribution :as_a_csv_a6e5aee9fcea32578e4ca08ea7d430b1;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

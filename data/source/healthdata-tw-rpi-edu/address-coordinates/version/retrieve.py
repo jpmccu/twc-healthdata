@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+#
+# Requires: http://pypi.python.org/pypi/googlemaps
+# easy_install http://pypi.python.org/packages/source/g/googlemaps/googlemaps-1.0.2.tar.gz
 
 from googlemaps import GoogleMaps
 import os, json

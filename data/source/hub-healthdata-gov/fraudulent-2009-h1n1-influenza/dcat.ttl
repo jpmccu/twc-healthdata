@@ -10,17 +10,17 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "fraudulent-2009-h1n1-influenza";
-   prov:wasDerivedFrom :as_a_csv_cf27b24b-16d7-40c2-b9ee-36eb29ba131a;
+   prov:wasDerivedFrom :as_a_csv_d9e654cce1a0732ef8f43f5a6461fe09;
 .
 
-:as_a_csv_cf27b24b-16d7-40c2-b9ee-36eb29ba131a
+:as_a_csv_d9e654cce1a0732ef8f43f5a6461fe09
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/h1n1flu/FraudulentH1N1ProductsList2009.xls>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/fraudulent-2009-h1n1-influenza>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_cf27b24b-16d7-40c2-b9ee-36eb29ba131a;
+   dcat:distribution :as_a_csv_d9e654cce1a0732ef8f43f5a6461fe09;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

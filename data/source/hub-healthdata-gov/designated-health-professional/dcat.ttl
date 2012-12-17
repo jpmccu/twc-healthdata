@@ -10,17 +10,17 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "designated-health-professional";
-   prov:wasDerivedFrom :as_a_csv_6672bc63-ec40-45ba-b9b7-b10a849e7458;
+   prov:wasDerivedFrom :as_a_csv_9b919a53489544d15de08b63aea1795a;
 .
 
-:as_a_csv_6672bc63-ec40-45ba-b9b7-b10a849e7458
+:as_a_csv_9b919a53489544d15de08b63aea1795a
    a dcat:Distribution;
    dcat:downloadURL <http://datawarehouse.hrsa.gov/DataDownload/HPSA/HPSA.zip>;
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/designated-health-professional>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_6672bc63-ec40-45ba-b9b7-b10a849e7458;
+   dcat:distribution :as_a_csv_9b919a53489544d15de08b63aea1795a;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

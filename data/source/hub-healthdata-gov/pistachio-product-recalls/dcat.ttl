@@ -10,10 +10,17 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "pistachio-product-recalls";
+<<<<<<< HEAD
    prov:wasDerivedFrom :as_a_xls_395e28d6bdc86b46641754eb75fb87fa;
 .
 
 :as_a_xls_395e28d6bdc86b46641754eb75fb87fa
+=======
+   prov:wasDerivedFrom :as_a_csv_395e28d6bdc86b46641754eb75fb87fa;
+.
+
+:as_a_csv_395e28d6bdc86b46641754eb75fb87fa
+>>>>>>> 4e7b8816a65051bb4152b0ffbccd6fadc31b6b28
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/pistachiorecall/Pistachio2009.xls>;
    dcterms:format [ rdfs:label "XLS" ];
@@ -21,7 +28,11 @@
 
 <http://healthdata.tw.rpi.edu/hub/dataset/pistachio-product-recalls>
    a dcat:Dataset, datafaqs:CKANDataset;
+<<<<<<< HEAD
    dcat:distribution :as_a_xls_395e28d6bdc86b46641754eb75fb87fa;
+=======
+   dcat:distribution :as_a_csv_395e28d6bdc86b46641754eb75fb87fa;
+>>>>>>> 4e7b8816a65051bb4152b0ffbccd6fadc31b6b28
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

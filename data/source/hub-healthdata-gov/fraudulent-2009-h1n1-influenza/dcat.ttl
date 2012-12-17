@@ -1,4 +1,5 @@
 @prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
@@ -10,17 +11,10 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "fraudulent-2009-h1n1-influenza";
-<<<<<<< HEAD
    prov:wasDerivedFrom :as_a_xls_d9e654cce1a0732ef8f43f5a6461fe09;
 .
 
 :as_a_xls_d9e654cce1a0732ef8f43f5a6461fe09
-=======
-   prov:wasDerivedFrom :as_a_csv_d9e654cce1a0732ef8f43f5a6461fe09;
-.
-
-:as_a_csv_d9e654cce1a0732ef8f43f5a6461fe09
->>>>>>> 4e7b8816a65051bb4152b0ffbccd6fadc31b6b28
    a dcat:Distribution;
    dcat:downloadURL <http://www.accessdata.fda.gov/scripts/h1n1flu/FraudulentH1N1ProductsList2009.xls>;
    dcterms:format [ rdfs:label "XLS" ];
@@ -28,11 +22,7 @@
 
 <http://healthdata.tw.rpi.edu/hub/dataset/fraudulent-2009-h1n1-influenza>
    a dcat:Dataset, datafaqs:CKANDataset;
-<<<<<<< HEAD
    dcat:distribution :as_a_xls_d9e654cce1a0732ef8f43f5a6461fe09;
-=======
-   dcat:distribution :as_a_csv_d9e654cce1a0732ef8f43f5a6461fe09;
->>>>>>> 4e7b8816a65051bb4152b0ffbccd6fadc31b6b28
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

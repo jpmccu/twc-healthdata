@@ -1,4 +1,5 @@
 @prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
@@ -10,17 +11,10 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-carrier-summary-data-file-cy2009";
-<<<<<<< HEAD
    prov:wasDerivedFrom :as_a_xls_7cd30a4942cdb8fb4c75e8a8958a3cf7;
 .
 
 :as_a_xls_7cd30a4942cdb8fb4c75e8a8958a3cf7
-=======
-   prov:wasDerivedFrom :as_a_csv_7cd30a4942cdb8fb4c75e8a8958a3cf7;
-.
-
-:as_a_csv_7cd30a4942cdb8fb4c75e8a8958a3cf7
->>>>>>> 4e7b8816a65051bb4152b0ffbccd6fadc31b6b28
    a dcat:Distribution;
    dcat:downloadURL <http://www.cms.gov/NonIdentifiableDataFiles/PBCAR/itemdetail.asp?filterType=none&filterByDID=-99&sortByDID=1&sortOrder=ascending&itemID=CMS1242082&intNumPerPage=10>;
    dcterms:format [ rdfs:label "XLS" ];
@@ -28,11 +22,7 @@
 
 <http://healthdata.tw.rpi.edu/hub/dataset/part-carrier-summary-data-file-cy2009>
    a dcat:Dataset, datafaqs:CKANDataset;
-<<<<<<< HEAD
    dcat:distribution :as_a_xls_7cd30a4942cdb8fb4c75e8a8958a3cf7;
-=======
-   dcat:distribution :as_a_csv_7cd30a4942cdb8fb4c75e8a8958a3cf7;
->>>>>>> 4e7b8816a65051bb4152b0ffbccd6fadc31b6b28
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

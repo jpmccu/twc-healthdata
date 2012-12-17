@@ -1,4 +1,5 @@
 @prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
@@ -10,7 +11,6 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospital-compare";
-<<<<<<< HEAD
    prov:wasDerivedFrom :as_a_rdf_1d3ed1dc70d2d0d165fd4901ebede027;
 .
 
@@ -18,23 +18,11 @@
    a dcat:Distribution;
    dcat:downloadURL <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/hqi-hosp-hcahps-msr/version/2012-Jul-17/thing_133343>;
    dcterms:format [ rdfs:label "rdf" ];
-=======
-   prov:wasDerivedFrom :as_a_csv_1d3ed1dc70d2d0d165fd4901ebede027;
-.
-
-:as_a_csv_1d3ed1dc70d2d0d165fd4901ebede027
-   a dcat:Distribution;
-   dcat:downloadURL <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/hqi-hosp-hcahps-msr/version/2012-Jul-17/thing_133343>;
->>>>>>> 4e7b8816a65051bb4152b0ffbccd6fadc31b6b28
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/hospital-compare>
    a dcat:Dataset, datafaqs:CKANDataset;
-<<<<<<< HEAD
    dcat:distribution :as_a_rdf_1d3ed1dc70d2d0d165fd4901ebede027;
-=======
-   dcat:distribution :as_a_csv_1d3ed1dc70d2d0d165fd4901ebede027;
->>>>>>> 4e7b8816a65051bb4152b0ffbccd6fadc31b6b28
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

@@ -3,13 +3,13 @@ prefix dcterms:  <http://purl.org/dc/terms/>
 
 select distinct ?theirs ?id
 where {
-  graph <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/catalog/version/2012-Oct-02> { 
+  graph <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/catalog/version/2012-Dec-17> { 
      ?theirs
       a datafaqs:CKANDataset;
       dcterms:identifier ?id .
   }
   optional {
-    graph <http://purl.org/twc/health/source/healthdata-tw-rpi-edu/dataset/catalog/version/2012-Oct-02> { 
+    graph <http://purl.org/twc/health/source/healthdata-tw-rpi-edu/dataset/catalog/version/2012-Dec-17> { 
       ?ours
          a datafaqs:CKANDataset;
          dcterms:identifier ?id .

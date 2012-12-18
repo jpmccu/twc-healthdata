@@ -28,17 +28,17 @@ WHERE {
 
    curl -sG --data-urlencode "query=$sparql" --data-urlencode "format=text/csv" $endpoint | sed -e s/\"//g | tail -n +2 > $today/source/datasets.txt
    mkdir -p $today/automatic
-   pushd $today/automatic
+   pushd $today/automatic &> /dev/null
    for url in `cat ../source/datasets.txt`; do
       echo $url
       pcurl.py -f turtle $url.rdf
    done
-   popd
+   popd &> /dev/null
 #  echo $datasets
 #  curl -sH "Content-Type: text/csv" -d "<$hhs> a <http://purl.org/twc/vocab/datafaqs#CKAN> ." $sadi > $today/source/datasets.ttl
 
-#   echo $today/source/datasets.ttl
-#   pushd $today &> /dev/null
-#      aggregate-source-rdf.sh source/datasets.ttl
-#   popd &> /dev/null
+   echo $today/source/datasets.ttl
+   pushd $today &> /dev/null
+      aggregate-source-rdf.sh automatic/*.rdf automatic/*.ttl
+   popd &> /dev/null
 fi

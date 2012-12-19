@@ -78,10 +78,11 @@ pushd $conversion_root &> /dev/null
    echo                                                       >> $log
 
 
+   wasInformed='a prov:Activity; prov:wasInformedBy <#cron>;'
    #
    # Git any new dcat.ttl, retrieve.sh, and update this cron script.
    echo "BEGIN cron git pull `date`"    >> $log
-   echo "#3> <#git-pull> a prov:Activity; prov:wasInformedBy <#cron>; prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
+   echo "#3> <#git-pull> $wasInformed prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
    if [ `which git` ]; then
       git pull 2>&1                     >> $log
    else
@@ -103,7 +104,7 @@ pushd $conversion_root &> /dev/null
    #
    # Populate our local writable CKAN instance with the entries from a third party CKAN instance.
    echo "BEGIN cron cr-mirror-ckan.py `date`"                                            >> $log
-   echo "#3> <#cr-mirror-ckan> a prov:Activity; prov:wasInformedBy <#cron>; prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
+   echo "#3> <#cr-mirror-ckan> $wasInformed prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
    if [[  "$CSV2RDF4LOD_CKAN" == "true"      && \
          ${#CSV2RDF4LOD_CKAN_SOURCE}   -gt 0 && \
          ${#CSV2RDF4LOD_CKAN_WRITABLE} -gt 0 && \
@@ -126,7 +127,7 @@ pushd $conversion_root &> /dev/null
    #
    # DCAT files provide the data download URLs.
    echo "BEGIN cron cr-publish-dcat-to-endpoint.sh `date`"                                     >> $log
-   echo "#3> <#cr-publish-dcat> a prov:Activity; prov:wasInformedBy <#cron>; prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
+   echo "#3> <#cr-publish-dcat> $wasInformed prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
    if [[ ${#CSV2RDF4LOD_BASE_URI}              -gt 0 && \
          ${#CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID} -gt 0 && \
          `which cr-publish-dcat-to-endpoint.sh` ]]; then
@@ -145,7 +146,7 @@ pushd $conversion_root &> /dev/null
    #
    # cr-retrieve.sh follows the DCAT descriptions to download the files.
    echo "BEGIN cron cr-retrieve.sh `date`"           >> $log
-   echo "#3> <#cr-retrieve> a prov:Activity; prov:wasInformedBy <#cron>; prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
+   echo "#3> <#cr-retrieve> $wasInformed prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
    example="hub-healthdata-gov/food-recalls"
    example=""
    if [ ${#example} -gt 0 ]; then
@@ -163,12 +164,13 @@ pushd $conversion_root &> /dev/null
    #
    # Analyze the retrieved files and determine their file format.
    echo "BEGIN cron cr-publish-droid-to-endpoint.sh `date`"                                      >> $log
-   echo "#3> <#cr-publish-droid> a prov:Activity; prov:wasInformedBy <#cron>; prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
+   echo "#3> <#cr-publish-droid> $wasInformed prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
    if [[ ${#CSV2RDF4LOD_BASE_URI}              -gt 0 && \
          ${#CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID} -gt 0 && \
          `which cr-publish-droid-to-endpoint.sh`     && \
          `which cr-droid.sh` ]]; then
-      echo "pwd: `pwd`"                                                                          >> $log
+      echo "pwd:    `pwd`"                                                                       >> $log
+      echo "script: `which cr-publish-droid-to-endpoint.sh`"                                     >> $log
       cr-publish-droid-to-endpoint.sh cr:auto                                               2>&1 >> $log
       # TODO cr-droid.ttl's coming up empty during cron, but useful manually.
    else
@@ -185,11 +187,12 @@ pushd $conversion_root &> /dev/null
    #
    # The VoID metadata organizes the RDF datasets created by converting each original dataset.
    echo "BEGIN cron cr-publish-void-to-endpoint.sh `date`"                                     >> $log
-   echo "#3> <#cr-publish-void> a prov:Activity; prov:wasInformedBy <#cron>; prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
+   echo "#3> <#cr-publish-void> $wasInformed prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
    if [[ ${#CSV2RDF4LOD_BASE_URI}              -gt 0 && \
          ${#CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID} -gt 0 && \
          `which cr-publish-void-to-endpoint.sh` ]]; then
-      echo "pwd: `pwd`"                                                                        >> $log
+      echo "pwd:    `pwd`"                                                                     >> $log
+      echo "script: `which cr-publish-void-to-endpoint.sh`"                                    >> $log
       echo cr-publish-void-to-endpoint.sh cr:auto                                              >> $log
       cr-publish-void-to-endpoint.sh cr:auto                                              2>&1 >> $log
    else
@@ -205,7 +208,7 @@ pushd $conversion_root &> /dev/null
    #
    # Find all asserted properties and classes, and assert rdfs:isDefinedBy to their namespace.
    echo "BEGIN cron cr-publish-isdefinedby-to-endpoint.sh `date`"                            >> $log
-   echo "#3> <#cr-publish-isdefinedby> a prov:Activity; prov:wasInformedBy <#cron>; prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
+   echo "#3> <#cr-publish-isdefinedby> $wasInformed prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
    if [[ ${#CSV2RDF4LOD_BASE_URI}                -gt 0 && \
          ${#CSV2RDF4LOD_PUBLISH_SPARQL_ENDPOINT} -gt 0 && \
          `which cr-publish-isdefinedby-to-endpoint.sh` ]]; then

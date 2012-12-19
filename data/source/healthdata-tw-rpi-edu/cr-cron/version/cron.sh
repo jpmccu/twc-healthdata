@@ -206,6 +206,27 @@ pushd $conversion_root &> /dev/null
 
 
    #
+   # Turtle In Comments often has PROV-O assertions about the files in which they are embedded.
+   echo "BEGIN cron cr-publish-tic-to-endpoint.sh `date`"                                         >> $log
+   echo "#3> <#cr-publish-tic> $wasInformed prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
+   if [[ ${#CSV2RDF4LOD_BASE_URI}              -gt 0 && \
+         ${#CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID} -gt 0 && \
+         `which cr-publish-tic-to-endpoint.sh` ]]; then
+      echo "pwd:    `pwd`"                                                                        >> $log
+      echo "script: `which cr-publish-tic-to-endpoint.sh`"                                        >> $log
+      echo cr-publish-tic-to-endpoint.sh cr:auto                                                  >> $log
+      cr-publish-tic-to-endpoint.sh cr:auto                                                  2>&1 >> $log
+   else
+      echo "   ERROR: Failed to invoke cr-publish-tic-to-endpoint.sh:"                            >> $log
+      echo "      CSV2RDF4LOD_BASE_URI:              $CSV2RDF4LOD_BASE_URI"                       >> $log
+      echo "      CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID: $CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID"          >> $log
+      echo "      cr-publish-tic-to-endpoint.sh path: `which cr-publish-tic-to-endpoint.sh`"      >> $log
+   fi
+   echo "END cron cr-publish-tic-to-endpoint.sh `date`"                                           >> $log
+   echo                                                                                           >> $log
+
+
+   #
    # Find all asserted properties and classes, and assert rdfs:isDefinedBy to their namespace.
    echo "BEGIN cron cr-publish-isdefinedby-to-endpoint.sh `date`"                            >> $log
    echo "#3> <#cr-publish-isdefinedby> $wasInformed prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log

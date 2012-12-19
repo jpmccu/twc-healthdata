@@ -34,7 +34,7 @@
         {%else%}
            <ul>
              {% for row in models.samples %}
-               <li><a href='{{lodspk.home}}graph/{{row.s.mirroredUri|urifier}}'>{{row.s.mirroredUri}}</a> </li>
+               <li><a href='{{lodspk.home}}graph/{{row.sample.mirroredUri|urifier}}'>{{row.sample.mirroredUri}}</a> </li>
              {% endfor %}
            </ul>
         {%endif%}

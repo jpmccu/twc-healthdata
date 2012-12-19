@@ -47,7 +47,7 @@ construct {
   ?dcatDS a dcat:Dataset;
     dcat:distribution [ dcat:accessURL ?download ].
    ?dcatDS ?p1 ?b.
-   ?b ?p2 ?o.
+   ?b rdf:value []; ?p2 ?o.
   filter (isBlank(?b))
 }'
 

@@ -135,6 +135,7 @@ pushd $conversion_root &> /dev/null
       echo "      cr-publish-dcat-to-endpoint.sh path: `which cr-publish-dcat-to-endpoint.sh`" >> $log
    fi
    echo "END cron cr-publish-dcat-to-endpoint.sh `date`"                                       >> $log
+   echo                                                                                        >> $log
 
 
    #
@@ -171,6 +172,7 @@ pushd $conversion_root &> /dev/null
       echo "      cr-droid.sh path:                     `which cr-droid.sh`"                     >> $log
    fi
    echo "END cron cr-publish-droid-to-endpoint.sh `date`"                                        >> $log
+   echo                                                                                          >> $log
 
 
    #
@@ -180,6 +182,7 @@ pushd $conversion_root &> /dev/null
          ${#CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID} -gt 0 && \
          `which cr-publish-void-to-endpoint.sh` ]]; then
       echo "pwd: `pwd`"                                                                        >> $log
+      echo cr-publish-void-to-endpoint.sh cr:auto                                              >> $log
       cr-publish-void-to-endpoint.sh cr:auto                                              2>&1 >> $log
    else
       echo "   ERROR: Failed to invoke cr-publish-void-to-endpoint.sh:"                        >> $log
@@ -188,6 +191,7 @@ pushd $conversion_root &> /dev/null
       echo "      cr-publish-void-to-endpoint.sh path: `which cr-publish-void-to-endpoint.sh`" >> $log
    fi
    echo "END cron cr-publish-void-to-endpoint.sh `date`"                                       >> $log
+   echo                                                                                        >> $log
 
 
    #

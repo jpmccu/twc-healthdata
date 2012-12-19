@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "omha-appeals-listed-state";
-   prov:wasDerivedFrom :as_a_xls_bebe62c7e47a79880ba5c80a9d161a7c;
+   prov:wasDerivedFrom <http://www.hhs.gov/omha/resources/appealslistbystate.xls>;
 .
 
 :as_a_xls_bebe62c7e47a79880ba5c80a9d161a7c
    a dcat:Distribution;
-   dcat:downloadURL <http://www.hhs.gov/omha/resources/appealslistbystate.xls>;
+   dcat:accessURL <http://www.hhs.gov/omha/resources/appealslistbystate.xls>;
    dcterms:format [ rdfs:label "XLS" ];
 .
 

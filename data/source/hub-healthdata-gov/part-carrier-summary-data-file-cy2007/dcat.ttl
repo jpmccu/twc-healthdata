@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-carrier-summary-data-file-cy2007";
-   prov:wasDerivedFrom :as_a_csv_09989f141fb9881fd7eab010c6d29236;
+   prov:wasDerivedFrom <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/2007AllCarriers.zip>;
 .
 
 :as_a_csv_09989f141fb9881fd7eab010c6d29236
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/2007AllCarriers.zip>;
+   dcat:accessURL <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/2007AllCarriers.zip>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

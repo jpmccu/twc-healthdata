@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "plainview-milk-cooperative";
-   prov:wasDerivedFrom :as_a_xls_ba83d504b9e301f8b3a5da6b189765ca;
+   prov:wasDerivedFrom <http://www.accessdata.fda.gov/scripts/Milk/MilkRecallProducts2009.xls>;
 .
 
 :as_a_xls_ba83d504b9e301f8b3a5da6b189765ca
    a dcat:Distribution;
-   dcat:downloadURL <http://www.accessdata.fda.gov/scripts/Milk/MilkRecallProducts2009.xls>;
+   dcat:accessURL <http://www.accessdata.fda.gov/scripts/Milk/MilkRecallProducts2009.xls>;
    dcterms:format [ rdfs:label "XLS" ];
 .
 

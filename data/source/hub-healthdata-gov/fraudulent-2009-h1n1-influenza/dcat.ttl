@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "fraudulent-2009-h1n1-influenza";
-   prov:wasDerivedFrom :as_a_xls_d9e654cce1a0732ef8f43f5a6461fe09;
+   prov:wasDerivedFrom <http://www.accessdata.fda.gov/scripts/h1n1flu/FraudulentH1N1ProductsList2009.xls>;
 .
 
 :as_a_xls_d9e654cce1a0732ef8f43f5a6461fe09
    a dcat:Distribution;
-   dcat:downloadURL <http://www.accessdata.fda.gov/scripts/h1n1flu/FraudulentH1N1ProductsList2009.xls>;
+   dcat:accessURL <http://www.accessdata.fda.gov/scripts/h1n1flu/FraudulentH1N1ProductsList2009.xls>;
    dcterms:format [ rdfs:label "XLS" ];
 .
 

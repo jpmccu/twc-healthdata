@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "home-health-agency-medicare-cost-report-data-1999";
-   prov:wasDerivedFrom :as_a_csv_08044699d09cd54265841d45a28e0e8b;
+   prov:wasDerivedFrom <http://www.cms.hhs.gov/CostReports/downloads/HHAFY1999.zip>;
 .
 
 :as_a_csv_08044699d09cd54265841d45a28e0e8b
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY1999.zip>;
+   dcat:accessURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY1999.zip>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

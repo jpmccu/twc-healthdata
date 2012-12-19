@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "third-national-survey-older";
-   prov:wasDerivedFrom :as_a_csv_1444db850f375dcdd9090bfcbb2ede3f;
+   prov:wasDerivedFrom <http://www.aoa.gov/AoARoot/Program_Results/docs/2005/National_Survey/3rd_National_Survey_Data_Files_2005.zip>;
 .
 
 :as_a_csv_1444db850f375dcdd9090bfcbb2ede3f
    a dcat:Distribution;
-   dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2005/National_Survey/3rd_National_Survey_Data_Files_2005.zip>;
+   dcat:accessURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2005/National_Survey/3rd_National_Survey_Data_Files_2005.zip>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

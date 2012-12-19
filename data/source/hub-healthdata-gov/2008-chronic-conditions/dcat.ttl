@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-chronic-conditions";
-   prov:wasDerivedFrom :as_a_csv_c18d97fc72f99e8d027425e6b8ad49c5;
+   prov:wasDerivedFrom <http://www.cms.gov/BSAPUFS/downloads/2008_Chronic_Conditions_PUF.zip>;
 .
 
 :as_a_csv_c18d97fc72f99e8d027425e6b8ad49c5
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.gov/BSAPUFS/downloads/2008_Chronic_Conditions_PUF.zip>;
+   dcat:accessURL <http://www.cms.gov/BSAPUFS/downloads/2008_Chronic_Conditions_PUF.zip>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

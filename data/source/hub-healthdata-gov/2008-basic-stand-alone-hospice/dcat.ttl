@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-hospice";
-   prov:wasDerivedFrom :as_a_csv_868e7f91c7664641c24d12283d8170b8;
+   prov:wasDerivedFrom <http://www.cms.gov/bsapufs/downloads/2008_BSA_Hospice_Beneficiary_PUF.zip>;
 .
 
 :as_a_csv_868e7f91c7664641c24d12283d8170b8
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.gov/bsapufs/downloads/2008_BSA_Hospice_Beneficiary_PUF.zip>;
+   dcat:accessURL <http://www.cms.gov/bsapufs/downloads/2008_BSA_Hospice_Beneficiary_PUF.zip>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

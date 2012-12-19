@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "medicare-medicaid-incentive";
-   prov:wasDerivedFrom :as_a_xls_7ff6d881f8f4fa79afe02628098b95c4;
+   prov:wasDerivedFrom <http://www.healthit.gov/data/MU_Report.xls>;
 .
 
 :as_a_xls_7ff6d881f8f4fa79afe02628098b95c4
    a dcat:Distribution;
-   dcat:downloadURL <http://www.healthit.gov/data/MU_Report.xls>;
+   dcat:accessURL <http://www.healthit.gov/data/MU_Report.xls>;
    dcterms:format [ rdfs:label "XLS" ];
 .
 

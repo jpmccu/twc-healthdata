@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "skilled-nursing-facility-medicare-cost-report-data-fy2006";
-   prov:wasDerivedFrom :as_a_csv_0ba934929f8851034b570f3d24adacf3;
+   prov:wasDerivedFrom <http://www.cms.hhs.gov/CostReports/downloads/SNFFY2006.zip>;
 .
 
 :as_a_csv_0ba934929f8851034b570f3d24adacf3
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/SNFFY2006.zip>;
+   dcat:accessURL <http://www.cms.hhs.gov/CostReports/downloads/SNFFY2006.zip>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

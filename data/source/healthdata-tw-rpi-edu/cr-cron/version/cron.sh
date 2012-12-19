@@ -170,6 +170,7 @@ pushd $conversion_root &> /dev/null
          `which cr-droid.sh` ]]; then
       echo "pwd: `pwd`"                                                                          >> $log
       cr-publish-droid-to-endpoint.sh cr:auto                                               2>&1 >> $log
+      # TODO cr-droid.ttl's coming up empty during cron, but useful manually.
    else
       echo "   ERROR: Failed to invoke cr-publish-droid-to-endpoint.sh:"                         >> $log
       echo "      CSV2RDF4LOD_BASE_URI:              $CSV2RDF4LOD_BASE_URI"                      >> $log

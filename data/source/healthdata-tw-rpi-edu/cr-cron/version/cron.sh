@@ -53,6 +53,7 @@ popd &> /dev/null
 
 pushd $conversion_root &> /dev/null
 
+   echo "#3> <#activity> a prov:Activity; prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
    echo "BEGIN cron ps --user `whoami` `date`"                >> $log
    ps --user `whoami`                                         >> $log
    echo "END cron ps --user `whoami` `date`"                  >> $log
@@ -215,6 +216,7 @@ pushd $conversion_root &> /dev/null
 
 popd &> /dev/null
 
-echo                   >> $log
-echo "END cron `date`" >> $log
+echo                                                                                       >> $log
+echo "#3> <#activity> a prov:Activity; prov:endedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
+echo "END cron `date`"                                                                     >> $log
 rm $lock

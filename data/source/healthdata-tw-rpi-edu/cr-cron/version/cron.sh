@@ -144,6 +144,8 @@ pushd $conversion_root &> /dev/null
    echo "END cron cr-publish-isdefinedby-to-endpoint.sh `date`"                              >> $log
    echo                                                                                      >> $log
 
+   # TODO: cr-publish-dcat-to-endpoint.sh cr:auto
+
    echo "BEGIN cron cr-publish-droid-to-endpoint.sh `date`"                                  >> $log
    if [[ ${#CSV2RDF4LOD_BASE_URI}              -gt 0 && \
          ${#CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID} -gt 0 && \

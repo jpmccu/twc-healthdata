@@ -1,7 +1,7 @@
 PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
 PREFIX void: <http://rdfs.org/ns/void#>
 
-SELECT DISTINCT ?dataset ?id ?pL
+SELECT DISTINCT ?dataset ?id 
 WHERE {
  ?dataset void:subset ?versioned .
  ?versioned void:subset ?layer .

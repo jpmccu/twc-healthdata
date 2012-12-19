@@ -1,4 +1,5 @@
 @prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
@@ -10,17 +11,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "home-health-agency-medicare-cost-report-data-2002";
-   prov:wasDerivedFrom :as_a_csv_6cdbec9e-02d3-4835-9478-63fdbbdd816d;
+   prov:wasDerivedFrom <http://www.cms.hhs.gov/CostReports/downloads/HHAFY2002.zip>;
 .
 
-:as_a_csv_6cdbec9e-02d3-4835-9478-63fdbbdd816d
+:as_a_csv_3616b00971f8e0545035509ede461575
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY2002.zip>;
+   dcat:accessURL <http://www.cms.hhs.gov/CostReports/downloads/HHAFY2002.zip>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/home-health-agency-medicare-cost-report-data-2002>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_6cdbec9e-02d3-4835-9478-63fdbbdd816d;
+   dcat:distribution :as_a_csv_3616b00971f8e0545035509ede461575;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

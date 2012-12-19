@@ -132,6 +132,8 @@ are listed at <a href="http://healthdata.tw.rpi.edu/hub">http://healthdata.tw.rp
 	<span>(<a href="#toc">top</a>) </span>
      </div>
 
+{{lodspk.queryTimes|GoogleVizColumnChart:"query,time"}}
+
     </div>
   </body>
 </html>

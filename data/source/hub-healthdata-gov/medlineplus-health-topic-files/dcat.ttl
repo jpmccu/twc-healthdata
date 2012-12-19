@@ -7,32 +7,32 @@
 @prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/health/id/> .
 
-<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/part-national-summary-data-file-cy2006>
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/medlineplus-health-topic-files>
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
-   conversion:dataset_identifier "part-national-summary-data-file-cy2006";
-   prov:wasDerivedFrom <http://www.cms.hhs.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/downloads/PartBNational2006.zip>;
+   conversion:dataset_identifier "medlineplus-health-topic-files";
+   prov:wasDerivedFrom <http://www.nlm.nih.gov/medlineplus/xml/mplus_topics_compressed_2012-12-15.zip>;
 .
 
-:as_a_csv_e2294cf72335443a18a02f5ef5a1cd8d
+:as_a_xml_d3f7e94a20273d1937878d5baf53197a
    a dcat:Distribution;
-   dcat:accessURL <http://www.cms.hhs.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/downloads/PartBNational2006.zip>;
-   dcterms:format [ rdfs:label "CSV" ];
+   dcat:accessURL <http://www.nlm.nih.gov/medlineplus/xml/mplus_topics_compressed_2012-12-15.zip>;
+   dcterms:format [ rdfs:label "XML" ];
 .
 
-<http://healthdata.tw.rpi.edu/hub/dataset/part-national-summary-data-file-cy2006>
+<http://healthdata.tw.rpi.edu/hub/dataset/medlineplus-health-topic-files>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_e2294cf72335443a18a02f5ef5a1cd8d;
+   dcat:distribution :as_a_xml_d3f7e94a20273d1937878d5baf53197a;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 
-<http://healthdata.tw.rpi.edu/hub/dataset/part-national-summary-data-file-cy2006> 
-   prov:alternateOf <http://hub.healthdata.gov/dataset/part-national-summary-data-file-cy2006>;
+<http://healthdata.tw.rpi.edu/hub/dataset/medlineplus-health-topic-files> 
+   prov:alternateOf <http://hub.healthdata.gov/dataset/medlineplus-health-topic-files>;
 .
 
-<http://hub.healthdata.gov/dataset/part-national-summary-data-file-cy2006>
+<http://hub.healthdata.gov/dataset/medlineplus-health-topic-files>
    a dcat:Dataset, datafaqs:CKANDataset;
-   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/part-national-summary-data-file-cy2006>;
+   prov:alternateOf <http://healthdata.tw.rpi.edu/hub/dataset/medlineplus-health-topic-files>;
    prov:wasAttributedTo <http://hub.healthdata.gov>;
 .
 

@@ -1,4 +1,5 @@
 @prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
@@ -10,17 +11,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-inpatient";
-   prov:wasDerivedFrom :as_a_csv_6d87e542-65fb-44ef-a5d9-9507c221db05;
+   prov:wasDerivedFrom <http://www.cms.gov/BSAPUFS/downloads/2008_BSA_Inpatient_Claims_PUF.zip>;
 .
 
-:as_a_csv_6d87e542-65fb-44ef-a5d9-9507c221db05
+:as_a_csv_0a773da1e3a6d9c209d3cef3dcee8f98
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.gov/BSAPUFS/downloads/2008_BSA_Inpatient_Claims_PUF.zip>;
+   dcat:accessURL <http://www.cms.gov/BSAPUFS/downloads/2008_BSA_Inpatient_Claims_PUF.zip>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/2008-basic-stand-alone-inpatient>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_6d87e542-65fb-44ef-a5d9-9507c221db05;
+   dcat:distribution :as_a_csv_0a773da1e3a6d9c209d3cef3dcee8f98;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

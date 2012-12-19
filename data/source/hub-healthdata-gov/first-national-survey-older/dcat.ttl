@@ -1,4 +1,5 @@
 @prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
@@ -10,17 +11,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "first-national-survey-older";
-   prov:wasDerivedFrom :as_a_csv_a4466f5d-ab44-4c80-b77d-e4ee8cc97b41;
+   prov:wasDerivedFrom <http://www.aoa.gov/AoARoot/Program_Results/docs/2003/National_Survey/1st_National_Survey_Data_Files_2003.zip>;
 .
 
-:as_a_csv_a4466f5d-ab44-4c80-b77d-e4ee8cc97b41
+:as_a_csv_ed49f5099ec1e167dac1203d26e49eb8
    a dcat:Distribution;
-   dcat:downloadURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2003/National_Survey/1st_National_Survey_Data_Files_2003.zip>;
+   dcat:accessURL <http://www.aoa.gov/AoARoot/Program_Results/docs/2003/National_Survey/1st_National_Survey_Data_Files_2003.zip>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/first-national-survey-older>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_a4466f5d-ab44-4c80-b77d-e4ee8cc97b41;
+   dcat:distribution :as_a_csv_ed49f5099ec1e167dac1203d26e49eb8;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

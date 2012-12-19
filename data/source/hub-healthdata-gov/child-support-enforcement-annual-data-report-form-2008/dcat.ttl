@@ -1,4 +1,5 @@
 @prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
@@ -10,17 +11,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "child-support-enforcement-annual-data-report-form-2008";
-   prov:wasDerivedFrom :as_a_csv_561e83b0-90c6-4aeb-b2e2-a9508f8db0b6;
+   prov:wasDerivedFrom <http://www.acf.hhs.gov/datagov-datasets/ocse/dcs/34A_CSE_ANNUAL.2008.csv>;
 .
 
-:as_a_csv_561e83b0-90c6-4aeb-b2e2-a9508f8db0b6
+:as_a_csv_a5fce49ec16090e95e9b43dda7862d38
    a dcat:Distribution;
-   dcat:downloadURL <http://www.acf.hhs.gov/datagov-datasets/ocse/dcs/34A_CSE_ANNUAL.2008.csv>;
+   dcat:accessURL <http://www.acf.hhs.gov/datagov-datasets/ocse/dcs/34A_CSE_ANNUAL.2008.csv>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/child-support-enforcement-annual-data-report-form-2008>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_561e83b0-90c6-4aeb-b2e2-a9508f8db0b6;
+   dcat:distribution :as_a_csv_a5fce49ec16090e95e9b43dda7862d38;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

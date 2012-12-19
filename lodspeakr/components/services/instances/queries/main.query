@@ -10,4 +10,4 @@ SELECT DISTINCT ?resource WHERE {
       ?resource a {{lodspk.args.arg0}}
   }
 }order by ?resource
-limit 1000
+limit 5000

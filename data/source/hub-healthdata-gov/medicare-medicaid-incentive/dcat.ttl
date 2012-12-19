@@ -1,4 +1,5 @@
 @prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
@@ -10,17 +11,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "medicare-medicaid-incentive";
-   prov:wasDerivedFrom :as_a_csv_ae8b1f32-cb42-475f-8564-6c21bb033276;
+   prov:wasDerivedFrom <http://www.healthit.gov/data/MU_Report.xls>;
 .
 
-:as_a_csv_ae8b1f32-cb42-475f-8564-6c21bb033276
+:as_a_xls_7ff6d881f8f4fa79afe02628098b95c4
    a dcat:Distribution;
-   dcat:downloadURL <http://www.healthit.gov/data/MU_Report.xls>;
+   dcat:accessURL <http://www.healthit.gov/data/MU_Report.xls>;
+   dcterms:format [ rdfs:label "XLS" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/medicare-medicaid-incentive>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_ae8b1f32-cb42-475f-8564-6c21bb033276;
+   dcat:distribution :as_a_xls_7ff6d881f8f4fa79afe02628098b95c4;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

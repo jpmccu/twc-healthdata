@@ -1,4 +1,5 @@
 @prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
@@ -10,17 +11,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "skilled-nursing-facility-medicare-cost-report-data-fy2011";
-   prov:wasDerivedFrom :as_a_csv_abea8241-e50e-4541-bbe0-e3d88049d3a0;
+   prov:wasDerivedFrom <http://www.cms.hhs.gov/CostReports/downloads/SNFFY2011.zip>;
 .
 
-:as_a_csv_abea8241-e50e-4541-bbe0-e3d88049d3a0
+:as_a_csv_4d456a8702a6b666c992d80fd5321286
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/SNFFY2011.zip>;
+   dcat:accessURL <http://www.cms.hhs.gov/CostReports/downloads/SNFFY2011.zip>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/skilled-nursing-facility-medicare-cost-report-data-fy2011>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_abea8241-e50e-4541-bbe0-e3d88049d3a0;
+   dcat:distribution :as_a_csv_4d456a8702a6b666c992d80fd5321286;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

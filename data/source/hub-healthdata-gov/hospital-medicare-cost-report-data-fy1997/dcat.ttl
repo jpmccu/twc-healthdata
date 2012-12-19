@@ -1,4 +1,5 @@
 @prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
@@ -10,17 +11,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospital-medicare-cost-report-data-fy1997";
-   prov:wasDerivedFrom :as_a_csv_aa2e3cd1-0bda-4958-be51-22288cbab7a3;
+   prov:wasDerivedFrom <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY1997.zip>;
 .
 
-:as_a_csv_aa2e3cd1-0bda-4958-be51-22288cbab7a3
+:as_a_csv_c7b00eb0c0d4d70616f4439f068c3769
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY1997.zip>;
+   dcat:accessURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY1997.zip>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/hospital-medicare-cost-report-data-fy1997>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_aa2e3cd1-0bda-4958-be51-22288cbab7a3;
+   dcat:distribution :as_a_csv_c7b00eb0c0d4d70616f4439f068c3769;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

@@ -1,4 +1,5 @@
 @prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
@@ -10,17 +11,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "renal-dialysis-facility-medicare-cost-report-data-1996";
-   prov:wasDerivedFrom :as_a_csv_80b03e58-bbe8-48d6-8aba-ecdd3fe1322f;
+   prov:wasDerivedFrom <http://www.cms.hhs.gov/CostReports/downloads/RENALFY1996.zip>;
 .
 
-:as_a_csv_80b03e58-bbe8-48d6-8aba-ecdd3fe1322f
+:as_a_csv_06f34e1a2c4e5a4389be4d65e5242ef4
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/RENALFY1996.zip>;
+   dcat:accessURL <http://www.cms.hhs.gov/CostReports/downloads/RENALFY1996.zip>;
+   dcterms:format [ rdfs:label "CSV" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/renal-dialysis-facility-medicare-cost-report-data-1996>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_80b03e58-bbe8-48d6-8aba-ecdd3fe1322f;
+   dcat:distribution :as_a_csv_06f34e1a2c4e5a4389be4d65e5242ef4;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

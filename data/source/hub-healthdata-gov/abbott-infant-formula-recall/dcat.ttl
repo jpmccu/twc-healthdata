@@ -1,4 +1,5 @@
 @prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
@@ -10,17 +11,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "abbott-infant-formula-recall";
-   prov:wasDerivedFrom :as_a_csv_6d3571ce-d3df-4ed1-bef5-ed562219a6ec;
+   prov:wasDerivedFrom <http://www.accessdata.fda.gov/scripts/infantformula/InfantFormulaRecallList2010.xls>;
 .
 
-:as_a_csv_6d3571ce-d3df-4ed1-bef5-ed562219a6ec
+:as_a_xls_334a25c2868bd025e04005fd23742690
    a dcat:Distribution;
-   dcat:downloadURL <http://www.accessdata.fda.gov/scripts/infantformula/InfantFormulaRecallList2010.xls>;
+   dcat:accessURL <http://www.accessdata.fda.gov/scripts/infantformula/InfantFormulaRecallList2010.xls>;
+   dcterms:format [ rdfs:label "XLS" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/abbott-infant-formula-recall>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_6d3571ce-d3df-4ed1-bef5-ed562219a6ec;
+   dcat:distribution :as_a_xls_334a25c2868bd025e04005fd23742690;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

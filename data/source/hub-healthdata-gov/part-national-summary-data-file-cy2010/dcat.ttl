@@ -1,4 +1,5 @@
 @prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
@@ -10,17 +11,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-national-summary-data-file-cy2010";
-   prov:wasDerivedFrom :as_a_csv_2a3afc50-3de6-4691-bf10-584043d93888;
+   prov:wasDerivedFrom <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/PartBNational2010.zip>;
 .
 
-:as_a_csv_2a3afc50-3de6-4691-bf10-584043d93888
+:as_a_xls_b985b15ff9d2692abb59fcf48237228a
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/PartBNational2010.zip>;
+   dcat:accessURL <http://www.cms.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/Downloads/PartBNational2010.zip>;
+   dcterms:format [ rdfs:label "XLS" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/part-national-summary-data-file-cy2010>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_2a3afc50-3de6-4691-bf10-584043d93888;
+   dcat:distribution :as_a_xls_b985b15ff9d2692abb59fcf48237228a;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

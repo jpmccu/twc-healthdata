@@ -1,4 +1,5 @@
 @prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
@@ -10,17 +11,18 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "claims-listed-state";
-   prov:wasDerivedFrom :as_a_csv_22cb9506-4936-42ae-aa31-e18fdf58b791;
+   prov:wasDerivedFrom <http://www.hhs.gov/omha/resources/claimslistbystate.xls>;
 .
 
-:as_a_csv_22cb9506-4936-42ae-aa31-e18fdf58b791
+:as_a_xls_f14a65ad990f8df8a26273e6f977b55a
    a dcat:Distribution;
-   dcat:downloadURL <http://www.hhs.gov/omha/resources/claimslistbystate.xls>;
+   dcat:accessURL <http://www.hhs.gov/omha/resources/claimslistbystate.xls>;
+   dcterms:format [ rdfs:label "XLS" ];
 .
 
 <http://healthdata.tw.rpi.edu/hub/dataset/claims-listed-state>
    a dcat:Dataset, datafaqs:CKANDataset;
-   dcat:distribution :as_a_csv_22cb9506-4936-42ae-aa31-e18fdf58b791;
+   dcat:distribution :as_a_xls_f14a65ad990f8df8a26273e6f977b55a;
    prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
 .
 

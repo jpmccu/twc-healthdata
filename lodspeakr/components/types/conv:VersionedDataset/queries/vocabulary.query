@@ -2,20 +2,9 @@ SELECT DISTINCT ?dataset  ?id
 WHERE {
 ?dataset void:subset ?versioned .
  ?versioned void:subset ?layer .
- {
-   <{{uri}}> void:vocabulary ?p .
-   ?layer void:vocabulary ?p .
- }UNION{
   <{{uri}}> void:subset ?thisLayer .
    ?thisLayer void:vocabulary ?p .
    ?layer void:vocabulary ?p .
-  }
- }UNION{
-  <{{uri}}> void:subset ?thisVersioned .
-  ?thisVersioned void:subset ?thisLayer .
-   ?thisLayer void:vocabulary ?p .
-   ?layer void:vocabulary ?p .
- }
 
   OPTIONAL{ ?dataset dcterms:identifier ?id}
   FILTER(?dataset != <{{uri}}>)

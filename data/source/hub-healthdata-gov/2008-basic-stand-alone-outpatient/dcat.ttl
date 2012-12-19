@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "2008-basic-stand-alone-outpatient";
-   prov:wasDerivedFrom :as_a_csv_08ce5f4cd591a396e66d68a712e7e09e;
+   prov:wasDerivedFrom <http://downloads.cms.gov/BSAPUF/2008_BSA_Outpatient_Procedures_PUF_1.zip>;
 .
 
 :as_a_csv_08ce5f4cd591a396e66d68a712e7e09e
    a dcat:Distribution;
-   dcat:downloadURL <http://downloads.cms.gov/BSAPUF/2008_BSA_Outpatient_Procedures_PUF_1.zip>;
+   dcat:accessURL <http://downloads.cms.gov/BSAPUF/2008_BSA_Outpatient_Procedures_PUF_1.zip>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

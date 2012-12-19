@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospice-medicare-cost-report";
-   prov:wasDerivedFrom :as_a_csv_42b335f90a893d28d409109b71e855bd;
+   prov:wasDerivedFrom <http://www.cms.hhs.gov/CostReports/downloads/HOSPICEallyears.zip>;
 .
 
 :as_a_csv_42b335f90a893d28d409109b71e855bd
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPICEallyears.zip>;
+   dcat:accessURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPICEallyears.zip>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

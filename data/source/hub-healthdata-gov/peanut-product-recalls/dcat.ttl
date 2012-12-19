@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "peanut-product-recalls";
-   prov:wasDerivedFrom :as_a_xls_baa897e55f77e3a1bdb775f8aaa37fa8;
+   prov:wasDerivedFrom <http://www.accessdata.fda.gov/scripts/peanutbutterrecall/PeanutButterProducts2009.xls>;
 .
 
 :as_a_xls_baa897e55f77e3a1bdb775f8aaa37fa8
    a dcat:Distribution;
-   dcat:downloadURL <http://www.accessdata.fda.gov/scripts/peanutbutterrecall/PeanutButterProducts2009.xls>;
+   dcat:accessURL <http://www.accessdata.fda.gov/scripts/peanutbutterrecall/PeanutButterProducts2009.xls>;
    dcterms:format [ rdfs:label "XLS" ];
 .
 

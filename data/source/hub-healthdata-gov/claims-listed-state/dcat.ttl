@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "claims-listed-state";
-   prov:wasDerivedFrom :as_a_xls_f14a65ad990f8df8a26273e6f977b55a;
+   prov:wasDerivedFrom <http://www.hhs.gov/omha/resources/claimslistbystate.xls>;
 .
 
 :as_a_xls_f14a65ad990f8df8a26273e6f977b55a
    a dcat:Distribution;
-   dcat:downloadURL <http://www.hhs.gov/omha/resources/claimslistbystate.xls>;
+   dcat:accessURL <http://www.hhs.gov/omha/resources/claimslistbystate.xls>;
    dcterms:format [ rdfs:label "XLS" ];
 .
 

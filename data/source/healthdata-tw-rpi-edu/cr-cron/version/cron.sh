@@ -139,10 +139,28 @@ pushd $conversion_root &> /dev/null
       echo "   ERROR: Failed to invoke cr-publish-isdefinedby-to-endpoint.sh:"               >> $log
       echo "      CSV2RDF4LOD_BASE_URI:                $CSV2RDF4LOD_BASE_URI"                >> $log
       echo "      CSV2RDF4LOD_PUBLISH_SPARQL_ENDPOINT: $CSV2RDF4LOD_PUBLISH_SPARQL_ENDPOINT" >> $log
-      echo "      cr-mirror-ckan.py path:    `which cr-publish-isdefinedby-to-endpoint.sh`"  >> $log
+      echo "                        path:    `which cr-publish-isdefinedby-to-endpoint.sh`"  >> $log
    fi
    echo "END cron cr-publish-isdefinedby-to-endpoint.sh `date`"                              >> $log
    echo                                                                                      >> $log
+
+   # TODO: cr-publish-dcat-to-endpoint.sh cr:auto
+
+   echo "BEGIN cron cr-publish-droid-to-endpoint.sh `date`"                                  >> $log
+   if [[ ${#CSV2RDF4LOD_BASE_URI}              -gt 0 && \
+         ${#CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID} -gt 0 && \
+         `which cr-publish-droid-to-endpoint.sh`     && \
+         `which cr-droid.sh` ]]; then
+      echo "pwd: `pwd`"                                                                          >> $log
+      cr-publish-droid-to-endpoint.sh cr:auto                                               2>&1 >> $log
+   else
+      echo "   ERROR: Failed to invoke cr-publish-droid-to-endpoint.sh:"                         >> $log
+      echo "      CSV2RDF4LOD_BASE_URI:              $CSV2RDF4LOD_BASE_URI"                      >> $log
+      echo "      CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID: $CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID"         >> $log
+      echo "      cr-publish-droid-to-endpoint.sh path: `which cr-publish-droid-to-endpoint.sh`" >> $log
+      echo "      cr-droid.sh path:                     `which cr-droid.sh`"                     >> $log
+   fi
+   echo "END cron cr-publish-droid-to-endpoint.sh `date`"                                        >> $log
 
 popd &> /dev/null
 

@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "drug-label-data";
-   prov:wasDerivedFrom :as_a_csv_5017cdec60a1f842b1edacbc71c79837;
+   prov:wasDerivedFrom <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/ucm241597.zip>;
 .
 
 :as_a_csv_5017cdec60a1f842b1edacbc71c79837
    a dcat:Distribution;
-   dcat:downloadURL <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/ucm241597.zip>;
+   dcat:accessURL <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/ucm241597.zip>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

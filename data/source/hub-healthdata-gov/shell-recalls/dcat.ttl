@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "shell-recalls";
-   prov:wasDerivedFrom :as_a_xls_011c5ddb11e9fc275e95587dc6c42d77;
+   prov:wasDerivedFrom <http://www.accessdata.fda.gov/scripts/shelleggsrecall/ShellEggsRecallList2010.xls>;
 .
 
 :as_a_xls_011c5ddb11e9fc275e95587dc6c42d77
    a dcat:Distribution;
-   dcat:downloadURL <http://www.accessdata.fda.gov/scripts/shelleggsrecall/ShellEggsRecallList2010.xls>;
+   dcat:accessURL <http://www.accessdata.fda.gov/scripts/shelleggsrecall/ShellEggsRecallList2010.xls>;
    dcterms:format [ rdfs:label "XLS" ];
 .
 

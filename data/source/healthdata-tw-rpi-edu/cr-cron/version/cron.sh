@@ -153,7 +153,7 @@ pushd $conversion_root &> /dev/null
       pushd $example
       echo "(only working with example `cr-pwd.sh`)" >> $log
    fi
-   #cr-retrieve.sh -w --skip-if-exists 2>&1           >> $log
+   # TEMP HIDE cr-retrieve.sh -w --skip-if-exists 2>&1           >> $log
    if [ ${#example} -gt 0 ]; then
       popd
    fi
@@ -171,8 +171,7 @@ pushd $conversion_root &> /dev/null
          `which cr-droid.sh` ]]; then
       echo "pwd:    `pwd`"                                                                       >> $log
       echo "script: `which cr-publish-droid-to-endpoint.sh`"                                     >> $log
-      cr-publish-droid-to-endpoint.sh cr:auto                                               2>&1 >> $log
-      # TODO cr-droid.ttl's coming up empty during cron, but useful manually.
+      # TEMP HIDE cr-publish-droid-to-endpoint.sh cr:auto                                               2>&1 >> $log
    else
       echo "   ERROR: Failed to invoke cr-publish-droid-to-endpoint.sh:"                         >> $log
       echo "      CSV2RDF4LOD_BASE_URI:              $CSV2RDF4LOD_BASE_URI"                      >> $log

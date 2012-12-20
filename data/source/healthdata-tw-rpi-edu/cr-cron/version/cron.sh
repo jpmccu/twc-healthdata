@@ -132,7 +132,7 @@ pushd $conversion_root &> /dev/null
          ${#CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID} -gt 0 && \
          `which cr-publish-dcat-to-endpoint.sh` ]]; then
       echo "pwd: `pwd`"                                                                        >> $log
-      cr-publish-dcat-to-endpoint.sh cr:auto                                              2>&1 >> $log
+      # TEMP HIDE cr-publish-dcat-to-endpoint.sh cr:auto                                              2>&1 >> $log
    else
       echo "   ERROR: Failed to invoke cr-publish-dcat-to-endpoint.sh:"                        >> $log
       echo "      CSV2RDF4LOD_BASE_URI:              $CSV2RDF4LOD_BASE_URI"                    >> $log

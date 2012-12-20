@@ -153,7 +153,7 @@ pushd $conversion_root &> /dev/null
       pushd $example
       echo "(only working with example `cr-pwd.sh`)" >> $log
    fi
-   cr-retrieve.sh -w --skip-if-exists 2>&1           >> $log
+   #cr-retrieve.sh -w --skip-if-exists 2>&1           >> $log
    if [ ${#example} -gt 0 ]; then
       popd
    fi

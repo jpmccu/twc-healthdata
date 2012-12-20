@@ -1,0 +1,3 @@
+SELECT DISTINCT ?keyword WHERE{
+  <{{uri}}> dcat:keyword ?keyword .
+}

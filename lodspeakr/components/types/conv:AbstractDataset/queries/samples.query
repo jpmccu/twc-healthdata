@@ -1,9 +1,11 @@
 PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
 PREFIX void: <http://rdfs.org/ns/void#>
 
-SELECT DISTINCT ?sample where{
+SELECT DISTINCT ?sample ?datasetVersion ?identifier where{
   <{{uri}}> void:subset ?versioned .
   ?versioned void:subset ?layered .
   ?layered void:subset  ?sample .
   ?sample a conversion:DatasetSample .
+  ?sample conversion:dataset_version ?datasetVersion;
+          conversion:conversion_identifier ?identifier.
 }

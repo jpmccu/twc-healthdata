@@ -8,11 +8,12 @@ select distinct ?ours ?theirs
 where {
    <{{uri}}>
       a void:Dataset, dcat:Dataset;
-      prov:wasDerivedFrom ?distribution
+      prov:wasDerivedFrom ?download
    .
 
    ?distribution
-      a dcat:Distribution
+      a dcat:Distribution;
+      dcat:accessURL ?download
    .
 
    ?ours

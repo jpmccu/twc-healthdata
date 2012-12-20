@@ -1,0 +1,5 @@
+SELECT DISTINCT ?subject ?label count(?dataset) as ?datasetCount WHERE{
+#  <{{uri}}> dcterms:subject ?subject .
+  ?subject skos:prefLabel ?label .
+  ?dataset dcterms:subject ?subject.
+} group by ?subject ?label order by desc(count(?dataset))

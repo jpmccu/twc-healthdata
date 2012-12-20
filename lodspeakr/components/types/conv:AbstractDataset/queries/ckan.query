@@ -5,7 +5,7 @@ PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 
 SELECT DISTINCT ?dataset ?datasetLabel WHERE{
-  ?dataset     dcat:distribution ?x .
+  ?dataset     dcat:distribution [ dcat:accessURL ?x ] .
   <{{uri}}> prov:wasDerivedFrom ?x;
             a void:Dataset .
   OPTIONAL{?dataset rdfs:label ?datasetLabel}

@@ -4,21 +4,26 @@
 
      <div class="fluid-row">
       <div class="span12">
-        <h2>Dataset <a href='{{uri}}'><span property='dc:identifier'>{{first.details.id.value}}</span></a></h2>
+        <h2><a href='{{uri}}'><span property='dc:title'>{{first.details.title.value}}</span></a></h2>
       </div>
      </div>
 
      <div class="fluid-row">
-      <div class="span10">
-         <h3>is a 
-            {%for i in models.types%}
-               {%if !forloop.first%}, {%endif%}
-              <span about="{{uri}}" typeof='{{i.type.curie}}'>
-                  <a href="{{i.type.mirroredUri}}">{%if i.label.value %}{{i.label.value}}{%else%}{{i.type.curie}}{%endif%}</a>
-              </span>
-            {%endfor%}.
-         </h3>
-      </div>
+      <div class="span7">
+        <p property='dc:description'>{{first.details.description.value}}</p>
+        <p><b>Keywords:</b>
+          {%for i in models.keywords%}{%if !forloop.first%}, {%endif%}
+              <span about="{{uri}}" property="dcat:keyword">{{i.keyword.value}}</span>
+            {%endfor%}</p>
+       </div>
+       <div class="span3">
+        <h3>Types</h3> 
+          {%for i in models.types%}
+        	<h4 about="{{uri}}" typeof='{{i.type.curie}}'>
+              <a href="{{i.type.mirroredUri}}">{%if i.label.value %}{{i.label.value}}{%else%}{{i.type.curie}}{%endif%}</a>
+            </h4>
+          {%endfor%}
+       </div>
      </div>
 
 
@@ -27,27 +32,23 @@
 
 
     <div class="fluid-row">
-      <div class="span12">
+      <div class="span7">
+        <h3>Related Subjects</h3>
+        {{models.subjects|D3CirclePacking:"label,parent,datasetCount"}}
+      </div>
+      <div class="span3">
         <h3>Loaded Samples</h3>
         {%if models.samples|length == 0%}
            <div class="alert alert-info">No samples found</div>
         {%else%}
            <ul>
              {% for row in models.samples %}
-               <li><a href='{{lodspk.home}}graph/{{row.sample.mirroredUri|urifier}}'>{{row.sample.mirroredUri}}</a> </li>
+               <li><a href='{{lodspk.home}}graph/{{row.sample.mirroredUri|urifier}}'>{{row.datasetVersion.value}}-{{row.identifier.value}}</a> </li>
              {% endfor %}
            </ul>
         {%endif%}
-      </div>
-    </div>
 
-
-   {% include '../void\:Dataset/in_triple_store.html.template' %}
-
-
-    <div class="fluid-row">
-      <div class="span8">
-         <h3>Subsets</h3>
+        <h3>Subsets</h3>
          {%if models.subsets|length == 0%}
            <div class="alert alert-info">No subsets found</div>
          {%else%}
@@ -57,27 +58,16 @@
             {% endfor %}
            </ul>
          {%endif%}
-     </div>
-    </div>
-
-     <div class="fluid-row">
-      <div class="span10">
-   <h3>Supersets</h3>
-     {%if models.supersets|length == 0%}
-         <div class="alert alert-info">No supersets found</div>
-     {%else%}
-   <ul>
-    {% for row in models.supersets %}
-     <li><a rev="void:subset" href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
-    {% endfor %}
-    </ul>
-{%endif%}
-     </div>
-    </div>
-
-
-     <div class="fluid-row">
-      <div class="span8">
+	   <h3>Supersets</h3>
+     	{%if models.supersets|length == 0%}
+        <div class="alert alert-info">No supersets found</div>
+   	    {%else%}
+   		<ul>
+    	{% for row in models.supersets %}
+     	  <li><a rev="void:subset" href='{{row.dataset.mirroredUri}}'>{%if row.datasetId.value%}{{row.datasetId.value}}{%else%}{{row.dataset.curie}}{%endif%}</a></li>
+    	{% endfor %}
+    	</ul>
+		{%endif%}
          <h3>CKAN listings <img width="30px" src="{{lodspk.home}}img/logo_64px_wide.png" alt="Comprehensive Knowledge Archive Network"/> </h3>
          
          {%if models.ckan_links|length > 0%}
@@ -103,8 +93,11 @@
             {% endfor %}
            </ul>
          {%endif%}
-     </div>
+      </div>
     </div>
+
+
+   {% include '../void\:Dataset/in_triple_store.html.template' %}
 
 
     <div class="fluid-row">

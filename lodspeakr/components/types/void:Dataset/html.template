@@ -4,7 +4,7 @@
 
      <div class="fluid-row">
       <div class="span12">
-        <h2>Dataset <a href='{{uri}}'><span property='dc:identifier'>{{first.details.id.value}}</span></a></h2>
+        <h2><a href='{{uri}}'><span property='dc:title'>{{first.details.title.value}}</span></a></h2>
       </div>
      </div>
 
@@ -18,7 +18,8 @@
               </span>
             {%endfor%}.
          </h3>
-      </div>
+         <p property='dc:description'>{{first.details.description.value}}</p>
+       </div>
      </div>
 
 

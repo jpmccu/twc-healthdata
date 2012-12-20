@@ -18,8 +18,10 @@
               </span>
             {%endfor%}.
          </h3>
-      </div>
+         <p property='dc:description'>{{first.details.description.value}}</p>
+       </div>
      </div>
+
 
 
 

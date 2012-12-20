@@ -1,3 +1,5 @@
-SELECT DISTINCT ?id WHERE{
-  <{{uri}}> dcterms:identifier ?id 
+SELECT DISTINCT ?id ?title ?description WHERE{
+  <{{uri}}> dcterms:identifier ?id ;
+            dcterms:title ?title ;
+            dcterms:description ?description .
 }

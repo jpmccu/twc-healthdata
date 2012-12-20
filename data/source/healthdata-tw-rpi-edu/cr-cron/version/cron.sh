@@ -132,7 +132,7 @@ pushd $conversion_root &> /dev/null
          ${#CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID} -gt 0 && \
          `which cr-publish-dcat-to-endpoint.sh` ]]; then
       echo "pwd: `pwd`"                                                                        >> $log
-      # TEMP HIDE cr-publish-dcat-to-endpoint.sh cr:auto                                              2>&1 >> $log
+      cr-publish-dcat-to-endpoint.sh cr:auto                                              2>&1 >> $log
    else
       echo "   ERROR: Failed to invoke cr-publish-dcat-to-endpoint.sh:"                        >> $log
       echo "      CSV2RDF4LOD_BASE_URI:              $CSV2RDF4LOD_BASE_URI"                    >> $log
@@ -153,7 +153,7 @@ pushd $conversion_root &> /dev/null
       pushd $example
       echo "(only working with example `cr-pwd.sh`)" >> $log
    fi
-   # TEMP HIDE cr-retrieve.sh -w --skip-if-exists 2>&1           >> $log
+   cr-retrieve.sh -w --skip-if-exists 2>&1           >> $log
    if [ ${#example} -gt 0 ]; then
       popd
    fi
@@ -171,7 +171,7 @@ pushd $conversion_root &> /dev/null
          `which cr-droid.sh` ]]; then
       echo "pwd:    `pwd`"                                                                       >> $log
       echo "script: `which cr-publish-droid-to-endpoint.sh`"                                     >> $log
-      # TEMP HIDE cr-publish-droid-to-endpoint.sh cr:auto                                               2>&1 >> $log
+      cr-publish-droid-to-endpoint.sh cr:auto                                               2>&1 >> $log
    else
       echo "   ERROR: Failed to invoke cr-publish-droid-to-endpoint.sh:"                         >> $log
       echo "      CSV2RDF4LOD_BASE_URI:              $CSV2RDF4LOD_BASE_URI"                      >> $log
@@ -214,7 +214,7 @@ pushd $conversion_root &> /dev/null
       echo "pwd:    `pwd`"                                                                        >> $log
       echo "script: `which cr-publish-tic-to-endpoint.sh`"                                        >> $log
       echo cr-publish-tic-to-endpoint.sh cr:auto                                                  >> $log
-      # TEMP HIDE cr-publish-tic-to-endpoint.sh cr:auto                                                  2>&1 >> $log
+      cr-publish-tic-to-endpoint.sh cr:auto                                                  2>&1 >> $log
    else
       echo "   ERROR: Failed to invoke cr-publish-tic-to-endpoint.sh:"                            >> $log
       echo "      CSV2RDF4LOD_BASE_URI:              $CSV2RDF4LOD_BASE_URI"                       >> $log

@@ -214,7 +214,7 @@ pushd $conversion_root &> /dev/null
       echo "pwd:    `pwd`"                                                                        >> $log
       echo "script: `which cr-publish-tic-to-endpoint.sh`"                                        >> $log
       echo cr-publish-tic-to-endpoint.sh cr:auto                                                  >> $log
-      cr-publish-tic-to-endpoint.sh cr:auto                                                  2>&1 >> $log
+      # TEMP HIDE cr-publish-tic-to-endpoint.sh cr:auto                                                  2>&1 >> $log
    else
       echo "   ERROR: Failed to invoke cr-publish-tic-to-endpoint.sh:"                            >> $log
       echo "      CSV2RDF4LOD_BASE_URI:              $CSV2RDF4LOD_BASE_URI"                       >> $log

@@ -1,0 +1,9 @@
+PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
+PREFIX void:       <http://rdfs.org/ns/void#>
+
+select distinct ?instance
+where {
+ ?instance a conversion:AbstractDataset; a ?type .
+ filter(?type != void:AbstractDataset) 
+ filter(?type != void:Dataset)
+}

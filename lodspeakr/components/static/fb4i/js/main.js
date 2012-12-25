@@ -185,7 +185,7 @@ function _updateGUI(e){
         '+predicateLabels+' \
       '+namedGraphEnd+' \
     }ORDER BY '+labelVariable+' '+thingVariable+' \
-    LIMIT 1000';
+    LIMIT 10000';
     $.ajax({
         url: endpoint,
         beforeSend: function(jqXHR, settings) {
@@ -206,12 +206,12 @@ function _updateGUI(e){
               options += '<option value="'+value.thing.value+'" data-name="'+label+'">'+label+'</option>';
           });
           if(existingFacets == undefined){
-            $("#"+item.id).append('<button class="btn btn-mini clear-button" data-target="select-'+item.id+'">clear</button><select multiple class="select-facet facet" id="select-'+item.id+'">'+options+'</select>');
+            $("#"+item.id).append('<button class="btn btn-mini clear-button" data-target="select-'+item.id+'">clear</button><select multiple class="select-facet facet" size="10" id="select-'+item.id+'">'+options+'</select>');
           }
           var currentSelection = new Array();
-          $("#select-"+item.id+" option:selected").each(function(i){console.log("asd", $(this));currentSelection.push($(this).val());});
-          console.log(item.id, currentSelection, $("#select-"+item.id+" option:selected"));
+          $("#select-"+item.id+" option:selected").each(function(i){console.log("asd", $(this).val());currentSelection.push($(this).val());});
           $("#select-"+item.id).html(options);
+          $.each(currentSelection, function(i, previouslySelected){$("#select-"+item.id+" option[value='"+previouslySelected+"']").attr("selected", true)});
           if(existingFacets == undefined){
             $('#waiting-'+item.id).addClass('hide');
             //Select values in case they are indicated in hash
@@ -232,7 +232,7 @@ function _clearFacet(e){
 
 function init(){
   $.each(facets, function(i, item){
-      $("#facets").append('<div class="table-bordered facetDiv well" id="'+item.id+'"><h3>'+item.id.charAt(0).toUpperCase() + item.id.slice(1)+'</h3><div id="waiting-'+item.id+'"class="progress progress-striped active"><div class="bar" style="width: 100%;"></div></div></div>');
+      $("#facets").append('<div class="table-bordered facetDiv well" id="'+item.id+'"><div style="float:left;display:inline"><h3>'+item.id.charAt(0).toUpperCase() + item.id.slice(1)+'</h3></div><div id="waiting-'+item.id+'"class="progress progress-striped active"><div class="bar" style="width: 100%;"></div></div></div>');
       _getFacetData(i, item);
   });  
   $(".limit-label").html(conf.fetchLimit);

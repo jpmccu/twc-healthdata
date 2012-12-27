@@ -113,7 +113,7 @@
     <div class="fluid-row">
      <div class="span5">
       <h3>Datasets with common predicates</h3>
-      {%if models.uses_predicate|length == 0%}
+      {%if models.uses_predicate%}
       <div class="alert alert-info">No datasets found</div>
       {%else%}
       <ul>
@@ -126,7 +126,7 @@
 
      <div class="span5">
       <h3>Datasets with common vocabularies</h3>
-      {%if models.vocabulary|length == 0%}
+      {%if models.vocabulary%}
       <div class="alert alert-info">No datasets found</div>
       {%else%}
       <ul>

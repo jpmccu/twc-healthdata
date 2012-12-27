@@ -241,6 +241,7 @@ function init(){
       if($elem.val().length >= 3 || $elem.val() === ""){
         $elem.trigger('change');
       }
+      event.preventDefault();
     },
     delay: 400
 });
@@ -249,13 +250,13 @@ function init(){
   $("body").on('click', ".pager-button", function(e){
       if($(e.target).is('.disabled')){return;}
       if($(e.target).attr("id") == 'previous'){
-        fetchOffset--;
+        conf.fetchOffset--;
       }
-      if(fetchOffset < 1){$("#previous").addClass('disabled');}
+      if(conf.fetchOffset < 1){$("#previous").addClass('disabled');}
       if($(e.target).attr("id") == 'next'){      
-        fetchOffset++;
+        conf.fetchOffset++;
       }
-      if(fetchOffset > 0){$("#previous").removeClass('disabled');}
+      if(conf.fetchOffset > 0){$("#previous").removeClass('disabled');}
 
       _executeQuery();
   });

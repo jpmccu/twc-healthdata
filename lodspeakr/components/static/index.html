@@ -2,11 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Welcome to {{lodspk.sitetitle}}</title>
+    <title>Welcome to {{lodspk.title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Jim McCusker,Tim Lebo,Alvaro Graves">
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="fb4i/css/fb4i.css" rel="stylesheet"/>
+  <link href="fb4i/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="fb4i/css/bootstrap-responsive.css" rel="stylesheet"/>
+  <script src="fb4i/js/jquery.min.js"></script>
+  <script src="fb4i/js/bootstrap.min.js"></script>
+  <script src="fb4i/js/bootstrap-modal.js"></script>
+  <script src="fb4i/js/jquery.typing-0.2.0.min.js"></script>
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -17,28 +24,8 @@
         padding-right:20px;
         background-position: right;
       }
+      .fb{font-family: sans-serif; font-size: 12px;}
     </style>
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="screen" />
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap-typeahead.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-        $('.typeahead').typeahead({
-            source: function (typeahead, query) {
-              $('.typeahead').addClass('wait');[]
-              return $.get('search/'+encodeURIComponent(query), { }, function (data) {
-                  $('.typeahead').removeClass('wait');[]
-                  return typeahead.process(data);
-              }, 'json');
-            },
-            onselect: function (obj) {
-              $('.typeahead').attr('disabled', true);
-              window.location = obj.uri;
-            }
-        });
-    });
-    </script>
   </head>
   <body>
  <div class="navbar navbar-fixed-top">
@@ -65,33 +52,48 @@
 
     <div class="container">
       <h1>Welcome to healthdata.tw.rpi.edu</h1>
-      <p></p>
 
-      <div class="row-fluid">
-        <div class="span5 well">
-          <h2>Explore our datasets</h2>
-          <p>Check the <a href='datasets'>datasets we have available</a> as Linked RDF.</p>
-        </div>
-
-        <div class="span5 well">
-          <h2>CKAN repository</h2>
-          <p>Check out our <a href='/hub'>CKAN repository</a>, a <a href="https://github.com/jimmccusker/twc-healthdata/wiki/Mirroring-a-Source-CKAN-Instance">writable mirror</a> 
+      <div class='fluid-row'>
+       <div class="span10 well">
+        <h3>CKAN repository</h3>
+        <p>Check out our <a href='/hub'>CKAN repository</a>, a <a href="https://github.com/jimmccusker/twc-healthdata/wiki/Mirroring-a-Source-CKAN-Instance">writable mirror</a> 
             of <a href="http://hub.healthdata.gov">http://hub.healthdata.gov</a>.</p>
-        </div>
-      </div>
-
-      <div class="row-fluid">
-       <div class="span5 well">
-        <h2>Behind the curtain</h2>
+        <h3>Behind the curtain</h3>
         <p>This site is maintained through our <a href="https://github.com/jimmccusker/twc-healthdata">github repository</a>;
 	see the <a href="https://github.com/jimmccusker/twc-healthdata/wiki">wiki</a>. 
 	The RDF data is available in <a href="http://healthdata.tw.rpi.edu/sparql">this SPARQL endpoint</a>. 
 	All data that we provide on this site can be automatically reproduced from the original goverment sources using <a href="https://github.com/timrdf/csv2rdf4lod-automation/wiki">csv2rdf4lod</a>.</p>
        </div>
-
       </div>
-
+      <div class='fluid-row'>
+       <div class='span10 fb'>
+        <div class="table-bordered" id="content">
+         <div class="facet-container table-bordered" id="facets">
+          <div class="panel-header table-bordered"><h3>Facets</h3></div>
+          <div class="table-bordered facetDiv well" id="keyword">
+            <h3>Search</h3>
+            <form class="form-inline">
+              <input type="text" class="input-large facet" id="keyword-search" placeholder="Type at least 3 characters">
+            </form>
+          </div>
     </div>
+    <div class="result-container">
+      <div class='panel-header'>
+      <h3 style='float:left;'>Results</h3>
+        <div style='float:right;' class="pager">
+          <button id='previous' class='pager-button btn btn-info disabled'>Previous <span class='limit-label'></span></button>
+          <button id='next' class='pager-button btn btn-info disabled'>Next <span class='limit-label'></span></button>
+        </div>
+        </div>
+      <div id="results" class="table-bordered results"></div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<script src="fb4i/js/facets.js"></script>
+<script src="fb4i/js/render.js"></script>
+<script src="fb4i/js/main.js"></script>
   </body>
 </html>
 

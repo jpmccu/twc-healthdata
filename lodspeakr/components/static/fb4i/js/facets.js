@@ -1,5 +1,5 @@
 var facets = [
-  {'id': 'terms',
+  {'id': 'subjects',
     'facetPredicates': ['dcterms:subject'],
     'facetLabelPredicates': 'skos:prefLabel'
   },

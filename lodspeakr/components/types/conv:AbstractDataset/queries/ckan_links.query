@@ -4,7 +4,7 @@ prefix void:       <http://rdfs.org/ns/void#>
 prefix prov:       <http://www.w3.org/ns/prov#> 
 prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> 
 
-select distinct ?ours ?theirs
+select distinct ?ours 
 where {
    <{{uri}}>
       a void:Dataset, dcat:Dataset;
@@ -17,17 +17,8 @@ where {
    .
 
    ?ours
-      a dcat:Dataset, datafaqs:CKANDataset;
       dcat:distribution ?distribution;
       prov:wasAttributedTo <http://healthdata.tw.rpi.edu>;
-      prov:alternateOf ?theirs
    .
 
-   optional {
-      ?theirs
-         a dcat:Dataset, datafaqs:CKANDataset;
-         prov:alternateOf <{{uri}}>;
-         prov:wasAttributedTo <http://hub.healthdata.gov>
-      .
-   }
 }

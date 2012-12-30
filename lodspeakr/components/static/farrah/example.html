@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  <link href="css/fb4i.css" rel="stylesheet"/>
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/bootstrap-responsive.css" rel="stylesheet"/>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap-modal.js"></script>
+  <script src="js/jquery.typing-0.2.0.min.js"></script>
+  <title>Demo of Farrah, the Fawcetted Browser</title>
+  <style>
+   body{font-family: sans-serif; font-size: 12px;}
+   select{font-family: sans-serif; font-size: 10px;}
+   .clear-button:{top:-30px;}
+  </style>
+ </head>
+ <body>
+ <h2>TV shows from DBpedia</h2>
+ <p>DBpedia may be slow, so please wait patiently.</p> 
+ <div id="f"></div>
+ 
+<script src="js/main.js"></script>
+<script>
+//configuration of the fawcetted browser
+var conf= {
+endpoint: 'http://dbpedia.org/sparql',
+query: {
+  prefixes: {
+    foaf: "http://xmlns.com/foaf/0.1/",
+    dcterms: "http://purl.org/dc/terms/",
+    dgtwc: "http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#",
+    rdfs: "http://www.w3.org/2000/01/rdf-schema#",
+    dbp: "http://dbpedia.org/property/",
+    skos: "http://www.w3.org/2004/02/skos/core#",
+    dbo: "http://dbpedia.org/ontology/",
+    xsd: "http://www.w3.org/2001/XMLSchema#"
+  },
+  variables: ["?thingTitle", "?thing", "?thingDescription"],
+  patterns: ["?thing a dbo:TelevisionShow", 
+             "?thing rdfs:label ?thingTitle", 
+             "?thing dbo:abstract ?thingDescription",
+             "FILTER(lang(?thingTitle) = 'en')",
+             "FILTER(lang(?thingDescription) = 'en')"
+
+             ],
+},
+resourceType: ["dbo:TelevisionShow"],
+facets: [
+  {'id': 'genre',
+    'facetPredicates': ['dbo:genre'],
+    'facetLabelPredicates': 'rdfs:label',  
+    'facetLabelLanguage': 'en',
+    'facetLimit': 1000,
+  },
+  {'id': 'language',
+    'facetPredicates': ['dbo:language'],
+    'facetLabelPredicates': 'rdfs:label',  
+    'facetLabelLanguage': 'en'
+  },  
+  {'id': 'country',
+    'facetPredicates': ['dbo:country'],
+    'facetLabelPredicates': 'rdfs:label',
+    'facetLabelLanguage': 'en'
+  },
+],
+};
+
+//run it in div "f"
+Farrah.init("f", conf);
+</script>
+ </body>
+</html>

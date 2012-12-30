@@ -1,0 +1,48 @@
+.facet-container{
+  float:left;
+  max-width:29%;
+  width:29%;
+  min-height:100px;
+}
+.facet{
+  font-family: sans-serif;
+  font-size: 10px;
+}
+.facetDiv{
+display:block;
+  clear:both;
+  margin-top: 3px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.results{
+  float:left;
+  max-width:100%;
+  width:100%;
+  min-height:300px;
+}
+.panel-header{
+  float:right;
+  width:100%;
+  clear:both;
+  max-height:100px;
+  height:50px;
+  display:block;
+}
+.result-container{
+  float:left;
+  max-width:69%;
+  width:69%;
+  max-height:100px;
+}
+.select-facet{
+width:98%;
+ margin-left: auto;   margin-right: auto; 
+}
+.clear-button{
+float:right;
+}
+.result{
+margin-bottom:20px;
+border-bottom: 2px solid red;
+}

@@ -4,24 +4,27 @@
 
      <div class="fluid-row">
       <div class="span12">
-        <h2>Dataset <a href='{{uri}}'><span property='dc:identifier'>{{first.details.id.value}}</span></a></h2>
+        <h2><a href='{{uri}}'><span property='dc:title'>{{first.details.dataset_identifier.value}} version {{first.details.version_identifier.value}}</span></a></h2>
       </div>
      </div>
 
      <div class="fluid-row">
-      <div class="span10">
-         <h3>is a 
-            {%for i in models.types%}
-               {%if !forloop.first%}, {%endif%}
-              <span about="{{uri}}" typeof='{{i.type.curie}}'>
-                  <a href="{{i.type.mirroredUri}}">{%if i.label.value %}{{i.label.value}}{%else%}{{i.type.curie}}{%endif%}</a>
-              </span>
-            {%endfor%}.
-         </h3>
-         <p property='dc:description'>{{first.details.description.value}}</p>
+      <div class="span7">
+        <p property='dc:description'>{{first.details.description.value}}</p>
+        <p><b>Keywords:</b>
+          {%for i in models.keywords%}{%if !forloop.first%}, {%endif%}
+              <span about="{{uri}}" property="dcat:keyword">{{i.keyword.value}}</span>
+            {%endfor%}</p>
+       </div>
+       <div class="span3">
+        <h3>Types</h3>
+          {%for i in models.types%}
+                <h4 about="{{uri}}" typeof='{{i.type.curie}}'>
+              <a href="{{i.type.mirroredUri}}">{%if i.label.value %}{{i.label.value}}{%else%}{{i.type.curie}}{%endif%}</a>
+            </h4>
+          {%endfor%}
        </div>
      </div>
-
 
 
     {% include '../void\:Dataset/void_data_dumps.html.template'%}

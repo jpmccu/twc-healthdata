@@ -34,7 +34,7 @@
     <div class="fluid-row">
       <div class="span7">
         <h3>Related Subjects</h3>
-        {{models.subjects|D3CirclePacking:"label,parent,datasetCount"}}
+        {{models.subjects|D3CirclePacking:"label,parent,datasetCount,subject,width=600,height=600"}}
       </div>
       <div class="span3">
         <h3>Loaded Samples</h3>
@@ -70,19 +70,6 @@
 		{%endif%}
          <h3>CKAN listings <img width="30px" src="{{lodspk.home}}img/logo_64px_wide.png" alt="Comprehensive Knowledge Archive Network"/> </h3>
          
-         {%if models.ckan_links|length > 0%}
-           <p>This RDF dataset is derived from the following CKAN dataset listings.</p>
-           <ul>
-             <li>Listed at <a href='{{first.ckan_links.theirs.value}}'>{{first.ckan_links.theirs.value|urischeme}}://{{first.ckan_links.theirs.value|hostname}}</a>
-             </li>
-             {%if first.ckan_links.ours.value %}
-                <li>Listed at <a href='{{first.ckan_links.ours.value}}'>{{first.ckan_links.ours.value|urischeme}}://{{first.ckan_links.ours.value|hostname}}</a>
-                </li>
-             {%endif%}
-           </ul>
-         {%else%}
-           <div class="alert alert-info">No CKAN links found</div>
-         {%endif%}
 
          {%if models.ckan|length == 0%}
            <div class="alert alert-info">No CKAN links found</div>

@@ -10,10 +10,12 @@
   <link href="farrah/css/farrah.css" rel="stylesheet"/>
   <link href="farrah/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="farrah/css/bootstrap-responsive.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
   <script src="farrah/js/jquery.min.js"></script>
   <script src="farrah/js/bootstrap.min.js"></script>
   <script src="farrah/js/bootstrap-modal.js"></script>
   <script src="farrah/js/jquery.typing-0.2.0.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -72,6 +74,7 @@
       </div>
     </div>
 <script src="farrah/js/main.js"></script>
+<script src="farrah/js/dateWidget.js"></script>
 <script>
 var conf = {
    endpoint: 'http://healthdata.tw.rpi.edu/sparql',
@@ -103,6 +106,7 @@ resourceType: ["conversion:AbstractDataset"],
   {'id': 'dates_modified',
     'facetPredicates': ['dcterms:modified'],
     'facetEntityCast': 'xsd:date',
+    'facetWidget': 'date'
   }],
 }
 Farrah.init("f", conf);

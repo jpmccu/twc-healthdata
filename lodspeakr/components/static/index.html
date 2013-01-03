@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Jim McCusker,Tim Lebo,Alvaro Graves">
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="alternate" type="text/turtle" href="http://healthdata.tw.rpi.edu/void.ttl"/>
   <link href="farrah/css/farrah.css" rel="stylesheet"/>
   <link href="farrah/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="farrah/css/bootstrap-responsive.css" rel="stylesheet"/>
@@ -29,7 +30,7 @@
       .fb{font-family: sans-serif; font-size: 12px;}
     </style>
   </head>
-  <body>
+  <body prefix="prov: http://www.w3.org/ns/prov#">
  <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -52,19 +53,30 @@
       </div>
     </div>
 
-    <div class="container">
-      <h1>Welcome to healthdata.tw.rpi.edu</h1>
+    <div class="container" about="http://healthdata.tw.rpi.edu">
+      <h1></h1>
 
       <div class='fluid-row'>
        <div class="span10 well">
+        <h3>HealthData.gov Platform (HDP) on the Semantic Web</h3>
+         <p>Welcome! This site provides the Department of Health and Human Services' 
+            <a href="http://www.healthdata.gov/developer-challenges-overview">HealthData.gov Platform (HDP)</a> as part of the semantic web.
+         </p>
+        <h3>Linked Data</h3>
+         The data shown on this site is available as RDF.
+         <ul>
+         <li>It can be queried from <a property="prov:alternateOf" href="http://healthdata.tw.rpi.edu/sparql">this SPARQL endpoint</a>.</li>
+         <li>A full list of datasets and data dump URLs is available in <a property="prov:alternateOf" href="http://healthdata.tw.rpi.edu/void.ttl">this VoID listing</a>.</li>
+         <li>Any data element URI can be requested using content negotiation (e.g., as <code>application/rdf+xml</code>).
+         </p>
+         </ul>
         <h3>CKAN repository</h3>
-        <p>Check out our <a href='/hub'>CKAN repository</a>, a <a href="https://github.com/jimmccusker/twc-healthdata/wiki/Mirroring-a-Source-CKAN-Instance">writable mirror</a> 
+        <p>Check out our <a href='/hub'>CKAN repository</a>, our <a href="https://github.com/jimmccusker/twc-healthdata/wiki/Mirroring-a-Source-CKAN-Instance">writable mirror</a> 
             of <a href="http://hub.healthdata.gov">http://hub.healthdata.gov</a>.</p>
         <h3>Behind the curtain</h3>
         <p>This site is maintained through our <a href="https://github.com/jimmccusker/twc-healthdata">github repository</a>;
 	see the <a href="https://github.com/jimmccusker/twc-healthdata/wiki">wiki</a>. 
-	The RDF data is available in <a href="http://healthdata.tw.rpi.edu/sparql">this SPARQL endpoint</a>. 
-	All data that we provide on this site can be automatically reproduced from the original goverment sources using <a href="https://github.com/timrdf/csv2rdf4lod-automation/wiki">csv2rdf4lod</a>.</p>
+	All data that we provide on this site can be automatically reproduced from the original goverment sources using <a href="https://github.com/timrdf/csv2rdf4lod-automation/wiki">csv2rdf4lod</a>. The site was developed by <a property="prov:wasAttributedTo" href="http://tw.rpi.edu">Tetherless World Constellation</a>.</p>
        </div>
       </div>
       <div class='fluid-row'>

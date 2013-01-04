@@ -22,7 +22,7 @@ var Farrah = {
     var facetsLoaded = 0;
     var ajaxObj = undefined;
     
-    hashParams = self._parseArgs();
+    self.conf.hashParams = self._parseArgs();
     //Create necessary dom elements
     var _farrah = $("#"+divId), _facetDiv = null, _resultDiv = null;
     _farrah.append('<div class="table-bordered" id="farrah-content">\
@@ -49,7 +49,7 @@ var Farrah = {
       </div>');
       $.each(self.conf.facets, function(i, item){
           var title = item.id.replace("_", " ");
-          $(self.div+" #farrahFacets").append('<div class="table-bordered facetDiv well" id="'+item.id+'"><div style="float:left;display:inline"><h3>'+title.charAt(0).toUpperCase() + title.slice(1)+'</h3></div><div id="waiting-'+item.id+'"class="progress progress-striped active"><div class="bar" style="width: 100%;"></div></div></div>');
+          $(self.div+" #farrahFacets").append('<div class="table-bordered facetDiv well" id="div-'+item.id+'"><div style="float:left;display:inline"><h3>'+title.charAt(0).toUpperCase() + title.slice(1)+'</h3></div><div id="waiting-'+item.id+'"class="progress progress-striped active"><div class="bar" style="width: 100%;"></div></div></div>');
           self._getFacetData(i, item);
       });  
       $(self.div+" .limit-label").html(self.conf.fetchLimit);
@@ -85,11 +85,11 @@ var Farrah = {
   _updateFacetFromHash: function(id){
     var self = this;
     if(self.conf.hashParams['keyword-search'] !== undefined && self.conf.hashParams['keyword-search'] != ""){
-      $("#"+self.div+" #keyword-search").val(self.conf.hashParams['keyword-search']);
+      $("#keyword-search").val(self.conf.hashParams['keyword-search']);
     }
-    if(hashParams[id] !== undefined){
-      $.each(hashParams[id], function(i, item){
-          $(self.div+" #select-"+id+" option[value='"+item+"']").attr("selected", true);
+    if(self.conf.hashParams[id] !== undefined){
+      $.each(self.conf.hashParams[id], function(i, item){
+          $("#"+id+" option[value='"+item+"']").attr("selected", true);
       });
     }
   },
@@ -97,53 +97,13 @@ var Farrah = {
   _executeQuery: function(patterns){ 
     var self = this;
     var facetPatterns = "";
-    var hashString = "#";
     var namedGraphStart = "", namedGraphEnd = "";
     //Stop ajax already existing request
     if(self.ajaxObj !== undefined){
       self.ajaxObj.abort();
     }
     
-    if($("#"+self.div+" #keyword-search").val() !== undefined && $("#"+self.div+" #keyword-search").val() != "" && $("#"+self.div+" #keyword-search").val().length >= 3){
-      facetPatterns += 'FILTER(regex('+self.conf.query.variables[0]+', "'+$("#"+self.div+" #keyword-search").val()+'", "i")) '
-      hashString +="keyword-search="+$("#"+self.div+" #keyword-search").val()+"&";
-    }
     facetPatterns += patterns.join("\n");
-    /*$.each(self.conf.facets, function(i, item){
-        var rightDelimiter = '>', leftDelimiter = '<';
-        if(item.facetLabelPredicates === undefined){
-          rightDelimiter = '"';
-          leftDelimiter = '"';
-        }
-        selectedValues = $(self.div+" #select-"+item.id+" option:selected");
-        if(self.conf.firstQuery == true && selectedValues.length == 0 && item.default !== undefined){
-          selectedValues.push($("#"+self.div+" #select-"+item.id+" option[value='"+item.default+"']").attr("selected", true));
-        }
-        hashString += item.id+"=";
-        if(selectedValues.length > 1){
-          facetPatterns += '{';
-        }
-        selectedValues.each(function(index, value){
-            var filter = "";
-            var objVar = $(value).val();
-            if (item.facetEntityCast !== undefined){
-              objVar = '?var'+parseInt(Math.random()*100000);
-              filter = "FILTER("+item.facetEntityCast+"("+objVar+") = \""+$(value).val()+"\"^^"+item.facetEntityCast+")";
-              rightDelimiter = "";
-              leftDelimiter = "";
-            }
-            facetPatterns += self.conf.query.variables[1]+' ' + item.facetPredicates[0] + ' '+leftDelimiter + objVar+ rightDelimiter +' .               '+filter;
-            hashString += $(value).val()+"|";
-            if(selectedValues.length > 1){
-              if(index < selectedValues.length -1){
-                facetPatterns += '}UNION{';
-              }else{
-                facetPatterns += '}';
-              }
-            }
-        });
-        hashString += "&";
-    });*/
     firstQuery = false;
     
     //Get Prefixes
@@ -195,7 +155,6 @@ var Farrah = {
                     }
         },
     });
-    window.location.hash = hashString;
     
   },
   
@@ -206,34 +165,60 @@ var Farrah = {
     var newPatterns = new Array();
     //Add query pattern if a text-based search exist
     newPatterns = self._getFacetStatus();
-
-    
     $(".facet").each(function(index){
         var aux = self._getFacetData(index, self.conf.facets[index], newPatterns);
     });
-    //  }
     self.conf.fetchOffset = 0;
     self._executeQuery(newPatterns);
   },
   
+  _getWidgetFacetStatus: function(id, widget){
+    var currentWidget = undefined;
+    switch(widget){
+    case 'date':
+        return getDateWidgetStatus(id);
+      break;
+    }
+  },
+  
+  _updateWidgetFacetFromHash: function(id, widget, data){
+    var self = this;
+    var currentWidget = undefined;
+    switch(widget){
+    case 'date':
+        return updateDateWidgetFromHash(id, data);
+      break;
+    }
+  },
   
   _getFacetStatus: function(){
     var self = this;
     var newPatterns = new Array();
+    var hashObj = self._parseArgs();
     var keywords = $("#keyword-search").val();
-    if(keywords !== undefined && keywords != ""){
-      newPatterns.push('FILTER(regex(?thing, "'+keywords+'", "i")) ');
+    
+    //Queries based on keyword search
+    if($("#keyword-search").val() !== undefined && $("#keyword-search").val() != "" && $("#keyword-search").val().length >= 3){
+      newPatterns.push('FILTER(regex('+self.conf.query.variables[0]+', "'+$("#keyword-search").val()+'", "i")) ');      
     }
+    hashObj["keyword-search"]= [$("#keyword-search").val()];
+
     //Add query patterns based on the selection of each facet
     $(".facet").each(function(index){
         var selectId = $(this).attr("id");
         if($(this).attr("data-widget") != null){
           var aux = self._getWidgetPatterns(selectId, $(this).attr("data-widget"), self.conf.facets[index], self.conf.facets[index]);
           newPatterns.push.apply(newPatterns, aux);
+
+          hashObj[selectId] = self._getWidgetFacetStatus(selectId, $(this).attr("data-widget"));
         }else{
+          hashObj[selectId] = new Array();
           $(self.div+" #"+selectId+" option:selected").each(function(i, j){
               //Add filter in case of cast available
               var filter = "", objVar = $(j).html(), delimiter = '"';
+              if($.inArray($(j).val(), hashObj[selectId]) < 0 ){
+                hashObj[selectId].push($(j).val())
+              };
               if(self.conf.facets[index].facetEntityCast !==undefined){
                 objVar = '?var'+parseInt(Math.random()*100000);
                 delimiter = " ";
@@ -249,7 +234,17 @@ var Farrah = {
           });
         }
     });
+        window.location.hash = self._argsToHash(hashObj);
+
     return newPatterns;
+  },
+  
+  _argsToHash: function(obj){
+    var hash = "#";
+    for(var i in obj){
+      hash+=i+"="+obj[i].join("|")+"&";
+    }
+    return hash;
   },
   _getFacetData: function(i, item, existingFacets){
     var self = this;
@@ -318,7 +313,7 @@ var Farrah = {
     var query = queryPrefixes+
     'SELECT DISTINCT '+thingSelected+' '+labelVariable+' WHERE { \
       '+namedGraphStart+'\
-      '+resourceTypes+' '+"\n###\n"+facetPattern+"\n###\n"+' '+selectedFacets+'\
+      '+resourceTypes+"\n"+facetPattern+"\n"+selectedFacets+'\
       '+predicateLabels+' \
       '+namedGraphEnd+' \
       '+filterByLanguage+' \
@@ -337,31 +332,38 @@ var Farrah = {
         async: false,
         success: function(data, textStatus, jqXHR){
           var self = jqXHR.thisSelf;
-          options = "";
+          options = {};
           $.each(data.results.bindings, function(index, value){
               var label = value["var_"+item.id].value;
               if(value["var_"+item.id+"Label"] !== undefined){
                 label = value["var_"+item.id+"Label"].value;
               }                                              
-              options += '<option value="'+value["var_"+item.id].value+'" data-name="'+label+'">'+label+'</option>';
+              options[label] = value["var_"+item.id].value;
           });
           if(existingFacets == undefined){
             if(facetWidget !==undefined){
-              $(self.div+" #"+item.id).append('<div style="display:block;min-height:30px"></div>');
-             self._drawWidget($(self.div+" #"+item.id), facetWidget, data);
+              $("#div-"+item.id).append('<div style="display:block;min-height:30px"></div>');
+             self._drawWidget(item.id, facetWidget, data);
             }else{
-              $(self.div+" #"+item.id).append('<div style="display:block;min-height:30px"><button class="btn btn-mini clear-button" data-target="'+item.id+'">clear</button></div>');
-              $(self.div+" #"+item.id).append('<select multiple class="select-facet facet" size="10" id="select-'+item.id+'">'+options+'</select>');
+              $("#div-"+item.id).append('<div style="display:block;min-height:30px"><button class="btn btn-mini clear-button" data-target="'+item.id+'">clear</button></div>');
+              $("#div-"+item.id).append('<select multiple class="select-facet facet" size="10" id="'+item.id+'">'+options+'</select>');
             }
           }
-          if(facetWidget !==undefined){       
+          var selectId = item.id;
+          if(facetWidget !==undefined){
             self._updateWidgetFacet(item.id, facetWidget, data);
+            if(existingFacets == undefined){
+             self._updateWidgetFacetFromHash(selectId,$("#"+selectId).attr("data-widget"), self.conf.hashParams[selectId] );
+            }
           }else{
             var currentSelection = new Array();
-            $(self.div+" #select-"+item.id+" option:selected")
+            $("#"+selectId+" option:selected")
             .each(function(i){currentSelection.push($(this).val());});
-            $(self.div+" #select-"+item.id).html(options);
-            $.each(currentSelection, function(i, previouslySelected){$(self.div+" #select-"+item.id+" option[value='"+previouslySelected+"']").attr("selected", true)});
+            $("#"+selectId).empty();
+            $.each(options, function(k, v) {
+                $("#"+selectId).append($("<option></option>").attr("value", v).text(k));
+            });
+            $.each(currentSelection, function(i, previouslySelected){$("#"+selectId+" option[value='"+previouslySelected+"']").attr("selected", true)});
             if(existingFacets == undefined){
               //Select values in case they are indicated in hash
               self._updateFacetFromHash(item.id);
@@ -422,8 +424,8 @@ var Farrah = {
   _clearFacet: function(e){
     var self = this;
     var selectFacet = $(e.target).attr("data-target");
-    $("#select-"+selectFacet+" option:selected").removeAttr("selected");
-    $("#select-"+selectFacet).trigger('change'); 
+    $("#"+selectFacet+" option:selected").removeAttr("selected");
+    $("#"+selectFacet).trigger('change'); 
   },
   
   _parseArgs: function(){
@@ -431,7 +433,7 @@ var Farrah = {
     var r = {};
     var s = window.location.hash.slice(1);
     $.each(s.split('&'), function(i, item){
-        if(item.length > 0){
+        if(item !==undefined && item.length > 0){
           pair = item.split('=');
           if(pair[1].length >0){
             var values = [];

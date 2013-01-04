@@ -1,0 +1,15 @@
+PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
+PREFIX void: <http://rdfs.org/ns/void#>
+
+SELECT DISTINCT ?dataset ?id 
+WHERE {
+ ?dataset void:subset ?versioned .
+ ?versioned void:subset ?layer .
+ <{{uri}}> void:subset ?thisVersioned .
+ ?thisVersioned void:subset ?thisLayer .
+  ?thisLayer conversion:uses_predicate ?p .
+  ?layer conversion:uses_predicate ?p .
+  optional { ?dataset dcterms:identifier ?id }
+  optional { ?p rdfs:label ?pL }
+}
+order by ?dataset

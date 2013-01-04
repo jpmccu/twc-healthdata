@@ -1,1 +1,10 @@
-../../void:Dataset/queries/details.query
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX conv: <http://purl.org/twc/vocab/conversion/>
+PREFIX void: <http://rdfs.org/ns/void#>
+
+SELECT DISTINCT ?dataset_identifier ?version_identifier ?description  WHERE{
+  <{{uri}}> conv:dataset_identifier ?dataset_identifier ;
+            conv:version_identifier ?version_identifier .
+  ?parent_dataset void:subset <{{uri}}>;
+                  dcterms:description ?description .
+}

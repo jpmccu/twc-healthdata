@@ -1,7 +1,11 @@
-SELECT DISTINCT ?s where{
- {
+PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
+PREFIX void: <http://rdfs.org/ns/void#>
+
+SELECT DISTINCT ?sample ?datasetVersion ?identifier where{
   <{{uri}}> void:subset ?versioned .
   ?versioned void:subset ?layered .
-  ?layered void:subset  ?s .
-  ?s a conversion:DatasetSample .
+  ?layered void:subset  ?sample .
+  ?sample a conversion:DatasetSample .
+  ?sample conversion:dataset_version ?datasetVersion;
+          conversion:conversion_identifier ?identifier.
 }

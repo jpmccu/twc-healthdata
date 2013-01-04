@@ -1,0 +1,18 @@
+PREFIX dcterms:    <http://purl.org/dc/terms/>
+PREFIX void:       <http://rdfs.org/ns/void#>
+PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
+PREFIX health:     <http://purl.org/twc/health/vocab/>
+
+select distinct ?dataset ?id
+where {
+ ?dataset void:subset ?versioned .
+ ?versioned void:subset ?layer .
+  <{{uri}}> void:subset ?thisVersioned .
+  ?thisVersioned void:subset ?thisLayer .
+  {
+   ?layer health:sharesCellValuesWith ?thisLayer .
+  }union{
+   ?thisLayer health:sharesCellValuesWith ?layer .
+  }
+  optional { ?dataset dcterms:identifier ?id }
+}

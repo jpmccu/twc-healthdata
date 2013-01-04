@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "electronic-animal-drug-product";
-   prov:wasDerivedFrom :as_a_xls_db8e2f0f1cfa504262ac6586fbac6425;
+   prov:wasDerivedFrom <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/UCM198204.zip>;
 .
 
 :as_a_xls_db8e2f0f1cfa504262ac6586fbac6425
    a dcat:Distribution;
-   dcat:downloadURL <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/UCM198204.zip>;
+   dcat:accessURL <http://www.fda.gov/downloads/ForIndustry/DataStandards/StructuredProductLabeling/UCM198204.zip>;
    dcterms:format [ rdfs:label "XLS" ];
 .
 

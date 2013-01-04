@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "renal-dialysis-facility-medicare-cost-report-data-2005";
-   prov:wasDerivedFrom :as_a_csv_be6ae6b179b137b4c2a43f7f295ecfd4;
+   prov:wasDerivedFrom <http://www.cms.hhs.gov/CostReports/downloads/RENALFY2005.zip>;
 .
 
 :as_a_csv_be6ae6b179b137b4c2a43f7f295ecfd4
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/RENALFY2005.zip>;
+   dcat:accessURL <http://www.cms.hhs.gov/CostReports/downloads/RENALFY2005.zip>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

@@ -1,0 +1,14 @@
+SELECT DISTINCT ?dataset  ?id
+WHERE {
+?dataset void:subset ?versioned .
+ ?versioned void:subset ?layer .
+  <{{uri}}> void:subset ?thisLayer .
+   ?thisLayer void:vocabulary ?p .
+   ?layer void:vocabulary ?p .
+
+  OPTIONAL{ ?dataset dcterms:identifier ?id}
+  FILTER(?dataset != <{{uri}}>)
+  OPTIONAL { ?dataset a ?type }
+  FILTER( ?type != <http://purl.org/twc/vocab/conversion/MetaDataset> )
+}
+order by ?dataset

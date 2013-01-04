@@ -60,6 +60,7 @@
          <span>All conversion:base_uri appear to be within the right namespace.</span>
       {%endif%}
 
+
       <h1>Missing Predicate Labels</h1>
       {% if models.base_uri|length > 0 %}
          <p>The following properties are missing their labels. This can happen because the relevant ontology hasn't been loaded, because of an error in the URI, or because it hasn't been defined yet. These are all things to fix.
@@ -72,6 +73,22 @@
       {%else%}
          <span>All predicates appear to have labels. Please check that you've loaded data.</span>
       {%endif%}
+
+
+
+      <h1>conversion:AbstractDataset is subclass of void:Dataset</h1>
+      {% if models.abstractdataset_subclassof_voiddataset|length > 0 %}
+         <p>The following instances are AbstractDatasets but are not void:Datasets.
+         </p>
+         <ul>
+         {% for row in models.abstractdataset_subclassof_voiddataset %}
+             <li><a href="{{ row.property.mirroredUri }}">{{row.property.curie}}</a></li>
+         {% endfor %}
+        </ul>
+      {%else%}
+         <span>All AbstractDatasets are also void:Datasets.</span>
+      {%endif%}
+
     </div>
 
   </body>

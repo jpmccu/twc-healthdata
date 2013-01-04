@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "medlineplus-health-topic-files";
-   prov:wasDerivedFrom :as_a_xml_d3f7e94a20273d1937878d5baf53197a;
+   prov:wasDerivedFrom <http://www.nlm.nih.gov/medlineplus/xml/mplus_topics_compressed_2012-12-15.zip>;
 .
 
 :as_a_xml_d3f7e94a20273d1937878d5baf53197a
    a dcat:Distribution;
-   dcat:downloadURL <http://www.nlm.nih.gov/medlineplus/xml/mplus_topics_compressed_2012-12-15.zip>;
+   dcat:accessURL <http://www.nlm.nih.gov/medlineplus/xml/mplus_topics_compressed_2012-12-15.zip>;
    dcterms:format [ rdfs:label "XML" ];
 .
 

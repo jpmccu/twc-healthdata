@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "food-recalls";
-   prov:wasDerivedFrom :as_a_xls_1b23afe181ffc781feae5eb0f1510097;
+   prov:wasDerivedFrom <http://www.accessdata.fda.gov/scripts/newpetfoodrecalls/PetFoodRecallProductsList2009.xls>;
 .
 
 :as_a_xls_1b23afe181ffc781feae5eb0f1510097
    a dcat:Distribution;
-   dcat:downloadURL <http://www.accessdata.fda.gov/scripts/newpetfoodrecalls/PetFoodRecallProductsList2009.xls>;
+   dcat:accessURL <http://www.accessdata.fda.gov/scripts/newpetfoodrecalls/PetFoodRecallProductsList2009.xls>;
    dcterms:format [ rdfs:label "XLS" ];
 .
 

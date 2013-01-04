@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "child-support-enforcement-annual-data-report-form-2008";
-   prov:wasDerivedFrom :as_a_csv_a5fce49ec16090e95e9b43dda7862d38;
+   prov:wasDerivedFrom <http://www.acf.hhs.gov/datagov-datasets/ocse/dcs/34A_CSE_ANNUAL.2008.csv>;
 .
 
 :as_a_csv_a5fce49ec16090e95e9b43dda7862d38
    a dcat:Distribution;
-   dcat:downloadURL <http://www.acf.hhs.gov/datagov-datasets/ocse/dcs/34A_CSE_ANNUAL.2008.csv>;
+   dcat:accessURL <http://www.acf.hhs.gov/datagov-datasets/ocse/dcs/34A_CSE_ANNUAL.2008.csv>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

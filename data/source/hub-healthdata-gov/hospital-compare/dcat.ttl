@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospital-compare";
-   prov:wasDerivedFrom :as_a_rdf_1d3ed1dc70d2d0d165fd4901ebede027;
+   prov:wasDerivedFrom <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/hqi-hosp-hcahps-msr/version/2012-Jul-17/thing_133343>;
 .
 
 :as_a_rdf_1d3ed1dc70d2d0d165fd4901ebede027
    a dcat:Distribution;
-   dcat:downloadURL <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/hqi-hosp-hcahps-msr/version/2012-Jul-17/thing_133343>;
+   dcat:accessURL <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/hqi-hosp-hcahps-msr/version/2012-Jul-17/thing_133343>;
    dcterms:format [ rdfs:label "rdf" ];
 .
 

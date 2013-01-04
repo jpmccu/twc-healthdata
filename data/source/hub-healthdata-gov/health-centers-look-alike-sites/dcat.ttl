@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "health-centers-look-alike-sites";
-   prov:wasDerivedFrom :as_a_csv_b1b622264f6b966abbad3280862e4815;
+   prov:wasDerivedFrom <http://datawarehouse.hrsa.gov/DataDownload/HCC/HCCs_and_Lookalikes.zip>;
 .
 
 :as_a_csv_b1b622264f6b966abbad3280862e4815
    a dcat:Distribution;
-   dcat:downloadURL <http://datawarehouse.hrsa.gov/DataDownload/HCC/HCCs_and_Lookalikes.zip>;
+   dcat:accessURL <http://datawarehouse.hrsa.gov/DataDownload/HCC/HCCs_and_Lookalikes.zip>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

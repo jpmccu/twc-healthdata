@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "hospital-medicare-cost-report-data-fy2003";
-   prov:wasDerivedFrom :as_a_csv_b87d5cb37461de89634590b51130b84c;
+   prov:wasDerivedFrom <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY2003.zip>;
 .
 
 :as_a_csv_b87d5cb37461de89634590b51130b84c
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY2003.zip>;
+   dcat:accessURL <http://www.cms.hhs.gov/CostReports/downloads/HOSPITALFY2003.zip>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

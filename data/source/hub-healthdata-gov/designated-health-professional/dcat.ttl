@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "designated-health-professional";
-   prov:wasDerivedFrom :as_a_csv_9b919a53489544d15de08b63aea1795a;
+   prov:wasDerivedFrom <http://datawarehouse.hrsa.gov/DataDownload/HPSA/HPSA.zip>;
 .
 
 :as_a_csv_9b919a53489544d15de08b63aea1795a
    a dcat:Distribution;
-   dcat:downloadURL <http://datawarehouse.hrsa.gov/DataDownload/HPSA/HPSA.zip>;
+   dcat:accessURL <http://datawarehouse.hrsa.gov/DataDownload/HPSA/HPSA.zip>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

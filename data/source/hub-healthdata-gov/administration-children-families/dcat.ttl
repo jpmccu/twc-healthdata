@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "administration-children-families";
-   prov:wasDerivedFrom :as_a_xls_b45680adfd96af9dded0264a96e3ff16;
+   prov:wasDerivedFrom <http://www.acf.hhs.gov/datagov-datasets/>;
 .
 
 :as_a_xls_b45680adfd96af9dded0264a96e3ff16
    a dcat:Distribution;
-   dcat:downloadURL <http://www.acf.hhs.gov/datagov-datasets/>;
+   dcat:accessURL <http://www.acf.hhs.gov/datagov-datasets/>;
    dcterms:format [ rdfs:label "XLS" ];
 .
 

@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "part-national-summary-data-file-cy2000";
-   prov:wasDerivedFrom :as_a_csv_f36584bbe11a85fab08e1ed62ac3d066;
+   prov:wasDerivedFrom <http://www.cms.hhs.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/downloads/PartBNational2000.zip>;
 .
 
 :as_a_csv_f36584bbe11a85fab08e1ed62ac3d066
    a dcat:Distribution;
-   dcat:downloadURL <http://www.cms.hhs.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/downloads/PartBNational2000.zip>;
+   dcat:accessURL <http://www.cms.hhs.gov/apps/ama/license.asp?file=/NonIdentifiableDatafiles/downloads/PartBNational2000.zip>;
    dcterms:format [ rdfs:label "CSV" ];
 .
 

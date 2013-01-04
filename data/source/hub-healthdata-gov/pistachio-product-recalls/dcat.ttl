@@ -11,12 +11,12 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub-healthdata-gov";
    conversion:dataset_identifier "pistachio-product-recalls";
-   prov:wasDerivedFrom :as_a_xls_395e28d6bdc86b46641754eb75fb87fa;
+   prov:wasDerivedFrom <http://www.accessdata.fda.gov/scripts/pistachiorecall/Pistachio2009.xls>;
 .
 
 :as_a_xls_395e28d6bdc86b46641754eb75fb87fa
    a dcat:Distribution;
-   dcat:downloadURL <http://www.accessdata.fda.gov/scripts/pistachiorecall/Pistachio2009.xls>;
+   dcat:accessURL <http://www.accessdata.fda.gov/scripts/pistachiorecall/Pistachio2009.xls>;
    dcterms:format [ rdfs:label "XLS" ];
 .
 

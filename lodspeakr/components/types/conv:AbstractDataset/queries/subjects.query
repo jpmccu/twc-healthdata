@@ -1,5 +1,8 @@
-SELECT DISTINCT ?subject ?label count(?dataset) as ?datasetCount WHERE{
-#  <{{uri}}> dcterms:subject ?subject .
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?label (COUNT(?label) AS ?ltotal) (CONCAT('http://healthdata.tw.rpi.edu/index.html#subjects=',?subject) AS ?llink) WHERE{
+  <{{uri}}> dcterms:subject ?subject .
   ?subject skos:prefLabel ?label .
   ?dataset dcterms:subject ?subject.
-} group by ?subject ?label order by desc(count(?dataset))
+}

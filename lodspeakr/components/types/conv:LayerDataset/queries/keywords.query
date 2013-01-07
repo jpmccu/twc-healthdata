@@ -1,0 +1,8 @@
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+
+SELECT DISTINCT ?keyword WHERE{
+  ?versioned void:subset <{{uri}}> .
+  ?parent_dataset void:subset ?versioned ;
+                  dcat:keyword ?keyword .
+}

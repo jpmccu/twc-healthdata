@@ -53,11 +53,21 @@ popd &> /dev/null
 
 pushd $conversion_root &> /dev/null
 
-   echo "BEGIN cron ps --user `whoami` `date`"                >> $log
+   #
+   # Starting user and time.
+   echo "BEGIN cron ps --user `whoami` `date`"                                              >> $log
    echo "#3> <#cron> a prov:Activity; prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
-   ps --user `whoami`                                         >> $log
-   echo "END cron ps --user `whoami` `date`"                  >> $log
-   echo                                                       >> $log
+   ps --user `whoami`                                                                       >> $log
+   echo "END cron ps --user `whoami` `date`"                                                >> $log
+   echo                                                                                     >> $log
+
+   #
+   # PID
+   echo "BEGIN cron pid" >> $log
+   echo $$               >> $log
+   echo "END cron pid"   >> $log
+   echo                  >> $log
+
    # Replaced with .lock:
    #already_running=`ps --user \`whoami\` | grep 'cron.sh' | grep -v 'grep' | wc -l | awk '{printf("%s",$1)}'`
    #echo "Number of cron.sh already_running:$already_running:" >> $log

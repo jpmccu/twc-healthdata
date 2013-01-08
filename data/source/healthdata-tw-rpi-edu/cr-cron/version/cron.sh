@@ -63,10 +63,11 @@ pushd $conversion_root &> /dev/null
 
    #
    # PID
-   echo "BEGIN cron pid" >> $log
-   echo $$               >> $log
-   echo "END cron pid"   >> $log
-   echo                  >> $log
+   echo "BEGIN cron pid"                                                                         >> $log
+   echo "#3> <#cron> <http://semanticscience.org/resource/software-process-identifier> \"$$\" ." >> $log
+   echo $$                                                                                       >> $log
+   echo "END cron pid"                                                                           >> $log
+   echo                                                                                          >> $log
 
    # Replaced with .lock:
    #already_running=`ps --user \`whoami\` | grep 'cron.sh' | grep -v 'grep' | wc -l | awk '{printf("%s",$1)}'`

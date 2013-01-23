@@ -53,11 +53,22 @@ popd &> /dev/null
 
 pushd $conversion_root &> /dev/null
 
-   echo "BEGIN cron ps --user `whoami` `date`"                >> $log
+   #
+   # Starting user and time.
+   echo "BEGIN cron ps --user `whoami` `date`"                                              >> $log
    echo "#3> <#cron> a prov:Activity; prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
-   ps --user `whoami`                                         >> $log
-   echo "END cron ps --user `whoami` `date`"                  >> $log
-   echo                                                       >> $log
+   ps --user `whoami`                                                                       >> $log
+   echo "END cron ps --user `whoami` `date`"                                                >> $log
+   echo                                                                                     >> $log
+
+   #
+   # PID
+   echo "BEGIN cron pid"                                                                         >> $log
+   echo "#3> <#cron> <http://semanticscience.org/resource/software-process-identifier> \"$$\" ." >> $log
+   echo $$                                                                                       >> $log
+   echo "END cron pid"                                                                           >> $log
+   echo                                                                                          >> $log
+
    # Replaced with .lock:
    #already_running=`ps --user \`whoami\` | grep 'cron.sh' | grep -v 'grep' | wc -l | awk '{printf("%s",$1)}'`
    #echo "Number of cron.sh already_running:$already_running:" >> $log
@@ -204,25 +215,26 @@ pushd $conversion_root &> /dev/null
    echo                                                                                        >> $log
 
 
+   # TODO: fix https://github.com/timrdf/csv2rdf4lod-automation/issues/313 and reinstate this.
    #
    # Turtle In Comments often has PROV-O assertions about the files in which they are embedded.
-   echo "BEGIN cron cr-publish-tic-to-endpoint.sh `date`"                                         >> $log
-   echo "#3> <#cr-publish-tic> $wasInformed prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
-   if [[ ${#CSV2RDF4LOD_BASE_URI}              -gt 0 && \
-         ${#CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID} -gt 0 && \
-         `which cr-publish-tic-to-endpoint.sh` ]]; then
-      echo "pwd:    `pwd`"                                                                        >> $log
-      echo "script: `which cr-publish-tic-to-endpoint.sh`"                                        >> $log
-      echo cr-publish-tic-to-endpoint.sh cr:auto                                                  >> $log
-      cr-publish-tic-to-endpoint.sh cr:auto                                                  2>&1 >> $log
-   else
-      echo "   ERROR: Failed to invoke cr-publish-tic-to-endpoint.sh:"                            >> $log
-      echo "      CSV2RDF4LOD_BASE_URI:              $CSV2RDF4LOD_BASE_URI"                       >> $log
-      echo "      CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID: $CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID"          >> $log
-      echo "                                    path: `which cr-publish-tic-to-endpoint.sh`"      >> $log
-   fi
-   echo "END cron cr-publish-tic-to-endpoint.sh `date`"                                           >> $log
-   echo                                                                                           >> $log
+   #echo "BEGIN cron cr-publish-tic-to-endpoint.sh `date`"                                         >> $log
+   #echo "#3> <#cr-publish-tic> $wasInformed prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
+   #if [[ ${#CSV2RDF4LOD_BASE_URI}              -gt 0 && \
+   #      ${#CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID} -gt 0 && \
+   #      `which cr-publish-tic-to-endpoint.sh` ]]; then
+   #   echo "pwd:    `pwd`"                                                                        >> $log
+   #   echo "script: `which cr-publish-tic-to-endpoint.sh`"                                        >> $log
+   #   echo cr-publish-tic-to-endpoint.sh cr:auto                                                  >> $log
+   #   cr-publish-tic-to-endpoint.sh cr:auto                                                  2>&1 >> $log
+   #else
+   #   echo "   ERROR: Failed to invoke cr-publish-tic-to-endpoint.sh:"                            >> $log
+   #   echo "      CSV2RDF4LOD_BASE_URI:              $CSV2RDF4LOD_BASE_URI"                       >> $log
+   #   echo "      CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID: $CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID"          >> $log
+   #   echo "                                    path: `which cr-publish-tic-to-endpoint.sh`"      >> $log
+   #fi
+   #echo "END cron cr-publish-tic-to-endpoint.sh `date`"                                           >> $log
+   #echo                                                                                           >> $log
 
 
    #
@@ -262,6 +274,49 @@ pushd $conversion_root &> /dev/null
    fi
    echo "END cron cr-full-dump.sh `date`"                                                >> $log
    echo                                                                                  >> $log
+
+
+   #
+   # Search the RDF Node URIs in our dataset that come from other Linked Data cloud bubbbles' namespaces.
+   # This needs to be run AFTER cr-full-dump.sh
+   echo "BEGIN cron cr-linksets.sh `date`"                                                     >> $log
+   echo "#3> <#cr-linksets> $wasInformed prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
+   if [[ -n "$CSV2RDF4LOD_BASE_URI"                               && \
+         -n "$CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID"                  && \
+         -n "$CSV2RDF4LOD_PUBLISH_DATAHUB_METADATA_OUR_BUBBLE_ID" && \
+         `which cr-linksets.sh` ]]; then
+      echo "pwd: `pwd`"                                                                        >> $log
+      cr-linksets.sh cr:auto cr:auto                                                      2>&1 >> $log
+   else
+      echo "   ERROR: Failed to invoke:"                                                       >> $log
+      echo "      CSV2RDF4LOD_BASE_URI:              $CSV2RDF4LOD_BASE_URI"                    >> $log
+      echo "      CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID: $CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID"       >> $log
+      echo "                                   path: `which cr-full-dump.sh`"                  >> $log
+   fi
+   echo "END cron cr-linksets.sh `date`"                                                       >> $log
+   echo                                                                                        >> $log
+
+
+   #
+   # Create a sitemap for each conversion:VersionedDataset.
+   echo "BEGIN cron cr-sitemap.sh `date`"                                                     >> $log
+   echo "#3> <#cr-sitemap> $wasInformed prov:startedAtTime `dateInXSDDateTime.sh --turtle` ." >> $log
+   if [[ -n "$CSV2RDF4LOD_BASE_URI"                               && \
+         -n "$CSV2RDF4LOD_PUBLISH_SPARQL_ENDPOINT"                && \
+         -n "$CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID"                  && \
+         `which cr-sitemap.sh` ]]; then
+      echo "pwd: `pwd`"                                                                       >> $log
+      cr-sitemap.sh cr:auto cr:auto                                                      2>&1 >> $log
+   else
+      echo "   ERROR: Failed to invoke:"                                                      >> $log
+      echo "      CSV2RDF4LOD_BASE_URI:                $CSV2RDF4LOD_BASE_URI"                 >> $log
+      echo "      CSV2RDF4LOD_PUBLISH_SPARQL_ENDPOINT: $CSV2RDF4LOD_PUBLISH_SPARQL_ENDPOINT"  >> $log
+      echo "      CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID:   $CSV2RDF4LOD_PUBLISH_OUR_SOURCE_ID"    >> $log
+      echo "                                   path: `which cr-full-dump.sh`"                 >> $log
+   fi
+   echo "END cron cr-sitemap.sh `date`"                                                       >> $log
+   echo                                                                                       >> $log
+
 
 popd &> /dev/null
 

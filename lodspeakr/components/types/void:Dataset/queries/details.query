@@ -1,5 +1,9 @@
-SELECT DISTINCT ?id ?title ?description WHERE{
-  <{{uri}}> dcterms:identifier ?id ;
-            dcterms:title ?title ;
-            dcterms:description ?description .
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX conv: <http://purl.org/twc/vocab/conversion/>
+PREFIX void: <http://rdfs.org/ns/void#>
+
+SELECT DISTINCT ?id ?title ?description  WHERE{
+  <{{uri}}> dcterms:identifier ?id;
+            dcterms:title ?title;
+            dcterms:description ?description . 
 }

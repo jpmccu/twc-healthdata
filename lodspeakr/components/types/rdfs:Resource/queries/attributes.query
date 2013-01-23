@@ -1,9 +1,10 @@
 prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 prefix dcterms: <http://purl.org/dc/terms/>
+PREFIX void: <http://rdfs.org/ns/void#>
 
 select distinct ?p ?o ?pLabel
 where {
-  <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare> ?p ?o
+  <{{uri}}> ?p ?o
   optional {?p rdfs:label ?pLabel}
   filter(isLiteral(?o))
   filter(?p != dcterms:modified)

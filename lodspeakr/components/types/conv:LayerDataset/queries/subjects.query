@@ -1,8 +1,11 @@
 PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX void: <http://rdfs.org/ns/void#>
 
 SELECT DISTINCT ?label (COUNT(?label) AS ?ltotal) (CONCAT('http://healthdata.tw.rpi.edu/index.html#subjects=',?subject) AS ?llink) WHERE{
-  <{{uri}}> dcterms:subject ?subject .
+  ?versioned void:subset <{{uri}}> .
+  ?super void:subset ?versioned ;
+         dcterms:subject ?subject .
   ?subject skos:prefLabel ?label .
   ?dataset dcterms:subject ?subject.
 }

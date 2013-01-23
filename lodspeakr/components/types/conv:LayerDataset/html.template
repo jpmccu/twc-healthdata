@@ -4,33 +4,40 @@
 
      <div class="fluid-row">
       <div class="span12">
-        <h2>Dataset <a href='{{uri}}'><span property='dc:identifier'>{{first.details.id.value}}</span></a></h2>
+        <h2><a href='{{uri}}'><span property='dc:title'>{{first.details.dataset_identifier.value}} {{first.details.version_identifier.value}} {{first.details.conversion_identifier.value}}</span></a></h2>
       </div>
      </div>
 
      <div class="fluid-row">
-      <div class="span10">
-         <h3>is a 
-            {%for i in models.types%}
-               {%if !forloop.first%}, {%endif%}
-              <span about="{{uri}}" typeof='{{i.type.curie}}'>
-                  <a href="{{i.type.mirroredUri}}">{%if i.label.value %}{{i.label.value}}{%else%}{{i.type.curie}}{%endif%}</a>
-              </span>
-            {%endfor%}.
-         </h3>
-         <p property='dc:description'>{{first.details.description.value}}</p>
+      <div class="span7">
+        <p property='dc:description'>{{first.details.description.value}}</p>
+        <p><b>Keywords:</b>
+          {%for i in models.keywords%}{%if !forloop.first%}, {%endif%}
+              <span about="{{uri}}" property="dcat:keyword">{{i.keyword.value}}</span>
+            {%endfor%}</p>
+       </div>
+       <div class="span3">
+        <h3>Types</h3> 
+          {%for i in models.types%}
+             <h4 about="{{uri}}" typeof='{{i.type.curie}}'>
+              <a href="{{i.type.mirroredUri}}">{%if i.label.value %}{{i.label.value}}{%else%}{{i.type.curie}}{%endif%}</a>
+            </h4>
+          {%endfor%}
+
        </div>
      </div>
-
 
 
 
     {% include '../void\:Dataset/void_data_dumps.html.template'%}
 
 
-
     <div class="fluid-row">
-      <div class="span12">
+      <div class="span7">
+        <h3>Related Subjects</h3>
+        {{models.subjects|D3WordCloud:"label,ltotal,llink,width=600,height=500,color=steelblue"}}
+      </div>
+      <div class="span3">
         <h3>Loaded Samples</h3>
         {%if models.samples|length == 0%}
            <div class="alert alert-info">No samples found</div>
@@ -41,16 +48,8 @@
              {% endfor %}
            </ul>
         {%endif%}
-      </div>
-    </div>
 
-
-    {% include '../void\:Dataset/in_triple_store.html.template' %}
-
-
-    <div class="fluid-row">
-      <div class="span8">
-         <h3>Subsets</h3>
+        <h3>Subsets</h3>
          {%if models.subsets|length == 0%}
            <div class="alert alert-info">No subsets found</div>
          {%else%}
@@ -60,12 +59,7 @@
             {% endfor %}
            </ul>
          {%endif%}
-     </div>
-    </div>
-
-     <div class="fluid-row">
-      <div class="span10">
-   <h3>Supersets</h3>
+     <h3>Supersets</h3>
      {%if models.supersets|length == 0%}
          <div class="alert alert-info">No supersets found</div>
      {%else%}
@@ -75,27 +69,8 @@
     {% endfor %}
     </ul>
 {%endif%}
-     </div>
-    </div>
-
-
-     <div class="fluid-row">
-      <div class="span8">
          <h3>CKAN listings <img width="30px" src="{{lodspk.home}}img/logo_64px_wide.png" alt="Comprehensive Knowledge Archive Network"/> </h3>
          
-         {%if models.ckan_links|length > 0%}
-           <p>This RDF dataset is derived from the following CKAN dataset listings.</p>
-           <ul>
-             <li>Listed at <a href='{{first.ckan_links.theirs.value}}'>{{first.ckan_links.theirs.value|urischeme}}://{{first.ckan_links.theirs.value|hostname}}</a>
-             </li>
-             {%if first.ckan_links.ours.value %}
-                <li>Listed at <a href='{{first.ckan_links.ours.value}}'>{{first.ckan_links.ours.value|urischeme}}://{{first.ckan_links.ours.value|hostname}}</a>
-                </li>
-             {%endif%}
-           </ul>
-         {%else%}
-           <div class="alert alert-info">No CKAN links found</div>
-         {%endif%}
 
          {%if models.ckan|length == 0%}
            <div class="alert alert-info">No CKAN links found</div>
@@ -106,7 +81,7 @@
             {% endfor %}
            </ul>
          {%endif%}
-     </div>
+      </div>
     </div>
 
 

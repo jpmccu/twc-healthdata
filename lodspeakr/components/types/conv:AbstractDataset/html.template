@@ -34,7 +34,7 @@
     <div class="fluid-row">
       <div class="span7">
         <h3>Related Subjects</h3>
-        {{models.subjects|D3WordCloud:"label,ltotal,llink,width=600,height=500,color=steelblue"}}
+        {{models.subjects|D3WordCloud:"label,ltotal,llink,width=580,height=500,color=steelblue,wordOrientation=horizontal"}}
       </div>
       <div class="span3">
         <h3>Loaded Samples</h3>

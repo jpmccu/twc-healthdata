@@ -1,0 +1,4 @@
+SELECT ?p COUNT( ?p) as ?total WHERE{
+  ?s ?p []
+}group by ?p
+order by desc(?total)

@@ -1,0 +1,14 @@
+prefix sd:         <http://www.w3.org/ns/sparql-service-description#>
+prefix foaf:       <http://xmlns.com/foaf/0.1/>
+prefix prov:       <http://www.w3.org/ns/prov#>
+prefix ov:         <http://open.vocab.org/terms/>
+prefix conversion: <http://purl.org/twc/vocab/conversion/>
+
+select (count ( distinct ?ad) as ?AbstractDataset) (count ( distinct ?vd) as ?VersionedDataset) (count ( distinct ?ld) as ?LayerDataset)
+where {
+  graph ?g {
+    ?ad a conversion:AbstractDataset .
+    ?vd a conversion:VersionedDataset .
+    ?ld a conversion:LayerDataset .
+  }
+}

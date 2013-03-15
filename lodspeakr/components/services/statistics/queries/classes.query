@@ -1,0 +1,11 @@
+SELECT ?class ?total WHERE{
+ {
+   SELECT ?class (COUNT(?class) AS ?total) WHERE{
+    GRAPH ?g{
+      [] a ?class.
+    }
+  }GROUP BY ?class
+ }
+ FILTER(?total > 2)
+}
+ORDER BY DESC(?total)

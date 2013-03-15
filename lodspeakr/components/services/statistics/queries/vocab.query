@@ -1,0 +1,13 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?vocabulary ?total WHERE{
+{
+  SELECT ?vocabulary COUNT(?vocabulary) AS ?total WHERE{
+    graph ?g{
+      [] prov:wasAttributedTo ?vocabulary.
+    }
+  }group by ?vocabulary
+}
+FILTER(?total >2)
+}
+ORDER BY DESC(?total)

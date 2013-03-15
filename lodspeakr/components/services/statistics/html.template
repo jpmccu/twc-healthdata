@@ -1,0 +1,57 @@
+{%include "../../includes/menu.inc"%}
+<div class="container-fluid">
+ <div class='row-fluid'>
+  <div class='span12 well'>
+   <h1>Datasets</h1>
+   <p>Currently, there are <strong><span id="loaded_triples"></span> triples</strong> loaded from <strong><span id="total_triples"></span> triples</strong> created to describe <strong>{{first.main.AbstractDataset.value}}</strong> Abstract Datasets, <strong>{{first.main.VersionedDataset.value}}</strong> Versioned Datasets  and <strong>{{first.main.LayerDataset.value}}</strong> Layer Datasets.</p>
+  <p><strong><a href='https://github.com/timrdf/csv2rdf4lod-automation/wiki/Dataset-granularities:-Abstract-vs.-Versioned-vs.-Layer'>What is the difference between Abstract, Versioned and Layer datasets?</a></strong></p>
+  </div>
+ </div>
+ <div class='row-fluid'>
+  <div class='span12 well'>
+   <h1>Vocabularies</h1>
+   We used <strong><span id="vocab"></span><span> different vocabularies</strong>:
+   {{models.vocab|GoogleVizColumnChart:"vocabulary.curie,total,width=300px,logScale=true"}}
+  </div>
+ </div>
+ <div class='row-fluid'>
+  <div class='span12 well'>
+   <h1>Classes</h1>
+   Healthdata.tw.rpi.edu uses <strong><span id="classes"></span> different classes</strong>:
+   {{models.classes|GoogleVizColumnChart:"class.curie,total,width=300px,logScale=true"}}
+  </div>
+ </div>
+ <div class='row-fluid'>
+  <div class='span12 well'>
+   <h1>Predicates</h1>
+   Healthdata.tw.rpi.edu uses <strong><span id="preds"></span> different predicates</strong>:
+   {{models.preds|GoogleVizColumnChart:"p.curie,total,width=300px,logScale=true"}}
+  </div>
+ </div>
+ <div class='row-fluid'>
+  <div class='span12 well'>
+   <h1>Abstract, Versioned and Layer Datasets</h1>
+   <ul>
+     <li><strong>{{first.main.AbstractDataset.value}}</strong> Abstract Datasets</li> 
+     <li><strong>{{first.main.VersionedDataset.value}}</strong> Versioned Datasets</li>
+     <li><strong>{{first.main.LayerDataset.value}}</strong> Layer Datasets</li>
+   </ul>
+   {{models.main|GoogleVizColumnChart:"dummy,AbstractDataset,VersionedDataset,LayerDataset,width=300px"}}
+  </div>
+ </div>
+</div>
+  <script src='https://raw.github.com/asual/jquery-format/master/src/jquery.format.js'></script>
+  <script>
+  var loaded_triples = {{first.triples.total.value}};
+  var total_triples = {{first.voidtriples.total.value}};
+  var vocab = {{models.vocab|length}};
+  var preds = {{models.preds|length}};
+  var classes = {{models.classes|length}};
+  $("#loaded_triples").html($.format.number(loaded_triples, '#,###'));
+  $("#total_triples").html($.format.number(total_triples, '#,###'));
+  $("#vocab").html($.format.number(vocab, '#,###'));
+  $("#classes").html($.format.number(classes, '#,###'));
+  $("#preds").html($.format.number(preds, '#,###'));
+  </script>
+</body>
+</html>

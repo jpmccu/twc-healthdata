@@ -60,6 +60,7 @@
               <li><a href="{{lodspk.home}}datasets">Datasets</a></li>
               <li><a href="{{lodspk.home}}namedGraphs">Named Graphs</a></li>
               <li><a href="{{lodspk.home}}vocabularies">Vocabularies</a></li>
+              <li><a href="{{lodspk.home}}statistics">Statistics</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

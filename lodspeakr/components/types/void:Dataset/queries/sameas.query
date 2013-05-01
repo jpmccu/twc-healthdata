@@ -1,5 +1,7 @@
 prefix owl: <http://www.w3.org/2002/07/owl#>
 select distinct ?other
 where { 
-  <{{uri}}> owl:sameAs ?other
+  {<{{uri}}> owl:sameAs ?other}
+  union
+  {?other owl:sameAs <{{uri}}>}
 }

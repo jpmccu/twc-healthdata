@@ -1,0 +1,7 @@
+prefix void:    <http://rdfs.org/ns/void#>
+select distinct ?triples
+where { 
+  <{{uri}}> void:triples ?triples
+}
+order by desc(?triples)
+limit 1

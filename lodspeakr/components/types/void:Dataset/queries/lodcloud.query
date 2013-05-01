@@ -1,0 +1,16 @@
+prefix owl:      <http://www.w3.org/2002/07/owl#>
+prefix dcterms:  <http://purl.org/dc/terms/>
+prefix tag:      <http://www.holygoat.co.uk/owl/redwood/0.1/tags/>
+prefix void:     <http://rdfs.org/ns/void#>
+prefix datafaqs: <http://purl.org/twc/vocab/datafaqs#>
+
+select distinct ?id ?tag ?uriSpace ?endpoint
+where { 
+  {<{{uri}}> dcterms:identifier ?id}
+  union
+  {<{{uri}}> tag:taggedWithTag ?tag}
+  union
+  {<{{uri}}> void:uriSpace ?uriSpace}
+  union
+  {<{{uri}}> void:sparqlEndpoint ?endpoint}
+}

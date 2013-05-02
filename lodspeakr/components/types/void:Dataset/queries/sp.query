@@ -1,0 +1,6 @@
+SELECT ?s ?p  WHERE {
+    GRAPH ?g{
+                ?s ?p <{{uri}}> .
+    }
+}
+limit 1000

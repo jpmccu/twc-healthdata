@@ -1,12 +1,14 @@
 prefix void: <http://rdfs.org/ns/void#>
 
-select distinct ?this ?triples ?otherbubble
+select distinct ?bubble1 ?subset ?size ?bubble2
 where {
-  <{{uri}}> void:subset [
-       a void:Linkset;
-       void:target  ?this,
-                    ?otherbubble;
-       void:triples ?triples;
-     ] 
-  filter(?this != ?otherbubble)
+  <{{uri}}> void:subset ?subset .
+
+  ?subset
+    a void:Linkset;
+    void:target  ?bubble1,
+                 ?bubble2;
+    void:triples ?size .
+     
+  filter(?bubble1 != ?bubble2)
 }

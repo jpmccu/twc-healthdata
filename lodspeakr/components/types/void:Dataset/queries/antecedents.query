@@ -1,6 +1,7 @@
 prefix prov: <http://www.w3.org/ns/prov#>
-select distinct ?entity ?type
+select distinct ?entity ?type ?desc
 where {
   <{{uri}}> prov:wasDerivedFrom ?entity .
-  ?entity a ?type .
+  optional { ?entity a ?type }
+  optional { ?entity dcterms:description ?desc }
 }

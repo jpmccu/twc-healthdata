@@ -1,0 +1,6 @@
+prefix prov: <http://www.w3.org/ns/prov#>
+select distinct ?entity ?type
+where {
+  <{{uri}}> prov:wasDerivedFrom ?entity .
+  ?entity a ?type .
+}

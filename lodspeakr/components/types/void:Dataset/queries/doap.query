@@ -1,0 +1,15 @@
+prefix owl:      <http://www.w3.org/2002/07/owl#>
+prefix dcterms:  <http://purl.org/dc/terms/>
+prefix tag:      <http://www.holygoat.co.uk/owl/redwood/0.1/tags/>
+prefix void:     <http://rdfs.org/ns/void#>
+prefix datafaqs: <http://purl.org/twc/vocab/datafaqs#>
+prefix doap:     <http://usefulinc.com/ns/doap#>         
+
+select distinct ?repo ?type ?loc ?anon ?browse
+where {
+  <{{uri}}> doap:repository ?repo .
+                 optional { ?repo a ?type }
+                 optional { ?repo doap:location  ?loc    }
+                 optional { ?repo doap:anon-root ?anon   }
+                 optional { ?repo doap:browse    ?browse }
+}

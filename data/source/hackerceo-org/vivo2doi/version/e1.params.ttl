@@ -35,6 +35,7 @@
 @prefix foaf:          <http://xmlns.com/foaf/0.1/> .
 @prefix ov:            <http://open.vocab.org/terms/> .
 @prefix conversion:    <http://purl.org/twc/vocab/conversion/> .
+@prefix prv:           <http://purl.org/net/provenance/ns#> .
 @prefix :              <http://http://purl.org/twc/health/source/hackerceo-org/dataset/vivo2doi/version/2014-Feb-17/params/enhancement/1/> .
 
 
@@ -72,66 +73,72 @@
       #conversion:delimits_cell "|";   # pipe
       #conversion:delimits_cell ",";   # comma
 
+      conversion:enhance [
+         ov:csvRow conversion:null;
+      ];
+      conversion:enhance [
+         dcterms:isReferencedBy conversion:null;
+      ];
+      conversion:enhance [
+         void:inDataset conversion:null;
+      ];
+
       #conversion:interpret [
       #   conversion:symbol        "";
       #   conversion:interpretation conversion:null; 
-      #];
-      #conversion:enhance [
-      #   conversion:domain_template "thing_[r]";
-      #   conversion:domain_name     "Thing";
       #];
       #conversion:enhance [
       #   conversion:class_name "Thing";
       #   conversion:subclass_of <http://purl.org/...>;
       #];
       conversion:enhance [
-         ov:csvCol          1;
-         ov:csvHeader       "author_uri";
-         #conversion:bundled_by [ ov:csvCol 1 ];
-         #conversion:label   "author_uri";
-         #conversion:equivalent_property dcterms:identifier;
-         #conversion:subproperty_of      dcterms:identifier;
-         conversion:comment "";
-         #conversion:range_template  "[/sd]thing[.]";
-         conversion:range   todo:Literal;
-         #conversion:range_name  "Thing";
+         conversion:fromCol 1;
+         conversion:toCol   4;
+         conversion:equivalent_property rdfs:seeAlso; # Avoids minting new RDF properties.
+         a conversion:Omitted;
       ];
       conversion:enhance [
-         ov:csvCol          2;
-         ov:csvHeader       "publication_uri";
-         #conversion:bundled_by [ ov:csvCol 1 ];
-         #conversion:label   "publication_uri";
-         #conversion:equivalent_property dcterms:identifier;
-         #conversion:subproperty_of      dcterms:identifier;
-         conversion:comment "";
-         #conversion:range_template  "[/sd]thing[.]";
-         conversion:range   todo:Literal;
-         #conversion:range_name  "Thing";
+         a conversion:TemplatedTopicsEnhancement;
+
+         conversion:topic [
+            conversion:name "[#1]";
+            a foaf:Person;
+            prov:alternateOf [ 
+               a foaf:Person;
+               conversion:name "[#4]";
+            ];
+         ];
+
+         conversion:topic [
+            conversion:name "[#2]";
+            a bibo:Article;
+            prov:alternateOf [
+               a bibo:Article;
+               conversion:name "[#3]";
+            ];
+         ];
+
+         conversion:topic [
+            conversion:name "http://lod.hackerceo.org/VIVO2DOI/bundle/increment([#1])";
+            a prov:Bundle, void:Dataset, void:Linkset;
+            prov:wasDerivedFrom [
+               a prov:Entity, prv:File;
+               conversion:name "[/]id/url/md5/md5([#1])";
+               prv:retrievedBy [ 
+                  conversion:name "[/]id/url/md5/md5([#1])/access";
+                  a prov:Activity, prv:DataAccess;
+                  prv:accessedResource [ conversion:name "[#1]" ];
+               ];
+            ];
+            void:target [ conversion:name "domain([#1])", 
+                                          "domain([#2])", 
+                                          "domain([#3])", 
+                                          "domain([#4])" ];
+            void:linkPredicate prov:alternateOf;
+            sio:has-member [ conversion:name "[#1]", "[#2]", "[#3]", "[#4]" ];
+         ];
       ];
-      conversion:enhance [
-         ov:csvCol          3;
-         ov:csvHeader       "doi_publication_uri";
-         #conversion:bundled_by [ ov:csvCol 1 ];
-         #conversion:label   "doi_publication_uri";
-         #conversion:equivalent_property dcterms:identifier;
-         #conversion:subproperty_of      dcterms:identifier;
-         conversion:comment "";
-         #conversion:range_template  "[/sd]thing[.]";
-         conversion:range   todo:Literal;
-         #conversion:range_name  "Thing";
-      ];
-      conversion:enhance [
-         ov:csvCol          4;
-         ov:csvHeader       "doi_author_uri";
-         #conversion:bundled_by [ ov:csvCol 1 ];
-         #conversion:label   "doi_author_uri";
-         #conversion:equivalent_property dcterms:identifier;
-         #conversion:subproperty_of      dcterms:identifier;
-         conversion:comment "";
-         #conversion:range_template  "[/sd]thing[.]";
-         conversion:range   todo:Literal;
-         #conversion:range_name  "Thing";
-      ];
+
       #conversion:enhance [
       #   ov:csvRow 3,4,5;
       #   conversion:fromRow 3;

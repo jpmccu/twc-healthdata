@@ -1,0 +1,172 @@
+@prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:          <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix todo:          <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:           <http://www.w3.org/2002/07/owl#> .
+@prefix vann:          <http://purl.org/vocab/vann/> .
+@prefix skos:          <http://www.w3.org/2004/02/skos/core#> .
+@prefix time:          <http://www.w3.org/2006/time#> .
+@prefix wgs:           <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geonames:      <http://www.geonames.org/ontology#> .
+@prefix geonamesid:    <http://sws.geonames.org/> .
+@prefix govtrackusgov: <http://www.rdfabout.com/rdf/usgov/geo/us/> .
+@prefix dbpedia:       <http://dbpedia.org/resource/> .
+@prefix dbpediaprop:   <http://dbpedia.org/property/> .
+@prefix dbpediaowl:    <http://dbpedia.org/ontology/> .
+@prefix con:           <http://www.w3.org/2000/10/swap/pim/contact#> .
+@prefix muo:           <http://purl.oclc.org/NET/muo/muo#> .
+@prefix vs:            <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix frbr:          <http://purl.org/vocab/frbr/core#> .
+@prefix bibo:          <http://purl.org/ontology/bibo/> .
+@prefix doap:          <http://usefulinc.com/ns/doap#> .
+@prefix qb:            <http://purl.org/linked-data/cube#> .
+@prefix dgtwc:         <http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#> .
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix void:          <http://rdfs.org/ns/void#> .
+@prefix scovo:         <http://purl.org/NET/scovo#> .
+@prefix sioc:          <http://rdfs.org/sioc/ns#> .
+@prefix foaf:          <http://xmlns.com/foaf/0.1/> .
+@prefix ov:            <http://open.vocab.org/terms/> .
+@prefix conversion:    <http://purl.org/twc/vocab/conversion/> .
+@prefix :              <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/drug-label-data/version/2012-Sep-19/params/enhancement/1/> .
+
+
+#:a_bundle
+#   a conversion:ImplicitBundle;
+#   conversion:property_name "a_property"; # Can also be a URI, e.g. dcterms:title.
+#   #conversion:type_name     "My Class";   # Can also be a URI, e.g. foaf:Person.
+#.
+
+<http://purl.org/twc/health/source/hub-healthdata-gov/dataset/drug-label-data/version/2012-Sep-19/conversion/enhancement/1>
+   a conversion:LayerDataset, void:Dataset;
+
+   conversion:base_uri           "http://purl.org/twc/health";
+   conversion:source_identifier  "hub-healthdata-gov";
+   conversion:dataset_identifier "drug-label-data";
+   conversion:version_identifier "2012-Sep-19";
+   conversion:enhancement_identifier "1";
+
+   conversion:conversion_process [
+      a conversion:EnhancementConversionProcess;
+      conversion:enhancement_identifier "1";
+
+      dcterms:creator [ a foaf:OnlineAccount; foaf:accountName "Kristine" ];
+      dcterms:created "2012-09-19T15:37:53-04:00"^^xsd:dateTime;
+
+      conversion:delimits_cell ",";
+      #conversion:delimits_cell "	"; # tab
+      #conversion:delimits_cell "|";   # pipe
+      #conversion:delimits_cell ",";   # comma
+
+      conversion:enhance [      
+         ov:csvRow 1;
+         a conversion:HeaderRow;
+      ];                        
+
+      #conversion:interpret [
+      #   conversion:symbol        "";
+      #   conversion:interpretation conversion:null; 
+      #];
+      conversion:enhance [
+         conversion:domain_template "http://logd.tw.rpi.edu/id/fda-gov/drug/[#1]";
+      #   conversion:domain_name     "Thing";
+      ];
+      conversion:enhance [
+        conversion:class_name "Thing";
+        conversion:subclass_of <http://purl.org/twc/health/vocab/Drug>;
+  	  ];
+      conversion:enhance [
+         ov:csvCol          1;
+         ov:csvHeader       "NDC";
+         #conversion:label   "NDC";
+         conversion:equivalent_property dcterms:identifier;
+         conversion:comment "";
+         conversion:range   rdfs:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          2;
+         ov:csvHeader       "Proprietary Name";
+         #conversion:label   "Proprietary Name";
+         conversion:comment "";
+         conversion:range   rdfs:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          3;
+         ov:csvHeader       "Ingredient Name";
+         #conversion:label   "Ingredient Name";
+         conversion:comment "";
+         conversion:range_template "[^._]";
+         conversion:delimits_object "; *"; 
+         conversion:range   rdfs:Resource;
+         conversion:range_name "Ingredient";
+      ];
+      conversion:enhance [
+         ov:csvCol          4;
+         ov:csvHeader       "Labeler Name";
+         conversion:label   "Labeler";
+         conversion:comment "";
+          rdfs:comment """ #SPARQL Query
+   			prefix foaf: <http://xmlns.com/foaf/0.1/>
+			prefix orgpedia: <http://tw.rpi.edu/orgpedia/vocab/>
+			prefix sec: <http://tw.rpi.edu/orgpedia/vocab/ussec/>
+	
+		construct {
+    	   ?company 
+       	   a <http://tw.rpi.edu/orgpedia/source/sec/Filers>;
+         	 foaf:name ?name .    
+		}
+		where {
+		  graph <http://tw.rpi.edu/orgpedia/source/orgpedia/dataset/idmappings/version/20110616> {
+  		  ?company 
+          a <http://tw.rpi.edu/orgpedia/source/sec/Filers>;
+          foaf:name ?name ."""; 
+       		a conversion:CaseInsensitiveLODLink, conversion:DirectSameAsEnhancement;
+       	 	conversion:links_via <http://logd.tw.rpi.edu/sparql.php?query-option=text&query=prefix+foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0D%0Aprefix+orgpedia%3A+%3Chttp%3A%2F%2Ftw.rpi.edu%2Forgpedia%2Fvocab%2F%3E%0D%0Aprefix+sec%3A+%3Chttp%3A%2F%2Ftw.rpi.edu%2Forgpedia%2Fvocab%2Fussec%2F%3E%0D%0A%0D%0Aconstruct+%7B%0D%0A++++++++%3Fcompany+%0D%0A+++++++++++a+%3Chttp%3A%2F%2Ftw.rpi.edu%2Forgpedia%2Fsource%2Fsec%2FFilers%3E%3B%0D%0A+++++++++++foaf%3Aname+%3Fname+.++++%0D%0A%7D%0D%0Awhere+%7B%0D%0A+++graph+%3Chttp%3A%2F%2Ftw.rpi.edu%2Forgpedia%2Fsource%2Forgpedia%2Fdataset%2Fidmappings%2Fversion%2F20110616%3E+%7B%0D%0A++++++++%3Fcompany+%0D%0A+++++++++++a+%3Chttp%3A%2F%2Ftw.rpi.edu%2Forgpedia%2Fsource%2Fsec%2FFilers%3E%3B%0D%0A+++++++++++foaf%3Aname+%3Fname+.+++++++++%0D%0A+++%7D%0D%0A%7D&service-uri=http%3A%2F%2Faquarius.tw.rpi.edu%3A8888%2Fsparql%2F&output=rdfxml&callback=&tqx=&tp=>;
+ 			conversion:subject_of foaf:name;
+         conversion:range_name  "Labeler";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+        conversion:class_name "Labeler";
+        conversion:subclass_of foaf:Organization;
+  	  ];
+      conversion:enhance [
+         ov:csvCol          5;
+         ov:csvHeader       "Product Type";
+         #conversion:label   "Product Type";
+         conversion:comment "";
+         conversion:equivalent_property rdf:type;
+         conversion:range_template "[/sd]vocab/[.]"; 
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          6;
+         ov:csvHeader       "Marketing Category";
+         #conversion:label   "Marketing Category";
+         conversion:comment "";
+         conversion:range_template "[/]vocab/[.]";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          7;
+         ov:csvHeader       "Application Number or Citation";
+         #conversion:label   "Application Number or Citation";
+         conversion:comment "";
+         conversion:range   rdfs:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          8;
+         ov:csvHeader       "Link";
+         #conversion:label   "Link";
+         conversion:comment "";
+         conversion:range   rdfs:Resource;
+         conversion:equivalent_property rdfs:seeAlso;
+         conversion:subproperty_of foaf:isPrimaryTopicOf;
+         conversion:range_template "http://www.drugsdb.eu/otc_drug.php?id=[.].xml";
+      ];
+      #conversion:enhance [            
+      #   ov:csvRow 3,4,5;             
+      #   a conversion:ExampleResource;
+      #];                              
+   ];
+.
